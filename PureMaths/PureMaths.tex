@@ -32,6 +32,10 @@ This book is an introduction to undergraduate pure mathematics. This books conta
 
 \pagebreak
 
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+
 \section{Lesson 1 - Logic: Statements and Truth}
 
 \subsection{Overview}
@@ -90,8 +94,6 @@ This section introduce the notion of sets, subsets, union and intersection.
 
 \subsection{Describing Sets}
 
-\newtheorem{definition}{Definition}[subsection]
-\newtheorem{theorem}{Theorem}[subsection]
 
 \begin{definition}[Set]
 A set is a collection of objects. The set can either be finite or infinite. We
@@ -163,6 +165,18 @@ Let A, B, C be sets such that $$ A \subseteq B, B \subseteq C. Then, A \subseteq
     \(B \subseteq A \iff A \cup B = A\)
 \end{theorem}
 
+\begin{theorem}
+    \(B \subseteq A \iff A \cap B = B\)
+\end{theorem}
+
+\begin{definition}[Reflexive]
+    A relation R is reflexive if  $ \forall x(x R x) $
+\end{definition}
+
+\begin{definition}[Symmetric]
+    A relation R is symmetric if $$\forall x \forall y(x R y \rightarrow y R x)$$
+\end{definition}
+
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -173,6 +187,102 @@ Let A, B, C be sets such that $$ A \subseteq B, B \subseteq C. Then, A \subseteq
 
 \section{Lesson 3 - Abstract Algebra: Semigroups, Monoids and Groups}
 \subsection{Overview}
+
+This section focus on the properties of semigroups, monoids and groups. It gives
+us an intuition on why some set behave a certain way while other don't.
+
+To determine wether a set has certain properties, we often use a multiplication
+table.
+
+\subsection{Binary Operations and Closure}
+
+\begin{definition}[Binary Operation]
+    A binary operation on a set is a rule that combines two elements of the set to
+    produce another element of the set
+\end{definition}
+
+\begin{definition}[Closed]
+    We say that the set S is closed under the partiel binary operation * if
+    whenever \(a,b \in S\), we have \(a * b \in S \)
+\end{definition}
+
+\subsection{Semigroups and Associativity}
+
+\begin{definition}[Associativity]
+    Let * be a binary operation on a set. We say that * is associative in S if
+    for all x, y, z in S, we have
+    $$ x * (y * z) = (x * y) * z $$
+\end{definition}
+
+
+\begin{definition}[Semigroup]
+    A semigroup is a pair (S,*), where S is a set and * is an associative binary
+    opertaion on S
+\end{definition}
+
+\begin{corollary}
+    If the binary operator * is not associative in S, then the pair (S,*) is not
+    a semigroup
+\end{corollary}
+
+\begin{definition}[Abelian or Commutative]
+    Let * be a binary operation on a set. We say that * is abelian (or commutative)
+    in S if for all x, y, z in S, we have
+    $$ x * y = y * x $$
+\end{definition}
+
+\begin{definition}[Abelian Semigroup]
+    An abelian semigroup is a semigroup that is commutative. Therefore, it has the
+    following properties:
+    \begin{enumerate}
+	\item Closed
+	\item Associative
+	\item Commutative
+    \end{enumerate}
+\end{definition}
+
+\subsection{Monoids and Identity}
+
+\begin{definition}[Identity]
+    Let (S,*) be a semigroup. An element e of S is called an identity with respect
+    of the binary operation * if for all \( a \in S \), we have \( a * e = e * a = a \)
+\end{definition}
+
+\begin{definition}[Monoid]
+    A monoid is a semigroup with an identity. In other word, a monoid is
+    \begin{enumerate}
+	\item Closed
+	\item Associative
+	\item Identity
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Unique Identity]
+    Let (M, *) be a monoid with identity e. The identity element is unique
+\end{theorem}
+
+\subsection{Groups and Inverses}
+
+\begin{definition}[Inverse]
+    Let (M,*) be a monoid with identity e. An element a of M is called invertible
+    if there is an element \( b \in M \) such that \( a * b = b * a = e \)
+\end{definition}
+
+\begin{definition}[Group]
+    A group is a monoid in which every element is invertible. Therefore, a group
+    follows the following properties
+    \begin{enumerate}
+	\item Closed
+	\item Associative
+	\item Identity
+	\item Inversible
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Unique Inverse]
+    Let (G, *) be a group. Each element in G has a unique inverse
+\end{theorem}
+
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -181,8 +291,11 @@ Let A, B, C be sets such that $$ A \subseteq B, B \subseteq C. Then, A \subseteq
 \subsubsection{Level 5}
 \pagebreak
 
-\section{Lesson 4 - Number Theory: The Ting of Integers}
+\section{Lesson 4 - Number Theory: The Ring of Integers}
 \subsection{Overview}
+
+
+
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
