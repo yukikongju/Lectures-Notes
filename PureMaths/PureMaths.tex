@@ -665,7 +665,6 @@ The goal of this section is TODO
     The intersection of two closed sets in $\mathbb{R}$ is a closed set in $\mathbb{R}$
 \end{theorem}
 
-
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -676,9 +675,181 @@ The goal of this section is TODO
 
 \section{Lesson 7 - Complex Analysis: The Field of Complex Numbers}
 \subsection{Overview}
+
+We should alway keep in mind wether we are in a field or ring when working with
+linear and quadratic equation.
+
+\subsection{A Limitation of the Reals}
+
+\begin{definition}[Linear Equation]
+    A linear equation has the form ax+b=0.
+\end{definition}
+
+\begin{definition}[Quadratic Equation]
+    A quadratic equation has the form $a^2 + bx + c =0 $, where $a \neq 0$
+\end{definition}
+
+\subsection{The Complex Field}
+
+\begin{definition}[Standard From of a Complex Number]
+    The standard form of a complex number is a + bi, where a and b are real numbers.
+    The set of complex number is $\mathbb{C} = {a + bi | a,b \in \mathbb{R}}$
+\end{definition}
+
+\begin{definition}[The Complex Plane]
+    We can visualize a complex number as a point in the Complex Plane, which has
+    a real axis (in x) and an imaginary axis (in y). The point (0,0) is called
+    the origin\\
+
+    The Complex plane allow us to visualize a complex number as a vector. If
+    z is a complex number such as z=a+bi, we call a the real part of z and b the
+    imaginary part of z. We write a = Re z and b = Im z
+\end{definition}
+
+\begin{definition}[Equality]
+    Two complex numbers are equal if and only if they have the same real and
+    imaginary part.
+    % $$ a + bi = c + di \iif a = c \text{ and } b = d $$
+\end{definition}
+
+\begin{definition}[Addition]
+    We can add two complex numbers by adding their real and imaginary parts.
+    $$ (a+bi) + (c+di) = (a+c) + (b+d) i$$
+\end{definition}
+
+\begin{definition}[Substraction]
+    We can find the difference of two complex numbers by substracting their real
+    and imaginary parts.
+    $$ (a+bi) - (c+di) = (a-c) + (b-d) i$$
+\end{definition}
+
+\begin{definition}[Division]
+    Let z and w be complex numbers such that $z \in \mathbb{C}$ and
+    $w \in \mathbb{C}*$. We define the quotient $\frac{z}{w}$ by
+    % $$ \frac{z}{w} = z w^-1 = (a+bi) (\frac{c}{c^2 + d^2} - \fract{d}{(c^2 + d^2)i}) $$
+\end{definition}
+
+\begin{definition}[Conjugate]
+    The conjugate of the complex number z=a+bi is the complex number
+    $\overline{z} = a - bi $
+\end{definition}
+
+\begin{definition}[Real Number]
+    Let z be a complex number such that z=a+bi. If b=0, then we call z a real
+    number.
+\end{definition}
+
+\begin{definition}[Pure Imaginary Number]
+    Let z be a complex number such that z=a+bi. If a=0, then we call z a pure
+    imaginary number
+\end{definition}
+
 \begin{theorem}
+    $i^2 = -1$
 \end{theorem}
-\subsection{}
+
+\begin{theorem}
+    $ (\mathbb{C}, +, \cdot)$ is a field
+\end{theorem}
+
+\begin{corollary}
+    $ (\mathbb{R}, +, \cdot)$ is a subfield of $ (\mathbb{C}, +, \cdot)$
+\end{corollary}
+
+\begin{theorem}
+    The field of complex numbers cannot be ordered
+\end{theorem}
+
+\subsection{Absolute Value and Distance}
+
+\begin{definition}[Square Root]
+    If x and y are real or complex numbers such that $y=x^2$, the we call x a
+    sqaure root of y. If x is a positive real number, then we say that x is the
+    positive square root of y and we write $x=\sqrt(y)$
+\end{definition}
+
+\begin{definition}[Modulus of a Complex Number]
+    The absolute value or the modulus of the complex number z=a+bi is the nonnegative
+    real number $$ |z | = \sqrt(a^2 + b^2) = \sqrt((Re z)^2 + (Im z)^2) $$
+\end{definition}
+
+\begin{definition}[Distance between Complex Numbers]
+    The distance between the complex numbers z=a+bi and w=c+di is
+    $$ d(z,w) = |z-w| = \sqrt((c-a)^2 + (d-b)^2)$$
+\end{definition}
+
+\begin{theorem}[The Triangle Inequality]
+    For all $z,w \in \mathbb{C}, |z+w| \leq |z| + |w| $
+\end{theorem}
+
+\subsection{Basic Topology of $\mathbb{C}$}
+
+\begin{definition}[Circle]
+    A circle in the Complex Plane is the set of all points that are at a fixed
+    distance from a fixed point. The fixed distance is called the radius of the
+    circle and the fixed point is called the center of the circle\\
+
+    If a circle has radius of r>0 and center c=a+bi, then any point z=x+yi on the
+    circle must satisfy $|z-c| = r$, or equivalently, $(x-a)^2 + (y-b)^2 = r^2$
+\end{definition}
+
+\begin{definition}[Open Disk]
+    An open disk in $\mathbb{C}$ consists of all the points in the interior of a
+    circle. If a is the center of the open disk and r is the radius of the open
+    disk, then any point z inside the disk satisfies $|z-a|<r$
+\end{definition}
+
+\begin{definition}[r-neighborhood of a]
+    $ N_r(a) = {z \in \mathbb{C} | |z-a| < r} $ is also called the r-neighborhood of a.
+\end{definition}
+
+\begin{definition}[Diameter]
+    In $\mathbb{R}$, an r-neighborhood of a is the open interval $N_r(a)=(a-r, a+r)$
+    The diameter of this interval is 2r
+\end{definition}
+
+\begin{definition}[Closed Disk]
+    A closed disk is the interior of a circle together with the circle itself
+    (boundary included). If a is the center of the closed disk and r is the radius
+    of the closed disk, the any point z inside the closed disk satisfies
+    $ |z-a| \leq r $
+\end{definition}
+
+\begin{definition}[Punctured Open Disk]
+    A punctured open sidk consists of all the points in the interior of a circle
+    except for the center of the circle. If a is the center of the punctured open
+    disk and r is the radius of the open disk, then any point z inside the
+    punctured disk satifies $|z-a|<r$ and $z \neq a$\\
+
+    Since $z \neq a$ is equivalent to $z-a \neq 0$, then it is also equivalent to
+    $ |z-a| \neq 0$. Since |z-a| must be nonnegative, then $|z-a|>0$ or $ 0<|z-a|$.
+
+    Therfore, a puncture open disk with center a and radius r consists of all
+    points z that satisfy 0<|z-a|<r
+\end{definition}
+
+\begin{definition}[Deleted r-neighborhood of a]
+    $N_{r}^{\odot}(a)=\{z|0<| z-a \mid<r\}$ is also called a deleted r-neighborhood
+    of a
+\end{definition}
+
+\begin{definition}[Open Subset]
+    A subset X of $\mathbb{C} $ is said to be open if for every complex number
+    z $\in$ X, there is an open disk D with $z \in D$ and $D \subseteq X$
+\end{definition}
+
+\begin{theorem}
+    A subset X of $\mathbb{C}$ is open if and only if for every complex number
+    w $\in$ X, there is a positive real number d such that $N_d(w) \subseteq X$
+\end{theorem}
+
+\begin{theorem}[Closed Subset]
+    A subset X of $\mathbb{C}$ is said to be closed if the complement of X
+    $\in \mathbb{C}$, noted $\mathbb{C} \ X$, is open
+
+    The complement concist of all complex numbers not in X
+\end{theorem}
+
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -689,6 +860,22 @@ The goal of this section is TODO
 
 \section{Lesson 8 - Linear Algebra: Vector Spaces}
 \subsection{Overview}
+\subsection{}
+\begin{definition}
+\end{definition}
+\begin{definition}
+\end{definition}
+\begin{definition}
+\end{definition}
+\begin{definition}
+\end{definition}
+\begin{theorem}
+\end{theorem}
+\begin{theorem}
+\end{theorem}
+\subsection{}
+\subsection{}
+\subsection{}
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
