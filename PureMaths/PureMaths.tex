@@ -406,7 +406,6 @@ identity and inverses which we saw in the previous section.
     We can add and substract the same quantities without changing the result
 \end{lemma}
 
-
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -417,6 +416,145 @@ identity and inverses which we saw in the previous section.
 
 \section{Lesson 5 - Real Analysis: The Complete Ordered Field of Reals}
 \subsection{Overview}
+
+The goal of this section is TODO
+
+\subsection{Field}
+
+\begin{definition}[Field]
+    A field is a triple (F, +, $\cdot $), where F is a set and + and $ \cdot$
+    are binary operations on F satisfying:
+    \begin{enumerate}
+	\item (F, +) is a commutative group
+	\item (F, $\cdot $) is a commutative group
+	\item Multiplication is distributive over addition in F. That is, for all
+	    x,y,z $\in $ F, we have
+	    $$ x \cdot (y+z) = x \cdot y + x \cdot z \text{ and }
+	    (y+z) \cdot x = y \cdot x + z \cdot x $$
+	\item 0 $\neq$ 1
+    \end{enumerate}
+
+    The properties that define a field are called the field axioms
+\end{definition}
+
+\begin{lemma}[Set of Natural Numbers]
+    The set $ \mathbb{N} $ is the set of natural numbers and the structure
+    ($ \mathbb{N} $ , +, $\cdot $) is a semiring
+\end{lemma}
+
+\begin{lemma}[Set of Integers]
+    The set $ \mathbb{Z} $ is the set of integers and the structure
+    ($ \mathbb{Z} $ , +, $\cdot $) is a ring
+\end{lemma}
+
+\begin{lemma}[Set of Rational Numbers]
+    The set $ \mathbb{Q} $ is the set of rational numbers and the structure
+    ($ \mathbb{Q} $, +, $\cdot $) is a field
+\end{lemma}
+
+\begin{definition}[Substraction]
+    If a,b $ \in $ F, we define the substraction a-b= a+(-b)
+\end{definition}
+
+\begin{definition}[Division]
+    If a,b $ \in $ F and b $\neq$0, we define the division $a/b= ab^-1$
+\end{definition}
+
+\subsection{Ordered Rings and Fields}
+
+\begin{definition}[Positive and Negative Elements]
+    If a $\in$ P, we say that a is positive and if -a $\in$ P, we say that a is
+    negative
+\end{definition}
+
+\begin{definition}[Ordered Ring]
+    We say that a ring (R,+, $\cdot$) is ordered if there is a nonempty subset
+    P of R, called the set of positive elements of R satisfying the folowing
+    properties
+    \begin{enumerate}
+	\item if a,b $\in$ P, then a + b $\in$ P
+	\item if a,b $\in$ P, then ab $\in$ P
+	\item if a $\in$ P, then exactly one of the following holds:
+	    $$ a \in P, a=0, \text{or} -a \in P $$
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    $ (\mathbb{Q}, +, \cdot) $ is an ordered field
+\end{theorem}
+
+\begin{theorem}
+    Let (F, $\leq$ ) be an ordered field. Then, for all x $\in$ F*, $ x \cdot x > 0 $
+\end{theorem}
+
+\begin{theorem}
+    Every ordered field (F, $\leq$ ) contains a copu of the natural numbers.
+\end{theorem}
+
+\begin{theorem}
+    Let (F, $\leq$ ) be an ordered field and let $ x \in F$ with $ x > 0$.
+    Then, $ \frac{1}{x} > 0 $
+\end{theorem}
+
+\subsection{Why Isn't $\mathbb{Q}$ Enough?}
+
+\begin{theorem}[Pythagorean Theorem]
+    In a right triangle with legs of length a and b, and a hypotenuse of length c
+    $$ c^2 = a^2 + b^2 $$
+\end{theorem}
+
+\begin{theorem}
+    There does not exist a rational number a such that $a^2=2$
+\end{theorem}
+
+\subsection{Completeness}
+
+\begin{definition}[Upper Bound]
+    Let (F, $\leq$ ) be an ordered field and let S be a nonempty subset of F.
+    We say that S is bounded above if there is $ M \in F$ such that for all
+    $s \in S, s \leq M$. Each number M is called an upper bound of S
+\end{definition}
+
+\begin{definition}[Lower Bound]
+    Let (F, $\leq$ ) be an ordered field and let S be a nonempty subset of F.
+    We say that S is bounded below if there is $ K \in F$ such that for all
+    $s \in S, K \leq s$. Each number K is called an lower bound of S
+\end{definition}
+
+\begin{definition}[Bounded Set]
+    We say that S is bounded if it is bounded above and bounded below. Otherwise,
+    we say that S is unbounded.
+\end{definition}
+
+\begin{definition}[Supremum]
+    A least upper bound of a set S is an upper bound that is smaller than any
+    other upper bound of S
+\end{definition}
+
+\begin{definition}[Infimum]
+    A greatest lower bound of S is a lower bound that is larger than any other
+    other lower bound of S
+\end{definition}
+
+\begin{definition}[Completeness Property]
+    An ordered field (F, $\leq$ ) has the Completeness Property if every nonempty
+    subset of F that is bounded above has a least upper upper bound in F. In this
+    case, we cay that (F, $\leq$ ) is a complete ordered field.
+\end{definition}
+
+\begin{theorem}
+    There is exaclty one complete ordred field
+\end{theorem}
+
+\begin{theorem}[Archimedian Property of $\mathbb{R}$]
+    For every $x \in \mathbb{R}, there is n \in \mathbb{N} such that n > x $
+\end{theorem}
+
+\begin{theorem}[Density Theorem]
+    If $x, y \in \mathbb{R} \text{with} x<y$ then there is $q \in \mathbb{Q}
+    \text{ with } x<q<y $
+\end{theorem}
+
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
