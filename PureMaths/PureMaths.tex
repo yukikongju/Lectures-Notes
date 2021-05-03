@@ -155,7 +155,7 @@ Let A, B, C be sets such that $$ A \subseteq B, B \subseteq C. Then, A \subseteq
 \end{definition}
 
 \begin{definition}[Intersection]
-    The intersection of the sets A and B, written \(A \cup B\), is the set of
+    The intersection of the sets A and B, written \(A \cap B\), is the set of
     elements that are in A and B simultaneously.
     $$ \forall x(x | x \in A \land x \in B) $$
 \end{definition}
@@ -564,7 +564,108 @@ The goal of this section is TODO
 \pagebreak
 
 \section{Lesson 6 - Topology: The Topology of R}
+
 \subsection{Overview}
+
+\subsection{Intervals of Real Numbers}
+
+\begin{definition}[Interval]
+    A set I of real numbers is called an interval id any real number that lies
+    between two numbers in I is also in I. We write:
+    $$ \forall x, y \in I, \forall z \in \mathbb{R}, \text{if x is less than z
+    and z is less than y, the z is in I} $$
+
+    Here is a list of the other types of intervals:
+    \begin{enumerate}
+	\item Open Interval
+	\item Closed Interval
+	\item Half-open Interval
+	\item Infinite Open Interval
+	\item Infinit Closed Interval
+    \end{enumerate}
+
+\end{definition}
+
+\begin{theorem}
+    If an interval I is bounded, the there are a,b $\in \mathbb{R} $ such that
+    one of the following holds:
+    $$ I=(a,b), I=(a,b], \text{ or } I=[a,b) $$
+\end{theorem}
+
+\subsection{Operations on Sets}
+
+\begin{definition}[Union]
+    The union of the sets A and B, written \(A \cup B\), is the set of elements that
+    are in A or B (or both).
+    $$ \forall x(x | x \in A \lor x \in B) $$
+\end{definition}
+
+\begin{definition}[Intersection]
+    The intersection of the sets A and B, written \(A \cap B\), is the set of
+    elements that are in A and B simultaneously.
+    $$ \forall x(x | x \in A \land x \in B) $$
+\end{definition}
+
+\begin{definition}[Difference]
+    The difference A \ B is the set of elements that are in A and not in B
+    $$ A \ B = {x|x \in A \text{ and } x \notin B} $$
+\end{definition}
+
+\begin{definition}[Symmetric Difference]
+    The symmetric difference A $ \triangle $ B is the set of elements that are
+    in A or B, but not both
+    $$ A \triangle B = (A \ B) \cup (B \ A) $$
+\end{definition}
+
+\begin{theorem}
+    The operation of forming unions is associative
+\end{theorem}
+
+\subsection{Open and Closed Sets}
+
+\begin{definition}[Open Set]
+    A subset X of $\mathbb{R}$ is open if for every real number $ x \in \mathbb{R}$,
+    there is an open interval (a,b) with $ x \in (a,b) \text{ and } (a,b) \subseteq X$
+\end{definition}
+
+\begin{definition}[Closed Set]
+\end{definition}
+
+\begin{theorem}
+    Let $a \in \mathbb{R}$ The infinite interval (a, $\infty$) is an open set
+\end{theorem}
+
+\begin{theorem}
+    $\emptyset $ and $\mathbb{R}$ are both open sets
+\end{theorem}
+
+\begin{theorem}
+    A subset X of $\mathbb{R}$ is open if and only if for every real number
+    $x \in X$, there is a positive real number c suche that $(x-c, x+c) \subseteq X$
+\end{theorem}
+
+\begin{theorem}
+    The union of two open sets in $\mathbb{R}$ is an open set in $\mathbb{R}$
+\end{theorem}
+
+\begin{theorem}
+    Let X be a set of open subsets of $\mathbb{R}$. Then UX is open
+\end{theorem}
+
+\begin{theorem}
+    Every open set in $\mathbb{R}$ can be expressed as a union of bounded open
+    intervals
+\end{theorem}
+
+\begin{theorem}
+    The intersection of two open sets in $\mathbb{R}$ is an open set in $\mathbb{R}$
+\end{theorem}
+
+\begin{theorem}
+    The intersection of two closed sets in $\mathbb{R}$ is a closed set in $\mathbb{R}$
+\end{theorem}
+
+
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -575,6 +676,9 @@ The goal of this section is TODO
 
 \section{Lesson 7 - Complex Analysis: The Field of Complex Numbers}
 \subsection{Overview}
+\begin{theorem}
+\end{theorem}
+\subsection{}
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -603,7 +707,7 @@ The goal of this section is TODO
 \subsubsection{Level 5}
 \pagebreak
 
-\section{Lesson 10 - Set Theory: Reltions and Functions}
+\section{Lesson 10 - Set Theory: Relations and Functions}
 \subsection{Overview}
 \subsection{Problem Set}
 \subsubsection{Level 1}
@@ -613,7 +717,7 @@ The goal of this section is TODO
 \subsubsection{Level 5}
 \pagebreak
 
-\section{Lesson 11 - Abstract ALgebra: Strucutres and Homomorphisms}
+\section{Lesson 11 - Abstract Algebra: Strucutres and Homomorphisms}
 \subsection{Overview}
 \subsection{Problem Set}
 \subsubsection{Level 1}
