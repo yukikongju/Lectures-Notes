@@ -1,6 +1,8 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{parskip}
+\usepackage{textgreek}
 \begin{document}
 \title{Lectures Notes from Pure Maths by Steve Warner}
 \author{Emulie Chhor}
@@ -35,6 +37,7 @@ This book is an introduction to undergraduate pure mathematics. This books conta
 \newtheorem{definition}{Definition}[subsection]
 \newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
 
 \section{Lesson 1 - Logic: Statements and Truth}
 
@@ -292,8 +295,116 @@ table.
 \pagebreak
 
 \section{Lesson 4 - Number Theory: The Ring of Integers}
+
 \subsection{Overview}
 
+The goal of this section is to familiarise ourselves with induction proofs. However,
+the proofs we have to prove utilize integers properties, so we have to define
+ring properties first.
+
+The notion of ring utilize the concepts of closure, associativity, abelian,
+identity and inverses which we saw in the previous section.
+
+\subsection{Ring and Distributivity}
+
+\begin{definition}[Commutative Group]
+    A commutative group is a group that follows the following properties:
+    \begin{enumerate}
+	\item Closure
+	\item Associative
+	\item Commutative
+	\item Identity
+	\item Inverse
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+    $ (\mathbb{Z} , +) $ is a commutative group
+\end{lemma}
+
+\begin{definition}[Commutative Monoid]
+    A commutative monoid is a monoid that follows the following properties:
+    \begin{enumerate}
+	\item Closure
+	\item Associative
+	\item Commutative
+	\item Identity
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+    $ (\mathbb{Z} , \cdot) $ is a commutative monoid
+\end{lemma}
+
+\begin{definition}[Ring]
+    A ring is a triple $ (R,+, \cdot) $ where R is a set, + and $ \cdot $ are binary
+    operations on R that satisfies:
+    \begin{enumerate}
+	\item (R, +) is commutative group
+	\item (R, $ \cdot $) is a commutative monoid
+	\item Multiplication is distributive over addition in R. That is, for all
+	    x,y,z $\in $ R, we have
+	    $$ x \cdot (y+z) = x \cdot y + x \cdot z \text{ and }
+	    (y+z) \cdot x = y \cdot x + z \cdot x $$
+    \end{enumerate}
+
+    It should be noted that the properties that define a ring are called the ring axioms
+\end{definition}
+
+\begin{lemma}
+    $ (\mathbb{Z} , +, \cdot) $ is a commutative ring
+\end{lemma}
+
+\begin{lemma}
+    $ (\mathbb{N} , +, \cdot) $ is a ring because $ (\mathbb{N} , +) $ is not a group.
+    We say it is a semiring
+\end{lemma}
+
+\subsection{Divisibility}
+
+\begin{definition}[Even]
+    An integer a is called even if there is another integer b such that a = 2b
+\end{definition}
+
+\begin{definition}[Odd]
+    An integer a is called odd if there is another integer b such that a = 2b + 1
+\end{definition}
+
+\begin{definition}[Sum]
+    We define the sum of integers a and b to be a + b
+\end{definition}
+
+\begin{definition}[Product]
+    We define the product of integers a and b to be a $ \cdot $ b
+\end{definition}
+
+\begin{theorem}
+    The sum of two even integer is even
+\end{theorem}
+
+\begin{theorem}
+    The product of two integers that are each divisible by k is also divisible by k
+\end{theorem}
+
+\subsection{Induction}
+
+\begin{definition}[Well Ordering Principle]
+    The Well Ordering Principle says that every nonempty subset of natural numbers
+    has a least element
+\end{definition}
+
+\begin{theorem}[Principle of Mathematical Induction]
+    Let S be a set of natural numbers such that
+    \begin{enumerate}
+	\item $ 0 \in S $
+	\item $ \text{for all k } \in \mathbb{N} , k \in S \rightarrow k+1.
+	    \text{ Then, } S= \mathbb{N} $
+    \end{enumerate}
+\end{theorem}
+
+\begin{lemma}[Standard Advanced Calculus Trick]
+    We can add and substract the same quantities without changing the result
+\end{lemma}
 
 
 \subsection{Problem Set}
