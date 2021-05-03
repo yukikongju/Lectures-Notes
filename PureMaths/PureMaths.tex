@@ -1,4 +1,6 @@
 \documentclass{article}
+\usepackage{amsmath}
+\usepackage{parskip}
 \begin{document}
 \title{Lectures Notes from Pure Maths by Steve Warner}
 \author{Emulie Chhor}
@@ -71,7 +73,6 @@ variables. Here is the truth table for the common logical connectives:\\
 We can also use truth table to determine if two statement are equivalent. To do
 so, we compare their truth table.
 
-
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -81,7 +82,87 @@ so, we compare their truth table.
 \pagebreak
 
 \section{Lesson 2 - Set Theory: Sets and Subsets}
+
 \subsection{Overview}
+
+This section introduce the notion of sets, subsets, union and intersection.
+
+
+\subsection{Describing Sets}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+
+\begin{definition}[Set]
+A set is a collection of objects. The set can either be finite or infinite. We
+can describe the set based on a common characteristic among the elements of the
+set using the set builder notation. We write \(\{x|P(x)\}\), where P(x) is the common
+characteristic.
+\end{definition}
+
+\begin{definition}[Axiom of Extensionality]
+Two sets are equivalent if they contain the same element, we write:
+$$ \forall x(x \in A \leftrightarrow x \in B) $$
+\end{definition}
+
+\begin{definition}[Cardinality]
+The cardinality of an element is the number of different element in the set. For
+example, the set S={1,2,3} has the same cardinality as the set T={1,2,2,3}
+\end{definition}
+
+\begin{theorem}[Fence-Post Formula]
+To count the number of integers in a set, we use the fence-post formula
+$$ n - m + 1 $$
+\end{theorem}
+
+\subsection{Subsets}
+
+\begin{definition}[Subset]
+We say that A is a subset of B if every element of A is an element of B. We write
+\( A \subseteq B\)
+$$ \forall x(x \in A \rightarrow x \in B) $$
+\end{definition}
+
+\begin{theorem}
+Every set A is a subset of itself
+$$ \forall x(x \in A \rightarrow x \in A) $$
+\end{theorem}
+
+\begin{theorem}
+    The empty set is a subset of every set
+    $$ \forall x(x \in \emptyset \rightarrow x \in A) $$
+\end{theorem}
+
+\begin{theorem}[Transitivity of sets]
+Let A, B, C be sets such that $$ A \subseteq B, B \subseteq C. Then, A \subseteq C $$
+\end{theorem}
+
+\begin{theorem}
+    There are \(2^n\) subsets in a set
+\end{theorem}
+
+\subsection{Unions and Intersections}
+
+\begin{definition}[Union]
+    The union of the sets A and B, written \(A \cup B\), is the set of elements that
+    are in A or B (or both).
+    $$ \forall x(x | x \in A \lor x \in B) $$
+\end{definition}
+
+\begin{definition}[Intersection]
+    The intersection of the sets A and B, written \(A \cup B\), is the set of
+    elements that are in A and B simultaneously.
+    $$ \forall x(x | x \in A \land x \in B) $$
+\end{definition}
+
+\begin{theorem}
+    If A and B are sets, then \( A \subseteq A \cup B\)
+\end{theorem}
+
+\begin{theorem}
+    \(B \subseteq A \iff A \cup B = A\)
+\end{theorem}
+
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
