@@ -1,0 +1,420 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\begin{document}
+\title{Lecture Notes for Linear Algebra}
+\author{Emulie Chhor}
+\maketitle
+
+\section{Introduction}
+
+Linear Algebra is the study of vectors and its transformation into space, and has
+several applications in Engineering and Computer Science. For example, matrices
+are utilize when applying masks in Machine Learning and Linear transformation are
+used for computer graphics.\\
+
+Linear Algebra is often taught following this sequence:
+
+    \begin{enumerate}
+	\item Linear Equations
+	\item Matrix Algebra
+	\item Determinants
+	\item Vector Spaces
+	\item Eigenvalues and Eigenvectors
+	\item Orthogonality and Least Squares
+    \end{enumerate}
+
+Professor tend to emphasize on the algebraic component of linear algebra, but we
+always have to keep in mind what the structures and objects represent graphically.
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{remark}{Remark}
+
+\part{Linear Equations}
+
+\subsection{Overview}
+
+\subsection{Solving Linear Systems}
+
+% \subsubsection{Overview}
+
+The first chapter of linear algebra focusses on how we can use the Gaussian
+method to solve linear systems. We want to determine if the system is compatible,
+and if it is, we want to verify id the solution is unique or more.
+
+\subsubsection{Matrix Notation}
+
+A common representation of linear system is with augmented matrix.
+
+\subsubsection{Types of Solutions}
+
+When we solve linear systems, we often transform it into its matrix notation.
+However, it can be useful to think about it in terms of vectors or plane that
+crosses one another.\\
+
+A SEL can have different types of solutions:
+
+\begin{enumerate}
+    \item No solution: Lines are parallel (geometrically); contradiction (algebraically)
+    \item Exactly one solution: Lines crosses each other; all variables are associated to one pivot
+    \item Infinitely many solutions: Lines are on top of each other; we have a free varaible
+\end{enumerate}
+
+\begin{definition}[Consistent and Inconsistent System]
+    A system of linear equations is said to be consistent if it has one or more
+    solutions; it is inconsistent if it has no solution.
+\end{definition}
+
+\subsubsection{Solving a Linear System}
+
+To solve a linear system, we want to use the elementary operations.
+
+\begin{enumerate}
+    \item (Replacement) Replace one row by the sum of itself with a multiple
+	of another row
+    \item (Interchange) Interchange two rows
+    \item (Scaling) Multiply all entries in a row by a nonzero constant
+\end{enumerate}
+
+\begin{definition}[Pivot]
+\end{definition}
+
+\begin{definition}[Free Variables]
+\end{definition}
+
+\begin{definition}[Elechon Matrix]
+    We say we a matrix is in echelon form if:
+    \begin{enumerate}
+	\item
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Reduced Echelon Matrix]
+
+\end{definition}
+
+\subsubsection{Row Reduction Algorithm}
+
+\subsection{Vector Equations}
+
+The second goal of this chapter is to understand vectors operations and properties.
+We will define them geometrically and algebrically.
+
+\subsubsection{Vector Addition}
+
+Geometrically, we can visualize vector addition as if we were adding vectors
+at the tip of each other.
+
+\subsubsection{Vector Properties}
+
+Since $\mathbb{R}^n$ is a field, our vector space follows the field axiom:
+
+\begin{enumerate}
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+\end{enumerate}
+
+\subsubsection{Linear Combination}
+
+Linear Combination is a weighted sum of vector that allow us to generate other
+vectors. Later, we will see that when vectors are independant, we can generate
+new vector in another dimension.
+
+\begin{definition}[Linear Combination]
+\end{definition}
+
+\begin{definition}[Span]
+\end{definition}
+
+\subsubsection{Matrix Equation Ax=b}
+
+\begin{definition}[Computation of Ax]
+    The product of a matrix and a vector can be interpreted as TODO
+\end{definition}
+
+\begin{theorem}[Properties of Matrix-Vector Product]
+
+\end{theorem}
+
+\begin{definition}[Homogeneous System]
+\end{definition}
+
+\subsubsection{Linear Independence}
+
+Intuitively, two vectors are linearly independant if they can be expressed in
+terms of the other one. We care about linear independance because it will allows
+us to add another dimension to our basis when generating new vectors.
+
+\begin{definition}[Linear Independence]
+\end{definition}
+
+\subsubsection{Linear Transfomations}
+
+Geometrically, we can interpret a matrix as a transformation ie a function that
+transform a vector into another one when we perform matrix multiplication. However,
+we rather focus on linear transformation, which are transformations where the
+transformed vectors keeps the same properties as it has before (addition and
+multiplication)
+
+\begin{definition}[Linear Transformation]
+\end{definition}
+
+\begin{definition}[Types of Linear Transformation]
+    There exists a few notable linear transformation
+    \begin{enumerate}
+	\item
+	\item
+	\item Translation
+	\item Rotation
+    \end{enumerate}
+\end{definition}
+
+\subsubsection{Kernel and Image}
+
+\begin{definition}[Kernel]
+\end{definition}
+
+\begin{definition}[Image]
+\end{definition}
+
+\part{Matrix Algebra}
+\subsection{Overview}
+
+\subsubsection{Matrix Addition}
+
+Geometrically, we can interpret matrix addition as TODO
+
+\begin{theorem}[Properties of Matrix Addition]
+\end{theorem}
+
+\subsubsection{Matrix Multiplication}
+
+Matrix multiplication is often used for composition of linear transformations.
+Instead of performing a bunch of transformation one after the other, we can
+compute a single matrix that perform all the transformation in one shot.
+
+\begin{definition}[Matrix Multiplication]
+\end{definition}
+
+\begin{theorem}[Properties of Matrix Multiplication]
+\end{theorem}
+
+\subsubsection{Transpose of a Matrix}
+
+We can interpret the transpose of a matrix as TODO
+
+\begin{definition}[Transpose of a Matrix]
+\end{definition}
+
+\begin{theorem}[Transpose Properties]
+\end{theorem}
+
+\subsubsection{Inverse of a Matrix}
+
+Until now, we wanted to compute the matrix that represented the linear transformation
+to be applied onto our vector. However, if we are given the initial vector and
+the final vector, we can use the inverse of a matrix to find the linear transformation.
+
+\begin{remark}
+    We have the equation Ax=b, and we want to find the matrix A given x and b.
+    With real, we would divide. However, with matrices, we cannot divide. The
+    inverse matrix act similarly as a division in the real.
+\end{remark}
+
+\begin{remark}
+    We know a matrix has an inverse if its determinant is not 0. Intuitively,
+    the determinant measure how much the area between two vectors has
+    increase/decrease. A determinant of zero would mean that the vector has
+    collapse of dimension (as if we were to divide by zero)
+\end{remark}
+
+\begin{definition}[Inverse of a Matrix]
+\end{definition}
+
+\begin{theorem}[Inverse of 2x2 Matrix]
+\end{theorem}
+
+\begin{theorem}[Finding $A^-1$ with Gauss Elimination]
+    $[A | I] ~ [I|A^-1]$
+\end{theorem}
+
+\begin{theorem}[The Invertible Matrix Theorem]
+\end{theorem}
+
+\subsubsection{Elementary Matrices}
+
+Elementary matrices are important because they help us find the inverse of a
+matrix. Since elementary matrices are invertible, we wil use this property
+when diagonalizing our matrices (later)
+
+\begin{definition}[Elementary Matrix]
+\end{definition}
+
+\subsubsection{LU Factorization}
+
+The LU factorization is a technique used to solve linear systems by using the
+fact that triangular matrices are easier to calculate their inverse.
+
+\begin{theorem}[LU Factorization]
+\end{theorem}
+
+\subsubsection{Subspaces of $\mathbb{R}^n$}
+
+Subspaces are subsets of a vector space that is also a vector space. We can think
+of lines or planes. TODO
+
+\begin{definition}[Subspace]
+\end{definition}
+
+\begin{definition}[Column Space]
+\end{definition}
+
+\begin{definition}[Null Space]
+\end{definition}
+
+\begin{theorem}[Basis]
+\end{theorem}
+
+\subsubsection{Dimension and Rank}
+
+\begin{definition}[Coordinate System]
+\end{definition}
+
+\begin{definition}[Dimension]
+\end{definition}
+
+\begin{definition}[Rank]
+\end{definition}
+
+\begin{theorem}[Rank Theorem]
+\end{theorem}
+
+\begin{theorem}[Basis Theorem]
+\end{theorem}
+
+\begin{theorem}[The Invertible Matrix Theorem]
+\end{theorem}
+
+\part{Determinants}
+
+\subsection{Overview}
+
+Intuitively, the determinant of a matrix measure the ratio between the area before
+and after a transformation. It helps us determine wether a matrix is inversible
+and allow us to calculate the surface and volume of parallelograms.
+
+\begin{definition}[Determinant]
+\end{definition}
+
+\begin{theorem}
+    If A is a triangular matrix, the det A is the product of the entries on the
+    main diagonal of A
+\end{theorem}
+
+\subsubsection{Properties of Determinant}
+
+\begin{theorem}[Row Operations]
+\end{theorem}
+
+\begin{theorem}[Matrix Invertible]
+    A square matrix A is invertible if and only if $det A \neq 0$
+\end{theorem}
+
+\begin{theorem}
+    If A is an n x n matrix, then $A^T = det A$
+\end{theorem}
+
+\begin{remark}
+    Intuitively, we know that the determinant of a matrix and its transpose
+    is the same because the area is the same.
+\end{remark}
+
+\begin{theorem}[Multiplicative Property]
+    If A and B are n x n matrices, then $det AB = (det A)(det B)$
+\end{theorem}
+
+\subsubsection{Cramer's Rule}
+
+Cramer's Rule is another method to solve linear systems. Instead of using
+Gaussian method with matrices, we use determinant instead.
+
+\begin{theorem}[Cramer's Rule]
+\end{theorem}
+
+\begin{theorem}[Inverse Formula]
+    Let A be an invertible n x n matrix. Then
+    % $$ A^-1 = \fract{1}{det A} adj(A) $$
+\end{theorem}
+
+\subsubsection{Determinant as Area or Volume}
+
+Determinant are also used to calculate the area of a parallelogram.
+
+
+\part{Vector Spaces}
+\subsection{Overview}
+
+\subsubsection{Vector Space and Subspaces}
+
+\begin{definition}[Vector Space]
+\end{definition}
+
+\begin{definition}[Subspace]
+\end{definition}
+
+\subsubsection{Null Subspaces, Column Spaces, and Linear Transfomations}
+
+\begin{definition}[Null Space]
+\end{definition}
+
+\begin{theorem}
+    The null space of an mx n matix A is a subspace of $\mathbb{R}^n$. Equivalenty,
+    the set of all solutions to a system Ax=0 of m homogeneous linear equations
+    in n unknowns is a subspace of $\mathbb{R}^n$.
+\end{theorem}
+
+\begin{definition}[Column Space]
+\end{definition}
+
+\begin{theorem}
+    The column space of an mx n matrix A is a subspace of $\mathbb{R}^n$
+\end{theorem}
+
+\subsubsection{Kernel and Range of Linear Transfomation}
+
+
+\begin{definition}[Linear Transfomation]
+\end{definition}
+
+\begin{theorem}[]
+\end{theorem}
+\begin{theorem}[]
+\end{theorem}
+\begin{theorem}[]
+\end{theorem}
+
+\begin{definition}
+\end{definition}
+\begin{definition}
+\end{definition}
+
+\part{Eigenvalues and Eigenvectors}
+\subsection{Overview}
+\part{Orthogonality and Least Squares}
+\subsection{Overview}
+
+\end{document}
+\end{article}
