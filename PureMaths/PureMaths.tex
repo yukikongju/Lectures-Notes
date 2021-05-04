@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{amsthm}
 \usepackage{parskip}
 \usepackage{textgreek}
 \begin{document}
@@ -38,12 +39,14 @@ This book is an introduction to undergraduate pure mathematics. This books conta
 \newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{corollary}{Corollary}[subsection]
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{remark}{Remark}
 
 \section{Lesson 1 - Logic: Statements and Truth}
 
 \subsection{Overview}
 
-This section introduces the notion of statements and truth tables.
+This section introduces the notion of statements and truth tables, which is the
+foundation of proofs.
 
 \subsection{Statements with words}
 
@@ -94,9 +97,13 @@ so, we compare their truth table.
 
 This section introduce the notion of sets, subsets, union and intersection.
 
+\subsection{Why do we care about sets}
+
+Having a good intuition on sets allows us to regroup similar element and compare
+them together. We can show that set contains some properties so that the elements
+all share those properties.
 
 \subsection{Describing Sets}
-
 
 \begin{definition}[Set]
 A set is a collection of objects. The set can either be finite or infinite. We
@@ -305,6 +312,10 @@ ring properties first.
 The notion of ring utilize the concepts of closure, associativity, abelian,
 identity and inverses which we saw in the previous section.
 
+We want to understand the properties of the common set $\mathbb{N}$, $\mathbb{Z}$,
+$\mathbb{Q}$, $\mathbb{R}$, as it will allow us to use those properties to work
+with more complex objects such as vectors or complex numbers.
+
 \subsection{Ring and Distributivity}
 
 \begin{definition}[Commutative Group]
@@ -417,7 +428,9 @@ identity and inverses which we saw in the previous section.
 \section{Lesson 5 - Real Analysis: The Complete Ordered Field of Reals}
 \subsection{Overview}
 
-The goal of this section is TODO
+The goal of this section is to define the set of numbers. We are introduced
+(Q, +, $\cdot$) which is an ordered field, but we are shown that we can't
+generate all the numbers with that set. We need the irrational numbers.
 
 \subsection{Field}
 
@@ -488,7 +501,7 @@ The goal of this section is TODO
 \end{theorem}
 
 \begin{theorem}
-    Every ordered field (F, $\leq$ ) contains a copu of the natural numbers.
+    Every ordered field (F, $\leq$ ) contains a copy of the natural numbers.
 \end{theorem}
 
 \begin{theorem}
@@ -506,6 +519,12 @@ The goal of this section is TODO
 \begin{theorem}
     There does not exist a rational number a such that $a^2=2$
 \end{theorem}
+
+\begin{remark}
+    Proving a number is irrational is done by assuming the rational can be
+    expressed as a irreductible fraction gcd(p,q)=1 and showing that the
+    smallest divisor is not 1
+\end{remark}
 
 \subsection{Completeness}
 
@@ -536,24 +555,72 @@ The goal of this section is TODO
     other lower bound of S
 \end{definition}
 
+\begin{remark}
+    To show that the number n is a supremum/infimum, we need to show that
+    \begin{enumerate}
+	\item The set S has a upper bound/lower bound
+	\item There is no greater lower bound / lower upper bound by contradiction.
+	    We use the fact that S < S' -> S' = S + $\varepsilon$, where
+	    $\varepsilon$ > 0, which contradict the fact that S' is a upper/lower
+	    bound
+    \end{enumerate}
+\end{remark}
+
 \begin{definition}[Completeness Property]
     An ordered field (F, $\leq$ ) has the Completeness Property if every nonempty
     subset of F that is bounded above has a least upper upper bound in F. In this
     case, we cay that (F, $\leq$ ) is a complete ordered field.
 \end{definition}
 
+\begin{remark}
+    The proof is done by contradiction. We assume that the naturals are bounded
+    (we know that they are not because $\mathbb{N}$ is not an ordered field?) and
+    we prove that there is a least upper bound that is not a upper bound using
+    the compleness property.
+\end{remark}
+
+\begin{corollary}
+    Every nonempty set of real numbers that is bounded below has a greatest
+    lower bound (infimum)
+\end{corollary}
+
 \begin{theorem}
-    There is exaclty one complete ordred field
+    There is exactly one complete ordered field
 \end{theorem}
 
 \begin{theorem}[Archimedian Property of $\mathbb{R}$]
     For every $x \in \mathbb{R}, there is n \in \mathbb{N} such that n > x $
 \end{theorem}
 
+\begin{corollary}
+    Let $x<y$. There exist $n \in \mathbb{N}$ such that $nx>y$
+\end{corollary}
+
+\begin{remark}
+    The Archimedian property tell us that the set of natural numbers is infinite.
+    Therefore, if we choose any arbitrary natural, we can find another natural
+    that can be smaller or greater than it.
+\end{remark}
+
 \begin{theorem}[Density Theorem]
     If $x, y \in \mathbb{R} \text{with} x<y$ then there is $q \in \mathbb{Q}
     \text{ with } x<q<y $
 \end{theorem}
+
+\begin{remark}
+    The Density theorem tells us that we can find a rational number between any
+    two real numbers. Intuitively, we can think that is because there is infintely
+    many numbers in the interval, so there must be a rational number in it.
+\end{remark}
+
+\begin{remark}
+    To prove the density theorem, we want to construct a rational number with
+    the Archimedian and the Well Ordering Principle. TODO
+\end{remark}
+
+\begin{corollary}
+    There is a real number that is not rational between any two real numbers.
+\end{corollary}
 
 \subsection{Problem Set}
 \subsubsection{Level 1}
@@ -974,7 +1041,6 @@ $$
 
 \section{Lesson 9 - Logic: Logical Arguments}
 \subsection{Overview}
-\end{theorem}
 \subsection{Statements and Substatements}
 \subsection{Logical Equivalence}
 \begin{theorem}
@@ -983,7 +1049,6 @@ $$
 \end{theorem}
 \begin{theorem}
 \end{theorem}
-\begin{theorem}
 \subsection{Validity in Sentential Logic}
 \subsection{Problem Set}
 \subsubsection{Level 1}
