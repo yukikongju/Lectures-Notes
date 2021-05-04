@@ -860,22 +860,110 @@ linear and quadratic equation.
 
 \section{Lesson 8 - Linear Algebra: Vector Spaces}
 \subsection{Overview}
-\subsection{}
-\begin{definition}
+
+In the previous section, we looked at three structure called fields:
+
+\begin{enumerate}
+    \item $\mathbb{Q}$ : field of rational numbers
+    \item $\mathbb{R}$ : field of real numbers
+    \item $\mathbb{C}$ : field of complex numbers
+\end{enumerate}
+
+And we also saw that $\mathbb{Q}$ is a subfield of $\mathbb{R}$, which is also
+a subset of $\mathbb{C}$. This means that every rational number is a real number
+and every real number is a complex number.
+
+Understanding that $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are fields is pretty
+neat, since they have two operations (addition and substraction) that satisifes
+closure, associativity, commutativity, identity, inverse, and distributive,
+which allows us to perform high school algebra on its elements.
+
+Consequently, since vectors are also in these fields, we can apply the field
+properties on vectors.
+
+\subsection{Vector Spaces Over Fields}
+
+\begin{definition}[Vector Space]
+    A vector space over a field $\mathbb{F}$ is a set V with a binary operation +
+    on V (called addition) and an operation called scalar multiplication satisfying:
+    \begin{enumerate}
+	\item (V,+) is a commutative group
+	\item (Closure under scalar multiplication) for all $ k \in \mathbb{F},
+	    kv \in V$
+	\item (Scalar multiplication Identity) If 1 is the multiplicative identity
+	    $\mathbb{F} \text{ and } v \in V$, then 1v=v
+	\item (Associativity of scalar multiplication) For all j,k $\in \mathbb{F}
+	    \text{ and } v \in V$, (jk)v=j(kv)
+	\item (Distributivity of 1 scalar over 2 vectors) For all $ k \in \mathbb{F}
+	    \text{ and } v,w \in V$, k(v+w)=kv+kw
+	\item (Distributivity of 2 scalars over 1 vector) For all j,k $\in
+	    \mathbb{F} \text{ and } v \in V$, (j+k)v = jv + kv
+    \end{enumerate}
 \end{definition}
-\begin{definition}
+
+\subsection{Subspaces}
+
+\begin{definition}[Subspace]
+    Let V be a vector space over a field $\mathbb{F}$. A subset U of V is called
+    subspace of V, written $ U \leq V$, if it is also a vector space with respect
+    to the same operations of addition and scalar multiplication as they were
+    defined in V.
 \end{definition}
-\begin{definition}
-\end{definition}
-\begin{definition}
-\end{definition}
+
 \begin{theorem}
+    Let V be a vector space over a field $\mathbb{F}$ and let $ U \subseteq V$.
+    Then $ U \leq V$ if and only if:
+    \begin{enumerate}
+	\item $ 0 \in U$
+	\item for all $v,w \in U, v+w \in U$
+    \item for all $ v\in U \text{and} k \in \mathbb{F}, kv \in U$
+    \end{enumerate}
 \end{theorem}
+
 \begin{theorem}
+    Let V be a vector space over a field $\mathbb{F}$ and let U and W be
+    subspaces of V. Then $ U \cap W$ is a subspace of V
 \end{theorem}
-\subsection{}
-\subsection{}
-\subsection{}
+
+\subsection{Bases}
+
+\begin{definition}[Linear Combination]
+    Let V be a vector space over a field $\mathbb{F}$, let $v,w \in V$ and
+    $j,k \in \mathbb{F}$. The expression jv+kw is called a linear combination
+    of vectors v and w. We call the scalars j and k weights
+\end{definition}
+
+\begin{definition}[Span]
+    If $v,w \in V$, where V is a vector space over a field $\mathbb{F}$, then
+    the set of all linear combinations of v and w is called the span of v and w.
+    Symbolically, we have  $ span{v,w} = {jv+kw|j,k \in \mathbb{F}} $
+\end{definition}
+
+\begin{theorem}
+    Let $V=\mathbb{R}^2 = {(a,b)|a,b \in \mathbb{R}}$ be the vector space over
+    $\mathbb{R}$ with the usual definitions of addition and scalar multiplication.
+    Then span{(1,0),(0,1)} = $V=\mathbb{R}^2$
+\end{theorem}
+
+\begin{definition}[Linear Independance]
+    If $v,w \in V$, where V is avector space over a field $\mathbb{F}$, then we
+    say that v and w are linearly independanent if neither vector is a scalar
+    multiple of the other one. Otherwise, we say that v and w are linearly dependant.
+\end{definition}
+
+\begin{theorem}
+    Let V be a vector space over a field $\mathbb{F}$ and let $v,w \in V$. Then
+    v and w are linearly dependent if and only if there are $j,k \in \mathbb{F}$,
+    not both 0, such that jv+kw=0
+\end{theorem}
+
+\begin{theorem}
+Let $V=\mathbb{R}^{n}=\left\{\left(k_{1}, k_{2}, \ldots, k_{n}\right) \mid k_{1}, k_{2}, \ldots, k_{n} \in \mathbb{R}\right\}$ be the vector space over $\mathbb{R}$ with the
+usual definitions of addition and scalar multiplication. Then
+$$
+\operatorname{span}\{(1,0,0, \ldots, 0),(0,1,0, \ldots, 0), \ldots,(0,0,0, \ldots, 1)\}=\mathbb{R}^{n}
+$$
+\end{theorem}
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -886,6 +974,17 @@ linear and quadratic equation.
 
 \section{Lesson 9 - Logic: Logical Arguments}
 \subsection{Overview}
+\end{theorem}
+\subsection{Statements and Substatements}
+\subsection{Logical Equivalence}
+\begin{theorem}
+\end{theorem}
+\begin{theorem}
+\end{theorem}
+\begin{theorem}
+\end{theorem}
+\begin{theorem}
+\subsection{Validity in Sentential Logic}
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -896,6 +995,11 @@ linear and quadratic equation.
 
 \section{Lesson 10 - Set Theory: Relations and Functions}
 \subsection{Overview}
+\subsection{Relations}
+\subsection{Equivalence Relations and Partitions}
+\subsection{Orderings}
+\subsection{Functions}
+\subsection{Equinumerosity}
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -907,6 +1011,10 @@ linear and quadratic equation.
 \section{Lesson 11 - Abstract Algebra: Strucutres and Homomorphisms}
 \subsection{Overview}
 \subsection{Problem Set}
+\subsection{Structures and Substructures}
+\subsection{Homomorphisms}
+\subsection{Images and Kernels}
+\subsection{Normal Subgroups and Ring Ideals}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
 \subsubsection{Level 3}
@@ -916,6 +1024,9 @@ linear and quadratic equation.
 
 \section{Lesson 12 - Number Theory: Primes, GCD, and LCM}
 \subsection{Overview}
+\subsection{Prime Numbers}
+\subsection{The Division Algorithm}
+\subsection{GCD and LCM}
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -926,6 +1037,13 @@ linear and quadratic equation.
 
 \section{Lesson 13 - Real Analysis: Limits and Continuity}
 \subsection{Overview}
+\subsection{Strips and Rectangles}
+\subsection{Limits and Continuity}
+\subsection{Equivalent Definitions of Limits and Continuity}
+\subsection{Basic Examples}
+\subsection{Limit and Continuity Theorems}
+\subsection{Limits Involving Infinity}
+\subsection{One-Sided Limits}
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -936,6 +1054,10 @@ linear and quadratic equation.
 
 \section{Lesson 14 - Topology: Spaces and Homeomorphisms}
 \subsection{Overview}
+\subsection{Topological Spaces}
+\subsection{Bases}
+\subsection{Types of Topological Spaces}
+\subsection{Continuous Functions and Homeomorphisms}
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -946,6 +1068,11 @@ linear and quadratic equation.
 
 \section{Lesson 15 - Complex Analysis: Complex Valued Functions}
 \subsection{Overview}
+\subsection{The Unit Circle}
+\subsection{Exponential Form of a Complex Number}
+\subsection{Functions of a Complex Variable}
+\subsection{Limits and Continuity}
+\subsection{The Reimann Sphere}
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
@@ -956,6 +1083,11 @@ linear and quadratic equation.
 
 \section{Lesson 16 - Linear Algebra: Linear Transformations}
 \subsection{Overview}
+\subsection{Linear Transformations}
+\subsection{Matrices}
+\subsection{The Matric of a Linear Transformation}
+\subsection{Images and Kernels}
+\subsection{Eigenvalues and Eigenvectors}
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
