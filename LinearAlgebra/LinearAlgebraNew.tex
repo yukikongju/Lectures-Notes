@@ -1,0 +1,169 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\begin{document}
+\title{Notes de Cours - Algèbre Linéaire}
+\author{Emulie Chhor}
+\maketitle
+
+
+\section*{Introduction}
+
+Le cours d'algèbre linéaire comporte plusieurs chapitres:
+
+    \begin{enumerate}
+	\item Systèmes d'Équations Linéaires
+	\item Matrices
+	\item Déterminants
+	\item Espaces et Sous-Espaces Vectoriels
+	\item Orthogonalité et Projections
+	\item Diagonalisation
+    \end{enumerate}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\subsection{Pourquoi étudier l'algèbre linéaire?}
+
+\pagebreak
+
+\section{Systèmes d'Équations Linéaires}
+
+\subsection{Overview}
+
+Le but de cette section est de pouvoir résoudre des systèmes d'équations linéaires
+avec l'algorithme de Gauss et de Gauss-Jordan
+
+\subsection{Définition d'un système d'équations linéaires}
+\subsection{Opérations élémentaires sur les lignes}
+
+Il existe 3 opérations élémentaires sur les matrices:
+\begin{enumerate}
+    \item Multiplier la ligne i par une constante $k \neq 0$ : $L_i \rightarrow
+	k L_j , k \neq 0$
+    \item Permuter les lignes i et j : $ L_i \leftrightarrow L_j$
+    \item Ajouter à la linge i un multiple d de la ligne j : $ L_i \rightarrow
+	L_i + d L_j$
+\end{enumerate}
+
+\subsection{Forme des matrices}
+
+Lorsqu'on essait de résoudre un SEL, on veut transformer notre matrice en l'une
+des deux formes:
+\begin{enumerate}
+    \item Forme échelonée : Gauss
+    \item Forme échelonée réduite : Gauss-Jordan
+\end{enumerate}
+
+\subsection{Types de Solutions}
+
+Il existe 3 types de solutions:
+\begin{enumerate}
+    \item Solution Unique: chaque variable est associée à un pivot
+    \item Infinité de Solutions: il existe une variable libre ou plus
+    \item Aucune Solutions: le système est incompatible et on a
+	$ [0 \, 0 \, ... \, 0 | \, k], \, k \neq 0$
+\end{enumerate}
+
+\subsection{Méthode de Gauss}
+\subsection{Méthode de Gauss-Jordan}
+
+\begin{remark}[Méthode de Gauss vs Gauss-Jordan]
+\end{remark}
+
+\pagebreak
+
+\section{Matrices}
+\subsection{Overview}
+
+Le but de cette section est de se familiariser algébriquement avec la notion de
+matrice. Cependant, il faut toujours garder en tête qu'une matrice représente
+une transformation linéaire. Essentiellement, une transformation linéaire est
+une fonction qui prend un vecteur et en recrache un autre. On verra plus tard
+les détails.
+
+\subsection{Opérations Matricielles}
+\subsubsection{Addition et Multiplication par un scalaire}
+\subsubsection{Multiplication Matricielle}
+\subsubsection{Transposition de Matrice}
+\subsection{Équation Ax=b}
+\subsubsection{Combinaison Linéaire}
+\subsubsection{Indépendance Linéaire}
+\subsubsection{Équation Ax=b}
+\subsection{Inversion de Matrices}
+
+\pagebreak
+\section{Déterminants}
+\subsection{Overview}
+
+Géométriquement, le déterminant d'une matrice représente le ratio entre l'aire
+formée par les vecteurs avant et après transormations linéaires. Intuitivement,
+le déterminant nous dit si une matrice est diagonalisable ou non puisque si
+$det(A)=0$, alors la transformation à changer de dimension et n'est pas inversible.
+
+On peut aussi utiliser les déterminants pour évaluer un SEL. On compare le déterminant
+de chaque vecteur avant et après transformation.
+
+\subsection{Définition du Déterminant}
+\subsection{Propriétés du Déterminant}
+\subsection{Règle de Cramer}
+
+\pagebreak
+
+\section{Espaces et Sous-Espaces Vectoriels}
+\subsection{Overview}
+
+Un aspect important à comprendre dans l'étude de l'algèbre linéaire est la notion
+d'espace. Malgré qu'on s'attarde peu à la notion d'anneau, il faut se souvenir
+qu'on peut manipuler les vecteurs algébriquement, car l'espace dans lequel il se
+trouve est un field, un ensemble qui comporte certaines propriétés qu'on nomme
+axiomes.\\
+
+Un deuxième aspect important est la notion de transformation linéaire. Comme mentionné
+plus tôt, une matrice peut être interprétée comme une transformation, c-à-d qu'elle
+est une fonction qui transforme un vecteur en un autre vecteur. Cependant, cette
+transformation peut changer les propriétés de l'espace. On s'attardera donc aux
+transformations qui gardent ces propriétés, transformations qu'on nomme linéaire.
+
+Finalement, on veut être capable de changer de base. Décrire un vecteur dans
+l'espace est assez arbitraire, car chaque personne peut tracer son propre quadrillage
+et obtenir un vecteur différent. Ainsi, pour s'assurer de parler le même language,
+on veut être capable de traduire un vecteur/transformation d'un espace à un autre.
+
+\subsection{Espaces vectoriels sur $\mathbb{R}$}
+\subsection{Transformations Linéaires}
+\subsection{Base d'un Espace Vectoriel}
+\subsection{Système de Coordonnées dans $\mathbb{R}^n$}
+\subsection{Changement de Base}
+
+\pagebreak
+\section{Orthogonalité et Projections}
+\subsection{Overview}
+
+\subsection{Orthogonalité et Projection}
+\subsection{Sous-Espace Orthogonal}
+
+\pagebreak
+
+\section{Diagonalisation}
+\subsection{Overview}
+\subsection{Valeurs et Vecteurs Propres}
+\subsection{Espace Propre et Multiplicité Géométrique}
+\subsection{Diagonalisation d'une matrice quelconque}
+\subsection{Diagonalisation d'une matrice symétrique}
+
+\pagebreak
+
+\end{document}
+\end{article}
