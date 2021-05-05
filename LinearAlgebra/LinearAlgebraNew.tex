@@ -94,14 +94,206 @@ une fonction qui prend un vecteur et en recrache un autre. On verra plus tard
 les détails.
 
 \subsection{Opérations Matricielles}
+
 \subsubsection{Addition et Multiplication par un scalaire}
+
+\begin{definition}[Égalité Matricielle]
+    On dit que 2 matrices $A_{mxn}$ et $B_{pxq}$ sont égales si:
+    \begin{enumerate}
+	\item meme dimension: m=p et n=q
+	\item composantes identiques: $(A)_ij = (B)ij, \forall i,j$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Addition Matricielle]
+    Soit A et B, deux matrices de même dimension. La Matrice A+B est
+    de même dimension et est caractérisée par $$(A+B)_ij = (A)_ij + (B)_ij$$
+\end{definition}
+
+\begin{remark}[Interprétation Géométrique de l'addition Matricielle]
+
+\end{remark}
+
+\begin{defintion}[Multiplication par un scalaire]
+    Soit A, une matrice, et r un scalaire. La matrice rA, de meme dimension,
+    est donnée par $$ (rA)_ij = r(A)_ij$$
+\end{defintion}
+
+\begin{remark}[Interprétation Géométrique de la multiplication Matricielle]
+
+\end{remark}
+
+\begin{theorem}[Propriétés de la somme et du PPS matriciel]
+    Soit A,B,C des matrices et r,s des scalaires.
+    \begin{enumerate}
+	\item (Commutativité de l'addition) : A + B = B + A
+	\item (Associativité de l'addition) : (A+B)+C=A+(B+C)
+	\item (Identité de la somme) : A + 0 = A
+	\item r(A+B) = rA + rB
+	\item (r+s)A = rA + sA
+	\item r(sA) = (rs)A
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    Algébriquement, on sait que les matrices possèdent ces propriétés,
+    car ses composantes sont des réels ou des complexes, qui sont
+    des fields. Géométriquement, on sait que les matrices sont construites
+    à partir de vecteurs, alors il s'agit encore de d'addition et de
+    multiplication, mais sur des vecteurs au lieu de composantes.
+\end{remark}
+
 \subsubsection{Multiplication Matricielle}
+
+\begin{definition}[Multiplication Matricielle]
+    Lignes x Colonnes
+\end{definition}
+
+\begin{theorem}[Propriétés de la Multiplication Matricielle]
+    Soit A,B,C, des matrices carrées et r un scalaire. Alors,
+    \begin{enumerate}
+	\item $ AB \neq BA$
+	\item $ r(AB) = (rA)B = A(rB), r \in \mathbb{R}$
+	\item $ IA = AI = A$
+	\item $A(B+C) = AB + AC$
+	\item $(B+C)A=BA + CA$
+	\item $A(BC) = (AB)C$
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}[Interprétation géométrique]
+    Géométriquement, on peut interpréter la multiplication matricielle
+    comme la composition de transformations linéaires, ce qui fait en
+    sorte que l'ordre est important.\\
+    Que peut-on dire à propos de A et B si AB=BA?
+\end{remark}
+
 \subsubsection{Transposition de Matrice}
+
+\begin{definition}[Transposition]
+    La transposition de la matrice A, notée $A^T$, est la matrice dont on
+    a interchangé ses lignes et ses colonnes. $$ (A^T)_{ij} = (A)_{ji}$$
+\end{definition}
+
+\begin{theorem}[Propriétés de la Transposée matricielle]
+    Soit A,B,C, des matrices carrées et r un scalaire. Alors,
+    \begin{enumerate}
+	\item $(A^T)^T = A$
+	\item $ (A+B)^T = A^T + B^T$
+	\item $ (rA)^T = r(A^T), r \in \mathbb{R}$
+	\item $ (AB)^T = B^T A^T$
+    \end{enumerate}
+\end{theorem}
+
 \subsection{Équation Ax=b}
+
 \subsubsection{Combinaison Linéaire}
+
+\begin{definition}[Combinaison Linéaire]
+    On dit que le vecteur u est une combinaison linéaire des vecteurs
+    $v_1, v_2, v_3$ dans l'espace vectoriel V s'il existe des scalaires
+    $c_2, c_2, c_3$ tels que: $$ u = c_1 v_1 + c_2 v_2 + ... + c_n v_n$$
+\end{definition}
+
+\begin{intuition}[Interprétation Géométrique de la Combinaison Linéaire]
+    On veut exprimer un vecteur quelconque comme une somme de plusieurs
+    autres. C'est comme si on voulait se rendre à la destination X, mais
+    qu'on s'arrêtait à pleins d'endroits.
+\end{intuition}
+
 \subsubsection{Indépendance Linéaire}
+
+\begin{definition}[Indépendance Linéaire]
+    On dit que la famille des vecteurs $(v_1, v_2, ..., v_n)$ de l'espace
+    vectoriel sont linéairement indépendants $\Longleftrightarrow
+    c_1 = c_2 = ... = c_n = 0$ est la seule solution pour la combinaison
+    linéaire $ c_1 v_1 + c_2 v_2 + ... + c_n v_n = 0$
+\end{definition}
+
+\begin{intuition}
+    On ne peut pas écrire les vecteurs de l'ensemble comme une combinaison
+    linéaire des autres. Plus tard, on verra que l'indépendance linéaire
+    fait en sorte qu'on a un minimum de vecteurs nécessaires pour générer
+    un ensemble de vecteurs.
+\end{intuition}
+
 \subsubsection{Équation Ax=b}
+
+\begin{theorem}[Compatibilité de Ax=b]
+    Le système Ax=b est compatible si et seulement si b est une combinaison
+    linéaire des colonnes de A
+\end{theorem}
+
+\begin{intuition}
+    On sait que A est une matrice de transformation, ce qui veut dire que b
+    est le vecteur x après avoir appliqué cette transformation. Ainsi,
+    on peut s'imaginer que les colonnes de A ont été utilisées pour faire
+    le doit product, qui nous donne l'étirement de chaque composantes de x.
+    Cet étirement peut donc être vu comme un scalaire par lequel on
+    multiplie x pour obtenir le vecteur b.
+\end{intuition}
+
+\begin{theorem}
+    Le système Ax=0 possède une unique solution si et seulement si les
+    colonnes de A sont linéairement indépendantes.
+\end{theorem}
+
+\begin{intuition}
+    On veut multiplier les vecteurs colonnes de A par le vecteur nul pour
+    obtenir zéro, ce qui est équivalent à l'indépendance linéaire.
+\end{intuition}
+
 \subsection{Inversion de Matrices}
+
+\subsubsection{Définition et Propriétés de l'inverse}
+
+\begin{definition}[Matrice Inversible]
+    On dit qu'une matrice carrée est inversible s'il existe une matrice B
+    telle que $AB=BA=I$
+\end{definition}
+
+\begin{theorem}[Unicité de l'inverse]
+    Si A est une matrice inversible, alors elle est l'inverse de A, notée
+    $A^(-1)$, est unique
+\end{theorem}
+
+\begin{remark}[Interprétation de l'inverse matricielle]
+    L'inverse d'une matrice est l'opération qui annule la transformation
+    faite par la matrice A. On sait que l'inverse existe si la
+    transformation ne change pas la dimension du vecteur/matrice. On
+    verra plus tard pourquoi les matrices ayant un détarminant nul ne
+    sont pas inversibles.
+\end{remark}
+
+\subsubsection{Calcul de l'inverse avec la méthode de Gauss-Jordan}
+
+\begin{definition}[Algorithme de Gauss-Jordan]
+    On peut calculer l'inverse d'une matrice si $$ (A \, | \, I) ~ ...
+    ~ (\, I \, | \, A^(-1))$$
+\end{definition}
+
+\begin{intuition}
+    On est capable de trouver l'inverse avec Gauss-Jordan puisque chaque
+    opération matricielle peut être associée à une matrice élémentaire.
+    C'est comme si on faisait une composition de matrices élémentaires.
+    On verra plus tard pourquoi les matrices élémentaires sont inversibles.
+\end{intuition}
+
+\subsubsection{Résolution du système Ax=b avec l'inverse}
+
+On peut trouver le vecteur x à l'aide de l'inverse de la façon suivante:
+\begin{equation*}
+    $ Ax = B$ \\ $ A^(-1) (Ax) = A^(-1)b$ \\ $ (A^(-1) A)x = A^(-1)b $ \\
+    $ Ix = A^(-1)b $\\ $ x = A^(-1)b$
+\end{equation*}
+
+
+\subsubsection{Matrices élémentaires}
+
+
+
+
+
 
 \pagebreak
 \section{Déterminants}
