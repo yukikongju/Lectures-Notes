@@ -1,18 +1,24 @@
 \documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
 \begin{document}
 \title{Lectures Notes for Analysis}
 \author{Emulie Chhor}
 \maketitle
 
-\section{Introduction}
+\section*{Introduction}
 
 Le premier cours d'analyse porte sur la même matière que le calcul différentiel
 et intégral, mais est plus rigoureux. La majorité du cours met l'emphase sur la
-démonstration des preuves et théorèmes et très peu sur le calcul.
+démonstration des preuves et théorèmes et très peu sur le calcul.\\
 
-MAT1000 porte sur les chapitres suivants:
+MAT1000 porte sur les chapitres suivants:\\
 
     \begin{enumerate}
+	\item Nombres Rationnels et Nombres Réels
 	\item Inégalités et Valeur Absolue
 	\item Suprémum et Infimum
 	\item Axiomes de Complétude
@@ -23,128 +29,424 @@ MAT1000 porte sur les chapitres suivants:
 	\item Séries
     \end{enumerate}
 
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\pagebreak
+
+\section{Nombres Rationnels et Nombres Réels}
+
+\subsection{Overview}
+
+Malgré que le cours ne met pas l'emphase sur la topologie des réels, il est
+important de comprendre que les réels possèdent certaines propriétés qui nous
+permettent de manipuler les termes algébriquement. On définit la notion de
+corps ordonné qui est TODO
+
+\subsection{Topologie des Réels}
+
+\begin{proposition}
+    $\forall a \in \mathbb{Q}, a^2 \neq 2$
+\end{proposition}
+
+\begin{lemma}
+    Soit $b \in \mathbb{Z}$. Si $b^2$ est pair, alors b est pair
+\end{lemma}
+
+\begin{axiom}
+    Il existe un corps totalement ordonné de $\mathbb{R}$ tel que:\\
+    \begin{enumerate}
+	\item $\mathbb{Q} \subseteq \mathbb{R} \text{ et } \mathbb{Q}$ est un sous-corps
+	    de $\mathbb{R}$
+	\item $\mathbb{R}$ possède la propriété de Complétude
+    \end{enumerate}
+\end{axiom}
+
+\begin{proposition}
+    Soit $a,b \in \mathbb{Q}$ avec a<b. Alors il existe $c \in \mathbb{Q}$ tel que
+    $a<c<b$
+\end{proposition}
+
+\begin{theorem}[Propriétés d'un corps]
+    Un corps possède les propriétés suivantes:\\
+    \begin{enumerate}
+	\item Commutativité
+	\item Associativité
+	\item Distributivité
+	\item Existence d'éléments neutres
+	\item Existence de l'inverse additif et multiplicatif
+	\item Lien entre les relations d'ordre et opérations
+    \end{enumerate}
+\end{theorem}
+
+\begin{problem}[Montrer qu'un nombre est irrationnel]
+\end{problem}
+
+\pagebreak
+
 \section{Inégalités et Valeur Absolue}
 
-\subsection{Théorie}
+\subsection{Overview}
 
-\subsubsection{Propriétés des Inégalités}
+TODO
 
-\subsubsection{Propriétés des Valeurs Absolues}
+\subsection{Définition de la Valeur Absolue}
 
-\subsection{Pratique}
+\begin{definition}[Valeur Absolue]
+\end{definition}
 
-\subsubsection{Stratégies pour montrer des Inegalités}
+\subsection{Propriétés des Valeurs Absolues}
+
+\begin{remark}
+    On peut interpréter la valeur absolue comme la distance entre 2 termes
+\end{remark}
+
+\subsection{Propriétés des Inégalités}
+
+\begin{problem}[Montrer l'inégalité]
+    Lorsqu'on veut montrer une inégalité, on utilise les astuces suivantes:\\
 
     \begin{enumerate}
 	\item Ajouter et Enlever le même terme
-	\item x^2 > 0
+	\item $x^2 > 0$
+	\item Utiliser la transitivité pour comparer avec un autre terme
     \end{enumerate}
 
-\subsubsection{Pratique - Résoudre l'inégalité}
+\end{problem}
+
+\begin{problem}[Résoudre des inégalités]
+    Lorsqu'on nous demande de résoudre des inégalités, on doit trouver les
+    valeurs qui satisfont l'inégalité. Pour ce faire, il est pratique d'utiliser
+    un tableau pour tester les intervalles de cohérence.
+\end{problem}
+
+\subsection{Induction}
+
+\begin{intuition}[Induction]
+    L'induction est une technique de preuve qui se fait en 3 étapes:
+    \begin{enumerate}
+	\item Cas de base
+	\item Hypothèse d'induction: on suppose que l'étape n est vraie
+	\item Étape d'induction: on montre que l'hypothèse est vraie en
+	    utilisant l'hypothèse d'induction
+    \end{enumerate}
+\end{intuition}
+
+\subsection{Inégalité de Bernouilli}
+
+\begin{theorem}[Inégalité de Bernouilli]
+    $ \forall n \in \mathbb{N}, \forall t > -1, (1+t)^n \geq 1+nt$
+\end{theorem}
+
+\pagebreak
 
 \section{Suprémum et Infimum}
 
-\subsection{Théorie}
+\subsection{Overview}
 
-\subsubsection{Majorant et Minorant}
+\subsection{Majorant et Minorant}
 
-\subsubsection{Suprémum et Infimum}
+\begin{definition}[Majorant]
+    Soit $E \subseteq \mathbb{R}$. E est majoré si $\exists c \in \mathbb{R}, \forall
+    x \in E, x \leq c$. On dit que c est un majorant de E
+\end{definition}
 
-\subsection{Pratique}
+\begin{definition}[Minorant]
+    Soit $E \subseteq \mathbb{R}$. E est minoré si $\exists c \in \mathbb{R}, \forall
+    x \in E, x \geq c$. On dit que c en un minorant de E
+\end{definition}
 
-\subsubsection{Montrer que la suite possède un suprémum/infimum}
+\begin{definition}[Ensemble Borné]
+    Soit $E \subseteq \mathbb{R}$. E est borné si E est majoré et minoré
+\end{definition}
 
-\subsubsection{Montrer que la suite ne possède pas un suprémum/infimum}
+\begin{proposition}
+    E est borné $ \to \exists c \in \mathbb{R}, \forall x \in E, |x|<c $
+\end{proposition}
 
-\subsubsection{Montrer que le suprémum/infimum est atteint}
+\begin{remark}
+    Un majorant et un minorant sont des valeurs que l'ensemble de peut jamais
+    atteindre. Il peut en exister plusieurs
+\end{remark}
 
+\subsection{Suprémum et Infimum}
+
+\begin{definition}[Supremum]
+    Soit $E \subseteq \mathbb{R}$. On dit que $c \in \mathbb{R}$ est le supremum
+    de E si c'est le plus petit majorant de E
+\end{definition}
+
+\begin{definition}[Infimum]
+    Soit $E \subseteq \mathbb{R}$. On dit que $c \in \mathbb{R}$ est l'infimum
+    de E si c'est le plus grand minotant de E
+\end{definition}
+
+\begin{proposition}
+    Soit $ A \subseteq \mathbb{R}, B \subseteq \mathbb{R}$ tel que Sup A et Sup B
+    existent. Alors, $sup(A+B)= sup A + sup B$
+\end{proposition}
+
+\begin{proposition}
+    Le suprémum et l'infimum sont uniques.
+\end{proposition}
+
+\begin{problem}[Montrer que la suite possède un suprémum/infimum]
+    Pour montrer que la suite possède un supremum/infimum, il faut montrer que:
+    \begin{enumerate}
+	\item c est un majorant/minorant
+	\item c est le plus petit majorant/plus grand minorant
+    \end{enumerate}
+
+    Pour montrer la première étape, il suffit d'utiliser la définition. Pour
+    montrer la deuxième étape, on procède par contradiction. On suppose qu'il
+    existe un plus petit majorant/plus grand minorant et on montre que cela
+    contredit l'hypothèse que S' était un majorant/minorant
+
+\end{problem}
+
+\begin{problem}[Montrer que la suite ne possède pas un suprémum/infimum]
+    Une suite de possède pas de suprémum ou d'infimum si elle n'est pas bornée
+    (l'ensemble est infini). On peut supposer qu'elle est bornée et utiliser
+    l'axiome de complétude pour montrer qu'elle est majorée/minorée, puis on
+    montre qu'il s'agit d'une contradiction avec la propriété Archimédienne.
+\end{problem}
+
+\begin{problem}[Montrer que le suprémum/infimum est atteint]
+\end{problem}
+
+\pagebreak
 \section{Axiomes de Complétude}
+\subsection{Overview}
 
-\subsection{Théorie}
+\subsection{Propriété Archimédienne}
 
-\subsubsection{Propriété Archimédienne}
+\begin{theorem}[Propriété Archimédienne]
+    Pour tout $x,y \in \mathbb{R} \text{ avec } x>0$, il existe $ n \in \mathbb{N}
+    \text{ tel que } nx>y$
+\end{theorem}
 
-\subsubsection{Densité des Rationnels}
+\begin{remark}
+    La propriété Archimédienne nous dit que les réels ne sont pas bornés. Ainsi,
+    si on prend un nombre arbitraire, on peut en trouver un autre qui est plus
+    petit ou plus grand.
+\end{remark}
 
-\subsection{Pratique}
+\subsection{Axiome de Complétude}
+
+\begin{proposition}[Axiome de Complétude]
+    Si $E \in \mathbb{R}$ est non-vide et majorée, alors sup E existe dans
+    $\mathbb{R}$
+\end{proposition}
+
+\begin{corollary}[Corollaire de l'Axiome de Complétude]
+    \begin{enumerate}
+	\item $ \forall y \in \mathbb{R}, \exists n \in \mathbb{N}, n>y$
+	\item $ \forall x \in \mathbb{R}, \exists! n \in \mathbb{R}$ tel que
+	    $n \leq x \neq n+1$ (fonction plancher)
+	\item (Densité de $\mathbb{Q}$ dans $\mathbb{Q}$): Soit $x,y \in \mathbb{R}$,
+	    alors $\exists r \in \mathbb{Q}, x<r<y$
+	\item (Densité de $\mathbb{R} \ \mathbb{Q}$ dans $\mathbb{Q}$): Soit $x,y \in \mathbb{R}$,
+	    alors $\exists r \in \mathbb{R} \ \mathbb{Q}, x<r<y$
+    \end{enumerate}
+\end{corollary}
+
+\begin{theorem}
+    L'axiome de complétude est faux dans $\mathbb{Q}$
+\end{theorem}
+
+\subsection{Densité des Rationnels}
+
+\begin{theorem}[Densité de $\mathbb{Q}$ dans $\mathbb{R}$]
+    Soit $x,y \in \mathbb{R}$, alors $\exists r \in \mathbb{Q}, x<r<y$
+\end{theorem}
+
+\begin{theorem}[Densité de $\mathbb{Q}'$ dans $\mathbb{R}$]
+    Soit $x,y \in \mathbb{R}$, alors $\exists r \in \mathbb{Q} ', x<r<y$
+\end{theorem}
+
+\begin{remark}
+    Le densité des rationnels et des irrationnels découle de la propriété
+    d'Archimède. Puisque les réels ne sont pas bornés, alors il existe une
+    infinité de nombre dans un intervalle, alors il existe nécessairement un
+    rationnel et un irrationnel dans cet intervalle.
+\end{remark}
+
+\begin{intuition}
+    La preuve de la densité se fait en construisant un rationnel à partir de la
+    distance entre x et y
+\end{intuition}
+
+\subsection{Racine n-ième}
+
+\begin{definition}[Definition Racine n-ième]
+    % Soit $q \in \mathbb{Q}, m \in \mathbb{Z}, n \in \mathbb{N} \text{ tel que }
+    % q= \fract{m}{n}$. Pour $x \geq 0$, on pose:
+    \begin{enumerate}
+	% \item $x^q := ^n\sqrt(x^m)$ si $q \geq 0$
+	% \item $x^q := (\fract{1}{x}) ^ (-q)$ si $q<0, x \neq 0$
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Racine n-ième]
+    $ \forall n \in \mathbb{N} , \forall x \geq 0, \exists! y \geq 0, y^n =x \,
+    (^n\sqrt{x} = y)$
+\end{theorem}
+
+\pagebreak
 
 \section{Dénombrabilité}
+\subsection{Overview}
 
-\subsection{Théorie}
+\subsection{Injection, Surjection, Bijection}
 
-\subsubsection{Injection, Surjection, Bijection}
+\begin{definition}[Injection]
+\end{definition}
 
-\subsubsection{Cardinalité}
+\begin{definition}[Surjection]
+\end{definition}
 
-\subsubsection{Théorème - Cardinalité et Injection-Bijection-Surjection}
+\begin{theorem}[Bijection]
+\end{theorem}
 
-\subsection{Pratique}
+\subsection{Cardinalité}
 
+\begin{definition}[Cardinalité]
+    Deux ensembles A et B ont le même cardinal s'il existe une bijection $\Phi:A \to B$
+\end{definition}
+
+\begin{corollary}
+    Si $\Phi:A \to B$ est une bijection, alors $\Phi ^(-1): B \to A$ existe et est
+    bijective
+\end{corollary}
+
+\begin{definition}[Dénombrabilité]
+    Un ensemble A est dénombrable s'il a le même cardinal que $\mathbb{N}$
+\end{definition}
+
+\begin{remark}
+\item $\mathbb{N}$ est dénombrable
+\item Un ensemble dénombrable est infini
+\item Un ensemble est dénombrable $\Longleftrightarrow$ on peut former une suite
+    infinie $a_1, a_2, ...$ contenant une et une seule fois chaque élément de A
+\end{remark}
+
+\begin{theorem}
+    Soit $ f:A \to B$, une fonction:
+    \begin{enumerate}
+	\item si f est surjective, alors $|A| \geq |B|$
+	\item si f est injective, alors $|A| \leq |B|$
+	\item si f est bijective, alors $|A| = |B|$
+    \end{enumerate}
+\end{theorem}
+
+\begin{proposition}
+    \begin{enumerate}
+	\item $\mathbb{Z}$ est dénombrable
+    	\item $\mathbb{Q}$ est dénombrable
+    	\item $\mathbb{R}$ n'est pas dénombrable
+    \end{enumerate}
+\end{proposition}
+
+\begin{remark}[Diagonale de Cantor]
+\end{remark}
+
+\pagebreak
 \section{Suites}
 
-\subsection{Théorie}
+\subsection{Overview}
 
-\subsubsection{Convergence d'une suite}
+Dans cette section, on essaie de déterminer si une suite converge et si oui,
+on veut calculer sa limite
 
-\subsubsection{Lim Sup et Lim inf}
+\subsection{Convergence d'une suite}
 
-\subsubsection{Théorème de Bolzano-Weistrass}
+\begin{definition}
+\end{definition}
 
-\subsubsection{Suite de Cauchy}
+\begin{intuition}
+\end{intuition}
 
-\subsubsection{Suites définies par récurrence}
+\begin{remark}
+\end{remark}
 
-\subsection{Pratique}
+\begin{definition}
+\end{definition}
+\begin{definition}
+\begin{definition}
+\begin{definition}
+\end{definition}
+\end{definition}
+\end{definition}
 
+\subsection{Théorème des suites monotones}
+
+\subsection{Lim Sup et Lim inf}
+
+\subsection{Théorème de Bolzano-Weistrass}
+
+\subsection{Suite de Cauchy}
+
+\subsection{Suites définies par récurrence}
+
+
+\pagebreak
 \section{Continuité et Continuité Uniforme}
+\subsection{Overview}
 
-\subsection{Théorie}
 
-\subsubsection{Definition de la Continuité}
+\subsection{Definition de la Continuité}
 
-\subsubsection{Théorème des Valeurs Intermédiaires}
+\subsection{Théorème des Valeurs Intermédiaires}
 
-\subsection{Pratique}
 
+\pagebreak
 \section{Dérivabilité}
+\subsection{Overview}
 
-\subsection{Théorie}
 
-\subsubsection{Définition de la dérivabilité}
+\subsection{Définition de la dérivabilité}
 
-\subsubsection{Propriété des fonctions dérivables}
+\subsection{Propriété des fonctions dérivables}
 
-\subsubsubsection{Théorème de Rolle}
+\subsection{Théorème de Rolle}
 
-\subsubsubsection{Théorème des Accroissements Finis}
+\subsection{Théorème des Accroissements Finis}
 
-\subsubsubsection{Corollaire du théorème des acroissements finis - Cauchy}
+\subsection{Corollaire du théorème des acroissements finis - Cauchy}
 
-\subsubsection{Extremums Relatifs et Absolues}
+\subsection{Extremums Relatifs et Absolues}
 
-\subsubsection{Approximation}
+\subsection{Approximation}
 
-\subsubsubsection{Développements Limités}
+\subsection{Développements Limités}
 
-\subsubsubsection{Théorème de Taylor}
+\subsection{Théorème de Taylor}
 
-\subsubsubsection{Méthode de Newton}
+\subsection{Méthode de Newton}
 
-\subsection{Pratique}
 
-\subsubsection{Déterminer les zéros d'une fonction}
+\subsection{Déterminer les zéros d'une fonction}
 
-\subsubsection{Problèmes de Points Fixes}
+\subsection{Problèmes de Points Fixes}
 
+\pagebreak
 \section{Séries}
+\subsection{Overview}
 
-\subsection{Théorie}
 
-\subsubsection{Convergence des séries}
+\subsection{Convergence des séries}
 
-\subsubsection{Séries célèbres}
+\subsection{Séries célèbres}
 
-\subsubsection{Critères de Convergence pour les séries à termes positifs}
+\subsection{Critères de Convergence pour les séries à termes positifs}
 
     \begin{enumerate}
 	\item Critère de Comparaison
@@ -155,10 +457,10 @@ MAT1000 porte sur les chapitres suivants:
 	\item Critère de Dirichlet
     \end{enumerate}
 
-\subsubsection{Convergence des séries alternées et Critère de Leibniz}
+\subsection{Convergence des séries alternées et Critère de Leibniz}
 
 
-\subsection{Pratique}
+\pagebreak
 
 \end{document}
 \end{article}

@@ -1,4 +1,9 @@
 \documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
 \begin{document}
 \title{Title}
 \author{Emulie Chhor}
@@ -11,6 +16,12 @@
     \begin{enumerate}
 	\item Item1
     \end{enumerate}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{remark}{Remark}
 
 \end{document}
 \end{article}
