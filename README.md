@@ -21,4 +21,11 @@ Computer Science:
 - [ ] Concepts de Languages de Programmation
 - [ ] Database Design
 - [ ] Computer Graphics
+- [ ]
+
+# Latex Ressources
+
+- Writting Theorems and definitions: https://www.overleaf.com/learn/latex/theorems_and_proofs
+- Symbols: http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf
+- Latex Snippets: https://github.com/honza/vim-snippets/blob/master/snippets/tex.snippets
 
