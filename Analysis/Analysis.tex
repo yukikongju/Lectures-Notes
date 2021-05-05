@@ -40,6 +40,8 @@ MAT1000 porte sur les chapitres suivants:\\
 \newtheorem*{problem}{Problème}
 \newtheorem*{intuition}{Intuition}
 
+\newcommand{\euler}{e}
+\newcommand{\ramuno}{i}
 \pagebreak
 
 \section{Nombres Rationnels et Nombres Réels}
@@ -130,15 +132,14 @@ TODO
 
 \subsection{Induction}
 
-\begin{intuition}[Induction]
-    L'induction est une technique de preuve qui se fait en 3 étapes:
-    \begin{enumerate}
-	\item Cas de base
-	\item Hypothèse d'induction: on suppose que l'étape n est vraie
-	\item Étape d'induction: on montre que l'hypothèse est vraie en
-	    utilisant l'hypothèse d'induction
-    \end{enumerate}
-\end{intuition}
+% \begin{intuition}[Induction]
+    % L'induction est une technique de preuve qui se fait en 3 étapes:
+    % \begin{enumerate}
+	% \item Cas de base
+	% \item Hypothèse d'induction: on suppose que l'étape n est vraie
+	% \item Étape d'induction: on montre que l'hypothèse est vraie en utilisant l'hypothèse d'induction
+    % \end{enumerate}
+% \end{intuition}
 
 \subsection{Inégalité de Bernouilli}
 
@@ -186,7 +187,7 @@ TODO
 
 \begin{definition}[Infimum]
     Soit $E \subseteq \mathbb{R}$. On dit que $c \in \mathbb{R}$ est l'infimum
-    de E si c'est le plus grand minotant de E
+    de E si c'est le plus grand minorant de E
 \end{definition}
 
 \begin{proposition}
@@ -199,7 +200,7 @@ TODO
 \end{proposition}
 
 \begin{problem}[Montrer que la suite possède un suprémum/infimum]
-    Pour montrer que la suite possède un supremum/infimum, il faut montrer que:
+    Pour montrer que la suite possède un supremum/infimum, il faut montrer que:\\
     \begin{enumerate}
 	\item c est un majorant/minorant
 	\item c est le plus petit majorant/plus grand minorant
@@ -339,7 +340,7 @@ TODO
 \end{remark}
 
 \begin{theorem}
-    Soit $ f:A \to B$, une fonction:
+    Soit $ f:A \to B$, une fonction:\\
     \begin{enumerate}
 	\item si f est surjective, alors $|A| \geq |B|$
 	\item si f est injective, alors $|A| \leq |B|$
@@ -368,34 +369,291 @@ on veut calculer sa limite
 
 \subsection{Convergence d'une suite}
 
-\begin{definition}
+
+\begin{definition}[Suite Borné]
+    La suite $(a_n)$,\\
+    \begin{enumerate}
+	\item majorée si $\exists M \in \mathbb{R}, \forall n \in \mathbb{N},
+	    (a_n) \leq M$
+	\item minorée si $\exists M \in \mathbb{R}, \forall n \in \mathbb{N},
+	    (a_n) \geq M$
+	\item bornée si $\exists M \in \mathbb{R}, \forall n \in \mathbb{N},
+	    |(a_n)| \leq M$
+    \end{enumerate}
 \end{definition}
+
+\begin{definition}[Croissance et Décroissance d'une Suite]
+    La suite $(a_n)$ est\\
+    \begin{enumerate}
+	\item strictement croissante si $a_(n+1) > a_n, \forall n \in \mathbb{N}$
+	\item croissante si $a_(n+1) \geq a_n, \forall n \in \mathbb{N}$
+	\item strictement décroissante si $a_(n+1) < a_n, \forall n \in \mathbb{N}$
+	\item décroissante si $a_(n+1) \leq a_n, \forall n \in \mathbb{N}$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Suite Monotone]
+    La suite est monotone si la suite est croissante ou décroissante
+\end{definition}
+
+\begin{definition}[Convergence d'une Suite]
+    Une suite $(a_n)$ est convergente s'il existe un nombre $L \in \mathbb{R}$
+    tel que pour $\varepsilon > 0$, il existe $N \in \mathbb{N}$ pour lequel
+    $|a_n - L| < \varepsilon$ lorsque $n \geq \mathbb{N}$.\\
+    On dit que L est la limite de $(a_n)$, et on écrit
+    $$ \lim_{n \to \infty} a_n = L$$
+\end{definition}
+
+\begin{definition}[Divergence d'une suite]
+    Si $(a_n)$ n'est pas convergente, on dit qu'elle est divergente
+    $$ \lim_(n \to \infty) a_n \neq L \Longleftrightarrow \exists \varepsilon 0,
+    \forall N \in \mathbb{N}, \exists n \geq N, |a_n - L | \geq \varepsilon$$
+\end{definition}
+
+\begin{problem}[Montrer que la suite converge]
+    Pour montrer que la suite converge, il faut trouver un N qui satisfait
+    l'inégalité $|a_n - L| < \varepsilon$. Pour ce faire, il est pratique de
+    partir avec $|a_n - L|$ et de poser N en fonction de $\varepsilon$.\\
+    Comme en différentielle, on peut évaluer la limite d'une suite en calculant
+    sa limite lorsqu'elle tend vers l'infini
+\end{problem}
 
 \begin{intuition}
+    On s'imaginer que les valeurs de la suite se trouvent à l'intérieur d'un
+    tube $(L-\varepsilon, L+\varepsilon)$ à partir d'un certain N.
 \end{intuition}
 
+\begin{theorem}[La limite est unique]
+    Si $(a_n)$ est convergente, alors la limite est unique
+\end{theorem}
+
+\begin{theorem}[La limite est bornée]
+Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
+\end{theorem}
+
+\begin{corollary}
+    Si $(a_n)$ n'est pas bornée, alors elle diverge
+\end{corollary}
+
 \begin{remark}
+    Si $(a_n)$ converge, alors elle est bornée, mais le contraire n'est pas vrai
 \end{remark}
 
+\begin{theorem}[Théorème des suites monotones]
+\item Si $(a_n)$ est croissante et majorée , alors $\lim_{n \to \infty} a_n =
+    sup {a_n | n \in \mathbb{N} =: L}$. On écrit $a_n \nearrow L$
+\item Si $(a_n)$ est décroissante et minorée, alors $\lim_{n \to \infty} a_n =
+    inf{a_n | n \in \mathbb{N} =: L}$. On écrit $a_n \searrow L$
+\end{theorem}
+
+\begin{remark}
+    On peut tracer le graphique pour voir que la limite tend vers sup/inf.
+    De plus, le premier terme de la suite correspond à l'inf/sup respectivement
+\end{remark}
+
+\begin{theorem}
+    Pour tout $M \in \mathbb{N}$, on a $\lim_{n \to \infty} a_n =
+    \lim_{n \to \infty} a_(n+M-1)$
+\end{theorem}
+
+\subsection{Limites suppérieures et Limites Inférieures}
+
 \begin{definition}
-\end{definition}
-\begin{definition}
-\begin{definition}
-\begin{definition}
-\end{definition}
-\end{definition}
+    Soit $(a_n)$, une suite
+    \begin{enumerate}
+	\item $ \sup{m \geq n} a_m := \sup{a_m | m \in \mathbb{N}, m \geq n}$
+	\item $ \inf{m \geq n} a_m := \inf{a_m | m \in \mathbb{N}, m \geq n}$
+    \end{enumerate}
 \end{definition}
 
-\subsection{Théorème des suites monotones}
+\begin{proposition}
+    Soit $(a_n)$, une suite bornée. On pose $b_n := \sup_{m \geq n} a_m$ et
+    $c_n := \inf_{m \geq n} a_m$, alors\\
+    \begin{enumerate}
+	\item $(b_n)$ est décroissante et convergente et
+	    $ \lim_{n \to \infty} b_n = \inf_{n \geq 1} \sup_{m \geq n} a_m$
+	\item $(b_n)$ est croissante et convergente et
+	    $ \lim_{n \to \infty} c_n = \sup{n \geq 1} \inf{m \geq n} a_m$
+    \end{enumerate}
+\end{proposition}
 
-\subsection{Lim Sup et Lim inf}
+\subsection{Limites Infinies}
 
-\subsection{Théorème de Bolzano-Weistrass}
+\begin{definition}[Limite à l'infinie]
+    On dit qu'une suite $(a_n)$ tend (diverge) vers l'infinie si
+    $\forall M \mathbb{R}, \exists N \in \mathbb{N}, \forall n \geq N, a_n \geq M$
+\end{definition}
 
-\subsection{Suite de Cauchy}
+\begin{remark}
+    Si $a_n$ tend vers $-\infty$, alors $a_n \leq M$
+\end{remark}
+
+\subsection{Opérations Élémentaire des Limites}
+
+\begin{theorem}
+    Supposons que $\lim_{n \to \infty} a_n$ et $\lim_{n \to \infty} b_n =b,
+    a,b, \in \mathbb{R}$, alors\\
+    \begin{enumerate}
+	\item $\lim_{n \to \infty} |a_n| = |a|$
+	\item $\lim_{n \to \infty} (a_n + b_n) = a+b$
+	\item $\lim_{n \to \infty} (a_n \cdot b_n) = ab$
+	\item Si $b_n \neq 0, b \neq 0, \forall n > N$, alors
+	    $\lim_{n \to \infty} \frac{a_n}{b_n} = \frac{a}{b}$
+	\item Si $a_n \leq b_n \forall n \geq N$, alors $a \leq b$
+	\item Si $a_n \geq 0$, alors $\lim_{n \to \infty} ^p\sqrt(a_n) = ^p\sqrt(a)
+	    \forall p \in \mathbb{N}$
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+    \begin{enumerate}
+	\item $\lim_{n \to \infty} (k a_n) =ka , \forall k \in \mathbb{R}$
+	\item $\lim_{n \to \infty} (a_n - b_n) = a-b$
+    \end{enumerate}
+\end{corollary}
+
+\subsection{Critère de Comparaison}
+
+\begin{theorem}[Théorème des 2 Gendarmes]
+    Soit $(a_n), (b_n), (c_n)$, des suites tel que $\lim_{n \to \infty} a_n =
+    \lim_{n \to \infty} c_n = L$ et $a_n \leq b_n \leq c_n$, alors
+    $\lim_{n \to \infty} b_n = L$
+\end{theorem}
+
+\begin{corollary}
+    Si $|a_n| \rightarrow 0$, alors $a_n \rightarrow 0$
+\end{corollary}
+
+\begin{theorem}
+    Si $a_n \rightarrow \infty$ et $ b_n \geq a_n$, alors $b_n \rightarrow \infty,
+    \forall n \geq N$
+\end{theorem}
+
+\subsection{Progression Géométrique}
+
+\begin{definition}[Progression Géométrique]
+    Une progession géométrique de raison $q \neq 1$ est une suite de la forme
+    $(a, aq, aq^2, ...) = (aq^(n-1))_{n \in \mathbb{N}}$
+\end{definition}
+
+\begin{theorem}
+    \begin{enumerate}
+	\item Si $|q| >1$, alors $|q|^n \rightarrow \infty$
+	\item Si $|q| <1$, alors $|q|^n \rightarrow 0$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Soit $q \neq 1$. On pose $S_n = 1 + q + q^2 + ... + q^(n-1)$\\
+    \begin{enumerate}
+	\item $S_n = \frac{1 - q^n}{1-q}$
+	\item $|q|<1$, alors $S_n \rightarrow \frac{1}{1-q}$
+	\item $|q|>1$, alors $S_n$ diverge et $|S_n| \rightarrow \infty$
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Racine n-ième}
+
+\begin{theorem}
+    \begin{enumerate}
+	\item $n^(1/n) \rightarrow 1 \, (n \rightarrow \infty)$
+	\item Si $a>0$, alors $a^(\frac{1}{n}) \rightarrow 1 $
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Sous-suites}
+
+\begin{definition}[Sous-suites]
+\end{definition}
+
+\begin{remark}
+    Lorsque $k \rightarrow \infty$, alors $n_k \rightarrow \infty$, car
+    $n_{k-1} < n_k$
+\end{remark}
+
+\begin{theorem}
+    $a_n \rightarrow L \Longleftrightarrow$ toutes sous-suites de $(a_n)$
+    convergent vers L
+\end{theorem}
+
+\begin{corollary}
+    \begin{enumerate}
+	\item Si une sous-suite diverge, alors $(a_n)$ diverge
+	% \item Si $a_{n_k} \rightarrow L_{1}$ et $a_{m_k} \rightarrow L_{2} \enq L_{1}$,
+	    % alors $(a_n)$ diverge
+	\item Si $(a_n)$ converge et $(a_{n_k}) \rightarrow L$, alors $a_n
+	    \rightarrow L$
+	\item Si $(a_n)$ est monotone et $(a_{n_k}) \rightarrow L$, alors $a_n
+	    \rightarrow L$
+    \end{enumerate}
+\end{corollary}
+
+\begin{theorem}[Théorème de Bolzano-Weistrass]
+    Soit $(a_n)$, une suite. Si $(a_n)$ est bornée, alros $(a_n)$ possède
+    une sous-suite convergente
+\end{theorem}
+
+\begin{remark}[Méthode de Dichotomie]
+    La preuve du théorème de Bolzano se fait avec la méthode de la dichotomie.
+    On prend l'intervalle fermé et on le sépare en 2 jusqu'à temps d'avoir un
+    intervalle tellement petit qu'on peut le considérer comme un point, et
+    on dit qu'un point converge vers la même valeur.
+\end{remark}
+
+\subsection{Suites de Cauchy}
+
+\begin{definition}[Suite de Cauchy]
+    On dit que $(a_n)$ est une suite de Cauchy si
+    $$ \forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n,m \geq N,
+    |a_{n+k} - a_n| < \varepsilon$$
+\end{definition}
+
+\begin{remark}[Définition alternative de la suite de Cauchy]
+    $$ \forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n,m \geq N,
+    |a_m - a_n| < \varepsilon$$
+\end{remark}
+
+\begin{theorem}
+    $(a_n)$ est une suite de Cauchy $\Longleftrightarrow (a_n)$ est une suite
+    convergente
+\end{theorem}
+
+\begin{intuition}
+    Intuitivement, la suite de Cauchy mesure la distance entre 2 termes
+    consécutifs. Pour que la suite converge, on veut que la distance deviennent
+    de plus en plus petite et converge vers 0.
+\end{intuition}
 
 \subsection{Suites définies par récurrence}
 
+\begin{proposition}[Nombre d'Euler]
+    % \begin{enumerate}
+	% \item On pose $S_n = \frac{1}{0!} + \frac{1}{1!} + ... + \frac{1}{n!}$
+	    % alors $(S_n)$ converge et on pose $e := \lim_{n \to \infty} S_n$
+	% \item On pose $t_n = (1+\frac{1}{n})^n$, alors $(t_n)$ est strictement
+	    % croissante s et \lim_{n \to \infty} t_n = e$
+    % \end{enumerate}
+\end{proposition}
+
+\begin{problem}[Calculer la limite d'une suite définie par récurrence]
+\end{problem}
+
+\begin{theorem}
+\end{theorem}
+\begin{problem}
+\end{problem}
+\begin{corollary}
+\end{corollary}
+\begin{definition}
+\end{definition}
+\begin{intuition}
+\end{intuition}
+\begin{corollary}
+\end{corollary}
+\begin{corollary}
+\end{corollary}
+\begin{remark}
+\end{remark}
 
 \pagebreak
 \section{Continuité et Continuité Uniforme}
@@ -406,6 +664,20 @@ on veut calculer sa limite
 
 \subsection{Théorème des Valeurs Intermédiaires}
 
+
+\begin{problem}[Point Fixe]
+\end{problem}
+
+\begin{problem}[Trouver les racines de la fonction]
+\end{problem}
+
+\subsection{Continuité Uniforme}
+
+\begin{problem}[Montrer que la fonction n'est pas uniformément continue]
+    Une fcontion est uniformément continue si on peut fermer les extrémités. En
+    d'autres mots, il faut que la limite aux extrémités existent et soient
+    égale à f(a)
+\end{problem}
 
 \pagebreak
 \section{Dérivabilité}
