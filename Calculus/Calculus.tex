@@ -1,14 +1,21 @@
 \documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\usepackage{chngcntr}
+\counterwithin*{section}{part}
 \begin{document}
 \title{Lectures Notes for Calculus}
 \author{Emulie Chhor}
 \maketitle
 
-\section{Introduction}
+\section*{Introduction}
 
-\subsection{Why Study Calculus?}
+\section{Why Study Calculus?}
 
-\subsection{Overview of Calculus}
+\section{Overview of Calculus}
 
 Le Calcul se découle en 4 cours:
 
@@ -35,13 +42,136 @@ d'intégrations et visualiser les intégrales à dessiner.
 
 Finalement, le quatrième cours de calcul porte sur le Vector Calculus.
 
-\subsection{Calcul Différentiel}
+\pagebreak
 
-\subsection{Calcul Intégral}
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
 
-\subsection{Calcul à plusieurs variables}
+\part{Pre-Calculus}
+\section{Overview}
+\pagebreak
 
-\subsection{Vector Calculus}
+\part{Calcul Différentiel}
+
+\section{Overview}
+
+Le calcul différentiel se découle en plusieurs chapitres:
+
+\begin{enumerate}
+    \item Fonctions
+    \item Limites et Continuité
+    \item Dérivées
+    \item Applications des dérivées
+\end{enumerate}
+
+\section{Fonctions}
+\subsection{Détermination du domaine, des zéros et du graphe d’une fonction}
+\subsection{Caractéristiques des fonction algébriques et transcendantes usuelles}
+\section{Limites et continuité}
+\subsection{Notion informelle de limite}
+\subsection{Calcul des limites}
+\subsection{Formes indéterminées}
+\subsection{Continuité d’une fonction}
+
+\section{Dérivées}
+\subsection{Définition en terme de limite}
+\subsection{Calcul de la dérivée à l’aide de limites}
+\subsection{Propriétés des dérivées}
+\subsection{Formules de dérivation}
+\subsection{Calcul de dérivées à l’aide des formules}
+\subsection{Dérivée des fonctions transcendantes}
+\subsubsection{Fonctions Trigonométriques}
+\subsubsection{Fonctions Trigonométriques Inverses}
+\subsubsection{Fonctions Exponentielles}
+\subsubsection{Fonctions Logarithmique}
+\subsection{Dérivation implicite}
+
+\section{Applications des dérivées}
+\subsection{Croissance et décroissance}
+\subsection{Maximums et minimums}
+\subsection{Concavité et points d’inflexion}
+\subsection{Tableau de variation et graphes de fonctions}
+\subsection{Asymptotes verticales et horizontales}
+\subsection{Optimisation}
+
+\pagebreak
+
+\part{Calcul Intégral}
+
+\section{Overview}
+
+Le calcul intégral se découle en plusieurs chapitres:
+\begin{enumerate}
+    \item Introduction aux Intégrales
+    \item Fonctions exponentielles, logarithmiques, trigos et inverses trigos
+    \item Techniques d'intégration
+    \item Applications d'Intégration
+    \item Équations différentielles
+    \item Suites et Séries
+\end{enumerate}
+
+\section{Limites, continuité et dérivées}
+\subsection{Dérivation logarithmique}
+\subsection{Règle de l’Hospital}
+\subsection{Différentielles}
+\section{Intégrale indéfinie}
+\subsection{Équations différentielles à variables séparables}
+\subsection{Formules d’intégration}
+\subsection{Changement de variable}
+\section{Intégrale définie}
+\subsection{Notation sigma}
+\subsection{Sommes de Riemann}
+\subsection{Théorème fondamental du calcul}
+\subsection{Changement de variable}
+\section{Techniques d’intégration}
+\subsection{Intégration par parties}
+\subsection{Substitution trigonométrique}
+\subsection{Décomposition en fractions partielles}
+\section{Applications de l’intégrale définie}
+\subsection{Aire entre deux courbes}
+\subsection{Volume de solides de section connue}
+\subsection{Surfaces et volumes de révolution}
+\subsection{Longueur d’une courbe}
+\section{Suites et séries}
+\subsection{Suites — définition et notion de convergence}
+\subsection{Séries — définition}
+\subsection{Séries Notables}
+\subsection{Critères de convergence}
+\subsubsection{Séries à termes positifs}
+\subsubsection{Séries alternées}
+\subsection{Séries de puissance}
+\subsubsection{Séries de Taylor et de MacLaurin}
+
+\pagebreak
+
+\part{Calcul à plusieurs variables}
+\section{Overview}
+
+Le calcul à plusieurs varaibles se découle en plusieurs chapitres:
+
+\begin{enumerate}
+    \item Suites et Séries
+    \item Vecteurs et Matrices
+    \item Équations des droites et des plans
+    \item Fonctions de plusieurs variables
+    \item Equations Paramétriques et Coordonnées Polaires
+    \item Dérivées Partielles
+    \item Optimisation
+    \item Intégrales Multiples
+\end{enumerate}
+\pagebreak
+
+\part{Vector Calculus}
+\section{Overview}
+\pagebreak
 
 \end{document}
 \end{article}
