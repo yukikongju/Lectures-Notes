@@ -9,7 +9,6 @@
 \author{Emulie Chhor}
 \maketitle
 
-
 \section*{Introduction}
 
 Le cours d'algèbre linéaire comporte plusieurs chapitres:
@@ -101,7 +100,7 @@ les détails.
     On dit que 2 matrices $A_{mxn}$ et $B_{pxq}$ sont égales si:
     \begin{enumerate}
 	\item meme dimension: m=p et n=q
-	\item composantes identiques: $(A)_ij = (B)ij, \forall i,j$
+	\item composantes identiques: $^(A)_ij = (B)ij, \forall i,j$
     \end{enumerate}
 \end{definition}
 
@@ -265,6 +264,16 @@ les détails.
     sont pas inversibles.
 \end{remark}
 
+\begin{theorem}[Propriétés de l'inverse matriciel]
+    Soit A et B, des matrices. Alors,
+    \begin{enumerate}
+	\item $ (A^(-1))^(-1) = A$
+	\item $ (AB))^(-1) = B^-1 A^-1$
+	\item $ (A^T)^-1 = (A^-1)^T$
+    \end{enumerate}
+
+\end{theorem}
+
 \subsubsection{Calcul de l'inverse avec la méthode de Gauss-Jordan}
 
 \begin{definition}[Algorithme de Gauss-Jordan]
@@ -287,13 +296,22 @@ On peut trouver le vecteur x à l'aide de l'inverse de la façon suivante:
     % $ Ix = A^(-1)b $ \\ $ x = A^(-1)b$
 \end{multline}
 
-
 \subsubsection{Matrices élémentaires}
 
+\begin{definition}[Matrice élémentaire]
+    Une matrice élémentaire est une matrice obtenue de la matrice en
+    effectuant une seule opération élémentaire ligne
+\end{definition}
 
+\begin{proposition}[Multiplication à gauche par une matrice élémentaire]
+    Soit $A_{mxn}$ une matrice quelconque et $E_{mxm}$, une matrice
+    élémentaire. La matrice obtenue de A par une opération élémentaire
+    ligne est égale au produit EA.
+\end{proposition}
 
-
-
+\begin{proposition}[Inverse des Matrices Élémentaires]
+    Toute matrice élémentaire est inversible
+\end{proposition}
 
 \pagebreak
 \section{Déterminants}
@@ -308,8 +326,34 @@ On peut aussi utiliser les déterminants pour évaluer un SEL. On compare le dé
 de chaque vecteur avant et après transformation.
 
 \subsection{Définition du Déterminant}
+
+\begin{definition}[Definition du Déterminant]
+
+\end{definition}
+
+\begin{remark}[Interprétation Géométrique du Déterminant]
+    Le déterminant mesure le ratio de l'aire (ou le volume) formé par les
+    vecteurs colonnes de la matrice A avant et après la transformation.
+    Si le déterminant est de zéro, alors il y a compression et on a perdu
+    une dimension. La matrice est donc non inversible. Si le déterminant
+    est de 1, alors la transformation n'a pas changé la longueur des
+    vecteurs. On a donc une rotation ou une translation. Finalement, si
+    le déterminant est négatif, on a flippé l'orientation des vecteurs.
+    \begin{enumerate}
+	\item si $det(A) = 0$ :
+	\item si $det(A) = 1$ :
+	\item si $0 < det(A) < 1$ :
+	\item si $det(A) > 0$ :
+    \end{enumerate}
+\end{remark}
+
 \subsection{Propriétés du Déterminant}
+
 \subsection{Règle de Cramer}
+
+\begin{intuition}
+    La règle de Cramer est un ratio
+\end{intuition}
 
 \pagebreak
 
@@ -334,9 +378,241 @@ et obtenir un vecteur différent. Ainsi, pour s'assurer de parler le même langu
 on veut être capable de traduire un vecteur/transformation d'un espace à un autre.
 
 \subsection{Espaces vectoriels sur $\mathbb{R}$}
+
+\begin{definition}[Espaces Vectoriels sur $\mathbb{R}$]
+    On appelle espace vectoriel tout ensemble non vide V constitué
+    d'objets appelés vecteurs sur lequel sont définies deux opérations
+    (l'addition et la multiplication par un scalaire), vérifiant les
+    10 axiomes suivants:
+    \begin{enumerate}
+	\item $u+v \in V$
+	\item $u+v = v+u$
+	\item $(a+v)+w=u+(v+w)$
+	\item $u+0=u$
+	\item $u+(-u)=0$
+	\item $ cu \in V$
+	\item $ c(u+v)=cu+vu$
+	\item $ (c+d)u=cu+du$
+	\item $ (cd)u=c(du)$
+	\item $1u=u$
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    Les réels forment un ring, c-à-d que:
+    \begin{enumerate}
+	\item L'opération binaire de l'addition est un groupe commutatif
+	\item L'opération binaire de multiplication est un groupe commutatif
+	\item Distributivité de la multiplication sur l'addition
+    \end{enumerate}
+\end{remark}
+
+\begin{definition}[Sous-espaces vectoriels]
+    Soit V, un espace vectoriel muni de l'addition et de la multiplication
+    par un scalaire. Un sous-espace vectoriel H de V est un sous-ensemble de
+    V qui vérifie les propriétés suivantes:
+    \begin{enumerate}
+	\item Le vecteur nul de V appartiet à H $(0 àin H)$
+	\item pour tout $u,v çin H, u+v \in H$
+	\item pour tout $u \in H$ et tout scalaire $c, cu \in H$
+    \end{enumerate}
+\end{definition}
+
 \subsection{Transformations Linéaires}
+
+\begin{definition}[Transformations Linéaires]
+    On dit qu'une fonction $T: \mathbb{R}^n \rightarrow \mathbb{R}^n$
+    est linéaire si pour tout $u,v \in \mathbb{R}^n$ et $k \in \mathbb{R}$:
+    \begin{enumerate}
+	\item T(ku)=kT(u)
+	\item T(u+v) = T(u) + T(v)
+    \end{enumerate}
+\end{definition}
+
+\begin{intuition}
+    On dit qu'une transformation est linéaire si elle préserve les
+    opérations dans les réels.
+\end{intuition}
+
+\begin{remark}[Pourquoi veut-on travailler avec des transformations
+    linéaires]
+\end{remark}
+
+\begin{theorem}[Représentation Matricielle]
+    Soit $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$, une transformation
+    linéaire. Alors il existe une unique matrice A, de dimension m x n
+    telle que $$ T(u)=A u$$
+\end{theorem}
+
+\begin{intuition}
+    La représentation matricielle nous dit que la transformation matricielle
+    est équivalente à la multiplication matricielle, ce qu'on savait déjà.
+\end{intuition}
+
+\begin{proposition}[Transformations Linéaires de $\mathbb{R}^2$
+    dans $\mathbb{R}^2$]
+    On distingue 4 transformations linéaires principales dans
+    $\mathbb{R}^2$:
+    \begin{enumeration}
+	\item Étirement:
+	\item Homothétie:
+	\item Réflexion:
+	\item Rotation:
+    \end{enumeration}
+\end{proposition}
+
+\begin{definition}[Composition de Transformations Linéaires]
+\end{definition}
+
+\subsection{Injectivité et Noyau}
+
+\begin{definition}[Injectivité]
+    Soit $f:X \rightarrow Y$ une fonction. On dit que f est injective si
+    pour tout $x_1, x_2 \in X$ $$ x_1 \neq x_2 \Longrightarrow f(x_1)
+    \neq f(x_2)$$
+\end{definition}
+
+\begin{theorem}[Injectivité d'une Transformation Linéaire]
+    Soit $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$ une transformation
+    linéaire. $$ \text{T est injective } \Longleftrightarrow ker(T)={0}$$
+\end{theorem}
+
+\begin{definition}[Surjectivité]
+    Soit $f:X \rightarrow Y$, une fonction. On dit que f est surjective
+    si pour tout $y \in Y$, il existe $x \in X$ tel que $f(x)=y$
+\end{definition}
+
+\begin{theorem}[Surjectivité d'une Transformation Linéaire]
+    Soit $f:X \rightarrow Y$, une fonction. $$ \text{ f est surjective }
+    \Longleftrightarrow Im(f)=Y$$
+\end{theorem}
+
 \subsection{Base d'un Espace Vectoriel}
+
+\begin{definition}[Ensemble Générateur]
+    Un ensemble B de vecteurs de l'espace vectoriel V est un ensemble
+    générateur de V si tout élément de V peut s'écrire comme une combinaison
+    linéaire des éléments de B
+\end{definition}
+
+\begin{intuition}
+    On peut former tous les vecteurs de l'espace vectoriel à l'aide des
+    vecteurs de ce même ensemble. Notons qu'il peut y avoir des vecteurs
+    redondants.
+\end{intuition}
+
+\begin{definition}[Base d'un espace vectoriel]
+    Un ensemble B de vecteurs de l'espace vectoriel V est une base de V
+    si:
+    \begin{enumerate}
+	\item les vecteurs de B sont linéairement indépendnats
+	\item B est un ensemble générateur de V
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    Pour qu'un ensemble forme une base, il faut qu'on ait le nombre
+    minimal de vecteurs pour générer l'ensemble, mais pas trop pour
+    que les vecteurs soient redondants.
+\end{remark}
+
 \subsection{Système de Coordonnées dans $\mathbb{R}^n$}
+
+\begin{definition}[Système de coordonnées]
+    Soit $B=(b_1, ... , b_n)$, une base d'un espace vectoriel V. Alors
+    pour tout vecteur x de V, il existe une unique famille $(c_1, ...,
+    c_n)$ de scalaires telle que $$x= c_1 b_1 + ... + c_n b_n$$
+    Le vecteur $[c_1 ... c_n]$ est appelé le vecteur coordonnées de x
+    dans la base B et est noté $[x]_B$
+\end{definition}
+
+\begin{remark}
+    Le vecteur des coordonées, aussi appelé vecteur des composantes,
+    est un vecteur formé des scalaire de la combinaison linéaire.
+    Intuitivement, on peut le voir comme le scalaire par lequel on
+    doit multiplier chaque composantes pour obtenir x
+\end{remark}
+
+\begin{definition}[Matrice de Passage]
+    Soit $B=(b_1, ... , b_n)$, une base de $\mathbb{R}^n$. La matrice
+    définie par $$P_B = [b_1 ... b_n]$$ est appelée la matrice de passage
+    de la base B. Pour tout vecteur $x \in \mathbb{R}^n$, on a
+    l'équation $$ x = P_B [x]_B$$ De plus, la matrice $P_B$ est inversible,
+    car ses colonnes forment une base, et on a l'équation
+    $$ [x]_B = P_B ^(-1) x$$
+\end{definition}
+
+\begin{remark}
+    L'équation $ x = P_B [x]_B$ est la même équation que $b=Ax$. On a que
+    x=b, $P_B = A$ et $ [x]_B = x$. Ainsi, on peut interpréter la matrice
+    de passage comme la matrice intermédiaire qu'on peut utiliser pour
+    passer d'une base à une autre.
+\end{remark}
+
+\subsection{Changement de Base}
+
+\begin{intuition}
+    Caractériser un vecteur est assez arbitraire, car chaque personne
+    peut choisir un quadrillage différent et obtenir un résultat
+    différent. Ainsi, pour s'assurer de parler le même language, on
+    veut être capable de traduire un vecteur dans un espace et dans un
+    autre. On se sert de la matrice de changement de base pour passer
+    d'une base à l'autre.
+\end{intuition}
+
+\begin{theorem}[Matrice de Changement de Base]
+    Soit $B=(b_1, ... , b_n)$ et $C=(c_1, ... , c_n)$, deux bases de
+    d'un espace vectoriel V. Il existe une unique matrice n x n, notée
+    $ P_{C \leftarrow B}$ telle que pour tout $x \in V$
+    $$ [x]_C = P_{C \leftarrow B}[x]_B, P_C = [[b_1]_C ... [b_n]_C] $$
+    Cette matrice est appelée la matrice de changement de base de B à C
+\end{theorem}
+
+\begin{remark}
+    On peut construire la matrice de transformation pour traduire un
+    vecteur de la base B dans la base C en prenant la matrice construite
+    par les vecteurs colonnes de la base originelle traduite dans la
+    nouvelle base.\\
+    En pratique, on trouve la matrice de changement de base en échelonnant
+    $$ (c_1 c_2 c_3 | b_1 b_2 b_3) ~ (I | [b_1]_C [b_2]_C [b_3]_C)
+    ~ (I | P_{C \leftarrow B})$$
+\end{remark}
+
+\begin{remark}[Lien entre matrice de changement de base et matrice de
+    passage]
+
+\end{remark}
+
+\subsection{Représentation matricielle d'une transformation Linéaire de V
+dans W}
+
+\pagebreak
+\section{Orthogonalité et Projections}
+\subsection{Overview}
+
+\subsection{Orthogonalité et Projection}
+\subsection{Sous-Espace Orthogonal}
+
+\pagebreak
+
+\section{Diagonalisation}
+\subsection{Overview}
+
+La diagonalisation est un processus utilisé dans le domaine du Machine Learning,
+car elle permet de "compresser" les données dans une plus petite dimension. La
+diagonalisation est notamment utilisée pour le PCA et le SVD.\\
+
+Géométriquement, lorsqu'on parle de valeurs propres et de vecteurs propres, c'est
+qu'il existe un vecteur qui reste sur le même axe après transformation linéaire.
+Ainsi, appliquer la transformation linéaire sur ce vecteur peut être considérer
+comme une multiplication par un scalaire $\lambda$, qui étire la longueur du vecteur.
+Notre but est donc de trouver le vecteur qui reste dans le même axe, qu'on appelle
+
+
+\subsection{Base d'un Espace Vectoriel}
+
+\subsection{Système de Coordonnées dans $\mathbb{R}^n$}
+
 \subsection{Changement de Base}
 
 \pagebreak
