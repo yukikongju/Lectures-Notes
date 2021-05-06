@@ -1171,9 +1171,49 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 
 \subsection{Overview}
 
+Le but de cette section est de déterminer la convergence d'une
+série, et si elle converge, de calculer sa somme. L'importance de
+la convergence d'une série est p/r à l'approximation. On utilise
+les séries pour estimer les fonctions transcendantes.\\
+
+Idéalement, on serait capable d'exprimer toutes les séries en
+termes des séries célèbres, mais ce n'est pas le cas. On verra donc
+qu'on peut utiliser des critères pour déterminer si la série converge
+ou non.
+
 \subsection{Convergence des séries}
 
+\begin{definition}[Série de terme général]
+    La série S de termes général $a_n$ est l'expression
+    $$ S = \sum_{n=1}{\infty} a_n = a_1 + a_2 + ... + a_n$$
+\end{definition}
 
+\begin{definiton}[Sommes Partielles]
+    Soit $S_n = \sum{k=1}{n} a_k$. On appelle $S_n$ la suite des sommes
+    partielles de S
+\end{definiton}
+
+\begin{definition}[Convergence de Série]
+    Si $S_n$ converge, alors on dit que la série S converge et on écrit
+    $ \lim_{n \to \infty} S_n = S$. Si $S_n$ diverge, alors on dit que
+    la série S diverge
+\end{definition}
+
+\begin{intuition}
+    Une suite et une série est essentiellement le même objet, seulement
+    pour les suites, on considère la valeur de chaque terme, alors que
+    pour les séries, on considère la distance entre 2 termes consécutifs.\\
+    La convergence d'une suite signifie que si on est assez loin dans
+    la suite, le terme $a_n$ prend une certaine valeur, alors que la
+    convergence d'une série nous dit que si on additionne la distance
+    entre deux termes consécutifs une infinité de fois, on obtient une
+    valeur réelle.
+\end{intuition}
+
+\begin{remark}
+    Commencer l'itération d'une série change uniquement la valeur de
+    sa somme, pas sa convergence
+\end{remark}
 
 \subsection{Séries célèbres}
 
@@ -1186,15 +1226,58 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 \begin{proposition}[Série de Riemann]
 \end{proposition}
 
+\begin{theorem}[Convergence d'une suite]
+    Si $\sum_{n=1}^{\infty} a_n$ converge, alors
+    $\lim_{n \to \infty} a_n=0$
+\end{theorem}
+
+\begin{corollary}
+    Si $\lim_{n \to \infty} a_n \neq 0$, alors la série diverge
+\end{corollary}
+
+\begin{intuition}
+    Pour la convergence d'une suite, on se disait qu'on voulait que
+    la distance entre 2 termes consécutifs deviennent de plus en plus
+    petit pour que le n-ième terme reste sur place. L'intuition pour
+    la convergence d'une suite est similaire: si la distance entre
+    deux termes consécutifs n'est pas de 0, on continue d'ajouter des
+    termes à l'infini, ce qui veut dire que la somme tend vers l'infini
+\end{intuition}
+
+\begin{theorem}[Propriétés de Séries]
+    Soient $S = sum_{n=1}^{\infty} a_n$ et $T = sum_{n=1}^{\infty} b_n$,
+    deux séries convergentes. Alors,
+    \begin{enumerate}
+	\item $sum_{n=1}^{\infty} (c a_n + d b_n) = cS + dT, c,d \in
+	    \mathbb{R}$
+	\item Si $sum_{n=1}^{\infty} a_n$ diverge, alors
+	    $sum_{n=1}^{\infty} c a_n$ diverge si $ c \neq 0$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Si une série converge, alors on peut regrouper ses termes en blocs
+    sans changer l'ordre. La réciproque est fausse
+\end{theorem}
+
 \subsection{Critères de Convergence pour les séries à termes positifs}
 
-Lorsqu'on veut déterminer la convergence de séries à termes positifs,
-on peut utiliser les critères suivants:
+\begin{definition}[Série à termes positifs]
+    Une série $\sum_{n=1}^{\infty} a_n$ est dite à termes positifs si
+    $a_n \geq 0, \forall n \in \mathbb{N}$
+\end{definition}
+
+\begin{remark}
+    \begin{enumerate}
+	\item Si S est à termes positifs, alors $(S_n)$ est croissante
+	\item S converge $\Longleftrightarrow (S_n)$ est majoré
+    \end{enumerate}
+\end{remark}
 
     \begin{enumerate}
 	\item Critère de Comparaison
-	\item Critère du Quotient
 	\item Critère de Condensation de Cauchy
+	\item Critère du Quotient
 	\item Critère d'Alembert (du rapport)
 	\item Critère de la Racine de Cauchy
 	\item Critère de Dirichlet
