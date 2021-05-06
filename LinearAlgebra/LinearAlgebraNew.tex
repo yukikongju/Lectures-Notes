@@ -587,44 +587,109 @@ on veut être capable de traduire un vecteur/transformation d'un espace à un au
 dans W}
 
 \pagebreak
+
 \section{Orthogonalité et Projections}
+
 \subsection{Overview}
 
-\subsection{Orthogonalité et Projection}
+Le but du chapitre est de définir ce qu'est l'orthogonalité et déterminer
+si une matrice est orthogonale, et si elle ne l'est pas, de la diagonaliser
+avec le Procédé de Graham-Schmidt. Essentiellement, on veut travailler
+avec une base orthonormale, c-à-d dont les vecteurs sont orthogonaux
+entre eux, car les propriétés linéaires des vecteurs et de l'espace sont
+gardées. De plus, travailler avec une base orthonormale est plus pratique
+puisque le quadrillage forment des rectangles (et non des parallélogrammes).
+
+\subsection{Produit Scalaire}
+
+\begin{definition}[Produit Scalaire]
+    Soit u et v, deux vecteur de $\mathbb{R}^n$. Le produit scalaire de u
+    et v est le nombre réel $$ u \cdot v = u^T v = u_1 v_1 + u_2 v_2 +
+    ... + u_n v_n$$
+\end{definition}
+
+\begin{theorem}[Propriétés du produit scalaire]
+    Soit u,v et w, trois vecteurs de $\mathbb{R}^n$ et c, un nombre réel.
+    Alors,
+    \begin{enumerate}
+	\item $ u \cdot v = v \cdot u$
+	\item $ u \cdot (v+w) = u \cdot v + u \cdot w$
+	\item $(cu) \cdot v = u \cdot (cv) = c(u \cdot v)$
+	\item $ u \cdot u \geq 0$ et $ u \cdot u = 0 \Longleftrightarrow
+	    u = 0$
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}[Interprétation géométrique du produit scalaire]
+    Comme le nom le dit, le produit scalaire de deux vecteurs nous donne
+    un scalaire. Ce nombre nous dit à quel point le premier vecteur va
+    dans la même direction que le deuxième. Une autre interprétation peut
+    se faire avec la formule de l'angle, qu'on verra plus tard.
+\end{remark}
+
+\subsection{Norme d'un vecteur}
+
+\begin{theorem}[Norme d'un vecteur]
+    On appelle la longueur d'un vecteur (ou norme) $u \in \mathbb{R}^n$
+    le nombre réel positif ou nul défini par
+    $$ || u|| = \sqrt(u_1 ^2 + u_2 ^2 + ... + u_n^2) = \sqrt(u \cdot u)$$
+\end{theorem}
+
+\begin{definition}[Vecteur Unitaire]
+    Un vecteur ayant une norme de 1 est appelé un vecteur unitaire.
+\end{definition}
+
+\begin{intuition}[D'ou vient la formule pour la norme d'un vecteur]
+\end{intuition}
+
+\begin{theorem}[Inégalité de Cauchy-Schwarz]
+    Soit u et v, deux vecteurs de $\mathbb{R}^n$, alors
+    $ | u \cdot v | \leq ||u|| ||v||$
+\end{theorem}
+
+\begin{theorem}[Propriétés de la norme]
+    Soit u et v, deux vecteurs de $\mathbb{R}^n$, alors
+    \begin{enumerate}
+	\item $ ||u||=0 \Longleftrightarrow u=0$
+	\item $ ||cu|| = |c| ||u||$
+	\item $ || u+v || \leq ||u||+||v||$
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Angle entre deux vecteurs}
+
+\begin{theorem}[Angle entre deux vecteurs]
+    Soit u et v, deux vecteurs non nul de $\mathbb{R}^n$. L'angle entre
+    u et v est le nombre réel $\Theta \in [0, \pi]$ tel que
+    $$ cos(\Theta) = \frac{u \cdot v}{||u||||v||}$$
+\end{theorem}
+
+\begin{intuition}[D'ou vient la formule de l'angle entre 2 vecteurs]
+\end{intuition}
+
+\begin{theorem}[Vecteurs Orthogonaux]
+    On dit que deux vecteurs u et v de $\mathbb{R}^n$ sont orthogonaux
+    (ou perpendiculaires) si $u \cdot v = 0$
+\end{theorem}
+
+\begin{intuition}
+    On sait que le produit scalaire peut être interprété comme la
+    quantité du premier vecteur qui va dans la même direction que le
+    deuxième. Ainsi, géométriquement, on sait que deux vecteurs orthogonaux
+    ne vont pas dans la même direction, d'ou le produit vectoriel de 0
+\end{intuition}
+
+\subsection{Projection Orthogonale}
+
+
+
+
 \subsection{Sous-Espace Orthogonal}
 
 \pagebreak
 
 \section{Diagonalisation}
-\subsection{Overview}
 
-La diagonalisation est un processus utilisé dans le domaine du Machine Learning,
-car elle permet de "compresser" les données dans une plus petite dimension. La
-diagonalisation est notamment utilisée pour le PCA et le SVD.\\
-
-Géométriquement, lorsqu'on parle de valeurs propres et de vecteurs propres, c'est
-qu'il existe un vecteur qui reste sur le même axe après transformation linéaire.
-Ainsi, appliquer la transformation linéaire sur ce vecteur peut être considérer
-comme une multiplication par un scalaire $\lambda$, qui étire la longueur du vecteur.
-Notre but est donc de trouver le vecteur qui reste dans le même axe, qu'on appelle
-
-
-\subsection{Base d'un Espace Vectoriel}
-
-\subsection{Système de Coordonnées dans $\mathbb{R}^n$}
-
-\subsection{Changement de Base}
-
-\pagebreak
-\section{Orthogonalité et Projections}
-\subsection{Overview}
-
-\subsection{Orthogonalité et Projection}
-\subsection{Sous-Espace Orthogonal}
-
-\pagebreak
-
-\section{Diagonalisation}
 \subsection{Overview}
 
 La diagonalisation est un processus utilisé dans le domaine du Machine Learning,
@@ -640,8 +705,11 @@ vecteur propre, et de trouver le facteur de multiplication, qu'on appele valeur
 propre.
 
 \subsection{Valeurs et Vecteurs Propres}
+
 \subsection{Espace Propre et Multiplicité Géométrique}
+
 \subsection{Diagonalisation d'une matrice quelconque}
+
 \subsection{Diagonalisation d'une matrice symétrique}
 
 \pagebreak

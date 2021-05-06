@@ -638,40 +638,228 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 \begin{problem}[Calculer la limite d'une suite définie par récurrence]
 \end{problem}
 
-\begin{theorem}
-\end{theorem}
-\begin{problem}
-\end{problem}
-\begin{corollary}
-\end{corollary}
-\begin{definition}
-\end{definition}
-\begin{intuition}
-\end{intuition}
-\begin{corollary}
-\end{corollary}
-\begin{corollary}
-\end{corollary}
-\begin{remark}
-\end{remark}
-
 \pagebreak
+
 \section{Continuité et Continuité Uniforme}
+
 \subsection{Overview}
 
+\subsection{Definition de la Limite d'une fonction}
 
-\subsection{Definition de la Continuité}
+\begin{definition}[Domaine et Image]
+\end{definition}
+
+\begin{definition}[Intervalle Ouvert et Fermé]
+\end{definition}
+
+\begin{definition}[Limite d'une fonction]
+    Soit $f:D \rightarrow \mathbb{R}$ et $a \in \bar{D}$. On dit que
+    f(x) tend vers L lorsque x tend vers a si
+    $$ \forall \varepsilon > 0 , \exists \delta > 0, \forall x \in D,
+    0 < |x-a|< \delta \Longrightarrow |f(x) -L| < \varepsilon$$
+    On écrit $lim_{x \to a} f(x) = L$
+\end{definition}
+
+\begin{remark}[Interprétation Graphique]
+    La définition de la limite d'une fonction nous dit que pour nimporte
+    quel epsilon, on peut trouver delta à l'intérieur de l'intervalle
+    $(L-\varepsilon, L+\varepsilon)$
+\end{remark}
+
+\begin{remark}
+    Si $f(x) \not\to L, \exists \varepsilon > 0, \forall \delta > 0,
+    \exists x \in D, 0 < |x-a|< \delta \Longrightarrow |f(x)-L| \geq
+    \varepsilon$
+\end{remark}
+
+\begin{problem}[Montrer que la fonction converge]
+    Pour montrer que la fonction converge, on doit reverse engineer et
+    trouver $\delta (\varepsilon)$. On part avec $|f(x)-L|$ et on essait
+    d'isoler $|x-a|$ pour pouvoir poser $\delta$ en fonction de epsilon.
+\end{problem}
+
+\begin{problem}[Montrer que la fonction ne converge pas]
+\end{problem}
+
+\begin{theorem}
+    Soit $f:D \rightarrow \mathbb{R}$ et $a \in \bar{D}$. Les énoncés
+    suivants sont équivalents:
+    \begin{enumerate}
+	\item $lim_{x \to \infty} f(x)=L$
+	\item Pour toute suite $(x_n) \subseteq D \ {a}$ tel que
+	    $x_n \to a$, on a $lim_{x \to \infty} f(x_n)=L$
+    \end{enumerate}
+\end{theorem}
+
+\begin{intuition}
+    Essentiellement, le théorème ci-haut nous dit que la définition des
+    limites est équivalente à la définition de la suite. Intuitivement,
+    Si la suite $x_n$ converge, alors on peut travailler à l'intérieur
+    de cet intervalle et trouver la fonction qui converge aussi (on
+    fixe $|x_n -a|<\varepsilon$)
+\end{intuition}
+
+\begin{definition}[Limite à gauche et à droite]
+    $$ \forall \varepsilon > 0, \exists \delta > 0, \forall x \in D,
+    0 < x-a < \delta \Longrightarrow |f(x)-L|< \varepsilon (resp
+    -\delta < x-a <0)$$
+\end{definition}
+
+\begin{definition}[Limite infinie]
+    $$ \forall M > 0, \exists \delta > 0, \forall x \in D,
+    0 < |x-a| < \delta \Longrightarrow f(x)-L > M (resp <M)$$
+\end{definition}
+
+\begin{definition}[Limite à l'infini]
+    $$ lim_{x \to \infty} f(x)=L \Longleftrightarrow \forall \varepsilon >0,
+    \exists M \in \mathbb{R}, \forall x \in D, x >M \Longrightarrow
+    |f(x) -L|< \varepsilon (resp <M)$$
+\end{definition}
+
+\subsection{Propriétés des limites}
+
+\begin{theorem}[Propriétés des limites de fonctions continues]
+    Soit $f,g:D \to \mathbb{R}$. Si $f(x) \to L$ et $g(x) \to M$, alors
+    \begin{enumerate}
+	\item $ |f(x)| \to L$
+	\item $ f(x) + g(x) \to L+M$
+	\item $ f(x) g(x) \to LM$
+	\item $ \frac{f(x)}{g(x)} \to \frac{L}{M}$, si $M \neq 0$
+	\item $ f(x) \leq g(x)$, alors $L \leq M$
+	\item $ \forall n \in \mathbb{N}, ^n\sqrt(L)$ si $f(x) \geq
+	    L, \forall x \in D$
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+    Soient P et Q, des polynomes et $Q(a) \neq 0$. Alors
+    $ lim_{x \to a} \frac{P(a)}{Q(a)}$
+\end{corollary}
+
+\subsection{Definition de la Limite d'une fonction}
+
+\begin{definition}[Fonction Continue en un point]
+    f est continue en $a \in D$ si
+    $$ \forall \varepsilon > 0 , \exists \delta > 0, \forall x \in D,
+    0 < |x-a|< \delta \Longrightarrow |f(x) -L| < \varepsilon$$
+\end{definition}
+
+\begin{definition}[Fonction Discontinue en un point]
+    f est discontinue en $a \in D$ si elle n'est pas continue en a
+\end{definition}
+
+\begin{definition}[Fonction Continue]
+    f est continue sur D si $\forall a \in D$, f est continue en a.
+    On dit que f est continue
+\end{definition}
+
+\begin{proposition}
+    Les énoncés suivants sont équivalents:
+    \begin{enumerate}
+	\item f est continue en a
+	\item $ lim_{x \to a} f(x) = f(a)$
+	\item $\forall (x_n) \subseteq D, x_n \to a \Longrightarrow
+	    f(x_n) \to f(a)$
+    \end{enumerate}
+\end{proposition}
+
+\begin{intuition}
+    La proposition nous dit que la définition de la continuité implique
+    la définition de la limite et vice-versa
+\end{intuition}
+
+\subsection{Propriétés de fonctions continues}
+
+\begin{proposition}
+    Soit $f,g:D \to \mathbb{R}$ sont continues, $a \in D$, alors $|f|,
+    f+g, fg, f/g (si g(a) \neq 0), ^n\sqrt(f) (si f \geq 0)$ sont
+    continues en a
+\end{proposition}
+
+\begin{proposition}
+    Les fonctions transcendantes suivantes sont continues en chaque point
+    de leur domaine: $e^x, log x, sin(x), cos(x), tan(x), arcsin(x),
+    arccos(x), arctan(x)$
+\end{proposition}
+
+\begin{proposition}
+    La composition de fonctions continues est aussi continues
+\end{proposition}
+
+\begin{proposition}
+    \begin{enumerate}
+	\item $lim_{x \to -\infty} e^x = 0$
+	\item $lim_{x \to \infty} e^x = \infty$
+	\item $lim_{x \to 0^(+)} log(x) = -\infty$
+	\item $lim_{x \to \infty} log(x) = \infty$
+    \end{enumerate}
+\end{proposition}
+
 
 \subsection{Théorème des Valeurs Intermédiaires}
 
+\begin{theorem}[Théorème des Valeurs Intermédiaires]
+    Soit $f:[a,b] \to \mathbb{R}$ continues sur [a,b] et tel que
+    $f(a)<f(b)$. Alors, $\forall c \text{ tel que } f(a)<c<f(b)$,
+    il existe $x \in (a,b)$ tel que f(x)=c
+\end{theorem}
+
+\begin{intuition}
+    Le TVI nous dit que si la fonction est continue dans un intervalle,
+    alors on peut atteindre toutes les images à l'intérieur de l'intervalle
+    donné par f(a) et f(b)
+\end{intuition}
+
+\begin{remark}[Algorithme de Bissection]
+    La preuve du TVI se fait avec l'algorithme de bissection, qui marche
+    de façon similaire à l'algorithme de dichotomie pour le théorème
+    de Bolzano-Weistrass.
+\end{remark}
 
 \begin{problem}[Point Fixe]
+    Lorsqu'on résout des problèmes de points fixes, on veut transformer
+    le problème en problème de zéro. Par exemple, si on a $f(x)=x$, alors
+    on veut travailler avec $g(x) = f(x)-x$ et montrer qu'il y a un
+    changement de signe dans cet intervalle pour que g possède un zéro
 \end{problem}
 
 \begin{problem}[Trouver les racines de la fonction]
+    On peut utiliser le théorème des valeurs intermédiaires pour montrer
+    qu'il y a une racine dans l'intervalle. Essentiellement, on veut
+    montrer que s'il y a un changement de signe dans un intervalle, et
+    que la fonction est continue, nécessairement, on passe par l'axe
+    des x et la fonction possède un zéro dans cet intervalle.\\
+    Si on nous demande de trouver la racine à au plus (erreur), on n'a
+    qu'à définir un intervalle dont la moitié est moins que ce terme
+    d'erreur
 \end{problem}
 
 \subsection{Continuité Uniforme}
+
+\begin{definition}[Continuité Uniforme]
+    Soit $f:D \to \mathbb{R}$, une fonction. On dit qu'elle est
+    uniformément continue si $\forall \varepsilon > 0, \exists \delta >0,
+    \forall x,y \in D, |x-y| \Longrightarrow |f(x) - f(y)|< \varepsilon$
+\end{definition}
+
+\begin{theorem}
+    Soit $f:[a,b] \to \mathbb{R}$. Si f est continue, alors f est
+    uniformément continue. En d'autres mots, si f est une fonction
+    continue définie sur un compact (intervalle fermé et borné), alors
+    elle est uniformément continue sur cet intervalle.
+\end{theorem}
+
+\begin{theorem}[Une Fonction Lipschitz est uniformément continue]
+    Soit $f:D \to \mathbb{R}$. S'il existe une constante K tel que
+    $K >)$ telle que $$ |f(x) - f(y)| < K |x-y|$$ alors elle est
+    uniformément continue
+\end{theorem}
+
+\begin{remark}
+    Une fonction Lipschitz est bornée, et on sait que toute fonction
+    continue qui est fermé et bornée dans un intervalle est convergente,
+    et donc continuement uniforme
+\end{remark}
 
 \begin{problem}[Montrer que la fonction n'est pas uniformément continue]
     Une fonction est uniformément continue si on peut fermer les extrémités. En
@@ -680,21 +868,272 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 \end{problem}
 
 \pagebreak
-\section{Dérivabilité}
-\subsection{Overview}
 
+\section{Dérivabilité}
+
+\subsection{Overview}
 
 \subsection{Définition de la dérivabilité}
 
-\subsection{Propriété des fonctions dérivables}
+\begin{definition}[Dérivée]
+    Soit I =(a,b), un intervalle. Soit $F:I \to \mathbb{R}$, une fonction
+    et soit $ c \in I$. ALors f est dérivable en c si
+    $$ \lim_{h \to 0} \frac{f(c+h) -f(c)}{h} \text{ existe } $$
+    La valeur de la limite s'appelle a dérivée de f en a, notée $f'(A)$
+\end{definition}
 
-\subsection{Théorème de Rolle}
+\begin{remark}
+    La définition de la dérivée nous dit que si la dérivée est équivalent
+    à prendre deux points et de les rapprocher à une distance très petite,
+    qui tend vers 0. Une définition équivalente serait la suivante:
+    $$ \lim_{x \to x_0} \frac{f(x) -f(x_0)}{x - x_0} \text{ existe } $$
+\end{remark}
 
-\subsection{Théorème des Accroissements Finis}
+\begin{remark}[Interprétation Analytique]
+    On sait que la dérivée représente la pente de la fonction en un
+    point donné, mais on peut réécrire la fonction de la façon suivante:
+    $$ f(c+h) = f(c) + f'(c)h + \epsilon (h)h, \epsilon (h)h \to 0
+    \text{ lorsque } h \to 0$$
+    Ainsi, puisque f(c+h) = constante + pente + erreur, on peut considérer
+    que f ressemble à une fonction affine localement
+\end{remark}
 
-\subsection{Corollaire du théorème des acroissements finis - Cauchy}
+\begin{theorem}[Règles de Calcul]
+    Soit I, un intervalle ouvert et $f,g:I \to \mathbb{R}$. Si f et g
+    sont dérivables en $a \in I$, alors
+    \begin{enumerate}
+	\item Somme:
+	\item Produit:
+	\item Quotient:
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Règle de Dérivation en Chaine]
+    Si f et g sont dérivables en b = f(a), alors $g(f(x))$ est dérivable
+    en a et $$ (g \cdot \f)'(a) = g'(f(a)) f'(a) = g'(b) f'(a) $$
+\end{theorem}
 
 \subsection{Extremums Relatifs et Absolues}
+
+\begin{definition}[Extremums Locaux]
+    Soit $f:I \to \mathbb{R}$, une fonction et soit $a \in I$. On dit
+    que a est un maximum local s'il existe un intervalle
+    $$(c,d) \subseteq I \text{ tel que } a \in \(c,d) \text{ et }
+    f(x) \leq f(a)$$
+    On dit que a est un minimum local s'il existe un intervalle
+    $$(c,d) \subseteq I \text{ tel que } a \in \(c,d) \text{ et }
+    f(x) \geq f(a)$$
+\end{definition}
+
+\begin{remark}
+    Pour que le maximum/minimum existent, il faut que le maximum/minimum
+    soit atteint
+\end{remark}
+
+\begin{definition}[Points Critiques]
+    Les points critiques de f sont les points x lorsque f(x)=0
+\end{definition}
+
+\begin{theorem}
+    Supposons $f:I \to \mathbb{R}$ atteint un minimum ou un maximum
+    en un point $a \in I$ et que a est un point intérieur de I. Supposons
+    aussi que f est dérivable dans l'intervalle. On a que $f'(a)=0$
+\end{theorem}
+
+\begin{remark}
+    La pente d'un maximum et d'un minimum est nulle
+\end{remark}
+
+\begin{remark}
+    La fonction f peut atteindre un min/max au bout d'un intervalle sans
+    avoir f'(a)=0, car si a est au bout, il n'est pas inclu dans
+    l'intervalle
+\end{remark}
+
+\begin{theorem}
+    f dérivable en a $\Longrightarrow$ f est continue en a, mais la
+    contraposée est fausse.
+\end{theorem}
+
+\subsection{Propriété des fonctions dérivables}
+
+\subsubsection{Théorème de Rolle}
+
+\begin{definition}[Théorème de Rolle]
+    Soit $f:[a,b] \to \mathbb{R}$, une fonction telle que
+    \begin{enumerate}
+	\item f est continue sur [a,b]
+	\item f est dérivable sur (a,b)
+	\item f(a)=f(b)
+    \end{enumerate}
+    alors $\exists c \in (a,b) \text{ tel que } f'(c)=0$
+\end{definition}
+
+\begin{remark}
+    Le Théorème de Rolle nous dit que si deux points ont la même
+    image et que la fonction est continue et dérivable, alors il y
+    a un extremums local. On sait que ce ne sera pas un point
+    d'inflexion, car la fonction ne peut pas avoir d'asymptote
+    verticale dans l'intrervalle si elle est continue.
+\end{remark}
+
+\begin{corollary}[Corollaire du Théorème de Rolle]
+    Soit $f:[a,b] \to \mathbb{R}$, une fonction continue sur [a,b] et
+    n fois dérivable sur (a,b). Supposons que $f^(n) \neq 0, \forall
+    x \in (a,b)$. Alors l'équation f(x)=0 possède au plus n solutions
+    dans l'intervalle [a,b]
+\end{corollary}
+
+\begin{remark}
+    Le corollaire nous dit qu'un polynôme a au plus n zéros
+\end{remark}
+
+\begin{problem}[Montrer que f possède au plus n racines réelles]
+    Pour trouver les zéros, on peut utiliser le théorème des
+    valeurs intermédiaires pour construire les intervalles avec changement
+    de signe. Pour montrer qu'il n'y a pas un deuxième zéro dans cet
+    intervalle, on peut utiliser le théorème de Rolle pour montrer qu'il
+    y a une contradiction. On montre que la racine trouvée est à
+    l'extérieur de l'intervalle définie.
+\end{problem}
+
+\subsubsection{Théorème des Accroissements Finis}
+
+\begin{theorem}[Théorème des Accroissements Finis]
+    Soit $f:[a,b] \to \mathbb{R}$, une fonction telle que
+    \begin{enumerate}
+	\item f est continue sur [a,b]
+	\item f est dérivable sur (a,b)
+    \end{enumerate}
+    alors $\exists c \in (a,b) \text{ tel que } f'(c)=\frac{f(b) - f(a)}
+    {b-a}$
+\end{theorem}
+
+\begin{intuition}
+    Le théorème des accroissements finis nous dit que si on a une
+    fonction continue et dérivable et qu'on relie les 2 extrémités
+    de l'intervalle, on peut trouver un point intérieur c qui possède
+    la même pente que la droite formée par a et b
+\end{intuition}
+
+\begin{remark}
+    Le théorème des accroissements finis est le théorème de Rolle
+    généralisé. C'est comme si on rotationnait notre graphique
+\end{remark}
+
+\begin{remark}
+    Le théorème des accroissements finis est pratique, car il nous
+    permet de rendre notre fonction Lipschitienne:
+    $$ |f(b) - f(a)| \leq M |b-a|, \forall x \in \mathbb{R},
+    |f'(x) \leq M$$
+    Ainsi, si on peut appliquer le théorème des accroissements finis
+    sur une fonction, la fonction est uniformément continue, car elle
+    est Lipschitienne
+\end{remark}
+
+\begin{theorem}[Fonction Constante]
+    Soit $f:I \to \mathbb{R}$, une fonction dérivable avec I, un
+    intervalle ouvert. Alors, f est constante $\Longleftrightarrow
+    f'(x)=0 \forall x \in I$
+\end{theorem}
+
+
+\begin{intuition}
+    La preuve se fait avec le théorème de Rolle
+\end{intuition}
+
+\begin{problem}[Calculer approximativement $\sqrt(24)$]
+    On peut utiliser le théorème des accroissements finis pour
+    approximer une racine en posant $f(x)=\sqrt(x)$ et en travaillant
+    avec l'intervalle [16,25], car on sait calculer $\sqrt(16)$ et
+    $\sqrt(25)$
+\end{problem}
+
+\begin{corollary}[Formule de Cauchy]
+    Soit f et g, deux fonctions continues sur [a,b] et différentiables
+    sur (a,b). Si $g'(x) \neq 0 \forall x \in (a,b)$, il existe au moins
+    un point $c \in (a,b)$ tel que
+    $$ \frac{f(b)- f(a)}{g(b)-g(a)} = \frac{f'(c)}{g'(c)}$$
+\end{corollary}
+
+\begin{remark}
+    On peut retrouver la formule de Cauchy à partir du théorème des
+    accroissements finis ou de la règle de l'Hospital
+\end{remark}
+
+\subsection{Croissance et Décroissance}
+
+\begin{definition}[Fonction Croissante et Décroissante]
+    Une fonction $f:I \to \mathbb{R}$ est dite
+    \begin{enumerate}
+	\item croissante si $a \leq b \Longrightarrow f(a) \leq f(b)$
+	\item strictement croissante si
+	    $a < b \Longrightarrow f(a) < f(b)$
+	\item décroissante si $a \geq b \Longrightarrow f(a) \geq f(b)$
+	\item strictement décroissante si
+	    $a > b \Longrightarrow f(a) > f(b)$
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    Une fonction $f:I \to \mathbb{R}$, dérivable sur un intervalle I
+    ouvert.
+    \begin{enumerate}
+	\item f est croissante $\Longleftrightarrow f'(x) \geq 0,
+	    \forall x \in I$
+	\item $f'(x) >0 \forall x \in I$, alors f est strictement
+	    croissante sur I
+	\item f est décroissante $\Longleftrightarrow f'(x) \leq 0,
+	    \forall x \in I$
+	\item $f'(x) <0 \forall x \in I$, alors f est strictement
+	    décroissante sur I
+    \end{enumerate}
+\end{theorem}
+
+\begin{intuition}
+    La preuve se fait avec le théorème des accroissements finis.
+\end{intuition}
+
+\begin{remark}
+    f strictement croissante $\not\Longrightarrow f'(x)>0 \forall x$
+\end{remark}
+
+\subsection{Règle de l'Hospital}
+
+\begin{theorem}[Règle de l'Hospital]
+    Soient $f,g:I \to \mathbb{R}$, des fonctions dérivables. Soit
+    $a \in I$ et supposons que f(a)=0 et g(a)=0. Soit $a \in I$ et
+    supposons que $f(a)=0, g(a)=0$. Si
+    $$ \lim_{x \to a} \frac{f'(x)}{g'(x)}=l, \text{ alors }
+    \lim_{x \to a} \frac{f(x)}{g(x)} = l$$
+\end{theorem}
+
+\begin{remark}
+    L'hypothèse que $ \lim_{x \to a} \frac{f'(x)}{g'(x)}$ existe suppose
+    aussi que $g'(x) \neq 0 \forall x$ assez proche de a. La règle de
+    l'hospital marche quand même s'il y a une discontinuité dans
+    l'intervalle I, on ne veut juste pas que ce soit autour de a
+\end{remark}
+
+\begin{intuition}
+    La règle de l'hospital nous permet d'évaluer la limite de forme
+    indéterminée avec la dérivée
+\end{intuition}
+
+\begin{lemma}
+    Soient $f,g:[a,b] \to \mathbb{R}$, deux fonctions continues sur [a,b]
+    et dérivales sur (a,b). Alors, il existe $c \in (a,b)$ tel que
+    $$ (f(b) - f(a)) g'(c) = (g(b)-g(a))f'(c) $$
+\end{lemma}
+
+\begin{remark}
+    Le cas g(x)=x est le théorème des accroissements finis
+\end{remark}
+
+\begin{remark}[Lien entre théorème des accroissements finis et Règle
+    de l'Hospital]
+
+\end{remark}
 
 \subsection{Approximation}
 
@@ -705,12 +1144,10 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 \subsection{Méthode de Newton}
 
 
-\subsection{Déterminer les zéros d'une fonction}
-
-\subsection{Problèmes de Points Fixes}
-
 \pagebreak
+
 \section{Séries}
+
 \subsection{Overview}
 
 
