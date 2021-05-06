@@ -1137,12 +1137,33 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 
 \subsection{Approximation}
 
-\subsection{Développements Limités}
+\subsubsection{Théorème des Développements Limités}
 
-\subsection{Théorème de Taylor}
+\begin{definition}[Théorème des Développements Limités]
 
-\subsection{Méthode de Newton}
+\end{definition}
 
+\subsubsection{Théorème de Taylor}
+
+\begin{theorem}[Théorème de Taylor]
+
+\end{theorem}
+
+\subsubsection{Méthode de Newton}
+
+\begin{theorem}[Méthode de Newton]
+
+\end{theorem}
+
+\begin{intuition}
+
+\end{intuition}
+
+\begin{remark}[Convergence Quadratique]
+
+\end{remark}
+
+\subsection{Tracés de Graphe}
 
 \pagebreak
 
@@ -1150,12 +1171,25 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 
 \subsection{Overview}
 
-
 \subsection{Convergence des séries}
+
+
 
 \subsection{Séries célèbres}
 
+\begin{proposition}[Série Géométrique]
+\end{proposition}
+\begin{proposition}[Série Harmonique]
+\end{proposition}
+\begin{proposition}[Série de Téléscopique]
+\end{proposition}
+\begin{proposition}[Série de Riemann]
+\end{proposition}
+
 \subsection{Critères de Convergence pour les séries à termes positifs}
+
+Lorsqu'on veut déterminer la convergence de séries à termes positifs,
+on peut utiliser les critères suivants:
 
     \begin{enumerate}
 	\item Critère de Comparaison
@@ -1168,6 +1202,67 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 
 \subsection{Convergence des séries alternées et Critère de Leibniz}
 
+\begin{definition}[Convergence Absolue et Conditionnelle]
+    Une série $sum_{n=1}^{\infty} a_n$ est dite
+    \begin{enumerate}
+	\item Absolument Convergente si $sum_{n=1}^{\infty} |a_n| $
+	    converge
+	\item Conditionnellement Convergente si $sum_{n=1}^{\infty} |a_n|$
+	    diverge
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Critère de Leibniz]
+\end{theorem}
+
+\begin{theorem}
+    Si une série est absolument convergente, alors elle converge
+\end{theorem}
+
+\begin{theorem}[Produit de Cauchy]
+    Soient $S = sum_{n=1}^{\infty} a_n$ et $T = sum_{n=1}^{\infty} b_n$.
+    On pose $$ P:= sum_{n=1}^{\infty} (a_n b_n + a_1 b_{n-1} + ... +
+    a_{n-1} b_1 + a_n b_n) = sum_{n=0}^{\infty} sum_{n=0}^{n}
+    (a_k - b_{n-k})$$
+    \begin{enumerate}
+	\item Si S est absolument convergente et T converge, alors P
+	    converge et P=ST
+	\item Si S et T sont absolument convergentes, alors p est
+	    absolument convergente et P=ST
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Séries Entières}
+
+\begin{definition}[Série Entière]
+    Une série entière est une série de la forme
+    $$sum a_n x^n, a_n , x \in \mathbb{R}$$
+\end{definition}
+
+\begin{theorem}
+    Soit $sum a_n x^n$, une série entière. Il existe un unique $R \in
+    [0, \infty]$ tel que
+    \begin{enumerate}
+	\item $sum a_n x^n$ est absolument convergente si $|x|<R$
+	\item $sum a_n x^n$ est divergente si $|x|>R$
+    \end{enumerate}
+    On dit que R est le rayon de convergence de $sum a_n x^n$ et (-R,R)
+    est son intervalle de convergence
+\end{theorem}
+
+\begin{remark}
+    On parle de rayon de convergence, car on a un cercle en analyse
+    complexe.
+\end{remark}
+
+\begin{remark}
+    On utilise les séries entières (ou de puissance) pour estimer des
+    fonctions transcendantes $(sin, cos, tan, e^x, log x, ...)$ à
+    l'aide d'une somme de fonctions polynômiales. Cependant, la fonction
+    est similaire que sur un certain intervalle, d'ou l'intervalle de
+    convergence. Plus on ajoute de termes, plus notre estimation est
+    précise et plus notre intervalle grandit.
+\end{remark}
 
 \pagebreak
 
