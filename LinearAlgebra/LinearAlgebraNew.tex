@@ -600,7 +600,9 @@ entre eux, car les propriétés linéaires des vecteurs et de l'espace sont
 gardées. De plus, travailler avec une base orthonormale est plus pratique
 puisque le quadrillage forment des rectangles (et non des parallélogrammes).
 
-\subsection{Produit Scalaire}
+\subsection{Produit Scalaire et Projection Orthogonale}
+
+\subsubsection{Orthogonalié et Projections}
 
 \begin{definition}[Produit Scalaire]
     Soit u et v, deux vecteur de $\mathbb{R}^n$. Le produit scalaire de u
@@ -627,7 +629,7 @@ puisque le quadrillage forment des rectangles (et non des parallélogrammes).
     se faire avec la formule de l'angle, qu'on verra plus tard.
 \end{remark}
 
-\subsection{Norme d'un vecteur}
+\subsubsection{Norme d'un vecteur}
 
 \begin{theorem}[Norme d'un vecteur]
     On appelle la longueur d'un vecteur (ou norme) $u \in \mathbb{R}^n$
@@ -656,7 +658,7 @@ puisque le quadrillage forment des rectangles (et non des parallélogrammes).
     \end{enumerate}
 \end{theorem}
 
-\subsection{Angle entre deux vecteurs}
+\subsubsection{Angle entre deux vecteurs}
 
 \begin{theorem}[Angle entre deux vecteurs]
     Soit u et v, deux vecteurs non nul de $\mathbb{R}^n$. L'angle entre
@@ -679,12 +681,107 @@ puisque le quadrillage forment des rectangles (et non des parallélogrammes).
     ne vont pas dans la même direction, d'ou le produit vectoriel de 0
 \end{intuition}
 
-\subsection{Projection Orthogonale}
+\subsubsection{Projection Orthogonale}
 
+\begin{proposition}[Projection Orthogonale]
+    Soit $ u \neq 0$ et y, deux vecteurs de $\mathbb{R}^n$. La projection
+    orthogonale de y sur u est le vecteur donné par
+    $$ ŷ = proj_u y = \frac{y \cdot u}{u \cdot u} u $$
+\end{proposition}
 
-
+\begin{intuition}[D'ou vient la projection orthogonale]
+    Soit $ŷ=ku, y=ŷ+z, z \perp u$. On a que
+    \begin{enumerate}
+	\item $ŷ=ku$ :
+	\item $y=ŷ+z = ku +z$
+	\item $ z \perp u \Longleftrightarrow z \cdot u=0$
+    \end{enumerate}
+\end{intuition}
 
 \subsection{Sous-Espace Orthogonal}
+
+\begin{definition}[Sous-Ensemble Orthogonal]
+    Soit W, un sous-ensemble de $\mathbb{R}^n$. L'ensemble des vecteurs
+    orthogonaux à tous les vecteurs de W est appelé le sous-ensemble
+    orthogonal de W. Il est noté
+    $$ W^\perp = {v \in \mathbb{R}^n | \forall _{w \in W} v \perp w } $$
+\end{definition}
+
+\begin{intuition}
+    C'est la famille des vecteurs orthogonaux à tous les vecteurs de la
+    famille W
+\end{intuition}
+
+\begin{problem}[Trouver $W^\perp$]
+    Si on veut déterminer $W^\perp$, on n'a qu'à résoudre le système
+    d'équations linéaires formés de vecteurs de $W_i \cdot v = 0$
+\end{problem}
+
+\begin{definition}[Sous-Espace Orthogonal]
+    Soit W, un sous-ensemble de $\mathbb{R}^n$. Alors $W^\perp$ est un
+    sous-espace vectoriel
+\end{definition}
+
+\begin{intuition}
+    On sait que $W^\perp$,car ses vecteurs sont linéairement indépendants
+\end{intuition}
+
+\begin{theorem}[Description d'un sous-espace orthogonal]
+    Un vecteur appartient à $W^\perp \Longleftrightarrow$ si il est
+    orthogonal à tous les vecteurs d'une famille génératrice de W
+\end{theorem}
+
+\subsubsection{Famille Orthogonale}
+
+\begin{definition}[Famille Orthogonale]
+    On dit qu'une famille de vecteurs $B =(u_1, u_2, ... , u_p)$ de
+    $\mathbb{R}^n$ est orthogonale si pour tout $i \neq j, u_i$ est
+    orthogonal à $u_j(u_i \cdot u_j =0)$
+\end{definition}
+
+\begin{intuition}
+    Une famille orthogonale est une famille dont tous les vecteurs
+    sont orthogonales entre eux c-à-d qu'ils sont à 90 degrés entre eux.
+    Travailler avec une famille orthogonale est plutôt pratique, car
+    notre quadrillage est rectangulaire (et non pas des parallélogrammes)
+\end{intuition}
+
+\begin{problem}[Montrer que la famille B est orthogonale]
+    Pour montrer qu'une famille est orthogonale, on veut montrer
+    que chaque paire de vecteurs de la famille est orthogonale
+    entre elles, c-à-d que $u_i \cdot u_j =0$
+\end{problem}
+
+\begin{theorem}[Base Orthogonale]
+    Une famille orthogonale de vecteurs non nuls est une base de
+    l'espace qu'elle engendre
+\end{theorem}
+
+\begin{intuition}
+    On sait que les vecteurs d'une famille orthogonale sont perpendiculaires
+    entre eux, ce qui veut aussi dire qu'ils sont linéairement indépendants
+    et forment donc une base
+\end{intuition}
+
+\begin{theorem}[Coordonnées dans une base orthogonale]
+    Soit $B =(u_1, u_2, ... , u_p)$, une base orthogonale d'un sous-espace
+    W de $\mathbb{R}^n$. Pour tout $y \in W$,
+    $$ y = proj_{u_1}y + ... + proj_{u_p}y = \sum proj_{u_i}y =
+    \sum (\frac{y \cdot u_i}{u_i \cdot u_i}) u_i$$
+\end{theorem}
+
+\begin{intuition}
+
+\end{intuition}
+
+\begin{remark}[Illustration du théorème]
+
+\end{remark}
+
+
+\begin{problem}[Trouver les coordonnées de y dans la base B]
+
+\end{problem}
 
 \pagebreak
 
