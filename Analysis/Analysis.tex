@@ -5,7 +5,7 @@
 \usepackage{parskip}
 \usepackage{textgreek}
 \begin{document}
-\title{Lectures Notes for Analysis}
+\title{Notes de Cours - Analyse I}
 \author{Emulie Chhor}
 \maketitle
 
@@ -15,7 +15,7 @@ Le premier cours d'analyse porte sur la même matière que le calcul différenti
 et intégral, mais est plus rigoureux. La majorité du cours met l'emphase sur la
 démonstration des preuves et théorèmes et très peu sur le calcul.\\
 
-MAT1000 porte sur les chapitres suivants:\\
+MAT1000 porte sur les chapitres suivants:
 
     \begin{enumerate}
 	\item Nombres Rationnels et Nombres Réels
@@ -29,10 +29,10 @@ MAT1000 porte sur les chapitres suivants:\\
 	\item Séries
     \end{enumerate}
 
-\newtheorem{definition}{Definition}[subsection]
-\newtheorem{theorem}{Theorem}[subsection]
-\newtheorem{corollary}{Corollary}[subsection]
-\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Définition}[subsection]
+\newtheorem{theorem}{Théorème}[subsection]
+\newtheorem{corollary}{Corollaire}[subsection]
+\newtheorem{lemma}[theorem]{Lemme}
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{axiom}{Axiome}
 \newtheorem{property}{Propriété}[subsection]
@@ -64,7 +64,7 @@ corps ordonné qui est TODO
 \end{lemma}
 
 \begin{axiom}
-    Il existe un corps totalement ordonné de $\mathbb{R}$ tel que:\\
+    Il existe un corps totalement ordonné de $\mathbb{R}$ tel que:
     \begin{enumerate}
 	\item $\mathbb{Q} \subseteq \mathbb{R} \text{ et } \mathbb{Q}$ est un sous-corps
 	    de $\mathbb{R}$
@@ -78,7 +78,7 @@ corps ordonné qui est TODO
 \end{proposition}
 
 \begin{theorem}[Propriétés d'un corps]
-    Un corps possède les propriétés suivantes:\\
+    Un corps possède les propriétés suivantes:
     \begin{enumerate}
 	\item Commutativité
 	\item Associativité
@@ -114,8 +114,7 @@ TODO
 \subsection{Propriétés des Inégalités}
 
 \begin{problem}[Montrer l'inégalité]
-    Lorsqu'on veut montrer une inégalité, on utilise les astuces suivantes:\\
-
+    Lorsqu'on veut montrer une inégalité, on utilise les astuces suivantes:
     \begin{enumerate}
 	\item Ajouter et Enlever le même terme
 	\item $x^2 > 0$
@@ -200,7 +199,7 @@ TODO
 \end{proposition}
 
 \begin{problem}[Montrer que la suite possède un suprémum/infimum]
-    Pour montrer que la suite possède un supremum/infimum, il faut montrer que:\\
+    Pour montrer que la suite possède un supremum/infimum, il faut montrer que:
     \begin{enumerate}
 	\item c est un majorant/minorant
 	\item c est le plus petit majorant/plus grand minorant
@@ -340,7 +339,7 @@ TODO
 \end{remark}
 
 \begin{theorem}
-    Soit $ f:A \to B$, une fonction:\\
+    Soit $ f:A \to B$, une fonction:
     \begin{enumerate}
 	\item si f est surjective, alors $|A| \geq |B|$
 	\item si f est injective, alors $|A| \leq |B|$
@@ -371,7 +370,7 @@ on veut calculer sa limite
 
 
 \begin{definition}[Suite Borné]
-    La suite $(a_n)$,\\
+    La suite $(a_n)$,
     \begin{enumerate}
 	\item majorée si $\exists M \in \mathbb{R}, \forall n \in \mathbb{N},
 	    (a_n) \leq M$
@@ -383,7 +382,7 @@ on veut calculer sa limite
 \end{definition}
 
 \begin{definition}[Croissance et Décroissance d'une Suite]
-    La suite $(a_n)$ est\\
+    La suite $(a_n)$ est
     \begin{enumerate}
 	\item strictement croissante si $a_(n+1) > a_n, \forall n \in \mathbb{N}$
 	\item croissante si $a_(n+1) \geq a_n, \forall n \in \mathbb{N}$
@@ -468,7 +467,7 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 
 \begin{proposition}
     Soit $(a_n)$, une suite bornée. On pose $b_n := \sup_{m \geq n} a_m$ et
-    $c_n := \inf_{m \geq n} a_m$, alors\\
+    $c_n := \inf_{m \geq n} a_m$, alors
     \begin{enumerate}
 	\item $(b_n)$ est décroissante et convergente et
 	    $ \lim_{n \to \infty} b_n = \inf_{n \geq 1} \sup_{m \geq n} a_m$
@@ -492,7 +491,7 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 
 \begin{theorem}
     Supposons que $\lim_{n \to \infty} a_n$ et $\lim_{n \to \infty} b_n =b,
-    a,b, \in \mathbb{R}$, alors\\
+    a,b, \in \mathbb{R}$, alors
     \begin{enumerate}
 	\item $\lim_{n \to \infty} |a_n| = |a|$
 	\item $\lim_{n \to \infty} (a_n + b_n) = a+b$
@@ -544,7 +543,7 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 \end{theorem}
 
 \begin{theorem}
-    Soit $q \neq 1$. On pose $S_n = 1 + q + q^2 + ... + q^(n-1)$\\
+    Soit $q \neq 1$. On pose $S_n = 1 + q + q^2 + ... + q^(n-1)$
     \begin{enumerate}
 	\item $S_n = \frac{1 - q^n}{1-q}$
 	\item $|q|<1$, alors $S_n \rightarrow \frac{1}{1-q}$
@@ -838,8 +837,8 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 
 \begin{definition}[Continuité Uniforme]
     Soit $f:D \to \mathbb{R}$, une fonction. On dit qu'elle est
-    uniformément continue si $\forall \varepsilon > 0, \exists \delta >0,
-    \forall x,y \in D, |x-y| \Longrightarrow |f(x) - f(y)|< \varepsilon$
+    uniformément continue si $$\forall \varepsilon > 0, \exists \delta >0,
+    \forall x,y \in D, |x-y| \Longrightarrow |f(x) - f(y)|< \varepsilon$$
 \end{definition}
 
 \begin{theorem}
@@ -910,7 +909,7 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 
 \begin{theorem}[Règle de Dérivation en Chaine]
     Si f et g sont dérivables en b = f(a), alors $g(f(x))$ est dérivable
-    en a et $$ (g \cdot \f)'(a) = g'(f(a)) f'(a) = g'(b) f'(a) $$
+    en a et $$ (g \cdot f)'(a) = g'(f(a)) f'(a) = g'(b) f'(a) $$
 \end{theorem}
 
 \subsection{Extremums Relatifs et Absolues}
@@ -918,10 +917,10 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 \begin{definition}[Extremums Locaux]
     Soit $f:I \to \mathbb{R}$, une fonction et soit $a \in I$. On dit
     que a est un maximum local s'il existe un intervalle
-    $$(c,d) \subseteq I \text{ tel que } a \in \(c,d) \text{ et }
+    $$(c,d) \subseteq I \text{ tel que } a \in \ (c,d) \text{ et }
     f(x) \leq f(a)$$
     On dit que a est un minimum local s'il existe un intervalle
-    $$(c,d) \subseteq I \text{ tel que } a \in \(c,d) \text{ et }
+    $$(c,d) \subseteq I \text{ tel que } a \in \ (c,d) \text{ et }
     f(x) \geq f(a)$$
 \end{definition}
 
@@ -1185,13 +1184,13 @@ ou non.
 
 \begin{definition}[Série de terme général]
     La série S de termes général $a_n$ est l'expression
-    $$ S = \sum_{n=1}{\infty} a_n = a_1 + a_2 + ... + a_n$$
+    $$ S = \sum_{n=1}^{\infty} a_n = a_1 + a_2 + ... + a_n$$
 \end{definition}
 
-\begin{definiton}[Sommes Partielles]
-    Soit $S_n = \sum{k=1}{n} a_k$. On appelle $S_n$ la suite des sommes
+\begin{definition}[Sommes Partielles]
+    Soit $S_n = \sum{k=1}^{n} a_k$. On appelle $S_n$ la suite des sommes
     partielles de S
-\end{definiton}
+\end{definition}
 
 \begin{definition}[Convergence de Série]
     Si $S_n$ converge, alors on dit que la série S converge et on écrit
@@ -1245,13 +1244,13 @@ ou non.
 \end{intuition}
 
 \begin{theorem}[Propriétés de Séries]
-    Soient $S = sum_{n=1}^{\infty} a_n$ et $T = sum_{n=1}^{\infty} b_n$,
+    Soient $S = \sum_{n=1}^{\infty} a_n$ et $T = \sum_{n=1}^{\infty} b_n$,
     deux séries convergentes. Alors,
     \begin{enumerate}
-	\item $sum_{n=1}^{\infty} (c a_n + d b_n) = cS + dT, c,d \in
+	\item $\sum_{n=1}^{\infty} (c a_n + d b_n) = cS + dT, c,d \in
 	    \mathbb{R}$
-	\item Si $sum_{n=1}^{\infty} a_n$ diverge, alors
-	    $sum_{n=1}^{\infty} c a_n$ diverge si $ c \neq 0$
+	\item Si $\sum_{n=1}^{\infty} a_n$ diverge, alors
+	    $\sum_{n=1}^{\infty} c a_n$ diverge si $ c \neq 0$
     \end{enumerate}
 \end{theorem}
 
@@ -1286,11 +1285,11 @@ ou non.
 \subsection{Convergence des séries alternées et Critère de Leibniz}
 
 \begin{definition}[Convergence Absolue et Conditionnelle]
-    Une série $sum_{n=1}^{\infty} a_n$ est dite
+    Une série $\sum_{n=1}^{\infty} a_n$ est dite
     \begin{enumerate}
-	\item Absolument Convergente si $sum_{n=1}^{\infty} |a_n| $
+	\item Absolument Convergente si $\sum_{n=1}^{\infty} |a_n| $
 	    converge
-	\item Conditionnellement Convergente si $sum_{n=1}^{\infty} |a_n|$
+	\item Conditionnellement Convergente si $\sum_{n=1}^{\infty} |a_n|$
 	    diverge
     \end{enumerate}
 \end{definition}
@@ -1303,9 +1302,9 @@ ou non.
 \end{theorem}
 
 \begin{theorem}[Produit de Cauchy]
-    Soient $S = sum_{n=1}^{\infty} a_n$ et $T = sum_{n=1}^{\infty} b_n$.
-    On pose $$ P:= sum_{n=1}^{\infty} (a_n b_n + a_1 b_{n-1} + ... +
-    a_{n-1} b_1 + a_n b_n) = sum_{n=0}^{\infty} sum_{n=0}^{n}
+    Soient $S = \sum_{n=1}^{\infty} a_n$ et $T = \sum_{n=1}^{\infty} b_n$.
+    On pose $$ P:= \sum_{n=1}^{\infty} (a_n b_n + a_1 b_{n-1} + ... +
+    a_{n-1} b_1 + a_n b_n) = \sum_{n=0}^{\infty} \sum_{n=0}^{n}
     (a_k - b_{n-k})$$
     \begin{enumerate}
 	\item Si S est absolument convergente et T converge, alors P
@@ -1319,17 +1318,17 @@ ou non.
 
 \begin{definition}[Série Entière]
     Une série entière est une série de la forme
-    $$sum a_n x^n, a_n , x \in \mathbb{R}$$
+    $$ \sum a_n x^n, a_n , x \in \mathbb{R}$$
 \end{definition}
 
 \begin{theorem}
-    Soit $sum a_n x^n$, une série entière. Il existe un unique $R \in
+    Soit $ \sum a_n x^n$, une série entière. Il existe un unique $R \in
     [0, \infty]$ tel que
     \begin{enumerate}
-	\item $sum a_n x^n$ est absolument convergente si $|x|<R$
-	\item $sum a_n x^n$ est divergente si $|x|>R$
+	\item $ \sum a_n x^n$ est absolument convergente si $|x|<R$
+	\item $ \sum a_n x^n$ est divergente si $|x|>R$
     \end{enumerate}
-    On dit que R est le rayon de convergence de $sum a_n x^n$ et (-R,R)
+    On dit que R est le rayon de convergence de $ \sum a_n x^n$ et (-R,R)
     est son intervalle de convergence
 \end{theorem}
 
