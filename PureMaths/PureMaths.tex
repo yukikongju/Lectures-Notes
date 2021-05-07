@@ -106,38 +106,38 @@ all share those properties.
 \subsection{Describing Sets}
 
 \begin{definition}[Set]
-A set is a collection of objects. The set can either be finite or infinite. We
-can describe the set based on a common characteristic among the elements of the
-set using the set builder notation. We write \(\{x|P(x)\}\), where P(x) is the common
-characteristic.
+    A set is a collection of objects. The set can either be finite or infinite. We
+    can describe the set based on a common characteristic among the elements of the
+    set using the set builder notation. We write \(\{x|P(x)\}\), where P(x) is the common
+    characteristic.
 \end{definition}
 
 \begin{definition}[Axiom of Extensionality]
-Two sets are equivalent if they contain the same element, we write:
-$$ \forall x(x \in A \leftrightarrow x \in B) $$
+    Two sets are equivalent if they contain the same element, we write:
+    $$ \forall x(x \in A \leftrightarrow x \in B) $$
 \end{definition}
 
 \begin{definition}[Cardinality]
-The cardinality of an element is the number of different element in the set. For
-example, the set S={1,2,3} has the same cardinality as the set T={1,2,2,3}
+    The cardinality of an element is the number of different element in the set. For
+    example, the set S={1,2,3} has the same cardinality as the set T={1,2,2,3}
 \end{definition}
 
 \begin{theorem}[Fence-Post Formula]
-To count the number of integers in a set, we use the fence-post formula
-$$ n - m + 1 $$
+    To count the number of integers in a set, we use the fence-post formula
+    $$ n - m + 1 $$
 \end{theorem}
 
 \subsection{Subsets}
 
 \begin{definition}[Subset]
-We say that A is a subset of B if every element of A is an element of B. We write
-\( A \subseteq B\)
-$$ \forall x(x \in A \rightarrow x \in B) $$
+    We say that A is a subset of B if every element of A is an element of B. We write
+    \( A \subseteq B\)
+    $$ \forall x(x \in A \rightarrow x \in B) $$
 \end{definition}
 
 \begin{theorem}
-Every set A is a subset of itself
-$$ \forall x(x \in A \rightarrow x \in A) $$
+    Every set A is a subset of itself
+    $$ \forall x(x \in A \rightarrow x \in A) $$
 \end{theorem}
 
 \begin{theorem}
@@ -146,7 +146,7 @@ $$ \forall x(x \in A \rightarrow x \in A) $$
 \end{theorem}
 
 \begin{theorem}[Transitivity of sets]
-Let A, B, C be sets such that $$ A \subseteq B, B \subseteq C. Then, A \subseteq C $$
+    Let A, B, C be sets such that $$ A \subseteq B, B \subseteq C. Then, A \subseteq C $$
 \end{theorem}
 
 \begin{theorem}
@@ -490,6 +490,20 @@ generate all the numbers with that set. We need the irrational numbers.
 	\item if a $\in$ P, then exactly one of the following holds:
 	    $$ a \in P, a=0, \text{or} -a \in P $$
     \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    Since P is the set of positive element, the following are equivalent:
+    \begin{enumerate}
+	\item $a \in P \Longleftrightarrow a \geq 0$
+	\item $-a \in P \Longleftrightarrow a \leq 0$
+	\item $ a \leq b \Longleftrightarrow a<b or a=b$
+	\item $ a \geq b \Longleftrightarrow a>b or a=b$
+    \end{enumerate}
+\end{remark}
+
+\begin{definition}[Nonnegative Number]
+    Let x be a non negative number. Then, a is positive or zero
 \end{definition}
 
 \begin{theorem}
@@ -983,7 +997,7 @@ properties on vectors.
     \begin{enumerate}
 	\item $ 0 \in U$
 	\item for all $v,w \in U, v+w \in U$
-    \item for all $ v\in U \text{and} k \in \mathbb{F}, kv \in U$
+	\item for all $ v\in U \text{and} k \in \mathbb{F}, kv \in U$
     \end{enumerate}
 \end{theorem}
 
@@ -1025,11 +1039,11 @@ properties on vectors.
 \end{theorem}
 
 \begin{theorem}
-Let $V=\mathbb{R}^{n}=\left\{\left(k_{1}, k_{2}, \ldots, k_{n}\right) \mid k_{1}, k_{2}, \ldots, k_{n} \in \mathbb{R}\right\}$ be the vector space over $\mathbb{R}$ with the
-usual definitions of addition and scalar multiplication. Then
-$$
-\operatorname{span}\{(1,0,0, \ldots, 0),(0,1,0, \ldots, 0), \ldots,(0,0,0, \ldots, 1)\}=\mathbb{R}^{n}
-$$
+    Let $V=\mathbb{R}^{n}=\left\{\left(k_{1}, k_{2}, \ldots, k_{n}\right) \mid k_{1}, k_{2}, \ldots, k_{n} \in \mathbb{R}\right\}$ be the vector space over $\mathbb{R}$ with the
+    usual definitions of addition and scalar multiplication. Then
+    $$
+    \operatorname{span}\{(1,0,0, \ldots, 0),(0,1,0, \ldots, 0), \ldots,(0,0,0, \ldots, 1)\}=\mathbb{R}^{n}
+    $$
 \end{theorem}
 \subsection{Problem Set}
 \subsubsection{Level 1}
@@ -1041,14 +1055,71 @@ $$
 
 \section{Lesson 9 - Logic: Logical Arguments}
 \subsection{Overview}
+
+In lesson 1, we introduce the principle of statement and logical
+connector to express a proposition.
+
 \subsection{Statements and Substatements}
+
+\begin{definition}[Substatement]
+    A substatement is a statement where we dropped unecessary
+    parentheses (parenthesese that don't add clarity)
+\end{definition}
+
 \subsection{Logical Equivalence}
-\begin{theorem}
-\end{theorem}
-\begin{theorem}
-\end{theorem}
-\begin{theorem}
-\end{theorem}
+
+\begin{definition}[Logical Statement]
+    Let $\phi$ and $\psi$ be statements. We say that $\phi$ and $\psi$
+    are logically equivalent if every truth assignment of the propositional
+    variables lead to the same truth table. We write $\phi \equiv \psi$
+\end{definition}
+
+\begin{proposition}[Logical Equivalence]
+    Let p,q,r be propositional variables. Here is a list of propositional
+    equivalence
+    \begin{array}{l}
+	\text { Law of double negation:  } p \equiv \neg(\neg p)\\
+	\begin{array}{lll}
+	    \text { De Morgan's laws:  } & \neg(p \wedge q) \equiv \neg p \vee \neg q & \neg(p \vee q) \equiv \neg p \wedge \neg q \\
+	    \text { Commutative laws:  } & p \wedge q \equiv q \wedge p & p \vee q \equiv q \vee p \\
+	    \text { Associative laws:  } & (p \wedge q) \wedge r \equiv p \wedge(q \wedge r) & (p \vee q) \vee r \equiv p \vee(q \vee r) \\
+	    \text { Distributive laws:  } & p \wedge(q \vee r) \equiv(p \wedge q) \vee(p \wedge r) & p \vee(q \wedge r) \equiv(p \vee q) \wedge(p \vee r) \\
+	    \text { Identity laws:  } & p \wedge \mathrm{T} \equiv p & p \wedge \mathrm{F} \equiv \mathrm{F} & p \vee \mathrm{T} \equiv \mathrm{T} \quad p \vee \mathrm{F} \equiv p \\
+	    \text { Negation laws:  } & p \wedge \neg p \equiv \mathrm{F} & p \vee \neg p \equiv \mathrm{T} \\
+	    \text { Redundancy laws:  } & p \wedge p \equiv p & p \vee p \equiv p \\
+	    \text { Absorption laws:  } & (p \vee q) \wedge p \equiv p & (p \wedge q) \vee p \equiv p \\
+	    \text { Law of the conditional:  } & p \rightarrow q \equiv \neg p \vee q &
+	\end{array}\\
+	\text { contrapositive:  }\\
+	p \rightarrow q \equiv \neg q \rightarrow \neg p\\
+	\text { Law  }\\
+	\begin{array}{l}
+	    \text { e contrapositive:  } p \rightarrow q=\neg q \rightarrow \neg p \\
+	    \text { e biconditional:  } p \leftrightarrow q \equiv(p \rightarrow q) \wedge(q \rightarrow p)
+	\end{array}
+    \end{array}
+\end{proposition}
+
+\begin{definition}[Tautology]
+    A statement that has truth value T for all truth assignements is
+    called a Tautology
+\end{definition}
+
+\begin{definition}[Contradiction]
+    A statement that has truth value F for all truth assigments is called
+    a contradiction
+\end{definition}
+
+\begin{proposition}[Law of Logical Equivalence]
+    \begin{enumerate}
+	\item Law of transitivity of logical equivalence: Let $\phi, \psi$,
+	    and $\tau$ be statements such that $\phi \equiv \psi$ and
+	    $\psi \equiv \tau$. Then $\phi \equiv \tau$
+	\item Law of substitution of logical equivalents: Let $\phi, \psi$, and $\tau$ be statements such that $\phi \equiv \psi$ and $\phi$ is a substatement of $\tau$. Let $\tau^{*}$ be the sentence formed by replacing $\phi$ by $\psi$ inside of $\tau$. Then $\tau^{*} \equiv \tau$
+	\item Law of substitution of sentences: Let $\phi$ and $\psi$ be statements such that $\phi \equiv \psi$, let $p$ be a propositional variable, and let $\tau$ be a statement. Let $\phi^{*}$ and $\psi^{*}$ be the sentences formed by replacing every instance of $p$ with $\tau$ in $\phi$ and $\psi$, respectively. Then $\phi^{*} \equiv \psi^{*}$
+    \end{enumerate}
+\end{proposition}
+
 \subsection{Validity in Sentential Logic}
 \subsection{Problem Set}
 \subsubsection{Level 1}
