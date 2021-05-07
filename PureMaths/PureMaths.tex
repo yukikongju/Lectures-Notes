@@ -1150,6 +1150,70 @@ connector to express a proposition.
 \end{proposition}
 
 \subsection{Validity in Sentential Logic}
+
+\begin{definition}[Logical Argument]
+    A logical argument (or proof) concists of premises (statements
+    we are given) and conclusions (statements we are not given)
+\end{definition}
+
+\begin{definition}[Valid Argument]
+    A logical argument is valid if every truth assignment that makes
+    all the premises true also makes all the conclusions true.\\
+    A logical argument that is not valid is called invalid or a fallacy
+\end{definition}
+
+\begin{definition}[Sound Argument]
+    We say that an argument is sound if
+    \begin{enumerate}
+	\item the argument is valid
+	\item all the premises are true
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    To show that an argument is invalid, we provide a counter example
+\end{remark}
+
+\begin{proposition}[Fallacy of the Converse]
+    $ p \to q \not\Longrightarrow q \to p$
+\end{proposition}
+
+\begin{remark}
+    Let $p \to q$
+    \begin{enumerate}
+	\item Converse: $ p \to p$ is not logically equivalent
+	\item Inverse: $ \neg p \to \neg q$ is not logically equivalent
+	\item Contrapositive: $ \neg q \to \neg p$ is logically equivalent
+    \end{enumerate}
+\end{remark}
+
+\begin{proposition}[Rules of Inference]
+    \begin{enumerate}
+	\item Modus Ponens: $ (p \to q) \land p \Longrightarrow q$
+	\item Modus Tollens: $ (p \to q) \land \neg q \Longrightarrow
+	    \neg p$
+	\item Disjunctive Syllogism: $ (p \lor q) \land \neg p
+	    \Longrightarrow q$
+	\item Hypothetical Syllogism: $ (p \to q) \land (q \to r)
+	    \Longrightarrow (p \to r)$
+	\item Conjunctive Introduction: $(p \land q) \Longrightarrow
+	    p \land q$
+	\item Disjunctive Introduction: $ p \Longrightarrow p \lor q$
+	\item Biconditional Introduction: $ (p \to q) \land (q \to p)
+	    \Longrightarrow (p \leftrightarrow q)$
+	\item Constructive Dilemma: $(p \to q) \land (r \to s)
+	    \land (p \lor r) \Longrightarrow (q \lor s)$
+	\item Destructive Dilemma: $(p \to q) \land (r \to s)
+	    \land (\neg q \lor \neq p) \Longrightarrow
+	    (\neq p \lor \neg r)$
+	\item Disjunctive Resolution: $(p \or q) \land (\neg p \lor r)
+	    \Longrightarrow (q lor r)$
+	\item Conjunctive Elimination: $ (p \land q) \Longrightarrow p$
+	\item Biconditional Elimination: $ (p \leftrightarrow q)
+	    \Longrightarrow (p \to q)
+    \end{enumerate}
+\end{proposition}
+
 \subsection{Problem Set}
 \subsubsection{Level 1}
 \subsubsection{Level 2}
