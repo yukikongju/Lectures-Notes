@@ -1,0 +1,200 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\begin{document}
+\title{Lecture Notes - Differential Equations by Professor Macauley}
+\author{Emulie Chhor}
+\maketitle
+
+\section*{Introduction}
+
+This document is a summary of concepts I have learned from Professor
+Macauley's Differential Equations Course.
+
+His course is separated into the following chapter:
+\begin{enumerate}
+    \item Introduction to ODE
+    \item First Order Differential Equations
+    \item Second Order Differential Equations
+    \item Systems of Differential Equations
+    \item Laplace Transforms
+    \item Fourier Series and Boundary Value Problems
+    \item Partiel Differential Equations
+\end{enumerate}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\pagebreak
+
+\section{Introduction to ODE}
+\subsection*{Overview}
+
+Le premier chapitre introduit la notion d'Ordinary Differential Equations,
+qui sont des equations differentielles à une seule variable. On
+n'apprend pas encore comment les résoudre, mais on désire les dessiner
+puisque ça nous donne une bonne idée de l'allure de la famille de solutions.
+
+Notons qu'il existe d'autres tyes d'équations différentielles (ex:
+PDEs, qui sont des équa diff avec 2 variables), mais on se penche sur les
+ODEs en premier.
+
+\subsection{What is a differential equation? }
+
+Une équation différentielle est une équation définie par ses fonctions
+et ses dérivées. On l'utilise pour modéliser:
+\begin{enumerate}
+    \item Growth : $ P'(t) = r P(t)$
+    \item Decay : $ P'(t) = r (1- \frac{P(t)}{M})P(t)$
+\end{enumerate}
+
+Éventuellement, le graphe devrait converger vers une valeur quelconque.\\
+
+Il est à noter qu'on cherche la famille de fonctions qui vérifie l'équation.
+ On pourra choisir la solution parmi cette famille de solutions plus tard.
+
+\subsection{Plotting solutions to differential equations. }
+
+Présentement, on n'est pas encore capable de résoudre une équation
+différentielle, mais on peut utiliser les outils du calcul pour tracer
+le graphe pour avoir une idée de l'allure de la famille de solutions.
+
+On distingue 2 types de solutions:
+\begin{enumerate}
+    \item Isocine: y' est une constante
+    \item Autonomous ODEs: y' est une fonction quelconque
+\end{enumerate}
+
+\subsubsection{Comment tracer les solutions}
+
+TODO
+
+\subsection{Approximating solutions to differential equations. }
+
+Présentement, on n'a pas enore les outils pour résoudre une équa diff.
+Par contre, on peut toujours se servir des concepts vu en calcul pour
+approximer les solutions à une équations différentielles. Il existe
+plusieurs méthodes:
+\begin{enumerate}
+    \item Euler's method: Approximating using stepwise Linear Approximations
+    \item Runge-Kutta's Method: skipped
+\end{enumerate}
+
+\subsubsection{Euler's Method}
+
+La méthode d'Euler conciste à tracer la fonction à l'aide d'approximation
+linéaire. On doit d'abord choisir un "step", qui représente la distance
+sur lequel on trace notre droite. Plus le step est petit, plus notre graphe
+aura l'air d'une courbe.
+
+Plus généralement, si on a $ y' = f(t,y)$ et $ y(t_0)$ avec un stepsize
+de h, on a:
+$$ (t_{k+1}, y_{k+1}) = (t_k + h, y_k + f(t_k, y_k) \cdot h) $$
+Il s'agit donc d'une méthode récursive pour tracer des graphes:
+on détermine la pente entre deux steps en considérant le triangle
+rectangle qui forme le point précédent et le point suivant.
+
+\pagebreak
+\section{First Order Differential Equations}
+\subsection*{Overview}
+
+\subsection{Separation of variables. }
+\subsection{Initial value problems.}
+\subsection{Falling objects with air resistance.}
+\subsection{Solving 1st order inhomogeneous ODEs.}
+\subsection{Linear differential equations.}
+\subsection{Basic mixing problems.}
+\subsection{Advanced mixing problems.}
+\subsection{The logistic equation.}
+
+\pagebreak
+\section{Second Order Differential Equations}
+\subsection*{Overview}
+
+\subsection{Second order linear ODEs.}
+\subsection{Equations with constant coefficients.}
+\subsection{The method of undetermined coefficients.}
+\subsection{Simple harmonic motion.}
+\subsection{Damped and driven harmonic motion.}
+\subsection{Variation of parameters.}
+\subsection{Cauchy-Euler equations.}
+\subsection{Power series solutions.}
+\subsection{The method of Frobenius.}
+
+\pagebreak
+\section{Systems of Differential Equations}
+\subsection*{Overview}
+
+\subsection{Basic matrix algebra.}
+\subsection{Eigenvalues and eigenvectors.}
+\subsection{Mixing with two tanks.}
+\subsection{Solving a 2x2 system of ODEs.}
+\subsection{Phase portraits with real eigenvalues.}
+\subsection{Phase portraits with complex eigenvalues.}
+\subsection{Phase portraits with repeated eigenvalues.}
+\subsection{Stability of phase portraits.}
+\subsection{of parameters for systems.}
+
+\pagebreak
+\section{Laplace Transforms}
+\subsection*{Overview}
+
+\subsection{What is a Laplace transform?}
+\subsection{Properties & applications of Laplace transforms.}
+\subsection{Discontinuous forcing terms.}
+\subsection{Periodic forcing terms.}
+\subsection{Impulse functions.}
+\subsection{Convolution.}
+
+\pagebreak
+\section{Fourier Series and Boundary Value Problems}
+
+\subsection{Introduction to Fourier series.}
+\subsection{Computing Fourier series.}
+\subsection{Fourier sine and cosine series.}
+\subsection{Complex Fourier series.}
+\subsection{Applications of Fourier series.}
+\subsection{Boundary value problems.}
+
+\subsection*{Overview}
+
+
+\pagebreak
+\section{Partial Differential Equations}
+\subsection*{Overview}
+
+\subsection{The heat equation.}
+\subsection{Different boundary conditions.}
+\subsection{The transport equation.}
+\subsection{The wave equation.}
+\subsection{Harmonic functions.}
+\subsection{Laplace's equation.}
+\subsection{The 2D heat equation.}
+\subsection{2D wave equation.}
+
+\pagebreak
+
+\section{Systems of Nonlinear Differential Equations}
+
+\subsection*{Overview}
+
+\subsection{Modeling with nonlinear systems.}
+\subsection{Linearization and steady-state analysis}
+\subsection{Predator-prey models}
+
+
+\pagebreak
+\end{document}
+\end{article}
+
