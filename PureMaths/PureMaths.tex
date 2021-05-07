@@ -1077,27 +1077,23 @@ connector to express a proposition.
 \begin{proposition}[Logical Equivalence]
     Let p,q,r be propositional variables. Here is a list of propositional
     equivalence
-    \begin{array}{l}
-	\text { Law of double negation:  } p \equiv \neg(\neg p)\\
-	\begin{array}{lll}
-	    \text { De Morgan's laws:  } & \neg(p \wedge q) \equiv \neg p \vee \neg q & \neg(p \vee q) \equiv \neg p \wedge \neg q \\
-	    \text { Commutative laws:  } & p \wedge q \equiv q \wedge p & p \vee q \equiv q \vee p \\
-	    \text { Associative laws:  } & (p \wedge q) \wedge r \equiv p \wedge(q \wedge r) & (p \vee q) \vee r \equiv p \vee(q \vee r) \\
-	    \text { Distributive laws:  } & p \wedge(q \vee r) \equiv(p \wedge q) \vee(p \wedge r) & p \vee(q \wedge r) \equiv(p \vee q) \wedge(p \vee r) \\
-	    \text { Identity laws:  } & p \wedge \mathrm{T} \equiv p & p \wedge \mathrm{F} \equiv \mathrm{F} & p \vee \mathrm{T} \equiv \mathrm{T} \quad p \vee \mathrm{F} \equiv p \\
-	    \text { Negation laws:  } & p \wedge \neg p \equiv \mathrm{F} & p \vee \neg p \equiv \mathrm{T} \\
-	    \text { Redundancy laws:  } & p \wedge p \equiv p & p \vee p \equiv p \\
-	    \text { Absorption laws:  } & (p \vee q) \wedge p \equiv p & (p \wedge q) \vee p \equiv p \\
-	    \text { Law of the conditional:  } & p \rightarrow q \equiv \neg p \vee q &
-	\end{array}\\
-	\text { contrapositive:  }\\
-	p \rightarrow q \equiv \neg q \rightarrow \neg p\\
-	\text { Law  }\\
-	\begin{array}{l}
-	    \text { e contrapositive:  } p \rightarrow q=\neg q \rightarrow \neg p \\
-	    \text { e biconditional:  } p \leftrightarrow q \equiv(p \rightarrow q) \wedge(q \rightarrow p)
-	\end{array}
-    \end{array}
+    \begin{enumerate}
+	\item Law of double negation: $p \equiv \neg(\neg p)$
+	\item De Morgan's laws: \neg(p \wedge q) \equiv \neg p \vee \neg q & \neg(p \vee q) \equiv \neg p \wedge \neg q
+	\item Commutative laws:  p \wedge q \equiv q \wedge p & p \vee q \equiv q \vee p
+	\item Associative laws:  (p \wedge q) \wedge r \equiv p \wedge(q \wedge r) & (p \vee q) \vee r \equiv p \vee(q \vee r)
+	\item Distributive laws:  p \wedge(q \vee r) \equiv(p \wedge q) \vee(p \wedge r) & p \vee(q \wedge r) \equiv(p \vee q) \wedge(p \vee r)
+	\item Identity laws: & p \wedge \mathrm{T} \equiv p & p \wedge \mathrm{F} \equiv \mathrm{F} & p \vee \mathrm{T} \equiv \mathrm{T} \quad p \vee \mathrm{F} \equiv p
+	\item Negation laws: p \wedge \neg p \equiv \mathrm{F} & p \vee \neg p \equiv \mathrm{T}
+	\item Redundancy laws: p \wedge p \equiv p & p \vee p \equiv p
+	\item Absorption laws: (p \vee q) \wedge p \equiv p & (p \wedge q) \vee p \equiv p
+	\item Law of the conditional:  p \rightarrow q \equiv \neg p \vee q
+	\item Law of contrapositive: $p \rightarrow q=\neg q \rightarrow \neg p$
+	\item Contrapositive:
+	    $p \rightarrow q \equiv \neg q \rightarrow \neg p$
+	\item Biconditional: $p \leftrightarrow q \equiv(p \rightarrow q) \wedge(q \rightarrow p)$
+
+    \end{enumerate}
 \end{proposition}
 
 \begin{definition}[Tautology]
