@@ -43,28 +43,57 @@ discrete et à temps continu, dépendemment si on considère le temps discret ou
 continu.
 
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item Processus Stochastiques
     \item Marche Aléatoire
-    \item Processus de Branchement
-    \item Processus de Comptage
-    \end{enumerate}
+\end{enumerate}
 
-Un Processus Stochastique peut être à temps discret si on considère le temps
-à chaque unité, ou continue si on observe le temps de façon continue. On peut
-donc voir le processus stochastique comme une fonction à deux variables définies
-sur son univers $\Omega$ et l'espace temps.\\
+\subsection{Processus Stochastiques}
 
-La fonction réelle du temps est dite trajectoire.
+Un processus stochastique est une v.a aléatoire qui est dépendante du temps.
+Elle peut être discrète ou continue (dépendemment à quelle fréquence on
+observe la valeur de la v.a)\\
+
+On dit que le temps est déterministe. Why?\\
+
+On peut écrire un p.s. $X( \omega, t )$, avec omega: les scenarios
+possibles et t, le temps. Si on fixe le temps, on parle de variable
+aléatoire. Si on fixe l'évènement et on laisse le temps libre, on
+parle de trajectoire.
+
+\subsection{Marche Aléatoire}
+
+La marche aléatoire représente la valeur d'un p.s. discret à un temps donnée.
+On peut la modéliser de deux façons:
+\begin{enumerate}
+    \item Conditionnement: valeur à la dernière position $\pm$ 1
+    \item Somme de variables indicatrices: $X_n = Y_1 + ... +Y_n$
+\end{enumerate}
+
+Il est à noter qu'on préfère représenter une marche aléatoire par une
+somme de variable indicatrice puisque ça rend le calcul plus facile.
+
+Espérance: $\mathbb{E} (X_n) = n (2p-1)$
+Variance: $ Var(X_n)= 4np(1-p)$
+
+\subsection{D'ou vient la formule de l'esperance et de la variance d'une
+marche aleatoire}
+
+Il s'agit de l'esperance et de la variance pour une somme de variable
+indicatrice.
+
+$E(x) = n(1 * p + (-1) (1-p))$ : nombre de pas x esperance succes/echec au
+i-ème pas
+$V(X)$ = somme des variances = $ n [ E(Y^2) - E(Y)^2 ]$
 
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -73,19 +102,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -93,19 +122,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -113,19 +142,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -133,19 +162,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -153,19 +182,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -173,19 +202,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -193,19 +222,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -213,19 +242,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -233,19 +262,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -253,19 +282,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -273,19 +302,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -293,19 +322,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -313,19 +342,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -333,19 +362,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
@@ -353,19 +382,19 @@ La fonction réelle du temps est dite trajectoire.
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}
-    \begin{enumerate}
+\begin{enumerate}
     \item
     \item
     \item
-    \end{enumerate}
+\end{enumerate}
 \subsection{TP}
 
 \pagebreak
