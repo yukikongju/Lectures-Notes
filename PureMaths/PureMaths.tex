@@ -40,6 +40,7 @@ This book is an introduction to undergraduate pure mathematics. This books conta
 \newtheorem{corollary}{Corollary}[subsection]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem*{remark}{Remark}
+\newtheorem*{proposition}{Proposition}
 
 \section{Lesson 1 - Logic: Statements and Truth}
 
@@ -1079,20 +1080,52 @@ connector to express a proposition.
     equivalence
     \begin{enumerate}
 	\item Law of double negation: $p \equiv \neg(\neg p)$
-	\item De Morgan's laws: \neg(p \wedge q) \equiv \neg p \vee \neg q & \neg(p \vee q) \equiv \neg p \wedge \neg q
-	\item Commutative laws:  p \wedge q \equiv q \wedge p & p \vee q \equiv q \vee p
-	\item Associative laws:  (p \wedge q) \wedge r \equiv p \wedge(q \wedge r) & (p \vee q) \vee r \equiv p \vee(q \vee r)
-	\item Distributive laws:  p \wedge(q \vee r) \equiv(p \wedge q) \vee(p \wedge r) & p \vee(q \wedge r) \equiv(p \vee q) \wedge(p \vee r)
-	\item Identity laws: & p \wedge \mathrm{T} \equiv p & p \wedge \mathrm{F} \equiv \mathrm{F} & p \vee \mathrm{T} \equiv \mathrm{T} \quad p \vee \mathrm{F} \equiv p
-	\item Negation laws: p \wedge \neg p \equiv \mathrm{F} & p \vee \neg p \equiv \mathrm{T}
-	\item Redundancy laws: p \wedge p \equiv p & p \vee p \equiv p
-	\item Absorption laws: (p \vee q) \wedge p \equiv p & (p \wedge q) \vee p \equiv p
-	\item Law of the conditional:  p \rightarrow q \equiv \neg p \vee q
-	\item Law of contrapositive: $p \rightarrow q=\neg q \rightarrow \neg p$
-	\item Contrapositive:
-	    $p \rightarrow q \equiv \neg q \rightarrow \neg p$
-	\item Biconditional: $p \leftrightarrow q \equiv(p \rightarrow q) \wedge(q \rightarrow p)$
+	\item De Morgan's laws:
+	    \begin{itemize}
+		\item $\neg(p \wedge q) \equiv \neg p \vee \neg q $
+		\item $\neg(p \vee q) \equiv \neg p \wedge \neg q$
+	    \end{itemize}
+	\item Commutative laws:
+	    \begin{itemize}
+		\item $p \wedge q \equiv q \wedge p $
+		\item $ p \vee q \equiv q \vee p$
+	    \end{itemize}
+	\item Associative laws:
+	    \begin{itemize}
+		\item $(p \wedge q) \wedge r \equiv p \wedge(q \wedge r)$
+		\item $(p \vee q) \vee r \equiv p \vee(q \vee r)$
+	    \end{itemize}
+	\item Distributive laws:
+	    \begin{itemize}
+		\item $ p \wedge(q \vee r) \equiv(p \wedge q) \vee(p \wedge r) $
+		\item $p \vee(q \wedge r) \equiv(p \vee q) \wedge(p \vee r)$
+	    \end{itemize}
 
+	\item Identity laws:
+	    \begin{itemize}
+		\item $p \wedge \mathrm{T} \equiv p $
+		\item $ p \wedge \mathrm{F} \equiv \mathrm{F} $
+		\item $p \vee \mathrm{T} \equiv \mathrm{T} \quad$
+		\item $p \vee \mathrm{F} \equiv p$
+	    \end{itemize}
+	\item Negation laws:
+	    \begin{itemize}
+		\item $ p \wedge \neg p \equiv \mathrm{F} $
+		\item $ p \vee \neg p \equiv \mathrm{T}$
+	    \end{itemize}
+	\item Redundancy laws:
+	    \begin{itemize}
+		\item $p \wedge p \equiv p$
+		\item $ p \vee p \equiv p$
+	    \end{itemize}
+	\item Absorption laws:
+	    \begin{itemize}
+		\item $(p \vee q) \wedge p \equiv p $
+		\item $(p \wedge q) \vee p \equiv p$
+	    \end{itemize}
+	\item Law of the conditional:  $p \rightarrow q \equiv \neg p \vee q$
+	\item Law of contrapositive: $p \rightarrow q=\neg q \rightarrow \neg p$
+	\item Biconditional: $p \leftrightarrow q \equiv(p \rightarrow q) \wedge(q \rightarrow p)$
     \end{enumerate}
 \end{proposition}
 
