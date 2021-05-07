@@ -88,12 +88,84 @@ $V(X)$ = somme des variances = $ n [ E(Y^2) - E(Y)^2 ]$
 
 \subsection{Théorie 2}
 \subsection*{Big Idea}
+
+Ce cours introduisait les chaines de Markov. Comme on l'a vu au dernier
+cours, les processus stochastiques sont des v.a. qui sont en fonction du
+temps. Certaine PS ont la propriété de Markov, c-à-d qu'on n'a que besoin
+de la dernière valeur pour déterminer la prochaine position et non tout
+l'historique. On introduit la notion de matrice de transition pour modéliser
+la probabilité de transitionner d'un état à l'autre, et la notion d'état
+absorbant, qui est un état duquel on ne peut se sortir une fois atteinte.
+
 \subsection*{Outline}
+
 \begin{enumerate}
-    \item
-    \item
-    \item
+    \item Rappel: Processus Stochastiques
+    \item Marche Aléatoire
+    \item Processus de Branchement
+    \item Chaines de Markov: Proba de transition et État absorbant
 \end{enumerate}
+
+\subsubsection{Marche Aléatoire}%
+\label{ssub:marche_aléatoire}
+
+Il faut se rappeler que la marche aléatoire sert à modéliser un p.s discret.
+On a vu qu'il y avait deux façons de l'interpréter:
+\begin{enumerate}
+    \item Conditionnement: previous +/- 1 dépendemment du succès/échec
+    \item Somme de variables indicatrices (bernouilli)
+\end{enumerate}
+
+Essentiellement, la probabilité est déterminer par une Bernouilli, puisqu'on
+considère que chaque coin flip est iid. On peut aussi visualiser la
+marche aléatoire comme un arbre de décision.\\
+
+Exemple: t=2, coin flip: +1 si Head, -1 si Tail
+\begin{enumerate}
+    \item $x_2 = 2$ avec proba $p^2$ : {HH}
+    \item $x_2 = 0$ avec proba $ 2p (1-p)$ : {HT, TH}
+    \item $x_2 = -2$ avec proba $ (1-p)^2$ : {TT}
+\end{enumerate}
+
+Notons qu'après 2 coins flip, on ne peut pas avoir 1 ou -1, car apres le
+premier coin flip, on est à 1 ou -1, et on ne peut que se déplacer de 1
+vers le haut ou vers le bas
+
+On a aussi vu qu'on peut tracer la trajectoire de la marche aléatoire, qui
+représente la valeur de $x_n$ selon le temps.
+
+\subsubsection{Processus de Branchement}%
+\label{ssub:processus_de_branchement}
+
+Le processus de Banchament est une façon de modéliser la générations
+d'évènement. Par exemple, en reinforcement learning, ça représente la
+transition d'état. Visuellement, on a un arbre et chaque branche mène
+à un autre état, associé à une certaine probabilité.
+
+\subsubsection{Chaine de Markov}%
+\label{ssub:chaine_de_markov}
+
+Comme mentionné, une chaine de Markov est une p.s qui satisfait à la
+propriété de Markov, c-à-d qu'on n'a que besoin de l'état précédant pour
+déterminer le futur et non tout l'historique. Dans la vraie vie, une
+chaine de markov ne représente pas nécessairement la situation, mais
+on fait cette hypothèse afin de simplifier les calculs et éviter de
+trainer trop d'information. On écrit:
+$$ \mathbb{P} (X_{n+1} = j) = (X_{n+1} = j | X_n + ... + X_0) =
+(X_{n+1} = j | X_n) $$
+
+Pour représenter la probabilité de transition d'un état à un autre, on
+utilise une matrice de transition.
+
+Finalement, il est important de comprendre la notion d'état absorbant.
+Une fois qu'on entre dans cet état, on ne peut plus en sortir. L'exemple
+donné en classe concernait le casino: une fois qu'on a plus d'argent à
+gamble, on ne peut plus gagner d'argent et on reste à zéro.
+
+Notons que si une chaine de Markov à un état absorbant, il est fort
+probable qu'il y ait plusieurs états absorbant et qu'on puisse observer
+un pattern.
+
 \subsection{TP}
 
 \pagebreak
