@@ -1151,15 +1151,24 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 \subsubsection{Méthode de Newton}
 
 \begin{theorem}[Méthode de Newton]
-
+    $$ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} $$
+    De plus,
+    $$ | x_{n+1} - x_0 | \leq \frac{M}{2m} |x_n - x_0| ^2,
+    |f'(x)| \geq m > 0, |f''(x)| \leq M$$
 \end{theorem}
 
-\begin{intuition}
-
-\end{intuition}
+\begin{remark}
+    La méthode de Newton est un algorithme itératif nous permettant
+    de déterminer les racines d'une fonction. on doit d'abord choisir
+    une fonction dont la racine est le nombre cherché, puis on commence
+    notre itération proche (avant ou après). Par exemple, si on veut
+    déterminer $\sqrt(24)$, on choisirait la fonction $ f(x) = x^2 - 24$
+\end{remark}
 
 \begin{remark}[Convergence Quadratique]
-
+    On dit que la méthode de Newton converge quadratiquement puisque
+    si on double la précision à chaque itération (la distance est coupé
+    de 2 à chaque fois). Tracer le graphique
 \end{remark}
 
 \subsection{Tracés de Graphe}
@@ -1214,15 +1223,34 @@ ou non.
     sa somme, pas sa convergence
 \end{remark}
 
+\begin{theorem}[Critère de Cauchy]
+
+\end{theorem}
+
+\begin{theorem}[Associativité Finie]
+
+\end{theorem}
+
+
+
 \subsection{Séries célèbres}
 
 \begin{proposition}[Série Géométrique]
 \end{proposition}
+
 \begin{proposition}[Série Harmonique]
+    La série harmonique $ \sum^{\infty}_{i=1} \frac{1}{n}  $ diverge
 \end{proposition}
+
 \begin{proposition}[Série de Téléscopique]
 \end{proposition}
+
 \begin{proposition}[Série de Riemann]
+    La série de Riemann $ \sum^{\infty}_{i=1} \frac{1}{n^p}$
+    \begin{enumerate}
+        \item converge si $ p > 1$
+	\item diverge si $ p \leq 1 $
+    \end{enumerate}
 \end{proposition}
 
 \begin{theorem}[Convergence d'une suite]
@@ -1273,14 +1301,80 @@ ou non.
     \end{enumerate}
 \end{remark}
 
+\begin{enumerate}
+    \item Critère de Comparaison
+    \item Critère de Condensation de Cauchy
+    \item Critère du Quotient
+    \item Critère d'Alembert (du rapport)
+    \item Critère de la Racine de Cauchy
+    \item Critère de Dirichlet
+\end{enumerate}
+
+\begin{theorem}[Critère de Comparaison]
+    Soit deux séries $ \sum^{\infty}_{i=1} a_n $ et
+    $ \sum^{\infty}_{i=1} b_n $ telles que $b_n \geq 0$
     \begin{enumerate}
-	\item Critère de Comparaison
-	\item Critère de Condensation de Cauchy
-	\item Critère du Quotient
-	\item Critère d'Alembert (du rapport)
-	\item Critère de la Racine de Cauchy
-	\item Critère de Dirichlet
+        \item Si $ \sum^{\infty}_{i=1} b_n $ converge, et qu'il existe
+	    deux nombres positifs N et M tels que $|a_n| \leq M b_n,
+	    \forall n \geq N$ la série $ \sum^{\infty}_{i=1} a_n $
+	    converge absolument
+        \item Si $ \sum^{\infty}_{i=1} b_n $ diverge, et qu'il existe
+	    deux nombres positifs N et M tels que $|a_n| \geq M b_n,
+	    \forall n \geq N$ la série $ \sum^{\infty}_{i=1} a_n $
+	    diverge
     \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Critère de Condensation de Cauchy]
+    Soit la suite décroissante ${a_n}, a_n \geq 0$.
+    $$ \sum^{\infty}_{i=1} a_n \text{ converge } \longrightarrow
+    \sum^{\infty}_{i=1} 2^n a_{2^n} $$
+\end{theorem}
+
+\begin{theorem}[Critère du Quotient]
+    Soit les deux séries $ \sum a_n$ et $ \sum b_n$. Posons
+    $ \lim_{n \to \infty} |\frac{a_n}{b_n} $
+    \begin{enumerate}
+        \item si $L \neq 0 \, ou \, \infty$ les séries $ \sum |a_n|$ et
+	    $ \sum |b_n|$ sont de même nature
+	\item si L = 0 et si $ \sum b_n$ converge absolument, alors
+	    $ \sum a_n $ converge abosulement. Si la série $ \sum |a_n|$
+	    diverge, alors $ \sum |b_n|$ diverge aussi
+	\item si L = $\infty$ et si $ \sum b_n$ diverge, alors
+	    $ \sum a_n $ diverge. Si la série $ \sum |a_n|$
+	    converge, alors $ \sum |b_n|$ converge
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Critère d'Alembert (du rapport)]
+    Soit la série $ \sum a_n , a_n \neq 0 $ tele que la limite
+    $ L = \lim_{n \to \infty} | \frac{a_{n+1}}{a_n} $ existe. Alors
+    \begin{enumerate}
+        \item si L < 1, la série converge absolument
+	\item si L > 1, la série diverge
+	\item si L = 1, on ne peut rien conclure
+    \end{enumerate}
+\end{theorem}
+
+\begin{intuition}
+    Intuitivement, on peut penser que le critère d'Alembert compare
+    la distance entre 2 termes consécutifs. Si cette distance devient
+    de plus en plus petite (L<1), alors elle converge. Elle diverge sinon
+\end{intuition}
+
+\begin{theorem}[Critère de la Racine de Cauchy]
+    Soit la série $\sum a_n$ telle que
+    $ \lim_{n \to \infty} ^n\sqrt(|a_n|)$ existe. Alors,
+    \begin{enumerate}
+        \item si L < 1, la série converge absolument
+	\item si L > 1, la série diverge
+	\item si L = 1, on ne peut rien conclure
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Critère de Dirichlet]
+
+\end{theorem}
 
 \subsection{Convergence des séries alternées et Critère de Leibniz}
 
@@ -1295,7 +1389,17 @@ ou non.
 \end{definition}
 
 \begin{theorem}[Critère de Leibniz]
+    La série alternée $ \sum^{\infty}_{i=1} (-1)^{n+1} a_n $ converge si
+    \begin{enumerate}
+	\item $ \lim_{n \to \infty} a_n = 0 $
+	\item $ {a_n} $ est décroissante
+    \end{enumerate}
 \end{theorem}
+
+\begin{intuition}
+    On peut s'imaginer que la suite saute en avant et en arrière avec des
+    bonds de plus en plus petits jusqu'à s'arrêter à une valeur
+\end{intuition}
 
 \begin{theorem}
     Si une série est absolument convergente, alors elle converge
