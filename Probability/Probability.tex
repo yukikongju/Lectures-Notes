@@ -376,16 +376,31 @@ TODO
 
 La loi de Poisson mesure le nombre d'évènements dans un intervalle donné.
 
+\subsubsection{Processus de Poisson}%
+\label{ssub:Processus de Poisson}
+
+
 \subsection{Variables aléatoires continues}
 
 \subsection{Définition}
 
+Une variable aléatoire continue est définie par sa fonction de densité,
+qui donne la "valeur" de la probabilité à un point donné, et sa fonction
+de répartition, qui donne la probabilité que X prenne une valeur dans un
+intervalle donné. Notons que la probabilité que X prenne une valeur
+quelconque est de 0, car l'aire sous la courbe d'un point est nulle.
+Ainsi, on ne veut pas calculer la probabilité que X prenne un valeur
+quelconque, mais plutôt:
+
 \begin{enumerate}
-    \item Fonction de Densité
-    \item Fonction de Répartition
+    \item Fonction de densité: valeur de X a un point
+    \item Fonction de Répartition: proba que X prenne une valeur dans
+	l'intervalle $ P(X \leq x)$
 \end{enumerate}
 
 \subsection{Loi de Variables aléatoires continues}
+
+Il existe quelques lois continues:
 
 \begin{enumerate}
     \item Loi Uniforme
@@ -397,17 +412,92 @@ La loi de Poisson mesure le nombre d'évènements dans un intervalle donné.
     \item Loi Cauchy
 \end{enumerate}
 
+Nous nous focusserons sur les primordiales, c-à-d la loi uniforme,
+exponentielle, et normale. On peut trouver la fonction de répartition en
+intégrant la fonction de densité, et, inversement, trouver la fonction
+de densité en dérivant la fonction de répartition
+
+\textbf{Comment trouver la fonction de densité de v.a continues?}
+
+TODO
+
+\subsubsection{Loi Uniforme}%
+\label{ssub:Loi Uniforme}
+
+La loi uniforme est dont la probabilité est la même partout.
+TODO
+
+\subsubsection{Loi Exponentielle}%
+\label{ssub:Loi Exponentielle}
+
+TODO
+
+\subsubsection{Loi Normale}%
+\label{ssub:Loi Normale}
+
+TODO
+
+\begin{remark}
+    On peut utiliser la loi normale pour trouver la formule de Stirling,
+    qui approxime la factorielle n!
+\end{remark}
+
+\begin{remark}[Loi Log-Normale]
+    Si on a une loi log normale, on a qu'à poser une variable intermédiaire
+    log(D) et travailler avec l'exponentielle
+\end{remark}
+
 \subsection{Variables aléatoires simultanées}
 
-\subsection{Définitions v.a. discrètes}
+Les variables aléatoires simultanées sont des variables qui considèrent
+2 paramètres (ou plus). Par exemple, on calcule le BMI à partir du poids
+et de la taille.
 
+On distingue 2 types de v.a. simultanées: discrètes et continues, et
+chacune d'elles possèdent
 \begin{enumerate}
-    \item Fonction de Masse Conjointe
-    \item Fonction de Masse Marginale
-    \item Fonction de Masse Conditionnelle
+    \item Fonction de Masse Conjointe: fonction de probabilité
+    \item Fonction de Masse Marginale: fonction "individuelle"
+    \item Fonction de Masse Conditionnelle:
 \end{enumerate}
 
-\subsection{Définitions v.a. continues}
+\subsection{Définitions v.a. simultanées discrètes}
+
+\subsubsection{Fonction de Masse Conjointe}%
+\label{ssub:Fonction de Masse Conjointe}
+
+La fonction de masse conjointe nous donne la probabilité de la variable
+simultanée. On écrit
+$$ p(x,y) = P(X=x, Y=y) = P(X=x | Y=y) P(Y=y) $$
+
+Intuitivement, c'est l'intersection de X et de Y, et puisque l'intersection
+est donnée par la règle de multiplication (voir chapitre 1), on obtient
+la proba conditionnelle plus haut.\\
+
+\textbf{Pourquoi la fonction de masse conjointe peut être interpréter comme
+l'intersection de X et Y}
+
+TODO
+
+\subsubsection{Fonction de Masse Marginale}%
+\label{ssub:Fonction de Masse Marginale}
+
+La fonction de masse marginale de X représente l'apport de X et on la
+trouve en sommant la fonction de masse conjointe p/r au support de l'autre
+variable
+
+\textbf{Pourquoi doit-on sommer/intégrer p/r à l'autre variable
+lorsqu'on calcule la fonction de masse marginale?}
+
+TODO
+
+\subsubsection{Fonction de masse conditionnelle}%
+\label{ssub:Fonction de masse conditionnelle}
+
+C'est le même principe que la probabilité conditionnelle, mais on considère
+le ratio des proportions.
+
+\subsection{Définitions v.a. simultanées continues}
 
 \begin{enumerate}
     \item Fonction de Densité Conjointe
@@ -417,22 +507,187 @@ La loi de Poisson mesure le nombre d'évènements dans un intervalle donné.
 
 \subsection{Variables aléatoires Indépendates}
 
-\subsection{Somme de Variables Aléatoires}
+On peut déterminer si X et Y sont indépendantes comme au chapitre 1, c-à-s
+qu'on compare leur probabilité, qu'on calcule avec l'intégrale.
+
+De savoir que deux variables simultanées sont indépendantes est pratique,
+car ça nous permet de trouver leur fonction de masse/densité conjointe
+en les multipliant.
+
+\subsubsection{Somme de Variables Aléatoires Indépendantes}
+
+TODO
+
+\textbf{Qu'est-ce qu'une convolution?}
+
+TODO
+
+
+\begin{problem}[Trouver la fonction densité de Z=X+Y]
+    Pour trouver la fonction densité de Z, on doit dabors trouver sa
+    fonction de densité en intégrant p/r à X ou Y, puis on dérive
+\end{problem}
+
+\begin{proposition}
+    La somme de v.a. normales est la somme de leurs parametres
+\end{proposition}
+
+\subsubsection{Produit de Variables Aléatoires Indépendantes}%
+\label{ssub:Produit de Variables Aléatoires Indépendantes}
+
+TODO
+
+subsection{Loi Binormale}
+
 \subsection{Transformation de Variables Aléatoires}
+
+Si on a 2 variables U et V définies par X et Y et on connait que les
+fonctions densités de X et de Y, il faut passer par une transformation.
+Par exemple, U=Y+X et V=Y-X.
+
+Pour ce faire, on doit réécrire les fonctions Y et X p/r à U et V. Par
+exemple, X=U+V et Y=V-U. Par la suite, on doit calculer la jacobienne
+avec les dérivées partielles. On n'a qu'à appliquer la formule
+
+\textbf{Pourquoi doit-on multiplier par la jacobienne?}
+
+On multiplie par la jacobienne, car puisqu'on pose de nouvelle variable,
+on change la base du système et le quadrillage change. Ce n'est donc
+plus des rectangles qu'on sommme, mais bien des parallélogrammes, et
+on sait que les parallélogrammes est donné par le déterminant.
 
 \section{Espérance de Variables Aléatoires}
 \subsection*{Overview}
 
+On peut interpréter l'espérance comme une moyenne pondérée, et la variance
+comme la distance moyenne entre un point et la moyenne.
+
+\begin{enumerate}
+    \item Espérance et Variance de v.a. discrètes
+    \item Espérance et Variance de v.a. continues
+    \item Espérance et Variance de v.a. indépendantes
+    \item Espérance et Variance de v.a. simultanées
+\end{enumerate}
+
+\subsection{Linéarité de l'Espérance}%
+\label{sub:Linéarité de l'Espérance}
+
+Calculer la variance d'une v.a. peut être compliquée, mais on utilise
+la linéarité de l'espérance pour la calculer. Comme on le sait, la
+variance est l'écart entre La moyenne et le point. On a donc
+$ V(X) = E((X - \mu)^2) $. On appelle aussi le moment d'ordre 2. En
+développant, on obtient $ V(X) = E(X^2) - E(X)^2 $.
+
+\subsection{Espérance et Variance de v.a. discrètes}
+
+On peut trouver l'espérance et la variance avec les formules générales
+\begin{enumerate}
+    \item Espérance: E(X)
+    \item Moment d'ordre 2: $E(X^2)$
+    \item Variance: $V(X) = E(X^2) - E(X)^2 $
+\end{enumerate}
+
+mais on connait l'espérance et la variance des distributions classiques:
+\begin{enumerate}
+	\begin{itemize}[Binomiale]
+	    \item Espérance
+	    \item Variance
+	\end{itemize}
+	\begin{itemize}[Poisson]
+	    \item Espérance
+	    \item Variance
+	\end{itemize}
+	\begin{itemize}[Géométrique]
+	    \item Espérance
+	    \item Variance
+	\end{itemize}
+\end{enumerate}
+
+\subsection{Espérance et Variance de v.a. continues}
+
+Tout comme l'espérance et la variance d'une v.a. discrète, on peut
+interpréter l'espérance d'une v.a. continue comme la moyenne pondérée.
+Cette fois-ci, on a
+\begin{enumerate}
+    \item Espérance: $ \int_{{-\infty}}^{{]infty}} {x p(x)} \: d{} {}$
+    \item Moment d'ordre 2:
+    \item Variance: $V(X) = E(X^2) - E(X)^2 $
+\end{enumerate}
+
+On connait aussi l'espérance et la variance des distributions continues
+classiques
+
+\begin{enumerate}
+	\begin{itemize}[Uniforme]
+	    \item Espérance
+	    \item Variance
+	\end{itemize}
+	\begin{itemize}[Exponentielle]
+	    \item Espérance
+	    \item Variance
+	\end{itemize}
+	\begin{itemize}[Normale]
+	    \item Espérance
+	    \item Variance
+	\end{itemize}
+\end{enumerate}
+
+\subsection{Espérance et Variance de v.a. indépendantes}
+\subsection{Espérance et Variance de v.a. simultanées}
+\subsection{Espérance et Variance de v.a. Conditionnelle}
+
 \section{Fonction Génératrice et Théorème Limite Central}
+
 \subsection*{Overview}
 
+
 \subsection{Fonction Génératrice}
+
+Si deux variables X et Y ont la même fonction génératrice, alors elles
+ont la même fonction de densité de répartition, et ainsi, elles ont
+la même espérance et variance.
+
+$$ M_X(t) = E(e^{tX})$$
+
+Pour calculer le moment d'ordre 1 et 2, nous permettant de trouver
+l'espérance et la variance, on doit évaluer la dérivée première et deuxième
+en zéro.
+
+$$ M_X ^(n) (0) = E(X^n) $$
+
+\begin{enumerate}
+    \item Fonction génératrice Normale
+    \item Fonction génératrice Gamma
+    \item Fonction génératrice Poisson
+    \item Fonction Binomiale et Binomiale Négative
+\end{enumerate}
+
+\subsubsection{ Somme de Fonctions Génératrices}
+
+Pour trouver la somme de fonctions génératrices, on multiplie les fonctions
+génératrices:
+$$ M_{X_1 + ... + X_n} = M_{X_1} x ... x M_{X_2} $$
 
 \subsection{Théorèmes Limites}
 
 \subsection{Loi des Grands Nombres}
-\subsection{Théorème Limite Central}
 \subsection{Inégalité de Bienyamé-Tchebychev}
+
+L'inégalité de Bienyamé-Tchebychev donne un majorant pour la probabilité.
+Si on veut trouver le minorant, n'a qu'à utiliser les probabilités totales.
+
+Parfois, le majorant est proche de la vraie valeur, parfois non.
+
+\textbf{Comment savoir si BT va être précis?}
+
+TODO
+
+\subsection{Théorème Limite Central}
+
+TODO
+
+
+
 
 \end{document}
 \end{article}
