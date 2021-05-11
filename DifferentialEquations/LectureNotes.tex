@@ -109,16 +109,222 @@ rectangle qui forme le point précédent et le point suivant.
 \section{First Order Differential Equations}
 \subsection*{Overview}
 
-\subsection{Separation of variables. }
-\subsection{Initial value problems.}
-\subsection{Falling objects with air resistance.}
+\subsection{Separation of variables}
+
+Cette setion met l'emphase sur la séparation de variables. En gros, on
+veut réécrire notre équation différentielle sous la notation de Leibniz
+afin d'isoler dy/y et d'avoir une équation p/r au temps. On voit qu'en
+intégrant, on obtient les équations suivantes:
+\begin{enumerate}
+    \item Exponential Growth: $ y' = ky \Longleftrightarrow y(t) = C e^{kt} $
+    \item Exponential Decay: $ y' = -ky \Longleftrightarrow y(t) = C e^{-kt} $
+    \item Decay to Initial Value: $ y' = -k (y-M) \Longleftrightarrow
+	y(t) = C e^{-kt} + M $
+\end{enumerate}
+
+Il faut aussi se souvenir que le k, représentant le rate of change, nous
+dit à quel point le decay/growth se fait rapidement.
+
+\subsection{Initial value problems}
+
+Cette section focussait sur la résolution de ODEs. Tout d'abord, on
+introduisait la notion de valeur initiale. Auparavant, on voulait
+trouver la solution générale du ODEs. Ici, on nous donne des valeurs
+intiales $ y(t_0) = y_0 $.
+
+Pour ce faire, on doit trouver:
+\begin{enumerate}
+    \item C: initial rate of change that can be found by solving
+	initial value (t=0)
+    \item k: constant rate of change that can be found by using
+	initial and end time (t=0 and t=5 for exemple)
+    \item t: time an which we measure value
+    \item P(t): value of function given using for all parameters
+\end{enumerate}
+
+Dépendemment du problème, on doit solve for une des 4 variables
+\begin{enumerate}
+    \item Find Initial Rate of Change : solve for C
+    \item Find how much x is worth at time t: use C, k, t to find P(t)
+    \item Find half live: use P(t), P(0), C, k to find t, the time when
+	P has value of P(t)
+\end{enumerate}
+
+\begin{remark}
+    On utilise souvent les logs pour abaisser l'exposant. On préfère
+    travailler avec des fractions positives
+\end{remark}
+
+\subsection{Falling objects with air resistance: Newton's 2nd Law}
+
+Dans cette section, on voit que la 2e loi de Newton F=ma qui considère
+la résistance de l'air, peut être modéliser avec une ODEs: exponential
+decay to value. ON voit aussi pourquoi on voudrait intégrer une ODEs
+
+\textbf{Comment trouver modéliser v(t) avec une ODE}
+
+La deuxième loi de Newton nous dit que
+\begin{enumerate}
+    \item Sans résistance de l'air: $ F=ma=-mg $
+    \item Avec résistance de l'air: $ F=-mg - R(v) $, R(v): résistance
+	de l'air
+\end{enumerate}
+
+De plus, on peut considérer que la résistance à l'air est proportionnelle
+à la vitesse (dans le sens inverse): $$ R(v) = -rv $$
+
+Aussi, il faut se souvenir que
+\begin{enumerate}
+    \item Vitesse: $ v(t) = d'(t) $, d: distance
+    \item Accélération: $ a(t) = v'(t) $, v: vitesse
+\end{enumerate}
+
+Ainsi, on a que la 2nd loi de Newton qui considère la résistance de l'air
+est $$ v' = -g - \frac{r}{m} v $$, qui peut être remodelée pour obtenir
+un exponential decay to a value
+$$ v' = -g - \frac{r}{m} = \frac{r}{m} (\frac{-mg}{r} - v),
+k = \frac{r}{m}, A = \frac{-mg}{r}$$, avec v: vitesse limitante,
+A: terminal velocity
+
+Ainsi, on a que $$ V(t) = -\frac{mg}{r} + C e^{\frac{-r}{m} t} $$
+
+\textbf{Problèmes}
+
+Dépendemment du problème, on nous demande de trouver:
+\begin{enumerate}
+    \item terminal velocity: $ A = \frac{-mg}{r} $
+    \item Limiting velocity: $ v' = 0 $
+    \item C: initial value
+    \item m: mass
+    \item g: constante de gravité
+    \item v(t): velocity after t time
+    \item rate of change r: use terminal velocity and solve for r
+    \item distance d(t): on n'a qu'à intégrer la fonction de vitesse
+	$$ \int_{{a}}^{{b}} {v(t)} \: d{t} $$
+\end{enumerate}
+
+Bref
+\begin{enumerate}
+    \item Comment on a trouver la ODE pour modéliser l'accélération
+	en considérant le frottement de l'air
+    \item Résoudre des problèmes en utilisant la modélisation de F=ma
+	en ODE
+\end{enumerate}
+
 \subsection{Solving 1st order inhomogeneous ODEs.}
-\subsection{Linear differential equations.}
+
+Depuis le début du cours, on a vu comment résoudre des équations homogènes
+à l'aide de la méthode par séparation. Cependant, cette stratégie ne peut pas
+être utilisée pour résoudre des équations inhomogènes
+
+Rappel: la différence entre une équation homogène et inhomogène est que f(t) = 0
+\begin{enumerate}
+    \item Homogenous Equation: $ y' + a(t)y(t) = 0 $
+    \item Inhomogenous Equation: $ y' + a(t)y(t) = f(t)$
+\end{enumerate}
+
+On discerne deux méthodes pour résoudre des ODEs inhomogènes:
+\begin{enumerate}
+    \item Integrating Factor
+    \item Variation of Parameters
+\end{enumerate}
+
+Notons que les 2 méthodes sont équivalentes, mais il est préférable d'utiliser
+la deuxième, puisqu'elle possède un "built-in correction" nous permettant de
+voir si on a fait des erreur
+
+\subsubsection{Integrating Factor}
+
+La première méthode consiste à multiplier par un facteur d'intégration afin de
+pouvoir intégrer. Pour choisir ce facteur d'intégration, on doit regarder a(t),
+le coefficient qui multiplie y(t).
+
+Plus généralement, les étapes sont les suivantes:
+\begin{enumerate}
+    \item Identifier a(t) afin de trouver le facteur d'intégration
+    \item Calculer le facteur d'intégration: $ e^( \int_{{}}^{{}} {A(t)} \:
+	d{t} {}) $
+    \item Multiplier l'équation inhomogène par le facteur d'intégration des
+	deux côtés: on obtient "l'inverse du produit de la dérivée"
+    \item Écrire le produit de la dérivée comme une dérivée
+    \item Intégrer des deux bords, et isoler y pour trouver la solution
+	générale
+\end{enumerate}
+
+Notons pour que cette stratégie fonctionne, on doit savoir intégrer la partie
+de droite
+
+\subsubsection{Variation of Parameters}
+
+La deuxième méthode consiste à trouver l'équation homogène en ignorant la
+constante f(t), puis à plugger le guess dans l'équation inhomogène
+
+Les étapes sont les suivantes:
+\begin{enumerate}
+    \item Trouver la solution à l'équation homogène en ignorant f(t)
+    \item Guesser la solution générale pour l'équation homogène pour trouver
+	y et y'
+    \item Plugger y et y' dans l'équation inhomogène: il devrait y avoir des
+	termes qui s'annulent
+    \item Intégrer et isoler v, le a(t) ie terme multiplication
+    \item Substitutionner v dans l'équation homogène de base
+\end{enumerate}
+
+En d'autres mots, on devrait retrouver la constante f(t) dans le v
+
+TO REVIEW
+
+\subsection{Linear differential equations}
+
+Cette section nous présente 2 résultas cachés des équations différentielles:
+\begin{enumerate}
+    \item Superposition: Les solutions des équations différentielles homogènes
+	sont linéairement indépendants
+    \item Inhomogenous ODEs: on peut trouver la solution générale d'une
+	ODEs inhomogènes en additionnant son équation homogène et une
+	équation particulière
+\end{enumerate}
+
+\subsubsection{Superposition}
+
+La superposition nous dit que si une ODE homogène $y'+a(t)y(t) = 0$ a comme
+solution $y_1(t)$ et $y_2(t)$, alors $ C_1 y_1(t) + C_2 y_2(t) $ est une
+solution $ \forall c_1, c_2$
+
+\textbf{Pourquoi c'est vrai?}
+
+Si on plug $ C_1 y_1(t) + C_2 y_2(t) $ dans l'équation homogène initiale
+$y'+a(t)y(t) = 0$, on obtient que $ C_1 \cdot 0 + C_2 \cdot 0$
+
+\subsubsection{Quick Trick to solve Inhomogenous ODEs}
+
+On peut trouver la solution générale d'une ODE inhomogène en additionnant
+son équation homogène et une équation particulière:
+$$ y(t) = y_h (t) + y_p (t) $$
+
+Les étapes sont les suivantes:
+\begin{enumerate}
+    \item Trouver la solution Homogène $y_h$
+    \item Trouver la solution particulière $y_p$ (choisir 0)
+    \item Trouver la solution générale: $$ y(t) = y_h (t) + y_p (t) $$
+\end{enumerate}
+
+\textbf{Pourquoi ça marche}
+
+Si y est la solution générale $y'+a(t)y(t) = f(t)$ et la solution particulière
+$y_p'+a(t)y_p(t) = f(t)$, alors en les soustrayant, on obtient
+$$ (y-y_p)' +a(t) (y-y_p) = 0$$, et $ (y - y_p) $ est une solution à l'équation
+homogène
+
 \subsection{Basic mixing problems.}
+
+TODO
+
 \subsection{Advanced mixing problems.}
 \subsection{The logistic equation.}
 
 \pagebreak
+
 \section{Second Order Differential Equations}
 \subsection*{Overview}
 
@@ -133,6 +339,7 @@ rectangle qui forme le point précédent et le point suivant.
 \subsection{The method of Frobenius.}
 
 \pagebreak
+
 \section{Systems of Differential Equations}
 \subsection*{Overview}
 
@@ -151,21 +358,21 @@ rectangle qui forme le point précédent et le point suivant.
 \subsection*{Overview}
 
 \subsection{What is a Laplace transform?}
-\subsection{Properties & applications of Laplace transforms.}
-\subsection{Discontinuous forcing terms.}
-\subsection{Periodic forcing terms.}
-\subsection{Impulse functions.}
-\subsection{Convolution.}
+\subsection{Properties and applications of Laplace transforms}
+\subsection{Discontinuous forcing terms}
+\subsection{Periodic forcing terms}
+\subsection{Impulse functions}
+\subsection{Convolution}
 
 \pagebreak
 \section{Fourier Series and Boundary Value Problems}
 
-\subsection{Introduction to Fourier series.}
-\subsection{Computing Fourier series.}
-\subsection{Fourier sine and cosine series.}
-\subsection{Complex Fourier series.}
-\subsection{Applications of Fourier series.}
-\subsection{Boundary value problems.}
+\subsection{Introduction to Fourier series}
+\subsection{Computing Fourier series}
+\subsection{Fourier sine and cosine series}
+\subsection{Complex Fourier series}
+\subsection{Applications of Fourier series}
+\subsection{Boundary value problems}
 
 \subsection*{Overview}
 
@@ -174,14 +381,14 @@ rectangle qui forme le point précédent et le point suivant.
 \section{Partial Differential Equations}
 \subsection*{Overview}
 
-\subsection{The heat equation.}
-\subsection{Different boundary conditions.}
-\subsection{The transport equation.}
-\subsection{The wave equation.}
-\subsection{Harmonic functions.}
-\subsection{Laplace's equation.}
-\subsection{The 2D heat equation.}
-\subsection{2D wave equation.}
+\subsection{The heat equation}
+\subsection{Different boundary conditions}
+\subsection{The transport equation}
+\subsection{The wave equation}
+\subsection{Harmonic functions}
+\subsection{Laplace's equation}
+\subsection{The 2D heat equation}
+\subsection{2D wave equation}
 
 \pagebreak
 
@@ -189,7 +396,7 @@ rectangle qui forme le point précédent et le point suivant.
 
 \subsection*{Overview}
 
-\subsection{Modeling with nonlinear systems.}
+\subsection{Modeling with nonlinear systems}
 \subsection{Linearization and steady-state analysis}
 \subsection{Predator-prey models}
 

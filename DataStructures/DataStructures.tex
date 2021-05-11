@@ -38,19 +38,119 @@ The study of data structures can be divided in the following chapters:
 
 \section{Basic Data Structures}
 
+\subsection{Overview}
+
+Le premier chapitre en structure des données introduit les notions de
+dynamic array et de linked list. En gros, ce sont des structures de
+données qui sont utilisées pour implémenter des structures abstraites.\\
+
+Ces structures de données supportent certaines opérations
+\begin{enumerate}
+    \item insertion
+    \item deletion
+    \item recherche
+\end{enumerate}
+
 \subsection{Dynamic Arrays}
+
+Le dynamic array est utilisé surtout pour storer des éléments dont on
+connait la taille et l'index parce qu'il requiert d'être resized
+
+\begin{enumerate}
+    \item insertion: si la capacité est atteinte, on double la capacité
+	et on copie les données dans le nouvel array
+    \item deletion: si la capacité est le quart de la taille du array,
+	on copie les éléments dans un array qui est la moitié de la
+	taille initiale
+    \item recherche: recherche linéaire si éléments non-ordonnées,
+	recherche binaire si les éléments sont ordonnées
+\end{enumerate}
+
+\textbf{Complexité du resize: Preuve Crédit-Débit}
+
+On peut montrer que le resize prend un temps constant amorti par une
+preuve crédit-débit. Soit 1\$, le cout pour push et pop.
+On sait qu'à chaque puissance de n éléments, on va devoir insérer n éléments
+et resize 1 fois. Ainsi, on va devoir:
+\begin{enumerate}
+    \item ajouter les éléments une première fois (on n'a pas atteint la
+	capacité): n fois
+    \item resize: coute 2n, car on doit pop n éléments et push n éléments
+	dans le nouvel array
+    \item nombre d'éléments: n
+\end{enumerate}
+
+Ainsi, le cout amorti est de $ \frac{n+2n}{n} = 3 $
+
 \subsection{Linked List}
+
+Il existe 3 types de linked list:
+\begin{enumerate}
+    \item Singly Linked List: Peuvent seulement être traversée du head
+	au tail, car on n'a pas de pointeur au précédant
+    \item Doubly Linked List: Can be traversed backward because we
+	store the previous node, but takes twice the space
+    \item Circular Linked List: the head and tail can reach each other
+\end{enumerate}
+
+Le linked list supporte les opérations suivantes:
+\begin{enumerate}
+    \item insertion: On traverse la liste séquentiellement, et on ajoute
+	le nouveau noeud entre le previous et le prochain en sauvegardant
+	le pointeur du prochain dans une variable temporaire
+    \item deletion: On change le pointeur du previous et du prochain en
+	sauvegardant le pointeur du prochain avant d'enlever le noeud
+    \item recherche: On doit faire de la recherche séquentielle parce
+	qu'on n'a pas accès aux indices
+\end{enumerate}
+
 \subsection{Dynamic Arrays vs Linked List}
 
 \section{Basic Abstract Data Types}
 
+\subsection{Overview}
+
+Le bag, stack et queue sont les DS les plus basiques. On peut les
+implémenter avec des arrays, mais il est préférable de le faire avec des
+arraylist, puisqu'on ne connait pas leur taille d'avance (et on ne
+travaille qu'avec le head/tail)
+
 \subsection{Bag}
+
+Le bag ne supporte qu'une seule opérations: insertion. Pour la recherche,
+on ne peut faire qu'une recherche séquentielle, car les éléments n'ont
+pas d'ordre.
 
 \subsection{Stack}
 
+Le stack, communément appelé FILO (first-in, last-out), est un type
+abstrait qui est utilisé pour le cache et l'OS. Elle supporte les 3
+opérations de base:
+\begin{enumerate}
+    \item push (insertion): ajoute le nouvel élément au top
+    \item pop (suppression): si non vide, enleve l'élément eu top
+    \item recherche: pas fait pour ça, mais on peut peek
+\end{enumerate}
+
 \subsection{Queue}
 
+La queue, communément appelée FIFO (first-in, first-out), supporte
+les 3 opérations de base
+\begin{enumerate}
+    \item enqueue (insertion): insère l'élément à la fin
+    \item dequeue (suppression): si non vide, enlève l'élément en
+	tête de la liste
+    \item recherche: pas fait pour ça, mais on peut peek
+\end{enumerate}
+
 \section{Sorting Algorithms}
+
+\subsection{Overview}
+
+Idéalement, le meilleur algorithme de tri devrait être linéarithmique
+et ne pas utiliser d'espace auxiliaire. Cependant, il n'existe pas de
+sorting algorithms satisfaisant ces 2 propriétés. Ainsi, on peut
+discerner quelques sorting algorithms:
 
 \begin{enumerate}
     \item Selection Sort
@@ -61,6 +161,20 @@ The study of data structures can be divided in the following chapters:
     \item Heapsort
     \item Raddix Sort
 \end{enumerate}
+
+Notons qu'on apprend les sorting algorithms, non pas pour les implémenter,
+mais plutôt parce que leur structure et temps de complexité sont de bons
+introductions à l'analyse de la complexité. On veut donc être en mesure
+de connaitre le input qui va donner un temps optimal, temps moyen, temps
+pire temps.
+
+\subsection{Selection Sort}
+\subsection{Insertion Sort}
+\subsection{Bubble Sort}
+\subsection{Mergesort}
+\subsection{Quicksort}
+\subsection{Heapsort}
+\subsection{Raddix Sort}
 
 \section{Heap}
 
@@ -84,8 +198,9 @@ The study of data structures can be divided in the following chapters:
 
 \subsubsection{Separate Chaining}
 \subsubsection{Open Adressing}
-\subsubsubsection{Linear Probing}
-\subsubsubsection{Double Hashing}
+
+\textbf{Linear Probing}
+\textbf{Double Hashing}
 
 \section{Graph Theory}
 

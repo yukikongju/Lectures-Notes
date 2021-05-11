@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{textgreek}
+\begin{document}
+\title{Lecture Notes for LeetCode}
+\author{Emulie Chhor}
+\maketitle
+
+\section*{Introduction}
+
+Le but de ce document est de compiler les stratégie utilisées pour
+résoudre les questions de LeetCode. Les stratégies sont séparées de la
+façon suivante:
+
+    \begin{enumerate}
+	\item Arrays
+	\item Linked List
+	\item String
+	\item Hash Table
+	\item Sorting
+	\item Recursion
+	\item Trees
+	\item Dynamic Programming
+	\item Graph Problems
+    \end{enumerate}
+
+\newtheorem{solution}{Solution}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\section{Arrays}
+
+\subsection{Two Sums (#1)}%
+\label{sub:Two Sums (#1)}
+
+\textbf{Solution: Hash Table}
+
+On veut utiliser un hashtable pour storer chacune des valeurs, et regarder
+si la différence entre l'élément et le target est dans le hastable.
+
+\begin{enumerate}
+    \item First Pass: Store Array in HashTable
+    \item Second Pass: Compute Difference:
+	$$ maxProfit = max(maxProfit, hashtable[j] - minValue) $$
+\end{enumerate}
+
+
+\section{Linked List}
+\section{String}
+\section{Hash Table}
+\section{Sorting}
+\section{Recursion}
+\section{Trees}
+\section{Dynamic Programming}
+\section{Graph Problems}
+
+\end{document}
+\end{article}
+

@@ -1,0 +1,433 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\begin{document}
+\title{Lectures Notes for Discrete Maths - Kenneth Rosen}
+\author{Emulie Chhor}
+\maketitle
+
+\section*{Introduction}
+
+\begin{enumerate}
+    \item Foundations of Logic and Proofs
+    \item Basic Structures: Set, Functions. Sequences, Sums
+    \item Algorithms
+    \item Number Theory and Cryptography
+    \item Induction and Recursion
+    \item Counting
+    \item Discrete Maths
+    \item Advanced Counting Techniques
+    \item Relations
+    \item Graphs
+    \item Trees
+    \item Boolean Algebra
+\end{enumerate}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\section{Foundations of Logic and Proofs}
+
+\subsection{Propositional Logic}%
+\label{sub:Propositional Logic}
+
+\subsubsection{Overview}
+
+\begin{enumerate}
+    \item What is a proposition: atomic vs compound statements
+    \item Logical Operators: and, or, not
+    \item Conditional Statement: implication, biconditional
+    \item Converse, Contrapositive, Inverse
+\end{enumerate}
+
+\subsubsection{What is a proposition: atomic vs compound statements}
+
+La première notion à comprendre est la notion de proposition. Une
+proposition est une phrase qui est associée à une valeur de vérité.
+Elle peut être soit vraie, soit fausse, mais par les 2.
+
+Il existe 2 types de proposition:
+\begin{enumerate}
+    \item Proposition atomique: Une seule idée
+    \item Compound Propostion: Plusieurs idées reliées par un connecteur
+	logique
+\end{enumerate}
+
+\subsubsection{Logical Operators: and, or, not}
+
+Pour générer des des propositions atomiques, on utilise des connecteurs
+logiques. On distingue 3 principaux connecteurs logiques:
+\begin{enumerate}
+    \item and
+    \item not
+    \item or
+\end{enumerate}
+
+Celles-ci possèdent leur propre table de vérité, qui nous dit la valeur
+de vérité du compound proposition.
+
+\subsubsection{Conditional Statement: implication, biconditional}
+
+Il existe des connecteurs logiques qui montrent une relation entre 2 idées,
+qui sont aussi associées à leur table de vérité.
+\begin{enumerate}
+    \item implication
+    \item biconditionnelle
+\end{enumerate}
+
+\subsubsection{Converse, Contrapositive, Inverse}
+
+Finalement, on voit qu'on peut construire différentes propositions à partir
+de l'implication:
+\begin{enumerate}
+    \item converse: $ q \rightarrow p $
+    \item inverse: $ \not p \rightarrow \not q$
+    \item contrapositive: $\not q \rightarrow \not p $
+\end{enumerate}
+
+Il faut retenir que la contraposée est équivalente à l'implication, un
+fait très utile à connaitre lorsqu'on lit des théorèmes.
+
+\subsubsection{Problèmes}
+\begin{enumerate}
+    \item Déterminer si la phrase est une proposition logique et dire si
+	elle est atomique ou compound
+    \item Trouver la négation de la phrase
+    \item Déterminer la valeur propositionnelle du statement
+    \item Traduire la proposition en anglais
+    \item Traduire la proposition en symboles
+    \item Déterminer si les conditionnelles et biconditionnelles sont
+	vraies ou non
+    \item Déterminer si le ou est includif ou exclusif
+    \item Traduire la proposition en "if p, then q"
+    \item Trouver l'inverse, la contraposée et la converse de la proposition
+    \item Construire la table de vérité pour les propositions
+    \item Find bitwise OR, AND, XOR of the binary strings
+\end{enumerate}
+
+\subsection{Applications of Propositional Logic}
+
+\subsubsection{Overview}
+
+\begin{enumerate}
+    \item Translating English Sentence into Logical Sentences
+    \item Translating Logical Sentences into English Sentences
+    \item Puzzle: which tells the truth
+    \item Logical Circuits
+\end{enumerate}
+
+
+\subsubsection{Translating English Sentence into Logical Sentences}
+
+On veut traduire de sentence en logical statements pour simplifier la
+notation et mieux trouver sa contraposée, son inverse et sa converse.
+Ce processus est utile lorsqu'on lit des théorèmes
+
+\subsubsection{Translating Logical Sentences into English Sentences}
+
+Être capable de traduire des logical statements en phrases parlées
+peut nous donner une meilleure intuition sur les théorèmes, car ça
+nous permet de verbaliser les maths
+
+\subsubsection{Puzzle: which tells the truth}
+
+On a certaines situations et on doit déterminer qui ment ou pas:
+\begin{enumerate}
+    \item Find Pirate Chess with treasure
+    \item Knights and Knaves: find which is which
+    \item Kids and Muds: find who has the mud
+\end{enumerate}
+
+La stratégie est de partir en assumant que A dit la vérité et de voir
+si on a une contradiction. S'il y a contradiction, A ment nécéssairement.
+On peut répéter le processus.
+
+\subsubsection{Logical Circuits}
+
+Les tables de vérité nous permmettent de réduire les circuits logiques
+à l'aide de l'algèbre booléenne. On associe chaque opéarateur logiques
+à un logic gates, qu'on peut relier. Essentiellement, c'est une façon
+visuelle de représenter une fonction propositionnelle
+
+\subsection{Propositional Equivalences}
+
+Le but de cette section est de montrer que deux propositions sont logiquement
+équivalentes. Pour ce faire, on doit montrer que celles-ci ont la même
+table de vérité. Dans ce cas, on dit qu'il y a tautologie. Si toutes les
+valeurs propositionnelles mènent donnent F, on dit qu'il y a contradiction.
+Finalement, si les proposition peuvent être soit T, soit F, on dit que
+c'est une contingence. On note l'équivalence $ A \equiv B $
+
+\subsubsection{Equivalence Propositionnelle}
+
+Notons qu'on peut voir l'équivalence comme une biconditionnelle. Ainsi,
+si on veut montrer que deux propositions sont équivalentes, on doit
+montrer que qu'elles ont la même table de valeur (on montre l'implication
+et l'inverse)\\
+
+\subsubsection{Logical Equivalence Table}
+
+De plus, il est important de noter les tableaux d'équivalence suivantes
+\begin{enumerate}
+    \item Common Logical Equivalence Table
+    \item Conditional Statement
+    \item Biconditionnal Statement
+\end{enumerate}
+
+\begin{proposition}[Logical Equivalence]
+    Let p,q,r be propositional variables. Here is a list of propositional
+    equivalence
+    \begin{enumerate}
+	\item Law of double negation: $p \equiv \neg(\neg p)$
+	\item De Morgan's laws:
+	    \begin{itemize}
+		\item $\neg(p \wedge q) \equiv \neg p \vee \neg q $
+		\item $\neg(p \vee q) \equiv \neg p \wedge \neg q$
+	    \end{itemize}
+	\item Commutative laws:
+	    \begin{itemize}
+		\item $p \wedge q \equiv q \wedge p $
+		\item $ p \vee q \equiv q \vee p$
+	    \end{itemize}
+	\item Associative laws:
+	    \begin{itemize}
+		\item $(p \wedge q) \wedge r \equiv p \wedge(q \wedge r)$
+		\item $(p \vee q) \vee r \equiv p \vee(q \vee r)$
+	    \end{itemize}
+	\item Distributive laws:
+	    \begin{itemize}
+		\item $ p \wedge(q \vee r) \equiv(p \wedge q) \vee(p \wedge r) $
+		\item $p \vee(q \wedge r) \equiv(p \vee q) \wedge(p \vee r)$
+	    \end{itemize}
+
+	\item Identity laws:
+	    \begin{itemize}
+		\item $p \wedge \mathrm{T} \equiv p $
+		\item $ p \wedge \mathrm{F} \equiv \mathrm{F} $
+		\item $p \vee \mathrm{T} \equiv \mathrm{T} \quad$
+		\item $p \vee \mathrm{F} \equiv p$
+	    \end{itemize}
+	\item Negation laws:
+	    \begin{itemize}
+		\item $ p \wedge \neg p \equiv \mathrm{F} $
+		\item $ p \vee \neg p \equiv \mathrm{T}$
+	    \end{itemize}
+	\item Redundancy laws:
+	    \begin{itemize}
+		\item $p \wedge p \equiv p$
+		\item $ p \vee p \equiv p$
+	    \end{itemize}
+	\item Absorption laws:
+	    \begin{itemize}
+		\item $(p \vee q) \wedge p \equiv p $
+		\item $(p \wedge q) \vee p \equiv p$
+	    \end{itemize}
+	\item Law of the conditional:  $p \rightarrow q \equiv \neg p \vee q$
+	\item Law of contrapositive: $p \rightarrow q=\neg q \rightarrow \neg p$
+	\item Biconditional: $p \leftrightarrow q \equiv(p \rightarrow q) \wedge(q \rightarrow p)$
+    \end{enumerate}
+\end{proposition}
+
+Finalement, on peut utiliser les équivalence propositionnelle pour
+déterminer si un programme est satifsfiable ou non, c-à-d qu'il possède une
+solution ou non
+
+\subsubsection{Preconditions vs postconditions}
+    La logique propositionnelle nous permet de décrire the correctness of
+    a program:
+    \begin{enumerate}
+        \item preconditions: conditions que le input doit satisfier
+	\item postconditions: conditions que la sortie doit satisifier
+	    pour que la sortie soit valide
+    \end{enumerate}
+
+\subsection{Predicates and Quantifiers}
+
+Malheureusement, on ne peut pas représenter toutes les expressions logiques
+qu'avec les connecteurs logiques. On doit donc introduire la notion
+de quantificateurs. On dénote plusieurs quantificateurs, mais on s'attardera
+au plus utilisés:
+\begin{enumerate}
+    \item quantificateur universel: $ \forall $
+    \item quantificateur existentiel: $ \exists $
+    \item quantificateur unique: $ \exists! $
+\end{enumerate}
+
+Il est important de comprendre que les quantificateurs peuvent s'associer
+ou non à des variables. On dit qu'elles sont libres ou liées. Des variables
+libres peuvent prendre nimporte qu'elle valeur et quand même satisfier
+la proposition logique, mais les variables liés doivent respecter leur
+quantificateur.
+
+\begin{remark}
+    Il est utile de voir que les quantificateurs ne sont que des while
+    loop:
+    \begin{enumerate}
+        \item forall: on itère jusqu'à la fin, mais on arrête si on trouve
+	    un faux
+	\item exists: on itère jusqu'à la fin, et on arrête si on trouve
+	    un vrai
+    \end{enumerate}
+\end{remark}
+
+\subsubsection{Problems}
+
+\begin{enumerate}
+    \item Show Logical Equivalence of propositions with quantifiers:
+	utiliser la logique pour montrer l'implication et l'inverse
+    \item Negating quantifiers using DeMorgan's Laws: forall becomes
+	exists and vice-versa
+    \item Translating English to Logical Expression and vice versa
+\end{enumerate}
+
+\subsection{Nested Quantifiers}
+
+\begin{enumerate}
+    \item Translating Nested Quantifiers to English and vice-versa
+    \item Negating Nested Quantifiers
+\end{enumerate}
+
+\subsection{Rules of Inference}
+
+Dans cette section, on veut apprendre à utiliser la logique propositionnelle
+pour obtenir des conclusions, ce qu'on ne connait pas apriori, en
+utilisant les prémisses, ce qu'on connait apriori. On note plusieurs
+règles d'inférence:
+
+\begin{proposition}[Rules of Inference]
+    \begin{enumerate}
+	\item Modus Ponens: $ (p \to q) \land p \Longrightarrow q$
+	\item Modus Tollens: $ (p \to q) \land \neg q \Longrightarrow
+	    \neg p$
+	\item Disjunctive Syllogism: $ (p \lor q) \land \neg p
+	    \Longrightarrow q$
+	\item Hypothetical Syllogism: $ (p \to q) \land (q \to r)
+	    \Longrightarrow (p \to r)$
+	\item Conjunctive Introduction: $(p \land q) \Longrightarrow
+	    p \land q$
+	\item Disjunctive Introduction: $ p \Longrightarrow p \lor q$
+	\item Biconditional Introduction: $ (p \to q) \land (q \to p)
+	    \Longrightarrow (p \leftrightarrow q)$
+	\item Constructive Dilemma: $(p \to q) \land (r \to s)
+	    \land (p \lor r) \Longrightarrow (q \lor s)$
+	\item Destructive Dilemma: $(p \to q) \land (r \to s)
+	    \land (\neg q \lor \neq p) \Longrightarrow
+	    (\neq p \lor \neg r)$
+	\item Disjunctive Resolution: $(p \lor q) \land (\neg p \lor r)
+	    \Longrightarrow (q \lor r)$
+	\item Conjunctive Elimination: $ (p \land q) \Longrightarrow p$
+	\item Biconditional Elimination: $ (p \leftrightarrow q)
+	    \Longrightarrow (p \to q)$
+    \end{enumerate}
+\end{proposition}
+
+\subsection{Introduction to Proofs}
+\subsection{Proof Methods and Strategy}
+
+\section{Basic Structures: Set, Functions. Sequences, Sums}
+
+\subsection{Sets}
+\subsection{Set Operation}
+\subsection{Functions}
+\subsection{Sequences and Summations}
+\subsection{Cardinality of Sets}
+\subsection{Matrices}
+
+\section{Algorithms}
+
+\subsection{Algorithm}
+\subsection{The Growth of Functions}
+\subsection{Complexity of Algorithms}
+
+\section{Number Theory and Cryptography}
+
+\subsection{Divisibility and Modular Arithmetic}
+\subsection{Integer Representations and Algorithms}
+\subsection{Primes and Greatest Common Divisors}
+\subsection{Solving Congruence}
+\subsection{Applications of Congruences}
+\subsection{Cryptography}
+
+\section{Induction and Recursion}
+
+\subsection{Mathematical Induction}
+\subsection{Strong Induction and Well-Ordering}
+\subsection{Recursive Definitions and Structural Induction}
+\subsection{Recursive Algorithms}
+\subsection{Program Correctness}
+
+\section{Counting}
+
+\subsection{The Basics of Countin}
+\subsection{The Pigeonhole Principle}
+\subsection{Permutations and Combinations}
+\subsection{Binomial Coefficients and Identities}
+\subsection{Generalized Permutations and Combinations}
+\subsection{Generating Permutations and Combinations}
+
+\section{Discrete Maths}
+
+\subsection{An Introduction to Discrete Probability}
+\subsection{Probability Theory}
+\subsection{Bayes’ Theorem}
+\subsection{Expected Value and Variance}
+
+\section{Advanced Counting Techniques}
+
+\subsection{Applications of Recurrence Relations}
+\subsection{Solving Linear Recurrence Relations}
+\subsection{Divide-and-Conquer Algorithms and Recurrence Relations}
+\subsection{Generating Functions}
+\subsection{Inclusion–Exclusion}
+\subsection{Applications of Inclusion–Exclusion}
+
+\section{Relations}
+
+\subsection{Relations and Their Properties}
+\subsection{n-ary Relations and Their Application}
+\subsection{Representing Relations}
+\subsection{Closures of Relation}
+\subsection{Equivalence Relations}
+\subsection{Partial Orderings}
+
+\section{Graphs}
+
+\subsection{Graphs and Graph Models}
+\subsection{Graph Terminology and Special Types of Graphs}
+\subsection{Representing Graphs and Graph Isomorphism}
+\subsection{Connectivity}
+\subsection{Euler and Hamilton Path}
+\subsection{Shortest-Path Problem}
+\subsection{Planar Graphs}
+\subsection{Graph Coloring}
+
+\section{Trees}
+
+\subsection{Introduction to Trees}
+\subsection{Applications of Trees }
+\subsection{Tree Traversal }
+\subsection{Spanning Trees }
+\subsection{Minimum Spanning Trees }
+
+\section{Boolean Algebra}
+
+\subsection{Boolean Functions}
+\subsection{Representing Boolean Functions}
+\subsection{Logic Gates}
+\subsection{Minimization of Circuits}
+
+
+\end{document}
+\end{article}
+

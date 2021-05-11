@@ -833,6 +833,14 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
     d'erreur
 \end{problem}
 
+\begin{problème}[Montrer que si f est continue est $\lim_{n \to -\infty}
+    a_n = -\infty$ et $\lim_{n \to \infty} \infty$, alors f possède au
+    moins un zéro]
+    Essentiellement, si lim -inf et lim +inf, alors il existe un $x_0$
+    strictement négatif et $x_1$ strictement positif. Puisque f est
+    continue, par TVI, il f a un zéro
+\end{problème}
+
 \subsection{Continuité Uniforme}
 
 \begin{definition}[Continuité Uniforme]
@@ -996,6 +1004,15 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
     l'extérieur de l'intervalle définie.
 \end{problem}
 
+\begin{problem}[Montrer que si f est continue, dérivable et
+    $\lim_{n \to -\infty} f(x) = \infty$
+    et $\lim_{n \to \infty} f(x) = \infty$, alors il existe c tel que
+    f'(c) = 0]
+    On peut utiliser le TVI pour se construire des deux points ayant la
+    même image. Voir solution de Stelios
+\end{problem}
+
+
 \subsubsection{Théorème des Accroissements Finis}
 
 \begin{theorem}[Théorème des Accroissements Finis]
@@ -1029,6 +1046,14 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
     sur une fonction, la fonction est uniformément continue, car elle
     est Lipschitienne
 \end{remark}
+
+\begin{intuition}[$ \frac{f'(x)}{f(x)}$ ]
+    Lorsqu'on voit $ \frac{f'(x)}{f(x)}$, on doit remarquer qu'on peut
+    transformer ce problème en problème de point fixe en posant la
+    fonction $ g(x)= log(f(x))$. On utilise le fait que
+    $ \frac{f'(x)}{f(x)}$ est la dérivée d'une fonction log
+\end{intuition}
+
 
 \begin{theorem}[Fonction Constante]
     Soit $f:I \to \mathbb{R}$, une fonction dérivable avec I, un
@@ -1147,6 +1172,13 @@ Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
 \begin{theorem}[Théorème de Taylor]
 
 \end{theorem}
+
+\begin{problem}[Montrer les inégalités en utilisant le théorème de Taylor]
+    On peut utiliser le théorème de Taylor pour approximer des fonctions
+    transcendantes. Ainsi, on peut écrire son développement à une certaine
+    constante près et annuler les termes
+\end{problem}
+
 
 \subsubsection{Méthode de Newton}
 
