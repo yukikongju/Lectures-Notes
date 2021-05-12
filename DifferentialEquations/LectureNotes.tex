@@ -50,13 +50,25 @@ Notons qu'il existe d'autres tyes d'équations différentielles (ex:
 PDEs, qui sont des équa diff avec 2 variables), mais on se penche sur les
 ODEs en premier.
 
+On verra 4 méthodes pour résoudre les ODEs:
+\begin{enumerate}
+    \item Separating Variables: isolate dy/y and integrate both sides
+    \item Integrating Factor: multiplier par une constante d'intégration
+	pour pouvoir intégrer
+    \item Variables Parameters
+    \item indetermined coefficient: $ y(t) = y_h(t) + y_p(t) $
+
+\end{enumerate}
+
 \subsection{What is a differential equation? }
 
 Une équation différentielle est une équation définie par ses fonctions
 et ses dérivées. On l'utilise pour modéliser:
 \begin{enumerate}
     \item Growth : $ P'(t) = r P(t)$
-    \item Decay : $ P'(t) = r (1- \frac{P(t)}{M})P(t)$
+    \item Decay : $ P'(t) = r (1- \frac{P(t)}{M})$
+    \item Logistic Equation: $ P'(t) = r (1- \frac{P(t)}{M})P(t)$
+
 \end{enumerate}
 
 Éventuellement, le graphe devrait converger vers une valeur quelconque.\\
@@ -72,8 +84,8 @@ le graphe pour avoir une idée de l'allure de la famille de solutions.
 
 On distingue 2 types de solutions:
 \begin{enumerate}
-    \item Isocine: y' est une constante
-    \item Autonomous ODEs: y' est une fonction quelconque
+    \item Isocline: y' est une constante: $ y' = 0$, with c
+    \item Autonomous ODEs: y' est une fonction quelconque: $ y' = f(y)$
 \end{enumerate}
 
 \subsubsection{Comment tracer les solutions}
@@ -262,12 +274,13 @@ constante f(t), puis à plugger le guess dans l'équation inhomogène
 Les étapes sont les suivantes:
 \begin{enumerate}
     \item Trouver la solution à l'équation homogène en ignorant f(t)
-    \item Guesser la solution générale pour l'équation homogène pour trouver
-	y et y'
+    \item Guesser la solution générale pour trouver
+	y et y': $ y(t) = v(t) y_h (t) = v e^t $
+    \item Solve for v by isolating v' and integrating both sides
     \item Plugger y et y' dans l'équation inhomogène: il devrait y avoir des
 	termes qui s'annulent
-    \item Intégrer et isoler v, le a(t) ie terme multiplication
-    \item Substitutionner v dans l'équation homogène de base
+    \item Substitutionner v dans l'équation générale
+	$ y(t) = v(t) y_h (t) = v e^t $
 \end{enumerate}
 
 En d'autres mots, on devrait retrouver la constante f(t) dans le v
@@ -313,14 +326,33 @@ Les étapes sont les suivantes:
 
 Si y est la solution générale $y'+a(t)y(t) = f(t)$ et la solution particulière
 $y_p'+a(t)y_p(t) = f(t)$, alors en les soustrayant, on obtient
-$$ (y-y_p)' +a(t) (y-y_p) = 0$$, et $ (y - y_p) $ est une solution à l'équation
-homogène
+$$ (y-y_p)' +a(t) (y-y_p) = 0$$, et $ (y - y_p) $ est une solution à
+l'équation homogène
 
 \subsection{Basic mixing problems.}
 
-TODO
+Dans un problème de mixing problem, on veut déterminer la concentration
+de soluté dans un solvant à un temps donné. Le problème le plus simple
+est le cas suivant: on ajoute de l'eau à la même concentration qu'il
+n'en sort. On caractérise le volume à un temps donné par
+$$ Concentration(t) = \frac{x(t)}{Vol(t)} $$
+
+De plus, on sait que le rate of change à un temps t est donné par
+$$ x'(t) = (rate in) - (rate out) $$
+
+Ainsi, on doit calculer
+\begin{enumerate}
+    \item Rate In := (volume rate) x (concentration) := (volume qui sort
+	dans un intervalle de temps) x (concentration du solvant)
+    \item Rate Out := (volume rate) x (concentration) :=
+	(volume qui sort) x (concentration du solvant dans le tank) :=
+	(volume) x $(\frac{x(t)}{Vol(t)} )$
+    \item Solve for x and for C using one of the 4 methods: on cherche
+	x pour pouvoir trouver C
+\end{enumerate}
 
 \subsection{Advanced mixing problems.}
+TODO
 \subsection{The logistic equation.}
 
 \pagebreak
