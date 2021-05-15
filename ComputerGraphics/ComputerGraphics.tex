@@ -9,7 +9,7 @@
 \author{Emulie Chhor}
 \maketitle
 
-\section{Introduction}
+\section*{Introduction}
 
 Courses Notes for CMU 15-462: Computer Graphics by Keenan Crane
 
@@ -145,9 +145,273 @@ The course consists of building our own library
 
 \section{Linear Algebra}
 
-NEXT
+\textbf{Overview}
+
+\begin{enumerate}
+    \item What is Linear Algebra
+    \item Geometric and algebraic interpretation of Vector Spaces
+    \item Defining what is a linear map
+    \item Span, Basis and Orthonormal Basis
+    \item System of Linear Equations
+    \item Matrices in Linear Algebra
+\end{enumerate}
+
+\subsection{What is Linear Algebra}
+
+L'algèbre linéaire est la branche de mathématique qui étudie les espaces
+vectoriel. Il est important de maitriser ces notions puisqu'elles
+permettent d'abstraire certains concepts géométriques algébriquement,
+ce qui nous permet de simplifier nos calculations.
+
+\subsection{Geometric and algebraic interpretation of Vector Spaces}
+
+\textbf{Qu'est-ce qu'un vecteur}
+
+Géométriquement, on peut visualiser un vecteur comme une flèche ayant
+une direction et une longuer. Ce vecteur se situe dans un espace qu'on
+nomme espace vectoriel. Dans cet espace, ce vecteur possède certaines
+propriétés qu'on nomme axiomes.
+
+\textbf{Pourquoi étudier les espaces vectoriels}
+
+Habituellement, l'interprétation géométrique et algébrique des espaces
+vectoriels se fait assez bien. On veut donc identifier ces propriétés afin
+de pouvoir généraliser les espaces vectoriels non pas uniquement sur des
+vecteurs, mais sur des structures plus compliquées tel que des polynômes,
+fonctions, matrices, etc.\\
+
+Ainsi, puisqu'on sait qu'un vecteur est caractérisé par sa norme et sa
+direction, on veut pouvoir généraliser ces notions et interpréter
+géométriquement ces objets.
+
+\subsubsection{Axiomes d'un espace vectoriel}
+
+Un espace vectoriel possèdent les 10 propriétés suivantes (axiomes):
+\begin{enumerate}
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+    \item
+\end{enumerate}
+
+Dans des cours de maths plus avancés, on verra que les espaces vectoriels
+possèdent ces caractéristiques puisque ce sont des fields/ring
+
+De plus, il est utile d'interpréter ces propriétés géométriquement
+et algébriquement. C'est donc un bon exercices de voir pourquoi, par
+exemple, l'addition de vecteurs est commutatif géométriquement et
+algébriquement.
+
+\subsubsection{Interprétation géométrique et algébrique de la norme}
+
+Cette sous section focusse sur les propriétés de la norme d'un objet dans
+un espace vectoriel. Ici, on se penchera sur la norme d'un vecteur et
+d'une fonction, norme qu'on nomme $L^2$. Notre but sera donc de
+\begin{enumerate}
+    \item Calculer la norme d'une vecteur et d'une fonction
+    \item Interpréter géométriquement et algébriquement les propriétés
+	de la norme d'un vecteur et d'une fonction
+\end{enumerate}
+
+\textbf{Calcul de la Norme}
+
+La norme d'un vecteur est sa longueur, alors que la norme $L^2$ d'une
+fonction est l'aire sous sa courbe. Notons qu'on peut interpréter une
+intégrale comme une somme (penser à Riemann)
+
+\begin{enumerate}
+    \item Norme d'un vecteur: $ |u| = \sqrt(\sum^{n}_{i=1} u_i ^2) $
+    \item Norme d'une fonction $(L^2)$ norm: $ || f ||
+	:= \sqrt(\int_{{0}}^{{1}} {f(x) ^2} \: d{x} {}	) $
+\end{enumerate}
+
+\subsubsection{Interprétation géométrique et algébrique des propriétés de la norme}
+
+\begin{enumerate}
+    \item $ | u| \geq 0 $
+    \item $ | u| = 0 \Longleftrightarrow u=0 $
+    \item $ |cu| = |c| |u| $
+    \item
+    \item Inégalité du triangle: $ |u| + |v| \geq |u+v| $
+\end{enumerate}
+
+\subsection{Interprétation géométrique et algébrique du produit scalaire}
+
+Le produit scalaire mesure si 2 vecteurs (ou fonction) se dirige vers
+la même direction (leur alignement). Encore une fois, on veut
+\begin{enumerate}
+    \item Calculer le produit scalaire de deux vecteurs/fonctions
+    \item Interpréter géométriquement et algébriquement les propriétés
+	du produit scalaire
+\end{enumerate}
+
+\subsubsection{Calcul du produit scalaire}
+
+\begin{enumerate}
+    \item Produit Scalaire d'un vecteur: $ <u,v> := \sum^{n}_{i=1} u_i v_i $
+    \item Produit Scalaire d'une fonction: $ <<f,g>> :=
+	\int_{{0}}^{{1}} {f(x)g(x)} \: d{x} {} $
+\end{enumerate}
+
+\subsubsection{Interprétation géométrique et algébrique des propriétés
+du produit scalaire}
+
+\begin{enumerate}
+    \item Symmétrique: $ <u,v> = <v,u>$
+    \item Projection and scaling
+    \item If we scale the vector, the scalar product is also scaled:
+	$ <cu, v> = c <u,v> $
+    \item a vector is aligned with itself: $ <u,u> = 1$ et $ <u,u> \geq 0$
+\end{enumerate}
+
+\textbf{Edges Detection using Derivatives}
+
+Parfois, la norme et le produit vectoriel d'une image ou d'un singal
+peuvent être trompeur. Par exemple, si on interpréte la norme d'une image
+comme sa "brillance", alors il se pourrait que notre algorithme nous
+indique qu'il y ait plus d'information dans une image d'un ciel que dans
+une photo d'un chien. Pour ce faire, on peut redéfinir notre définition
+de la norme comme étant la dérivée, et ainsi détecter les edges.
+
+\subsection{Defining what is a linear map}
+
+\subsubsection{Pourquoi travailler avec des transformations linéaires}
+
+On veut travailler avec des transormations linéaires parce que
+\begin{enumerate}
+    \item travailler avec des transformations non-linéaires est un
+	problème NP, très difficile à computer
+    \item Les transformations usuelles
+	(rotations, translation, ..) sont des transformations linéaires
+    \item Puisque l'addition et la multiplication sont définies de la
+	même façon avant et après transformations, on peut faire des
+	approximations de Taylor: on peut approximer des fonctions
+	transcendantes avec des fonctions polynômiales.
+\end{enumerate}
+
+Plus tard, on verra qu'on peut interpréter les matrices comme des
+transformations linéaires.
+
+\textbf{Is it a linear function}
+
+On peut déterminer si une transformation est linéaire de 2 façons:
+algébriquement et géométriquement.
+
+Géométriquement:
+\begin{enumerate}
+    \item L'origine part à la même place
+    \item Les lignes restent des lignes
+\end{enumerate}
+
+Algébriquement:
+\begin{enumerate}
+    \item l'addition est définie de la même façon avant et après
+	transformation:
+    \item la multiplication est définie de la même façon avant et après
+	transformation:
+\end{enumerate}
+
+Ainsi, la fonction $f(x) = ax+b$ n'est pas une transformation linéaire,
+puique géométriquement, elle ne mappe pas les vecteurs à la même origine,
+et algébriquement, l'addition n'est pas définie de la même façon avant
+et après transformation. Intuitivement, c'est comme si on disait que
+l'ordre dans lequel on performe nos transformation change le output,
+ce qui n'a pas de sens.
+
+\subsection{Span, Basis and Orthonormal Basis}
+
+\textbf{Span (Espace générateur)}
+
+On peut interpréter un espace générateur de la façon suivante: c'est
+l'ensemble de vecteurs qu'on peut obtenir en faisant la combinaison
+linéaire de vecteurs d'un ensemble.\\
+
+La notion de span est importante, car on veut pouvoir déterminer si on
+notre ensemble de vecteurs est assez grand pour générer les vecteurs
+de l'espace
+
+\textbf{Basis}
+
+La base d'un espace vectoriel est simplement l'ensemble des vecteurs
+nécessaires pour construire tous les vecteurs d'un espace. On veut
+pouvoir générer tous les vecteurs, sans en avoir trop. La base doit être:
+\begin{enumerate}
+    \item Linéairement indépendant: on a un nombre minimal de vecteurs
+	pouvant générer ie il existe une seule façon de construire
+	le vecteur
+    \item Générateur: on peut faire une combinaison linéaire
+\end{enumerate}
+
+Il faut noter que lorqu'on additionne, multiplie des vecteurs, il faut
+toujours s'assurer qu'on travaille dans la même base.
+
+\textbf{Orthonormal Basis}
+
+En computer graphics, on veut travailler avec des bases orthonormales,
+car la longueur reste la même
+
+\begin{enumerate}
+    \item Comment déterminer si la base est orthogonale? les paires des
+	vecteurs sont orthogonales entre elles
+    \item Comment transformer une base quelqconque en base orthogonale?
+	Gram-Schmidt ou QR Decomposition
+\end{enumerate}
+
+\textbf{Fourier Transform}
+
+Les fouriers transformations et les fourier decomposition sont
+utilisés pour décomposer les signaux sur des bases sinusoidales
+$ cos(nx), sin(mx) $ en projettant les fonctions (se répètent
+sur des période 2 pi) sur différentes fréquences.
+
+\subsection{System of Linear Equations}
+
+Une autre utilisation de l'algèbre linéaire est p/r à la résolution de
+système linéaire. On veut résoudre les systèmes linéaire, car ils nous
+disent si on a des intersections (points, droites, plans, ...)
+
+\textbf{Types de solutions}
+
+Encore une fois, on peut interpréter les solutions à un SEL algébriquement
+et géométriquement.
+
+\begin{enumerate}
+    \item Aucune solution
+	\begin{itemize}
+	    \item Algébriquement: contradiction [ 0 0 .. 0  | k]
+	    \item Géométriquement: il n'y a pas d'intersections
+	\end{itemize}
+    \item Solution Unique
+	\begin{itemize}
+	    \item Algébriquement: toutes les variables sont associées à un
+		pivot
+	    \item Géométriquement: il y a une seule intersection point/droite
+	\end{itemize}
+    \item Infinité de solutions
+	\begin{itemize}
+	    \item Algébriquement: variable libre
+	    \item Géométriquement: superposition des droites/plans
+	\end{itemize}
+\end{enumerate}
+
+Notons que les SEL sont aussi associés à l'équation Ax=b, qui nous
+permet de trouver la préimage x de b, c-à-d le vecteur original avant
+d'avoir appliquer la matrice de transformation A sur le vecteur b
+
+\subsection{Matrices in Linear Algebra}
+
+On a peu parler des matrices, car elles ont plusieurs interprétations
+géométriques, ce qui peut nous mélanger dans la compréhension.
+
+TODO
 
 \section{Vector Calculus}
+NEXT
 \section{Drawing a Triangle and an Intro to Sampling}
 \section{Spatial Transformations}
 \section{3D Rotations and Complex Representations}
