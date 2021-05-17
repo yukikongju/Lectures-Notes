@@ -168,17 +168,113 @@ un pattern.
 
 \subsection{TP}
 
+Cette semaine, le TP se penchait sur 2 sujets:
+\begin{enumerate}
+    \item Rappel sur les concepts en probabilité
+    \item Intro aux Processus Stochastiques
+\end{enumerate}
+
+\subsubsection{{Rappel sur les concepts en probabilité}}
+
+\begin{enumerate}
+    \item Principe Inclusion-Exclusion
+    \item Probilités Totales pour généraliser le nombre de tirage avec et sans
+	remise: $ P(A_1|B) P(B) + P(A_2|B)P(B) $
+    \item Trouver la densité marginale d'une v.a: si continues, on doit essayer
+	de retrouver une fonction de densité pour éviter d'avoir à résoudre
+	l'intégrale
+\end{enumerate}
+
+\subsubsection{Intro aux Processus Stochastiques}
+
+\begin{enumerate}
+    \item Déterminer si une p.s. est Markov ou non
+    \item Trouver/Lire une Matrice de Transition
+    \item Tracer le Graphe
+\end{enumerate}
+
+\subsection{Intro aux Processus Stochastiques}
+
 \pagebreak
 
 \section{Semaine 2}
-\subsection{Théorie 1}
+\subsection{Théorie 1: Probabilité de Transition à plusieurs étapes}
 \subsection*{Big Idea}
+
+Ce cours-ci nous présentait certaines méthodologies pour déterminer
+la probabilité de transition à plusieurs étapes pour des P.S discrèts
+à temps homogène satisfaisant la propriété de Markov
+
 \subsection*{Outline}
 \begin{enumerate}
-    \item
-    \item
-    \item
+    \item Modèles: Marche aléatoire, Processus de Branchement, Modèle de
+	diffusion de Gaz
+    \item Probabilité de transition avec probabilité conditionnelle
+    \item Probabilité de transition avec Relation Chapman-Kolmogrov
 \end{enumerate}
+
+
+\subsubsection{Modèles: Marche aléatoire, Processus de Branchement, Modèle de    diffusion de Gaz}
+
+Dans un premier temps, on a réviser les notions de marche aléatoire,
+processus de branchement et  modèle de diffusion de gaz. Essentiellement,
+on voulait s'apercevoir que
+\begin{enumerate}
+    \item La valeur de $X_n$ ne peut que se déplacer de 1 (dans la plupart
+	du temps)
+    \item Conditionnement: on peut trouver la probabilité de transition
+	d'un état à l'autre par conditionnement p/r à l'étape précédante
+\end{enumerate}
+
+\subsubsection{Probabilité de transition avec probabilité conditionnelle}
+
+Dans les cours précédants, on nous donnait la matrice de transition pour
+déterminer la probabilité de se déplacer d'un état à l'autre. Ici, on
+voit 2 résultats importants:
+\begin{enumerate}
+    \item si P.S Markov et homogène (même proba peu import le temps),
+	alors $$ P[X_2 = 3 , X_1 = 2 | X_0 = 1] = P[X_{n+2} = 3, X_{n+1} = 2
+	| X_n =1] $$, ce qui veut dire que la proba de transition d'état ne
+	dépend pas d'un temps quelconque, mais que de la "distance" (nombres
+	de pas) entre 2 états, si P.S Markov est homogène
+    \item On peut utiliser la probabilité conditionnelle pour déterminer la
+	proba de transition entre 2 états
+\end{enumerate}
+
+\textbf{Preuve pour 1}
+
+Puisqu'on a une chaine de Markov, les les 2 états sont indépendants et on peut
+utiliser la règle de multiplication:
+
+$$ P[X_2 = 3 , X_1 = 2 | X_0 = 1] $$
+$$ = \frac{P(X_2 = 3, X_1 =2, X_0 = 1)}{P(X_0 = 1)}  $$
+$$ = (\frac{P(X_2 = 3, X_1 =2, X_0 = 1)}{P(X_0 = 1)})
+(\frac{P(X_1 = 3, X_1 = 2)}{P(X_0=1)} ) $$
+$$ ... $$
+
+\textbf{Probabilité Conditionnelle pour trouver la probabilité de transition}
+
+Plus généralement, pour trouver la probabilité de transition à plusieurs
+étapes, on doit conditionner par les étapes intermédiaires:
+
+\begin{enumerate}
+    \item 2 étapes: $ P(X_2 = 1 | X_0 =1) = \sum^{n}_{i=1} P(X_2 = 2, X_1 = k | X_0=1) $
+    \item 3 étapes: $ P(X_3 = 1, X_2 = 1 | X_0 =1) = P(X_3 = 1, X_2 = 1)
+	P(X_2 = 1 | X_1 =1) P(X_1 = 1 | X_0 =2)$
+    \item m étapes: $ P(X_{n+m} = j | X_n = i) = P(n=j |X_0 = i) $
+\end{enumerate}
+
+\subsubsection{Probabilité de transition avec Relation Chapman-Kolmogrov}
+
+La relation de Chapman-Kolmogrov est pratique, car elle nous permet de généraliser
+le calcul pour la probabilité de transition en m étapes. Au lieu de multiplier
+individuellement les intermédiaires à chaque étapes, on peut utiliser la
+multiplication matricielle pour obtenir la matrice de transition après m
+étapes. On note $ P^(m) = P^m $, P: matrice de transition.\\
+
+Par exemple, si on veut la proba de transition à 3 étapes, on n'a qu'à faire
+$$ P \times P \times P $$
+
 \subsection{Théorie 2}
 \subsection*{Big Idea}
 \subsection*{Outline}

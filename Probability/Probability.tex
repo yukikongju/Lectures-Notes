@@ -1,12 +1,17 @@
 \documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
 \begin{document}
-\title{Lectures Notes for Probability}
+\title{Notes de Cours MAT1720 - Probabilités}
 \author{Emulie Chhor}
 \maketitle
 
-\section{Introduction}
+\section*{Introduction}
 
-Le premier cours de probabilité comporte 4 chapitres
+Le premier cours de probabilité comporte 4 chapitres:
 
 \begin{enumerate}
     \item Introduction aux Probabilités
@@ -15,18 +20,62 @@ Le premier cours de probabilité comporte 4 chapitres
     \item Fonctions Génératrices et Théorème Limite Central
 \end{enumerate}
 
-\subsection{Introduction à la Probabilité}
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
 
-\subsubsection{Définition Classique de Probabilité}
+\section{Introduction à la Probabilité}
 
-\subsubsection{Règles de dénombrement}
+\subsection*{Overview}
+
+Le premier chapitre porte sur les notions de bases en Probabilité.
+On introduit la notion de dénombrement, la règle de Bayes et la
+notion d'indépendance.\\
+
+Il est essentiel de maitriser ces notions puisque les concepts des
+autres chapitres seront basées sur celles-ci.
+
+\subsection{Définition Classique de Probabilité}
+
+La définition classique de probabilité nous dit qu'on peut trouver la
+probabilité en considérant le ratio entre la cardinalité de notre
+espace et la cardinalité de l'univers des possibles. En d'autres mots,
+c'est le ratio entre les évènements favorables et tous les évènements.
+
+\subsection{Règles de dénombrement}
 
 \begin{enumerate}
-    \item Règle de multiplication
-    \item Règle d'addition
+    \item Principe de multiplication
+    \item Principe d'addition
 \end{enumerate}
 
-\subsubsection{Règles de dénombrement II}
+La principe de multiplication et d'addition nous dit que lorsqu'on doit
+multiplier les évènements consécutifs ensemble, alors que le principe
+d'addition nous dit d'additionner la probabilité d'évènements disjoints.
+On verra plus tard que le principe d'addition pourra se généraliser avec
+le principe d'inclusion-exclusion.
+
+En ce qui attrait le principe de multiplication, je trouve qu'il est
+utile de visualiser chaque position comme des petites cases qu'on
+doit déterminer la probabilité à chaque case.
+
+\begin{problem}[Permutations et Combinaisons avec et sans remise]
+    Souvent, les problèmes ne nous disent pas s'il s'agit d'un
+    problème sans remise ou avec remise ou si l'ordre est important.
+    Le plus important est de rester cohérent avec notre stratégie de
+    dénombrement. Si on décide de compter le nombre de groupes, alors
+    il faut rester avec le nombre de groupes. On ne peut pas calculer
+    le nombre de groupe pour l'un et le nombre de personnes pour l'autre
+\end{problem}
+
+\subsection{Règles de dénombrement II}
 
 \begin{enumerate}
     \item Permutations
@@ -34,7 +83,50 @@ Le premier cours de probabilité comporte 4 chapitres
     \item Boules et Urnes
 \end{enumerate}
 
-\subsubsection{Règles de dénombrement III}
+\subsubsection{Permutations}%
+\label{ssub:permutations}
+
+Les permutations comptent le nombre d'évènements en considérant l'ordre.
+$$ P(n,r) = \frac{n!}{(n-r)!} $$ avec n: nombre d'éléments, r: nombre de cases\\
+
+Intuitivement, le numérateur nous dit qu'on a n cases et qu'on doit piger
+1 boule sans remise à chaque position, alors que le dénominateur nous dit
+qu'on a compter trop de cases et qu'on doit retrancher les positions qu'on
+a compter de trop.
+
+\subsubsection{Combinaisons}%
+\label{ssub:combinaisons}
+
+Les combinaisons comptent le nombre d'évènements sans considérer l'ordre
+de la pige et est donné par
+$$ C(n,r) = \frac{n!}{r! (n-r)!} $$
+
+Intuitivement, le nombre de combinaisons est le nombre de permutations dont
+on a retrancher les groupes équivalents, donné par r!
+
+\begin{problem}[Compter le nombre de paires]
+    Lorsqu'on doit dénombrer de paires, on doit considérer la position de la
+    paire et la sortes. Exemples:
+    \begin{enumerate}
+        \item Souliers: paires + gauche/droite
+	\item Cartes: valeur + enseigne
+    \end{enumerate}
+\end{problem}
+
+\subsubsection{Boules et Urnes}%
+\label{ssub:boules_et_urnes}
+
+Le principe de boules et urnes nous dit qu'on veut placer n boules dans r
+urnes. Dépendamment des problèmes, on accepte que certaines urnes soients
+vides ou non. Pour ma part, j'aime représenter les urnes avec des petites
+boites. Parfois, certains problèmes plus tricky requiert qu'on dissecte
+le problème en plusieurs étapes. On doit dabord fixer des positions, puis
+résoudre avec l'astuce de boule et urnes par la suite.
+
+\begin{problem}[Code Binaire]
+\end{problem}
+
+\subsection{Règles de dénombrement III}
 
 \begin{enumerate}
     \item Formule de Pascal
@@ -42,14 +134,43 @@ Le premier cours de probabilité comporte 4 chapitres
     \item Coefficients Binomiaux
 \end{enumerate}
 
-\subsubsection{Espaces de Probabilité}
+\subsection{Espaces de Probabilité}
 
 \begin{enumerate}
     \item Espace Fondamental
-    \item Formule du Binôme
 \end{enumerate}
 
-\subsubsection{Probabilité Conditionnelle}
+Un espace de probabilité est l'univers des possibles, c-à-d toutes les
+valeurs que l'évènement X peut prendre. On note 3 axiomes importants, duquel
+découlent tous les autres:
+
+\begin{enumerate}
+    \item $ \mathbb{P} (\Omega) = 1 $
+    \item $ \mathbb{P} (A^c) = 1  - \mathbb{P}(A)$
+\end{enumerate}
+
+\subsubsection{Propriété de l'Espace Fondamental}%
+\label{ssub:Propriété de l'Espace Fondamental}
+
+
+\begin{property}[Propriétés de l'Espace fondamental]
+    \item Propriété d'additivité
+    \item Continuité croissante/décroissante
+    \item Additivité Dénombrables
+    \item Inégalité de Boole
+    \item Propriété de Monotécité
+\end{property}
+
+\subsubsection{Principe d'inclusion-exclusion}%
+\label{ssub:Principe d'inclusion-exclusion}
+
+Le principe d'inclusion-exclusion nous permet de caluler la probabilité
+de l'union (et de l'intersection) d'évènements qui ne sont pas disjoints.
+
+Pour mieux comprendre, on peut dessiner un diagramme de Venne. Essentiellement, la formule nous dit qu'on doit retrancher les intersections pour éviter
+de compter le même espace deux fois.
+
+\subsection{Probabilité Conditionnelle}
 
 \begin{enumerate}
     \item Définition
@@ -57,7 +178,26 @@ Le premier cours de probabilité comporte 4 chapitres
     \item Conditionnement
 \end{enumerate}
 
-\subsubsection{Indépendance}
+
+\subsubsection{Définition de la Probabilité Conditionnelle}%
+\label{ssub:Définition de la Probabilité Conditionnelle}
+
+Intuitivement, la définition de la probabilité conditionnelle nous dit
+que si on sait qu'une partie de l'espace fondamental s'est déjà produit,
+alors on n'a plus besoin de le considérer (car ça s'est déjà passé), et
+on peut le retrancher de la probabilité
+
+\subsubsection{Formule de Bayes}%
+\label{ssub:Formule de Bayes}
+
+La formule de Bayes nous dit nous permet de calculer de la probabilité
+à postériori. En observant un résultat, on peut faire de l'inférence pour
+peut-être obtenir plus d'information sur une prieure.\\
+
+On peut retrouver la formule en faisant l'égalité entre 2 probabilités
+conditionnelles.
+
+\subsection{Indépendance}
 
 \begin{enumerate}
     \item Pairwise Independance
@@ -65,15 +205,72 @@ Le premier cours de probabilité comporte 4 chapitres
     \item Conditionnement
 \end{enumerate}
 
-\subsection{Variables aléatoires}
+On peut interpréter l'indépendance de la façon suivante: connaitre
+le résultat de X n'affecte pas la probabilité de Y. En d'autres mots,
+si je pige X avant Y, je ne change pas la probabilité de Y. Connaitre
+le résultat de X ne me donne pas plus d'information sur Y.\\
 
-\subsubsection{Variables aléatoires discrètes}
+On sait que deux évènements (ou plus) sont indépendant si:
+\begin{enumerate}
+    \item Pairwise Independance: la probabilité de chaque paire est
+	égale à la probabilité de leur intersection
+    \item Independance "for all": la probabilité de l'intersection
+	entre A,B,C est égale à leur produit
+\end{enumerate}
 
-\subsubsubsection{Définition}
+Notons qu'on veut déterminer l'indépendance entre 2 variables, car ça
+nous permet d'additionner des v.a. (prochain chapitre)
 
-\subsubsubsection{Loi de Variables aléatoires discrètes}
+\section{Variables aléatoires}
+
+\subsection*{Overview}
+
+On étudie les variables aléatoires parce qu'on n'est pas capable
+de déterminer la "chance" d'obtenir un résultat précis en un seul essai.
+Par contre, si on répète l'expérience assez de fois, on est en mesure
+d'estimer la probabilité d'un évènement
+
+Le chapitre sur les variables aléatoires se découlent en:
+\begin{enumerate}
+    \item Variables aléatoires discrètes: valeur discrete
+    \item Variables aléatoires continues: valeur continue
+    \item Somme et Produit de Variable
+    \item Transformation de variable aléatoire
+    \item V.a. Conditionnelles
+\end{enumerate}
+
+Il faut aussi se souvenir qu'une v.a. est définie par la fonction densité,
+représentant la courbe de sa valeur, et par sa fonction de répartition,
+la valeur de sa probabilité, équivalent à l'aire sous la courbe.\\
+
+Notons que les concepts du premier chapitre sont encore valide. Ce chapitre
+essait de généraliser les résultats du premier chapitres. Ainsi, on
+sait que l'aire sous la courbe est de 1.
+
+\subsection{Variables aléatoires discrètes}
+
+\subsection{Définition}
+
+Une variable aléatoire discrète est une variable qui modélise un évènement
+dont la valeur est discrète. Ici, on désire déterminer:
+\begin{enumerate}
+    \item Probabilité que X prenne une valeur quelconque: $ P(X = x)$
+    \item Probabilité que X prenne une valeur dans un intervalle:
+	$ P(X \leq x) $ ou $ P(X \geq x) = 1 - P(X \leq x)$ ou
+	$ P(n < X < m) $
+\end{enumerate}
+
+Ainsi, si on veut déterminer la proba que X prenne la valeur 1 ou 2 ou ...,
+on n'a qu'à additioner ses probabilités là.\\
+
+Il existe plusieurs variables aléatoires discrètes, qui modélise des
+situations différentes, et elles se trouvent avec les techniques de
+dénombrement vues au chapitre 1.
+
+\subsection{Loi de Variables aléatoires discrètes}
 
 \begin{enumerate}
+    \item Épreuves de Bernouilli
     \item Loi Binomiale
     \item Loi Géométrique
     \item Loi Hypergéométrique
@@ -82,16 +279,128 @@ Le premier cours de probabilité comporte 4 chapitres
     \item Processus de Poisson
 \end{enumerate}
 
-\subsubsection{Variables aléatoires continues}
+\subsubsection{Épreuves de Bernouilli}%
+\label{ssub:Épreuves de Bernouilli}
 
-\subsubsubsection{Définition}
+Malgré qu'on ne la considère pas comme une loi, une épreuve de Bernouilli
+réprésente la probabilité d'un succès ou d'un échec pour un seul essai.
 
+$$ P(I) = \text{ 1 * proba succès + 0 * proba échec } $$
+
+On verra plus tard qu'on l'appelle aussi une variable indicatrice, et nous
+aide à calculer les calculer la somme de variables aléatoires.
+
+\subsubsection{Loi Binomiale}%
+\label{ssub:Loi Binomiale}
+
+La Binomiale est une généralisation de la Bernouilli. On veut déterminer
+la probabilité d'avoir k succès en n épreuves. Une hypothèse de la binomiale
+est que la probabilité de chaque succès est la même.\\
+
+La formule de la binomiale est assez intuitive. Si la probabilité de succès
+est donnée par p, alors on sait que la probabilité d'échec est de (1-p).
+De plus, on a k succès et n-k échecs. Ainsi, on a
+$$ p^k (1-p)^{n-k} $$, qu'on multiplie par la combinaisons, car l'ordre
+n'importe pas.
+
+Notons que si p est petit et n est grand, on peut modéliser avec une poisson
+(on verra plus tard pourquoi)
+
+\subsubsection{Loi Géométrique}%
+\label{ssub:Loi Géométrique}
+
+La loi géométrique représente la probabilité d'avoir le premier succès au
+k-ième essai. Elle suppose aussi que la probabilité de succès est la
+même à chaque essai (tirage avec remise).
+
+Intuitivement, la formule peut être interpréter de la façon suivante:
+si on veut que le premier succès soit à la k-ième position, on doit
+fixer la k-ième position à un succès et les autres à un échec.
+$$ P(X) = (1-p)^n p $$
+
+Notons qu'on ne multiplie pas par la combinaison parce que ici, l'ordre
+est important
+
+\textbf{Pourquoi dit-on que la géométrique est sans mémoire}
+
+On dit que la géométrique est sans mémoire, car elle ne dépend pas des
+résultats précédants. Connaitre l'historique ne nous donne pas plus
+d'information sur ce qu'il va se passer dans le futur: on n'a besoin que
+de l'étape précédante
+
+\subsubsection{Hypergéométrique}%
+\label{ssub:Hypergéométrique}
+
+Une distribution hypergéométrique détermine la probabilité d'avoir k succès
+en n épreuves, mais dans un tirage sans remise.
+
+$$ P(X=x) = \frac{\binom{(a,x) \binom(N-a, n-x) }}{\binom(N,n)} $$
+
+Avec
 \begin{enumerate}
-    \item Fonction de Densité
-    \item Fonction de Répartition
+    \item n: nombre objets
+    \item a: nombre de succes
+    \item X: nombre de succès dans le sample
 \end{enumerate}
 
-\subsubsubsection{Loi de Variables aléatoires continues}
+Le dénominateur représente le nombre de façon de piger n objets et le
+numérateur représente le nombre de façon d'avoir x succès parmi les a
+succès possibles x la proba d'avoir n-x échecs
+
+\subsubsection{Binomiale Négative}%
+\label{ssub:Binomiale Négative}
+
+La binomiale négative est la distribution qui nous donne la distribution
+du nombre d'essais requis pour avoir le r-ième succès avec probabilité p.
+
+
+Pour obtenir la binomiale négative, on doit d'abord fixer le k-ème succès
+au x-ième essais. $$p$$
+
+Puis, il faut qu'il y ait (r-1) succès dans les (x-1)
+essais (essais avant le k-ième succès). On sait aussi que l'ordre n'importe
+pas, alors on doit multiplier par la combinaison. (utiliser l'intuition de la
+binomiale)
+
+$$ \binom{x-1, r-1} p^{r-1}(1-p)^{(x-1)-(r-1)} $$
+
+On obtient donc
+
+$$ P(X =x) = p x \binom{x-1, r-1} p^{r-1}(1-p)^{(x-1)-(r-1)}
+= \binom{x-1, r-1} p^{r}(1-p)^{(x-r)} $$
+
+\subsubsection{Poisson}%
+\label{ssub:Poisson}
+
+TODO
+
+La loi de Poisson mesure le nombre d'évènements dans un intervalle donné.
+
+\subsubsection{Processus de Poisson}%
+\label{ssub:Processus de Poisson}
+
+
+\subsection{Variables aléatoires continues}
+
+\subsection{Définition}
+
+Une variable aléatoire continue est définie par sa fonction de densité,
+qui donne la "valeur" de la probabilité à un point donné, et sa fonction
+de répartition, qui donne la probabilité que X prenne une valeur dans un
+intervalle donné. Notons que la probabilité que X prenne une valeur
+quelconque est de 0, car l'aire sous la courbe d'un point est nulle.
+Ainsi, on ne veut pas calculer la probabilité que X prenne un valeur
+quelconque, mais plutôt:
+
+\begin{enumerate}
+    \item Fonction de densité: valeur de X a un point
+    \item Fonction de Répartition: proba que X prenne une valeur dans
+	l'intervalle $ P(X \leq x)$
+\end{enumerate}
+
+\subsection{Loi de Variables aléatoires continues}
+
+Il existe quelques lois continues:
 
 \begin{enumerate}
     \item Loi Uniforme
@@ -103,17 +412,92 @@ Le premier cours de probabilité comporte 4 chapitres
     \item Loi Cauchy
 \end{enumerate}
 
-\subsubsection{Variables aléatoires simultanées}
+Nous nous focusserons sur les primordiales, c-à-d la loi uniforme,
+exponentielle, et normale. On peut trouver la fonction de répartition en
+intégrant la fonction de densité, et, inversement, trouver la fonction
+de densité en dérivant la fonction de répartition
 
-\subsubsubsection{Définitions v.a. discrètes}
+\textbf{Comment trouver la fonction de densité de v.a continues?}
 
+TODO
+
+\subsubsection{Loi Uniforme}%
+\label{ssub:Loi Uniforme}
+
+La loi uniforme est dont la probabilité est la même partout.
+TODO
+
+\subsubsection{Loi Exponentielle}%
+\label{ssub:Loi Exponentielle}
+
+TODO
+
+\subsubsection{Loi Normale}%
+\label{ssub:Loi Normale}
+
+TODO
+
+\begin{remark}
+    On peut utiliser la loi normale pour trouver la formule de Stirling,
+    qui approxime la factorielle n!
+\end{remark}
+
+\begin{remark}[Loi Log-Normale]
+    Si on a une loi log normale, on a qu'à poser une variable intermédiaire
+    log(D) et travailler avec l'exponentielle
+\end{remark}
+
+\subsection{Variables aléatoires simultanées}
+
+Les variables aléatoires simultanées sont des variables qui considèrent
+2 paramètres (ou plus). Par exemple, on calcule le BMI à partir du poids
+et de la taille.
+
+On distingue 2 types de v.a. simultanées: discrètes et continues, et
+chacune d'elles possèdent
 \begin{enumerate}
-    \item Fonction de Masse Conjointe
-    \item Fonction de Masse Marginale
-    \item Fonction de Masse Conditionnelle
+    \item Fonction de Masse Conjointe: fonction de probabilité
+    \item Fonction de Masse Marginale: fonction "individuelle"
+    \item Fonction de Masse Conditionnelle:
 \end{enumerate}
 
-\subsubsubsection{Définitions v.a. continues}
+\subsection{Définitions v.a. simultanées discrètes}
+
+\subsubsection{Fonction de Masse Conjointe}%
+\label{ssub:Fonction de Masse Conjointe}
+
+La fonction de masse conjointe nous donne la probabilité de la variable
+simultanée. On écrit
+$$ p(x,y) = P(X=x, Y=y) = P(X=x | Y=y) P(Y=y) $$
+
+Intuitivement, c'est l'intersection de X et de Y, et puisque l'intersection
+est donnée par la règle de multiplication (voir chapitre 1), on obtient
+la proba conditionnelle plus haut.\\
+
+\textbf{Pourquoi la fonction de masse conjointe peut être interpréter comme
+l'intersection de X et Y}
+
+TODO
+
+\subsubsection{Fonction de Masse Marginale}%
+\label{ssub:Fonction de Masse Marginale}
+
+La fonction de masse marginale de X représente l'apport de X et on la
+trouve en sommant la fonction de masse conjointe p/r au support de l'autre
+variable
+
+\textbf{Pourquoi doit-on sommer/intégrer p/r à l'autre variable
+lorsqu'on calcule la fonction de masse marginale?}
+
+TODO
+
+\subsubsection{Fonction de masse conditionnelle}%
+\label{ssub:Fonction de masse conditionnelle}
+
+C'est le même principe que la probabilité conditionnelle, mais on considère
+le ratio des proportions.
+
+\subsection{Définitions v.a. simultanées continues}
 
 \begin{enumerate}
     \item Fonction de Densité Conjointe
@@ -121,22 +505,187 @@ Le premier cours de probabilité comporte 4 chapitres
     \item Fonction de Densité Conditionnelle
 \end{enumerate}
 
-\subsubsubsection{Variables aléatoires Indépendates}
+\subsection{Variables aléatoires Indépendates}
 
-\subsubsection{Somme de Variables Aléatoires}
-\subsubsection{Transformation de Variables Aléatoires}
+On peut déterminer si X et Y sont indépendantes comme au chapitre 1, c-à-s
+qu'on compare leur probabilité, qu'on calcule avec l'intégrale.
 
-\subsection{Espérance de Variables Aléatoires}
+De savoir que deux variables simultanées sont indépendantes est pratique,
+car ça nous permet de trouver leur fonction de masse/densité conjointe
+en les multipliant.
 
-\subsection{Fonction Génératrice et Théorème Limite Central}
+\subsubsection{Somme de Variables Aléatoires Indépendantes}
 
-\subsubsection{Fonction Génératrice}
+TODO
 
-\subsubsection{Théorèmes Limites}
+\textbf{Qu'est-ce qu'une convolution?}
 
-\subsubsubsection{Loi des Grands Nombres}
-\subsubsubsection{Théorème Limite Central}
-\subsubsubsection{Inégalité de Bienyamé-Tchebychev}
+TODO
+
+
+\begin{problem}[Trouver la fonction densité de Z=X+Y]
+    Pour trouver la fonction densité de Z, on doit dabors trouver sa
+    fonction de densité en intégrant p/r à X ou Y, puis on dérive
+\end{problem}
+
+\begin{proposition}
+    La somme de v.a. normales est la somme de leurs parametres
+\end{proposition}
+
+\subsubsection{Produit de Variables Aléatoires Indépendantes}%
+\label{ssub:Produit de Variables Aléatoires Indépendantes}
+
+TODO
+
+subsection{Loi Binormale}
+
+\subsection{Transformation de Variables Aléatoires}
+
+Si on a 2 variables U et V définies par X et Y et on connait que les
+fonctions densités de X et de Y, il faut passer par une transformation.
+Par exemple, U=Y+X et V=Y-X.
+
+Pour ce faire, on doit réécrire les fonctions Y et X p/r à U et V. Par
+exemple, X=U+V et Y=V-U. Par la suite, on doit calculer la jacobienne
+avec les dérivées partielles. On n'a qu'à appliquer la formule
+
+\textbf{Pourquoi doit-on multiplier par la jacobienne?}
+
+On multiplie par la jacobienne, car puisqu'on pose de nouvelle variable,
+on change la base du système et le quadrillage change. Ce n'est donc
+plus des rectangles qu'on sommme, mais bien des parallélogrammes, et
+on sait que les parallélogrammes est donné par le déterminant.
+
+\section{Espérance de Variables Aléatoires}
+\subsection*{Overview}
+
+On peut interpréter l'espérance comme une moyenne pondérée, et la variance
+comme la distance moyenne entre un point et la moyenne.
+
+\begin{enumerate}
+    \item Espérance et Variance de v.a. discrètes
+    \item Espérance et Variance de v.a. continues
+    \item Espérance et Variance de v.a. indépendantes
+    \item Espérance et Variance de v.a. simultanées
+\end{enumerate}
+
+\subsection{Linéarité de l'Espérance}%
+\label{sub:Linéarité de l'Espérance}
+
+Calculer la variance d'une v.a. peut être compliquée, mais on utilise
+la linéarité de l'espérance pour la calculer. Comme on le sait, la
+variance est l'écart entre La moyenne et le point. On a donc
+$ V(X) = E((X - \mu)^2) $. On appelle aussi le moment d'ordre 2. En
+développant, on obtient $ V(X) = E(X^2) - E(X)^2 $.
+
+\subsection{Espérance et Variance de v.a. discrètes}
+
+On peut trouver l'espérance et la variance avec les formules générales
+\begin{enumerate}
+    \item Espérance: E(X)
+    \item Moment d'ordre 2: $E(X^2)$
+    \item Variance: $V(X) = E(X^2) - E(X)^2 $
+\end{enumerate}
+
+mais on connait l'espérance et la variance des distributions classiques:
+\begin{enumerate}
+	\begin{enumerate}[Binomiale]
+	    \item Espérance
+	    \item Variance
+	\end{enumerate}
+	\begin{enumerate}[Poisson]
+	    \item Espérance
+	    \item Variance
+	\end{enumerate}
+	\begin{enumerate}[Géométrique]
+	    \item Espérance
+	    \item Variance
+	\end{enumerate}
+\end{enumerate}
+
+\subsection{Espérance et Variance de v.a. continues}
+
+Tout comme l'espérance et la variance d'une v.a. discrète, on peut
+interpréter l'espérance d'une v.a. continue comme la moyenne pondérée.
+Cette fois-ci, on a
+\begin{enumerate}
+    \item Espérance: $ \int_{{-\infty}}^{{]infty}} {x p(x)} \: d{} {}$
+    \item Moment d'ordre 2:
+    \item Variance: $V(X) = E(X^2) - E(X)^2 $
+\end{enumerate}
+
+On connait aussi l'espérance et la variance des distributions continues
+classiques
+
+\begin{enumerate}
+	\begin{enumerate}[Uniforme]
+	    \item Espérance
+	    \item Variance
+	\end{enumerate}
+	\begin{enumerate}[Exponentielle]
+	    \item Espérance
+	    \item Variance
+	\end{enumerate}
+	\begin{enumerate}[Normale]
+	    \item Espérance
+	    \item Variance
+	\end{enumerate}
+\end{enumerate}
+
+\subsection{Espérance et Variance de v.a. indépendantes}
+\subsection{Espérance et Variance de v.a. simultanées}
+\subsection{Espérance et Variance de v.a. Conditionnelle}
+
+\section{Fonction Génératrice et Théorème Limite Central}
+
+\subsection*{Overview}
+
+
+\subsection{Fonction Génératrice}
+
+Si deux variables X et Y ont la même fonction génératrice, alors elles
+ont la même fonction de densité de répartition, et ainsi, elles ont
+la même espérance et variance.
+
+$$ M_X(t) = E(e^{tX})$$
+
+Pour calculer le moment d'ordre 1 et 2, nous permettant de trouver
+l'espérance et la variance, on doit évaluer la dérivée première et deuxième
+en zéro.
+
+$$ M_X ^(n) (0) = E(X^n) $$
+
+\begin{enumerate}
+    \item Fonction génératrice Normale
+    \item Fonction génératrice Gamma
+    \item Fonction génératrice Poisson
+    \item Fonction Binomiale et Binomiale Négative
+\end{enumerate}
+
+\subsubsection{ Somme de Fonctions Génératrices}
+
+Pour trouver la somme de fonctions génératrices, on multiplie les fonctions
+génératrices:
+$$ M_{X_1 + ... + X_n} = M_{X_1} x ... x M_{X_2} $$
+
+\subsection{Théorèmes Limites}
+
+\subsection{Loi des Grands Nombres}
+\subsection{Inégalité de Bienyamé-Tchebychev}
+
+L'inégalité de Bienyamé-Tchebychev donne un majorant pour la probabilité.
+Si on veut trouver le minorant, n'a qu'à utiliser les probabilités totales.
+
+Parfois, le majorant est proche de la vraie valeur, parfois non.
+
+\textbf{Comment savoir si BT va être précis?}
+
+TODO
+
+\subsection{Théorème Limite Central}
+
+TODO
+
 
 \end{document}
 \end{article}

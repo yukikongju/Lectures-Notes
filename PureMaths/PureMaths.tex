@@ -1206,11 +1206,11 @@ connector to express a proposition.
 	\item Destructive Dilemma: $(p \to q) \land (r \to s)
 	    \land (\neg q \lor \neq p) \Longrightarrow
 	    (\neq p \lor \neg r)$
-	\item Disjunctive Resolution: $(p \or q) \land (\neg p \lor r)
-	    \Longrightarrow (q lor r)$
+	\item Disjunctive Resolution: $(p \lor q) \land (\neg p \lor r)
+	    \Longrightarrow (q \lor r)$
 	\item Conjunctive Elimination: $ (p \land q) \Longrightarrow p$
 	\item Biconditional Elimination: $ (p \leftrightarrow q)
-	    \Longrightarrow (p \to q)
+	    \Longrightarrow (p \to q)$
     \end{enumerate}
 \end{proposition}
 
@@ -1225,7 +1225,78 @@ connector to express a proposition.
 \section{Lesson 10 - Set Theory: Relations and Functions}
 \subsection{Overview}
 \subsection{Relations}
+
+\begin{definition}[unordered pair]
+    An unordered pair is a set with 2 elements. In other words, (x,y)
+    and (y,x) is the same
+\end{definition}
+
+\begin{definition}[ordered pair]
+    An ordered pair (x,y) is not the same as (x,y). We define this property
+    as follows $$ (x,y) = {{x}, {x,y}} $$
+\end{definition}
+
+\begin{remark}[ordered k-tuple]
+
+\end{remark}
+
+\begin{theorem}
+    (x,y) = (z,w) $\longrightarrow x=z \text{ and } y=w$
+\end{theorem}
+
+\begin{definition}[Cartesian Product]
+    The cartesian product of the sets A and B, written $ A \times {B}$
+    is the set of ordered pairs (a,b) with $a \in A$ and $b \in B$
+    $$ A \times {B} = {(a,b) | a \in A \land b \in B} $$
+\end{definition}
+
+\begin{definition}[Binary Relation on a set]
+    A binary relation on a set A is a subset of $A^2 = A \times {A}$. We
+    write $$ \text{ R is a binary relation on A } \longrightarrow {R \subseteq A \times {A}} $$
+\end{definition}
+
+\begin{remark}[n-ary relation]
+
+\end{remark}
+
+\begin{proposition}[Properties of Binary Relations]
+    We say a binary relation R on A is
+    \begin{enumerate}
+	\item (Reflexive): $\forall a \in A, (a,a) \in R$
+	\item (Symmetric): $\forall a,b \in A, (a,b) \in R \longrightarrow
+	    (b,a) \in R$
+	\item (Transitive): $\forall a,b,c \in A, (a,b), (b,c) \in R
+	    \Longrightarrow (a,c) \in R$
+	\item (Antireflexive): $\forall a \in A, (a,a) \not\in R$
+	\item (antisymmetric): $\forall a,b \in A, (a,b), (b,a) \in R
+	    \longrightarrow a=b$
+    \end{enumerate}
+\end{proposition}
+
+\begin{definition}[Partial ordering]
+    A relation that is
+    \begin{enumerate}
+        \item Transitive
+	\item Reflexive
+	\item Antisymmetric
+    \end{enumerate}
+    is called a partial ordering
+\end{definition}
+
+\begin{definition}[Strict Partial ordering]
+    A relation that is
+    \begin{enumerate}
+        \item Transitive
+	\item Antireflexive
+	\item Antisymmetric
+    \end{enumerate}
+    is called a partial ordering
+\end{definition}
+
 \subsection{Equivalence Relations and Partitions}
+
+TODO
+
 \subsection{Orderings}
 \subsection{Functions}
 \subsection{Equinumerosity}
@@ -1237,7 +1308,7 @@ connector to express a proposition.
 \subsubsection{Level 5}
 \pagebreak
 
-\section{Lesson 11 - Abstract Algebra: Strucutres and Homomorphisms}
+\section{Lesson 11 - Abstract Algebra: Structures and Homomorphisms}
 \subsection{Overview}
 \subsection{Problem Set}
 \subsection{Structures and Substructures}

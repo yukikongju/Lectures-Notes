@@ -1,0 +1,601 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\usepackage{chngcntr}
+\counterwithin*{section}{part}
+\begin{document}
+\title{Lectures Notes for Linear Algebra - Nathaniel Johnston}
+\author{Emulie Chhor}
+\maketitle
+
+\section*{Introduction}
+
+Lecture Notes from Nathaniel Johnston
+
+\section*{Why Study Linear Algebra?}
+
+\section{Overview of Linear Algebra}
+
+\pagebreak
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\part{Linear Algebra}
+\section{Overview}
+
+\begin{enumerate}
+    \item Introduction to Vectors: Length, Dot Product, Linear Combination
+	(Lecture 1 to 7)
+    \item Matrices: Addition, Scalar Multiplication, Matrix Multiplication,
+	transpose (Lecture 8 to 13)
+    \item Linear Tranformation (Lecture 14 to 16)
+    \item System of Linear Equation (Lecture 17 to 21)
+    \item Inverse of a Matrix (Lecture 22 to 25)
+    \item Subspaces and Basis (Lecture 26 to 33)
+    \item Determinants (Lecture 34 to 36)
+    \item Eigenvalues and Eigenvectors (Lecture 37 to )
+    \item Diagonalization
+\end{enumerate}
+
+\section{Vectors in 2D}
+
+\begin{enumerate}
+    \item Vector Representation: coordinates, direction, length
+    \item Vector Manipulation: addition, multiplication by scalar
+    \item Geometric Interpretation of vector manipulation
+    \item Parallelogram Rule
+\end{enumerate}
+
+\subsection{problem}
+
+\begin{enumerate}
+    \item add and PPS with vectors
+\end{enumerate}
+
+\section{Vectors in Higher Dimensions}
+
+\begin{enumerate}
+    \item Properties of Vector Operations
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Prove properties of vector operations
+    \item Apply vector properties to simplify vector
+\end{enumerate}
+
+\section{Linear Combinations}
+
+\begin{enumerate}
+    \item Linear Combinations
+    \item Standard Basis Vector $ (e_1, e_2, ...), e_1 = (1, 0, 0, ..., 0)$
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Determine if vector is a linear combination of sets of vector or
+	not
+    \item Write vector as linear combination of standard basis vector
+\end{enumerate}
+
+\section{The Dot Product}
+
+\begin{enumerate}
+    \item Dot Product
+    \item Properties of Dot Product
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Perform dot product on two vectors
+    \item Prove properties of dot product
+    \item Use properties of dot product
+\end{enumerate}
+
+\section{The Length of a Vector}
+
+\begin{enumerate}
+    \item Length of a Vector
+    \item Properties of Vector Length
+    \item Unit Vector
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Calculate vector length
+    \item Prove properties of vector length
+    \item Use properties of vector length
+    \item Calculate Unit Vector using normalization
+\end{enumerate}
+
+\section{The Cauchy Schwarz and Triangle Inequalities}
+
+\begin{enumerate}
+    \item Cauchy-Schwarz Inegality: $ |v \cdot w| \leq || v|| ||w|| $
+    \item Triangle Inequlity
+\end{enumerate}
+
+\begin{remark}[Cauchy-Schwarz]
+    The Cauchy-Schwarz Inequality gives us a relation between the
+    dot product (wether v and w are in same direction) and the length
+    of the vector
+\end{remark}
+
+\begin{remark}[Triangle Inequality]
+    The triangle inequality tells us that if we go in a straight line,
+    we walk a shorter distance than if we don't
+\end{remark}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Proof for Cauchy-Schwarz
+    \item Proof for Triangle Inequality using Cauchy-Schwarz
+    \item Use the Cauchy-Schwarz Inequality to prove that no vector v and
+	w produce dot product of 7
+\end{enumerate}
+
+\section{The Angle Between Vectors}
+
+\begin{enumerate}
+    \item Angle between vectors: $ v \cdot w = || v|| ||w|| \cos(\theta) $
+    \item Orthogonality: $ v \cdot w = 0 $
+    \item The zero vector is always orthogonal to any vector
+\end{enumerate}
+
+\begin{remark}[Why we can compute arccos]
+    To find the angle, we can use arccos because we know that
+    $ -1 \leq \frac{v \cdot w}{||v|| ||w||} \leq 1 $ (Cauchy-Schwarz)
+\end{remark}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Proof for Angle between vectors
+    \item Find Angle between vectors
+    \item Algebraic Idea between Orthogonality using angle between vector
+    \item Determine if two vectors are orthogonal
+\end{enumerate}
+
+\section{Matrix Notation, Addition, and Scalar Multiplication}
+
+\begin{enumerate}
+    \item Matrix Addition
+    \item Properties of Matrix Addition
+    \item Scalar Multiplication
+    \item Properties of Scalar Multiplication
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Compute addition and scalar multiplication on matrices
+    \item Prove properties of matrix addition and multiplication
+    \item Use Matrix addition and scalar multiplication to compute
+\end{enumerate}
+
+\section{The Mechanics of Matrix Multiplication}
+
+\begin{enumerate}
+    \item Matrix Multiplication: row x columns
+    \item Properties of Matrix Multiplication
+    \item Why matrix multiplication is not commutative
+    \item Identity Matrix and Zero Matrix
+\end{enumerate}
+
+\subsection{problem}
+
+\begin{enumerate}
+    \item Compute the prduct of two matrices
+    \item Prove the properties of matrix multiplication
+    \item Multiplication by identity matrix and zero matrix
+\end{enumerate}
+
+\section{The Transpose of a Matrix}
+
+\begin{enumerate}
+    \item Transpose of Matrix: swap i and j
+    \item Properties of Transpose of Matrix
+    \item $(AB)^T = B^T A^T $
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Find transpose of matrix
+    \item Prove properties of transpose matrix
+\end{enumerate}
+
+\section{Powers of a Matrix}
+
+\begin{enumerate}
+    \item Matrix power: $ A^k = A A ..A $
+    \item Properties of Matrix Power
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Compute Matrix powers
+    \item Prove Properties of Matrix powers
+\end{enumerate}
+
+\section{Block Matrices}
+
+\begin{enumerate}
+    \item Block Matrices: partition of matrices for big matrice
+    \item Theorem: Matrix Vector Multiplication is a linear combination
+    \item Theorem: Matrix multiplication can be performed column-wise
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Perform Matrix Multiplication using Block Matrices
+    \item Proof for theorem using block multiplication
+\end{enumerate}
+
+\section{Introduction to Linear Transformations}
+
+\begin{enumerate}
+    \item Algebraic Definition of Linear Transformation
+    \item Geometric Definition of Linear Transformation
+    \item Linear Transformation using Standard Basis
+    \item Theorem: Every Linear Transformation T is completely determined
+	by the vectors $T(e_1), ..., T(e_n)$
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Determine if Matrix is a linear transformation algebraicly and
+	geometrically
+\end{enumerate}
+
+\section{The Standard Matrix of a Linear Transformation}
+
+\begin{enumerate}
+    \item Theorem: Standard Matrix of a Linear Transformation: all linear
+	transformation can be written as Ax=b
+    \item Standard Matrix of T: apply transformation to basis
+	$ [T] = [T(e_1) ... T(e_n)] $
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Proof for Standard Matrix of Linear Transformation
+    \item Find standard matrix of linear transformation
+    \item Verification for standard matrix of linear transformation: Ax=b
+\end{enumerate}
+
+\section{A Catalog of Linear Transformations}
+
+\begin{enumerate}
+    \item Linear Tranformation of Zero and Identity Matrix
+    \item Diagonal Transformations/matrices
+    \item Projection onto a line
+    \item Rotations
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+
+\section{Composition of Linear Transformations}
+
+\begin{enumerate}
+    \item Theorem: Composition of Linear Transformation
+	\begin{itemize}
+	    \item Multiplication of Linear Tranformation is also linear
+	    \item Computing composition of linear transformation as matrix
+		multiplication
+	\end{itemize}
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Proof of Composition of Linear Transformation
+    \item Computer Composition of Linear transformation using matrix
+	multiplication
+\end{enumerate}
+
+\section{Introduction to Systems of Linear Equations}
+
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Trichotomy for Linear Systems}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Solving Linear Systems (Part 1)}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Solving Linear Systems (Part 2: Row Echelon Form)}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Solving Linear Systems (Part 3: Zero and Infinitely Many Solutions)}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+
+\section{Elementary Matrices}
+
+\begin{intuition}
+    Building blocks of Matrices, like prime number are for integers
+\end{intuition}
+
+\begin{enumerate}
+    \item Theorem: row operations can be represented as matrices (from
+	identity matrices)
+    \item Elementary Matrices: can be obtained from identity matrice via
+	single row colum
+    \item Theorem: Row Reduction: $[A|I] ~ [R|E]$, where R=EA
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+
+\section{Introduction to the Inverse of a Matrix}
+
+\begin{intuition}
+    We can use elementary matrices to find the inverse of a matrix. We can
+    undo our linear transformation
+\end{intuition}
+
+\begin{enumerate}
+    \item Inverse of a Matrix: $A^-1 A = A A^-1 = I $
+    \item Theorem: The inverse of a Matrix is unique
+    \item Properties of Matrix Inverses
+    \item How to know if Matrix is inversible
+    \item Theorem: Caracterization of Invertible Matrices
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Proof that inverse of a matrix is unique
+    \item Show that A is the inverse of B
+    \item Proof of Properties of Matrix Inverses
+    \item Zero Matrix and Projection Matrix are not inversible (we cannot
+	undo ie we cannot find the original vector)
+    \item Determine if matrix is invertible or not: we can use row
+	operations to get identity matrix
+\end{enumerate}
+
+\section{Computing the Inverse of a Matrix}
+
+\begin{enumerate}
+    \item Theorem: Computing Inverses: $[A|I] ~ [I|A^-1] $
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Determine if Matrix is invertible and find its inverse if it
+	exists
+\end{enumerate}
+
+\section{One Sided Inverses and a Formula for 2x2 Inverses}
+
+\begin{enumerate}
+    \item Theorem: One-Sided Matrix Inverse: if AB=I or BA=I, then A
+	is invertible and $A^-1 = B$
+    \item Theorem: Inverse of 2x2 Matrix:
+\end{enumerate}
+
+\begin{intuition}
+    On dit que c'est one-sided parce qu'on a qu'à vérifier l'inégalité
+    d'un seul bord pour dire que A et B sont leurs inverses respectifs
+\end{intuition}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Proof for One-Sided Matrix
+    \item Proof for 2x2 inverse matrices
+    \item Determine if 2x2 matrix is invertible and calculate its inverse
+	if it exist
+\end{enumerate}
+
+\section{Subspaces}
+
+\begin{enumerate}
+    \item Definition of a Subspace
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Determine if set of vectors is a subspace of $\mathbb{R}^n$
+\end{enumerate}
+
+\section{The Range and Null Space of a Matrix}
+
+\begin{enumerate}
+    \item Range of Matrix: $Ax$
+    \item Null Space: $Ax=0$
+    \item Theorem: Range and Null space are subspace
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Find the range and the null space of the matrix
+\end{enumerate}
+
+\section{The Span of a Set of Vectors}
+
+\begin{enumerate}
+    \item Span:
+    \item Theorem: The span is the subspace of $\mathbb{R}^n$
+    \item Theorem: Range equals the span of columns
+    \item Theorem: Spanning Sets and Invertible Matrices
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Show that set of vector span subspace
+    \item Proof
+    \item Proof
+\end{enumerate}
+
+\section{Linear Dependence and Independence}
+
+\begin{intuition}
+    Some vectors in the span are redundant
+\end{intuition}
+
+\begin{enumerate}
+    \item Linear Dependence and Independance
+    \item Theorem:
+    \item Theorem: Independance and Invertible Matrices: If A is invertible,
+	then its row and column are linearly independant
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Determine if vectors are linearly dependant or not
+    \item Proofs
+\end{enumerate}
+
+\section{Bases of Subspaces}
+
+\begin{enumerate}
+    \item Defintion of Bases
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+    \item Determine if sets of vectors form a basis or not
+\end{enumerate}
+
+\section{The Dimension of a Subspace}
+
+\begin{enumerate}
+    \item Theorem: Uniqueness of Size of Bases: Every basis of S has the
+	same number of vectors
+    \item Dimension of a Subspace
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{The Rank of a Matrix}
+
+\begin{intuition}
+    How much information we have after transformation
+\end{intuition}
+
+\begin{enumerate}
+    \item Rank of the Matrix
+    \item Theorem: Charaterization of Rank
+\end{enumerate}
+
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{The Nullity of a Matrix}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Introduction to the Determinant (Geometrically)}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Computing the Determinant (via Gaussian Elimination)}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Explicit Formulas for the Determinant}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Introduction to Eigenvalues and Eigenvectors}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Complex Numbers and Complex Eigenvalues}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{The Characteristic Polynomial and Multiplicity}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Diagonalization and Large Matrix Powers}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Matrices with Distinct Eigenvalues are Diagonalizable}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{The Fibonacci Sequence via Diagonalization}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Arbitrary Matrix Powers via Diagonalization}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+\section{Matrix Functions via Diagonalization}
+\subsection{problem}
+\begin{enumerate}
+\end{enumerate}
+
+\part{Advanced Linear Algebra}
+
+\section{Overview}
+
+\section{What is a Vector Space?}
+\section{Complex Numbers}
+\section{Subspaces}
+\section{Linear Combinations and Spans}
+\section{Linear (In)Dependence}
+\section{Bases}
+\section{Coordinate Vectors}
+\section{The Dimension of a Vector Space}
+\section{Change of Basis}
+\section{Linear Transformations}
+\section{The Standard Matrix of a Linear Transformation}
+\section{Composition of Linear Transformations}
+\section{Change of Basis for Linear Transformations}
+\section{Invertibility of Linear Transformations}
+\section{Isomorphisms of Vector Spaces}
+\section{Properties of Linear Transformations}
+\section{Roots of Linear Transformations}
+\section{What is an Inner Product?}
+\section{The Trace and the Frobenius Inner Product}
+\section{The Norm Induced by an Inner Product}
+\section{Orthogonality and Orthonormal Bases}
+\section{All Inner Products Look Like the Dot Product}
+\section{Orthogonalization and the Gram-Schmidt Process}
+\section{The Adjoint of a Linear Transformation}
+\section{Unitary Transformations and Matrices}
+\section{Schur Triangularization}
+\section{The Cayley-Hamilton Theorem}
+\section{Normal Matrices and the Complex Spectral Decomposition}
+\section{Computing Spectral Decompositions}
+\section{The Real Spectral Decomposition}
+\section{Introduction to Positive (Semi)Definite Matrices}
+\section{Sylvester's Criterion for Positive Definiteness}
+\section{Diagonal Dominance and Gershgorin Discs}
+\section{The Polar Decomposition and Principal Square Root of a Matrix}
+\section{The Singular Value Decomposition}
+\section{Geometric Interpretation of the Singular Value Decomposition}
+\section{The Fundamental Matrix Subspaces from the SVD}
+\section{How the SVD Relates to Other Matrix Decompositions}
+\section{Introduction to the Pseudoinverse}
+\section{Using the Pseudoinverse to Solve Linear Systems}
+\section{The Operator Norm of a Matrix}
+\section{Low Rank Approximation and Image Compression}
+
+\pagebreak
+
+\end{document}
+\end{article}
+
