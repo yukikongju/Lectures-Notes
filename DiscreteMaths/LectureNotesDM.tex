@@ -363,10 +363,33 @@ TODO
 
 \section{Basic Structures: Set, Functions. Sequences, Sums}
 
-
 \subsection{Sets}
 \subsection{Set Operation}
 \subsection{Functions}
+
+\subsubsection{Injectivity, Surjectivity, Bijectivity}%
+\label{ssub:Injectivity, Surjectivity, Bijectivity}
+
+\begin{definition}[Injectivity]
+    Each value in the range corresponds to exactly one element in the domain
+    \begin{enumerate}
+	\item $ \forall a \forall b ((a \neq b) \rightarrow
+	    (f(a) \neq f(b))) $
+	\item $ \forall a \forall b ((a = b) \rightarrow (f(a) = f(b))) $
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Surjectivity]
+    Every element in the codomain maps to at least one element in the domain
+    $ \forall y \exists x (f(x)=y) $
+\end{definition}
+
+\begin{definition}[Bijectivity]
+    Function is both injective and surjective
+\end{definition}
+
+
+
 \subsection{Sequences and Summations}
 \subsection{Cardinality of Sets}
 \subsection{Matrices}
@@ -396,7 +419,7 @@ TODO
 
 \section{Counting}
 
-\subsection{The Basics of Countin}
+\subsection{The Basics of Counting}
 \subsection{The Pigeonhole Principle}
 \subsection{Permutations and Combinations}
 \subsection{Binomial Coefficients and Identities}
@@ -422,6 +445,21 @@ TODO
 \section{Relations}
 
 \subsection{Relations and Their Properties}
+
+\subsubsection{Relations}%
+\label{ssub:}
+
+\begin{enumerate}
+    \item Reflexive: $ \forall x (xRx) $
+    \item Symetric: $ \forall x \forall y (xRy \rightarrow yRx)$
+    \item Antisymmetric: $ \forall x \forall b ((a,b) \in R \land
+	(b,a) \in R \rightarrow (a=b))$
+    \item Transitive: $ \forall x \forall y \forall z
+	((x \rightarrow y) \land (y \rightarrow z) \Longrightarrow
+	x \rightarrow z) $
+\end{enumerate}
+
+
 \subsection{n-ary Relations and Their Application}
 \subsection{Representing Relations}
 \subsection{Closures of Relation}
@@ -432,6 +470,34 @@ TODO
 
 \subsection{Graphs and Graph Models}
 \subsection{Graph Terminology and Special Types of Graphs}
+
+\subsubsection{Handshaking Theorem}%
+\label{ssub:Handshaking Theorem}
+
+\begin{theorem}[Handshaking Theorem]
+    The sum of degree of all vertices is twice the number of edges
+    contained in it
+    $$ \sum^{n}_{i=1} d(v_i) = 2 |E| $$
+\end{theorem}
+
+\subsubsection{Types of Graphes}%
+\label{ssub:Types of Graphes}
+
+\begin{enumerate}
+    \item Complete Graphes: tous les points sont reliés
+    \item Cycles and wheel
+    \item hypercube
+    \item Birpartite Graphs: Vertex can be partitionned into two
+	disjoints sets (graph coloring technique)
+\end{enumerate}
+
+\begin{remark}[Graph Colorign Technique]
+    Pour déterminer si un graphe est bipartite, on peut utiliser la
+    méthode du graph coloring. On colore un point d'une couleur, puis
+    ses enfants de l'autre, et ainsi de suite, et on regarde si
+    les couleurs s'alternent
+\end{remark}
+
 \subsection{Representing Graphs and Graph Isomorphism}
 \subsection{Connectivity}
 \subsection{Euler and Hamilton Path}

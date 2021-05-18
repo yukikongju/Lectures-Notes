@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{hyperref}
 \begin{document}
 \title{Lecture Notes for Data Structures}
 \author{Emulie Chhor}
@@ -17,7 +18,30 @@ algorithms, which is learn via 4 courses:
     \item Modèle de Recherche Opérationnelle (optional)
 \end{enumerate}
 
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
 \section{Why study Data Structures}
+
+\section{How to study Data Structures}%
+\label{sec:How to study Data Structures}
+
+Lorsqu'on étudie les structures de données, on doit comprendre que
+chaque structure de donnée possède un invariant qui lui donne ses propriétés,
+et on doit préserver ces propriétés lors des opérations:
+\begin{enumerate}
+    \item Propriétés
+    \item Invariant
+    \item Helper Methods
+    \item Opérations: insertion, suppresion, recherche
+    \item Complexité des opérations: worse, best, average
+    \item Implementation
+\end{enumerate}
 
 \section{Introduction}
 
@@ -178,13 +202,278 @@ pire temps.
 
 \section{Heap}
 
+\subsection{Invariant}%
+\label{sub:Invariant}
+
+Un heap est une structure de données qui implémente des files de propriété.
+Il existe 2 types de heap:
+\begin{enumerate}
+    \item MinHeap: $ parent < child $
+    \item MaxHeap: $ parent > child $
+\end{enumerate}
+
+Remarquons qu'on a des inégalités strictes, car on ne veut pas ajouter
+les mêmes valeurs au heap. De plus, l'implémentation est similaire,
+la seule chose qui change est la comparaison qu'on fait: less vs more
+
+\subsection{Helper Methods}%
+\label{sub:Helper Methods}
+
+Le heap possède 2 helpers methods: swim et sink
+
+\textbf{Swim}
+
+\begin{enumerate}
+    \item Trouver le parent
+    \item Échanger avec le parent jusqu'à l'invariant soit satisfait
+	ou qu'on aille atteint le root
+\end{enumerate}
+
+\textbf{Sink}
+
+\begin{enumerate}
+    \item Trouver le plus grand/petit enfant
+    \item Échanger avec l'enfant jusqu'à l'invariant soit satisfait
+	ou qu'on atteigne un NIL
+\end{enumerate}
+
+\subsection{Operations}%
+\label{sub:Operations}
+
+\begin{enumerate}
+    \item Insertion
+	\begin{itemize}
+	    \item ajouter l'élément à la dernière position
+	    \item swim() pour retrouver sa bonne position
+	\end{itemize}
+    \item Suppression
+    \begin{itemize}
+        \item Échanger le root avec le dernier élément
+	\item supprimer le dernier élément
+	\item sink le root pour qu'il soit à la bonne position
+    \end{itemize}
+    \item Recherche: Puisqu'il n'y a pas de relations entre les
+	2 enfants, on doit faire une recherche linéaire
+\end{enumerate}
+
+\subsection{Complexité des Opérations}%
+\label{sub:Complexité des Opérations}
+
+
 \section{Binary Search Trees}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+Le BST est une structure de donnée utilisée, car elle maintient un ordre.
+Son invariant: $ node.left < node < node.right $. Comme avec le heap,
+on n'accepte pas de valeurs duppliquées
+
+\subsection{Helper Methods}%
+\label{sub:Helper Methods}
+
+Les helpers methods sont:
+\begin{enumerate}
+    \item FindMin: trouver la plus petite valeur dans le sous-arbre en
+	parcourant l'arbre en allant toujours vers la gauche
+    \item FindMax: trouver la plus grande valeur dans le sous-arbre en
+	parcourant l'arbre en allant toujours vers la droite
+\end{enumerate}
+
+Ces helpers methods sont utiles, car elles nous permet de choisir le
+successeur/prédécesseur lors de la suppression
+
+\subsection{Operations}%
+\label{sub:Operations}
+
+\begin{enumerate}
+    \item Insertion: Parcourir l'arbre
+	\begin{itemize}
+	    \item Si element < node.val: allez à gauche
+	    \item Si element > node.val: allez à droite
+	    \item Si element = node.val: ne pas ajouter de duppliqué
+	\end{itemize}
+    \item Suppression
+	\begin{itemize}
+	    \item Parcourir le tree pour trouver l'élément à enlever
+	    \item Choisir le prédécesseur/successeur si le noeud
+		supprimé possède un enfant (ou plus)
+	\end{itemize}
+    \item Recherhe: Puisqu'on maintient une structure, on peut effectuer
+	une recherche binaire
+\end{enumerate}
+
+\subsection{Complexité}%
+\label{sub:Complexité}
+
+\subsection{Implementation}%
+\label{sub:Implementation}
+
+Pour l'implémentation, on déclare une classe noeud qui a les paramètres
+suivants:
+\begin{enumerate}
+    \item value
+    \item left child
+    \item right child
+    \item (optional) parent
+    \item (optional) height
+\end{enumerate}
+
+\subsubsection{Operations in Java}%
+\label{ssub:Operations in Java}
+
+TODO
 
 \section{Balanced Binary Search Trees}
 
+\subsection{Overview}%
+\label{sub:Overview}
+
+Les balanced Binary Trees sont la version 2.0 des BST. Essentiellement,
+on a vu que les arbres BST ne garantissent pas une hauteur logarithmique,
+alors le temps de complexité de ses opérations peut aller jusqu'à O(n),
+ce qui n'est pas bon. Les BBST sont des arbres, qui, par leurs invariants,
+permettent de garantir une hauteur logarithmique et ainsi un temps
+de complexité O(log n) au pire.\\
+
+On discerne 3 BBST:
+\begin{enumerate}
+    \item AVL Trees: rotations et balance factor
+    \item Red-Black Trees: rotation et couleur
+    \item B-Trees: noeuds avec plusieurs éléments
+\end{enumerate}
+
+Notons que la recherche pour le AVL et le Red-Black Tree se font avec
+un binary search, car ce sont des BST balancés.
+
 \subsection{AVL Trees}
 
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Les arbres AVL qui utilisent la rotation et un balance factor pour
+garantir un temps logarithmique au pire. Pour ce faire, on doit
+respecter l'invariant suivant: la différence de hauteur entre 2
+sous-arbres doit être d'au plus 1.
+
+\subsubsection{Helper Methods: Rotations}%
+\label{ssub:Helper Methods}
+
+\begin{enumerate}
+    \item Rotations: left and right
+    \item FindHeight: Calculer balance factor
+\end{enumerate}
+
+\textbf{Rotations}
+
+Pour un left rotation, on a un arbre right heavy et on veut le rendre
+left heavy:
+\begin{enumerate}
+    \item right child becomes the root
+    \item root becomes left child of new root
+    \item rigt child.left becomes right child of old root
+\end{enumerate}
+
+De la même façon, pour un right rotation, on a un arbre left heavy et
+on veut le rendre right heavy
+
+\textbf{FindHeight}
+
+On veut trouver la hauteur du subtree, car cela nous permet de calculer le
+balance factor.
+$$ return 1 + max(findHeight(node.left), findHeight(node.right)) $$
+
+\subsubsection{Operations}%
+\label{ssub:Operations}
+
+\textbf{Operations}
+
+\begin{enumerate}
+    \item Insertion
+	\begin{itemize}
+	    \item Perform BST insertion
+	    \item Update balance factor
+	    \item Perform Rotation if invariant violated
+	\end{itemize}
+    \item Suppression
+	\begin{itemize}
+	    \item Perform BST deletion
+	    \item Update balance factor
+	    \item Perform Rotation if invariant violated
+	\end{itemize}
+\end{enumerate}
+
+\textbf{Updating Balance Factor}
+
+\begin{enumerate}
+    \item recalculer hauteur à partir du root
+\end{enumerate}
+
+\begin{remark}[Balance Factor]
+    $$ \text{ return } height(x.left) - height(x.right) $$
+\end{remark}
+
+\textbf{Balance an AVL Tree}
+
+Lorsque l'invariant est violé (bf >1), on doit rotater les branches. En
+considérant que zig: left heavy et zag: right heavy. On
+doit considérer 4 cas:
+\begin{enumerate}
+    \item zig-zig: rotateRight
+    \item zag-zag: rotateRight
+    \item zig-zag: rotateLeft pour avoir zig-zig
+    \item zag-zig: rotateRight pour avoir zag-zag
+\end{enumerate}
+
+\textbf{Associer le balance factor à chaque cas}
+
+TODO
+
+\subsubsection{Implementation}%
+\label{ssub:Implementation}
+
+Princeton Implementation:
+\url{https://algs4.cs.princeton.edu/code/edu/princeton/cs/algs4/AVLTreeST.java.html}
+
 \subsection{Red-Black Trees}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Les red-black trees utilisent la rotation et la couleur pour garantir
+une hauteur logarithmique. L'invariant est donné p/r à la hauteur noire
+de l'arbre: les noeud de couleur rouge = 0, alors que les noeuds de
+couleur noire comptent pour 1. Les red0black trees respectent les propriétés
+suivantes:
+\begin{enumerate}
+    \item Node is red at insertion
+    \item Root node and NIL nodes are black
+    \item Child of red nodes are black
+    \item Black height from root to NIL is the same for all paths
+\end{enumerate}
+
+Ils possèdent les caractéristiques suivantes:
+\begin{enumerate}
+    \item Shortest Path: alternating red-black trees
+    \item Longest Path: only black node
+\end{enumerate}
+
+\subsubsection{Operations}%
+\label{ssub:Operations}
+
+\begin{enumerate}
+    \item Insertion
+	\begin{itemize}
+	    \item
+	\end{itemize}
+    \item Suppression
+\end{enumerate}
+
+\subsubsection{Implementation}%
+\label{ssub:Implementation}
+
+Princeton Red-Black Tree Implementation:
+\url{https://algs4.cs.princeton.edu/33balanced/RedBlackBST.java.html}
 
 \subsection{B-Trees}
 
