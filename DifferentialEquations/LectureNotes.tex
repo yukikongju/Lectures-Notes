@@ -62,13 +62,34 @@ On verra 4 méthodes pour résoudre les ODEs:
 
 \subsection{What is a differential equation? }
 
+\begin{definition}[Linear Differential Equation]
+    On dit qu'une transformation est linéaire si les coefficients de
+    l'équation différentielle sont de degré 0 et que y et ses dérivées
+    sont exposant 1
+\end{definition}
+
+\begin{definition}[Order of Derivative]
+    L'ordre d'une équation différentielle est la plus grande dérivée.
+\end{definition}
+
+\begin{definition}[Solution générale et particulière]
+    \begin{enumerate}
+        \item Particular Solutions: no arbitrary parameters $ y = 3x$
+	\item One-Parameter family of solutions $ y=3x+c$
+	\item Trivial Solution: y=0
+    \end{enumerate}
+    Une solution explicite est une équation qui n'isole pas y. Une solution
+    implicite est une équation avec y qui n'est pas isolée.
+    Plus généralement, si on a une constante, on parle de solutions
+    générale, sinon, on parle de solution particulière.
+\end{definition}
+
 Une équation différentielle est une équation définie par ses fonctions
 et ses dérivées. On l'utilise pour modéliser:
 \begin{enumerate}
     \item Growth : $ P'(t) = r P(t)$
     \item Decay : $ P'(t) = r (1- \frac{P(t)}{M})$
     \item Logistic Equation: $ P'(t) = r (1- \frac{P(t)}{M})P(t)$
-
 \end{enumerate}
 
 Éventuellement, le graphe devrait converger vers une valeur quelconque.\\
@@ -125,8 +146,8 @@ rectangle qui forme le point précédent et le point suivant.
 
 Cette setion met l'emphase sur la séparation de variables. En gros, on
 veut réécrire notre équation différentielle sous la notation de Leibniz
-afin d'isoler dy/y et d'avoir une équation p/r au temps. On voit qu'en
-intégrant, on obtient les équations suivantes:
+afin d'isoler dy/y et dx/x et d'avoir une équation p/r au temps. On voit
+qu'en intégrant, on obtient les équations suivantes:
 \begin{enumerate}
     \item Exponential Growth: $ y' = ky \Longleftrightarrow y(t) = C e^{kt} $
     \item Exponential Decay: $ y' = -ky \Longleftrightarrow y(t) = C e^{-kt} $
@@ -137,12 +158,27 @@ intégrant, on obtient les équations suivantes:
 Il faut aussi se souvenir que le k, représentant le rate of change, nous
 dit à quel point le decay/growth se fait rapidement.
 
+\begin{remark}[Stratégies de résolution]
+    Pour résoudre des intégrales, il est parfois utile d'utiliser
+    \begin{enumerate}
+        \item intégration par fraction partielle
+	\item Rational zero theorem: trouver les facteurs de p et q, et
+	    résoudre par division euclidienne une foit qu'on a trouvé le
+	    premier zéro
+    \end{enumerate}
+\end{remark}
+
 \subsection{Initial value problems}
 
 Cette section focussait sur la résolution de ODEs. Tout d'abord, on
 introduisait la notion de valeur initiale. Auparavant, on voulait
 trouver la solution générale du ODEs. Ici, on nous donne des valeurs
-intiales $ y(t_0) = y_0 $.
+intiales $ y(t_0) = y_0 $. On veut trouver une solution particulière.
+
+\begin{intuition}
+    Graphiquement, c'est comme si on calculait la famille de solutions
+    générale, et on choisissait la courbe qui passait par le point initial
+\end{intuition}
 
 Pour ce faire, on doit trouver:
 \begin{enumerate}

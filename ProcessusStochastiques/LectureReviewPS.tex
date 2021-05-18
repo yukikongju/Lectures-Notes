@@ -190,6 +190,7 @@ Cette semaine, le TP se penchait sur 2 sujets:
 \begin{enumerate}
     \item Déterminer si une p.s. est Markov ou non
     \item Trouver/Lire une Matrice de Transition
+    \item Déterminer la probabilité de transition d'un état à un autre
     \item Tracer le Graphe
 \end{enumerate}
 
@@ -212,7 +213,6 @@ la probabilité de transition à plusieurs étapes pour des P.S discrèts
     \item Probabilité de transition avec probabilité conditionnelle
     \item Probabilité de transition avec Relation Chapman-Kolmogrov
 \end{enumerate}
-
 
 \subsubsection{Modèles: Marche aléatoire, Processus de Branchement, Modèle de    diffusion de Gaz}
 
@@ -279,11 +279,89 @@ $$ P \times P \times P $$
 \subsection*{Big Idea}
 \subsection*{Outline}
 \begin{enumerate}
-    \item
-    \item
-    \item
+    \item Preuve de la Relation Chapman-Kolmogrov
+    \item Classes: Communication entre états
 \end{enumerate}
+
+\subsubsection{Preuve de la Relation Chapman-Kolmogrov}
+
+La relation de Chapman-Kolmogov nous dit que si on a une chaine de
+Markov à temps homogène, on peut multiplier les matrices de transition
+pour obtenir la probabilité de passer de l'état n à l'état n+k
+\begin{enumerate}
+    \item $ P^{m}=P^m$
+    \item $ P^{m+n}=P^m P^n$
+\end{enumerate}
+
+La preuve de cette relation se fait par induction, et on montre
+l'étape d'induction avec la propriété des chaines de Markov et la
+probabilité conditionnelle. Essentiellement, on veut montrer qu'en
+multipliant chaque entrées entre elles, on obtient la proba à l'étape
+n x la proba à l'étape 1 et qu'en multipliant ces matrices, on obtient
+$ P^{n+1}$
+
+\textbf{Cas de base}
+
+\begin{enumerate}
+    \item t=0: matrice identité, car on ne change pas d'état
+    \item t=1: $P^1 = P$
+\end{enumerate}
+
+\textbf{Étape d'induction}
+
+\begin{enumerate}
+    \item Puisque CM est homogène dans le temps, alors
+	$ P^{n+1} \Longrightarrow P_{ij} ^{n+1} = P[X_{n+1} = j | X_n = i]
+	= P[X_{n+1} =j | X_0 = i] $
+    \item En considèrant les états intermédiaires, on obtient
+	$ P[X_{n+1}=j | X_0 = i] = \sum^{n}_{i=1} P[X_{n+1} = j | X_n = k]$
+    \item Puisque c'est une chaine de Markov, on a que
+	$$ \sum^{n}_{i=1} P[X_{n+1} = j, X_n = k | X_0 = i]$$
+    \item Par probabilité conditionnelle, on a que
+	$$ \sum^{n}_{i=1} \frac{P[X_{n+1} = j, X_n = k, X_0 = i]}
+	{P[X_0=i]} \frac{P[X_n = k, X_0=i]}{P[X_n = k, X_0=i]} $$
+    \item En réarrangeant les termes, on obtient la proba de transition
+	à l'étape n et en une étape
+	$$ \sum^{n}_{i=1} \frac{P[X_{n+1} = j, X_n = k, X_0 = i]}
+	{P[X_n = k, X_0=i]} \frac{P[X_n = k, X_0=i]}{P[X_0=i]} $$
+    \item et on applique la définition de la multiplication matricielle
+\end{enumerate}
+
+\subsubsection{Classes: Communication entre états}
+
+La deuxième partie du cours mettait l'emphase sur la séparation des
+états par des classes. Essentiellement, on veut être capable de
+différentier les différentes classes dans une matrice de transition
+afin de déterminer si la matrice est irréductible ou non.
+
+\textbf{Qu'est-ce qu'une classe}
+
+Tous les états qui communiquent entre eux forment une classe. Pour que
+2 états communiquent entre entre elles, il faut qu'elles satisfassent
+les conditions suivantes:
+\begin{enumerate}
+    \item Réflexive: $ i \leftrightarrow i$
+    \item Symétrique: $ i \leftrightarrow j \iif j \leftrightarrow i $
+    \item Transitive: $ i \to j, j \tok \Longrightarrow i \to k $
+\end{enumerate}
+
+\textbf{Quelles sont les types de classes}
+
+\begin{enumerate}
+    \item État absorbant: On ne peut jamais quitter cet état après y
+	être entré
+    \item État de non-retour: une fois qu'on n'a quitté cet état,
+	on ne peut jamais revenir
+\end{enumerate}
+
+\textbf{Qu'est-ce qu'une matrice irréductible}
+
+On dit qu'une matrice est irréductible si tous les états communiquent
+entre elles. Autrement dit, tous les états forment une seule classe.
+
 \subsection{TP}
+
+TODO
 
 \pagebreak
 \section{Semaine 3}

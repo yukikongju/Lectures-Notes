@@ -15,6 +15,34 @@ This is a compilation of the intuition I have learned in Linear Algebra.
 The approach I want to take is a recursive top-down approach.
 
 In my mind, linear algebra should be taught as follow:
+\begin{enumerate}
+    \item Linear Algebra: Nathaniel Johnston, Mathema-TICS
+    \item Advanced Linear Algebra: Nathaniel Johnston
+    \item Modern Linear Algebra: Macauley
+\end{enumerate}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{proof}{Proof}[subsection]
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\part{Linear Algebra} % (fold)%
+\label{prt:Linear Algebra}
+
+% part Linear Algebra (end)
+
+\section{Overview}%
+\label{sec:Overview}
+
+Le premier cours d'algèbre est une introduction aux notions de base
+dans un espace euclidien $\mathbb{R}^n$.
 
 \begin{enumerate}
     \item What is Linear Algebra
@@ -33,6 +61,7 @@ In my mind, linear algebra should be taught as follow:
     \item Spaces, Subspaces
     \item Bases et Changements de Bases
     \item Bases Orthogonale
+    \item Spectral Decomposition
     \item Singular Value Decomposition (SVD)
 \end{enumerate}
 
@@ -45,17 +74,6 @@ Plus généralement, on a 3 buts:
     \item Orthogonaliser une base avec Gram-Schmidt (ou QR decomposition)
 \end{enumerate}
 
-\newtheorem{definition}{Definition}[subsection]
-\newtheorem{theorem}{Theorem}[subsection]
-\newtheorem{corollary}{Corollary}[subsection]
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{axiom}{Axiome}
-\newtheorem{property}{Propriété}[subsection]
-\newtheorem*{remark}{Remarque}
-\newtheorem*{proof}{Proof}[subsection]
-\newtheorem*{problem}{Problème}
-\newtheorem*{intuition}{Intuition}
 
 \section{What is Linear Algebra}
 
@@ -471,7 +489,19 @@ matrice est inversible}%
 Il existe plusieurs façons de calculer l'inverse d'une matrice:
 \begin{enumerate}
     \item Méthode de Gauss: $ [A|I] ~ [I| A^-1] $
-    \item Formule de l'inverse d'une matrice 2x2
+    \item Formule de l'inverse d'une matrice 2x2:
+	$$
+	A^{-1}=\begin{bmatrix}
+	    a & b \\
+	    c & d
+	\end{bmatrix}^{-1}
+	=\frac{1}{\lvert A\rvert}
+	\begin{bmatrix*}[r]
+	    d & -b \\
+	    -c & a
+	\end{bmatrix*} \,.
+	    $$
+
 \end{enumerate}
 
 \section{Determinants}
@@ -525,7 +555,7 @@ nous permet de :
 
 \begin{theorem}[Propriétés du déterminant]
 \item Produit de Matrice: $ det(AB) = det(A) det(B) $
-\item Transposée de Matrice:
+\item Transposée de Matrice: $ det(A^T) = det(A) $
 \end{theorem}
 
 \begin{remark}
@@ -543,7 +573,8 @@ Il existe plusieurs méthodes pour calculer le déterminant d'une matrice:
 \begin{enumerate}
     \item Diagonale d'une matrice triangulaire: on applique les opérations
 	élémentaires sur la matrice et on multiplie la diagonale
-    \item Formule d'une matrice 2x2
+    \item Formule pour le déterminant d'une matrice 2x2:
+	$ ad-bc $
     \item Matrices de cofacteurs
 \end{enumerate}
 
@@ -729,6 +760,8 @@ valeurs propres soient différentes.
 \subsubsection{Trouver la formule pour $A^k$}%
 \label{ssub:Trouver la formule pour $A^k$}
 
+$ A^k = P D^k P^-1 $
+
 \subsection{Undiagonalize a Matrix}
 
 TODO
@@ -772,6 +805,52 @@ des vecteurs (polynômes, fonctions, ...)
 
 \subsection{Noyau et Image}%
 \label{sub:Noyau et Image}
+
+\subsubsection{Noyau}%
+\label{ssub:Noyau}
+
+La base du noyau est la base de l'espace satisfaisant à $ Ax=0$
+
+\subsubsection{Image}%
+\label{ssub:Image}
+
+La base de l'image est composé des vecteurs linéairement indépendants qui
+vérifient $Ax$. Pour ce faire, on doit
+\begin{enumerate}
+    \item Identifier les pivots de la matrice échelonné pour avoir les
+	vecteurs linéairement indépendants
+    \item Construire la base avec les vecteurs colonnes de la matrice A
+	originale
+\end{enumerate}
+
+\subsection{Rank}%
+\label{sub:Rank}
+
+Le rang correspond à la dimension du vecteur après transformation.
+Intuitivement, c'est le nombre d'information qu'on a après transformation
+
+\begin{theorem}[Caraterization of a Rank]
+    \begin{enumerate}
+	\item rank(A)
+	\item $rank(A^T)$
+	\item The number of non-zeros rows dans la matrice echelonnée A
+	\item Le nombre de colonne associée à un pivot dans la matrice
+	    echelonnée A
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    The range(A) is span of A's columns, so $range(A^T)$ is span of A's
+    rows
+\end{remark}
+
+
+
+\subsection{Nullity}%
+\label{sub:Nullity}
+
+
+
 
 \section{Bases et Changements de Bases}%
 \label{sec:Bases et Changements de Bases}
@@ -864,6 +943,429 @@ orthogonale sur un sous-espace.
 \textbf{Étapes de Procédé Gram-Schmidt}
 
 TODO
+
+\part{Advanced Linear Algebra} % (fold)%
+\label{prt:Advanced Linear Algebra}
+
+% part Advanced Linear Algebra (end)
+
+\section{Overview}%
+\label{sec:Overview}
+
+Le but de ce deuxième cours est de généraliser ce qu'on a vu sur les
+espaces vectoriels pour des objets quelconques.
+
+\begin{enumerate}
+    \item Généralisation des concepts de l'algèbre linéaire sur
+	des polynômes et matrices
+\end{enumerate}
+
+\section{Généralisation des concepts de l'algèbre linéaire sur
+	des polynômes et matrices}%
+\label{sec:Vector Space and Subspace}
+
+Le premier chapitre est une généralisation des concepts d'algèbre
+linéaire. On revoit les mêmes définitions, mais on essait des les
+appliquer sur des objets différents que des vecteurs:
+\begin{enumerate}
+    \item Fonctions polynômiales
+    \item Matrices
+\end{enumerate}
+
+Les concepts:
+\begin{enumerate}
+    \item Vector Space and Subspace
+    \item Combinaison Linéaire, Indépendance Linéaire, Span
+    \item Bases et Changement de base
+\end{enumerate}
+
+\begin{remark}
+    Toujours revenir à la définition
+\end{remark}
+
+\subsection{Vector Space and Subspace}%
+\label{sub:Vector Space and Subspace}
+
+Le premier concept à comprendre est la notion d'espace vectoriel et de
+sous-espace vectoriel. Puisqu'on essait de généraliser les opérations
+sur des objets quelconques, on doit d'abord caractériser l'espace dans
+lequel ils se trouvent. On doit donc définir ce qu'est un espace vectoriel
+et un sous-espace vectoriel.
+
+Analogie: humains (objets) sur Terre (espace)
+
+\subsection{Vector Space}%
+\label{sub:Vector Space}
+
+Un espace vectoriel est un field, et possède les 10 axiomes suivants:
+\begin{enumerate}
+    \item
+\end{enumerate}
+
+\begin{remark}[Field]
+    A field is a set of number that
+    \begin{enumerate}
+	\item Addition that is an abelian group
+	\item Multiplication that is an abelian group
+    \end{enumerate}
+    A group is
+    \begin{enumerate}
+        \item Closed
+	\item Associative
+	\item Identity
+	\item Unique inverse
+    \end{enumerate}
+\end{remark}
+
+\begin{proposition}
+    \begin{enumerate}
+        \item $\mathbb{R}^n$ is a vector space
+    \end{enumerate}
+\end{proposition}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Show that a set is a vector space using the definition
+    \end{enumerate}
+\end{problem}
+
+\subsection{Subspace}%
+\label{sub:Subspace}
+
+\begin{definition}[Subspace]
+    If V is a vector space and $ S \subseteq V$, then S is a subspace
+    of V if S is itself a vector space with the same addition and
+    scalar multiplication as V.
+\end{definition}
+
+Un espace vectoriel est un sous-espace si:
+\begin{enumerate}
+    \item fermeture de l'addition
+    \item fermeture de la multiplication
+\end{enumerate}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Show that a set is a subspace using the definition
+	    \begin{itemize}
+		\item Polynome
+		\item Matrice symmétrique
+	    \end{itemize}
+    \end{enumerate}
+\end{problem}
+
+\subsection{Linear Combination, Span}%
+\label{sub:Linear Combination, Span}
+
+\begin{intuition}[Linear Combination]
+    Linear Combination:
+    \begin{enumerate}
+        \item polynôme: peut-on exprimer p(x) comme la somme de produit
+	    de g(x) et h(x) tel que $ p(x) = c_1 q(x) + c_2 h(x) $
+	\item matrice: peut-on exprimer A comme la somme de produit de
+	    B et C tel que $ A = c_1 B + c_2 C $
+    \end{enumerate}
+\end{intuition}
+
+\begin{definition}[Span]
+    Let V be a vetor space and let $ B \subseteq V$ be a set of vectors.
+    Then, the span of B, denoted span(B), is the set all all finite
+    linear combinations of vector from B
+\end{definition}
+
+\begin{intuition}[Span]
+    Peut-on générer tous les vecteurs/polynômes/matrices avec les
+    objets de la base? On regarde si les objets peuvent s'écrire
+    comme une combinaison linéaire.
+\end{intuition}
+
+\begin{proposition}
+    \begin{enumerate}
+	\item $ P^p = span(1,x, ..., x^p) $
+	\item $M_{m,n}$ is spanned by stand matrix unit $E_{1,1},
+	    E_{1,2}, E_{2,1}, E_{2,2} $
+    \end{enumerate}
+\end{proposition}
+
+\begin{theorem}
+    Let V be a vector space and let $ B \subseteq V$. Then span(B) is
+    a subspace of V.
+\end{theorem}
+
+\begin{definition}[Linear Indépendance]
+    A set of two vectors is linearly independent iif they are not scalar
+    multiples of each others
+    \begin{enumerate}
+	\item polynôme: $ c_1 p(x) + c_2 q(x) = 0, c_1 = c_2 = 0$
+	\item matrices: $ c_1 A + c_2 B = \begin{0/0/0/0/smallmatrix} $
+	\end{0/0/0/0/smallmatrix}
+    \end{enumerate}
+\end{definition}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Determine if function/matrice is linear combination
+	\item Determine if function/matrice span vector space
+    \end{enumerate}
+\end{problem}
+
+\subsection{Bases et Changement de Base}%
+\label{sub:Bases et Changement de Base}
+
+\subsubsection{Bases}%
+\label{ssub:Bases}
+
+Pour montrer qu'une famille de vecteurs/polynômes/matrices forment
+une base, il faut montrer que
+\begin{enumerate}
+    \item Linéairement Indépendant
+    \item Génère l'espace vectoriel dans lequel il se trouve
+\end{enumerate}
+
+\begin{proposition}
+    \begin{enumerate}
+	\item Standard basis of $\mathbb{R}^n$: ${e_1, ..., e_n} $
+	\item Standard basis of $M_{m,n}$: $ {E_{1,1}, E_{1,2}, ...,
+	    E_{m,n}} $
+	\item Standard basis of $P^p$: ${1,x,x^2, ..., x^p} $
+    \end{enumerate}
+\end{proposition}
+
+\begin{problem}
+    \begin{enumerate}
+	\item Montrer que l'ensemble {...} forme un base
+    \end{enumerate}
+\end{problem}
+
+\subsubsection{Coordinate Vectors}%
+\label{ssub:Coordinate Vectors}
+
+\begin{intuition}
+    Puisque tout vecteur dans une base ne peut s'écrire avec une
+    unique combinaison linéaire, on peut décrire chaque vecteur
+    avec un vecteur de réels, qu'on appelle vecteur coordonnées.\\
+    Le concept de vecteur coordonnées est pratique, car il nous
+    permet d'écrire nimporte quel objet dans un vecteur qu'avec des
+    nombres réels, ce qui sera pratique lors de changement de base.\\
+\end{intuition}
+
+\begin{theorem}[Uniqueness of Linear Combination]
+    Let V be a vector space and let B be a bass for V. Then, for
+    every $v \in V$, there is exactly one way to write v as a
+    linear combination of the basis vectors in B
+\end{theorem}
+
+\begin{definition}[Coordinate Vectors]
+    Suppose V is a vector space over a field F with a finite ordered
+    basis $ B= {v_1, ... , v_n}, v \in V$. Then,
+    $$ v = c_1 v_1 + c_2 v_2 + ... + c_n v_n $$ with coordinate
+    vector $$ [v]_B = (c_1, c_2, ..., c_n)$$
+\end{definition}
+
+\begin{intuition}
+    Le vecteur coordonnée nous donne les composantes de chaque
+    quadrillage, peut importe la base de l'espace vectoriel
+\end{intuition}
+
+\begin{remark}
+    Puisque le vecteur coordonnée est aussi dans le sous-espace
+    vectoriel, la fermeture de l'addition et de la mutliplication
+    restent vraies:
+    \begin{enumerate}
+	\item Fermeture de l'addition: $ [v + w]_B = [v]_B + [w]_B $
+	\item Fermeture de la multiplication: $ [cv]_B = c [v]_B $
+    \end{enumerate}
+    L'ordre des bases est important
+\end{remark}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find Coordonate vector for vectors/polynômes/matrice
+    \end{enumerate}
+\end{problem}
+
+\subsubsection{Dimension of Vectors Space}%
+\label{ssub:Dimension of Vectors Space}
+
+\begin{theorem}[Dimension of Basis]
+    Let V be a vector Space with basis B of size n. Then
+    \begin{enumerate}
+        \item Any set of more than n vectors must be linearly dependant
+	\item Any set of less than n vectors cannot span V
+    \end{enumerate}
+    This theorem can be proved with coordinates vectors
+\end{theorem}
+
+\begin{definition}[Dimension of Vector Space]
+    \begin{enumerate}
+        \item Finite Dimensional Vector Space
+	\item Infinite Dimensional Vector Space: $dim(V) = \infty $
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}[Dimension of Standard Basis]
+    \begin{tabular}{c c c}
+	V & Basis $ dim(V)$ \\
+	$\mathbb{F}^n, \mathbb{R}^n, \mathbb{C}^n$ & ${e_1, ..., e_n}$
+	& n \\
+	$ P^p $ & ${1,x,..., x^p} $ & p+1 \\
+	$ M_{m,n}$ & $ {E_{1,1}, ..., E_{m,n}} $ & mn \\
+	P (all polynômes) & $ {1,x,x^2,...}$ & $ \infty $\\
+	F & ?? & $ \infty $\\
+	C & ?? & $ \infty $\\
+    \end{tabular}
+\end{proposition}
+
+\begin{remark}
+    By definition, all finite dimensional vector space has a basis
+\end{remark}
+
+More: Axiom of choice (TODO)
+
+\subsubsection{Changement de Bases}%
+\label{ssub:Changement de Bases}
+
+\textbf{Comment efectuer un changement de base}
+
+Rappelons-nous qu'on veut effectuer un changement de base afin de
+traduire un vecteur d'un espace à un autre. Pour faciliter ce changement,
+on veut utiliser le vecteur coordonnées, qui représente la "longeur"
+de chaque composantes. Ainsi, pour faire un changement de base, on n'a
+qu'à "rescale" la longueur de chaque quadrillage à l'aide d'une
+transformation linéaire, qu'on nomme matrice de changement de base.
+
+\textbf{Matrice de changement de base}
+
+\begin{definition}[Matrice de changement de base]
+    $$ P_{C \rightarrow B} = [ [v_1]_C \, [v_2]_C \, ... \, [v_n]_C ] $$
+\end{definition}
+
+\begin{remark}
+    Intuitivement, la formule pour trouver la matrice de changement de
+    base a du sens, car on veut traduire chaque longueur des composantes
+    de la base B à la base C.
+\end{remark}
+
+\begin{theorem}[Matrice de Changement de Base]
+    \begin{enumerate}
+	\item $ P_{C \rightarrow B} [v]_B = [v]_C $
+	\item La matrice de changement de base est inversible et unique:
+	    $ P_{C \rightarrow B} = P_{C \rightarrow B}^-1 $
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Computing Change of Basis]
+    $ [ P_{E \rightarrow C} | P_{E \rightarrow B}] ~
+    [I | P_{C \rightarrow B} ] $
+\end{theorem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Trouver la matrice de changement de base pour vecteurs/
+	    polynômes/matrices
+	\item Trouver le vecteur coordonnée du polynômes/matrice dans
+	    la base C
+    \end{enumerate}
+    Utiliser les 2 méthodes:
+    \begin{enumerate}
+        \item Définition
+	\item Théorème
+    \end{enumerate}
+    TO REVIEW
+\end{problem}
+
+\begin{remark}
+    Si B ou C est la matrice standard, il est plus facile de trouver
+    la matrice de changement de base C avec B et de trouver son inverse.
+    Par exemple, si $B={1,x,x^2}, C={1+x,1+x^2, x+x^2}$, alors
+    $ P_{C \rightarrow B} = P_{B \rightarrow C}^-1 =
+    [ [1+x]_B [1+x^2]_B [x+x^2]_B ] ^-1 $ et la matrice de coordonnée
+    B dans C est $ [P]_C = P_{C \rightarrow B} [P]_B $
+\end{remark}
+
+\subsection{Transformation Linéaire}%
+\label{sub:Transformation Linéaire}
+
+\begin{definition}[Linear Transformation]
+    \begin{enumerate}
+	\item $ T(v+w) = T(v) + T(w) $
+	\item $T(cv) = c T(v) $
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    For all linear transformation, T(0)=0
+\end{remarktheorem}
+
+\begin{definition}
+    \begin{enumerate}
+	\item Zero Transformation 0(v) = 0
+	\item Identity Transformation: I(v) = v
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+    Every matrice transformation is a linear transformation
+\end{proposition}
+
+\subsubsection{Standard Matrix}%
+\label{ssub:Standard Matrix}
+
+\begin{theorem}[Standard Matrix of a Linear Transformation]
+    A function $ T:v \rightarrow W$ is a linear transformation if
+    $$ [T(v)]_D = [T]_{D \rightarrow B} [v]_B $$
+    The standard matrix is
+    $$[T]_{D \rightarrow B} =[ [T(v_1)_D] \, .. \, [T(v_n)]_D ] $$
+\end{theorem}
+
+\begin{problem}[Find Standard Basis]
+    \begin{enumerate}
+        \item Trouver la base de l'espace vectoriel dans lequel on veut
+	    traduire
+	\item Exprimer chacune de nos bases à l'aide des bases de l'autre
+	    espace vectoriel
+    \end{enumerate}
+\end{problem}
+
+\subsubsection{Composition of Linear Transformation}%
+\label{ssub:Composition of Linear Transformation}
+
+\begin{theorem}[Composition of Linear Transformation]
+    $ S \circ T: V \to X$
+    $$ [D \circ D]_{D \rightarrow B} = [S]_{D \rightarrow C}
+    [T]_{C \rightarrow B} $$
+\end{theorem}
+
+\begin{intuition}
+    On peut utiliser le théorème précédant pour trouver la  puissance
+    de matrice de transformation standard
+\end{intuition}
+
+\subsubsection{Change of Basis for Linear Tranformation}%
+\label{ssub:Change of Basis for Linear Tranformation}
+
+\begin{theorem}[Change of Basis]
+    $$ [T]_{E \rightarrow C} = P_{E \rightarrow D} [T]_{D \rightarrow B}
+    P_{B \rightarrow C}$$
+\end{theorem}
+
+\begin{intuition}
+    On a vu que pour traduire un vecteur d'une base à l'autre, on
+    veut manipuler le vecteur coordonnées pour obtenir celle-ci
+    dans la nouvelle base en la multipliant par un la matrice de
+    changement de base.\\
+    Intuitivement,
+    \begin{enumerate}
+        \item Vector in our language
+	\item Transformed vector in our language
+	\item Transformed vector in other language
+    \end{enumerate}
+\end{intuition}
+
+
+TODO: Lect 12
+
+
 
 \end{document}
 \end{article}
