@@ -1,0 +1,1400 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\begin{document}
+\title{Lectures Notes from Pure Maths by Steve Warner}
+\author{Emulie Chhor}
+\maketitle
+
+\section*{Introduction}
+
+This book is an introduction to undergraduate pure mathematics. This books contains
+16 chapters with exercices ranging from different levels:
+
+\begin{enumerate}
+    \item Lesson 1 - Logic: Statements and Truth
+    \item Lesson 2 - Set Theory: Sets and Subsets
+    \item Lesson 3 - Abstract Algebra: Semigroups, Monoids and Groups
+    \item Lesson 4 - Number Theory: The Ting of Integers
+    \item Lesson 5 - Real Analysis: The Complete Ordered Field of Reals
+    \item Lesson 6 - Topology: The Topology of R
+    \item Lesson 7 - Complex Analysis: The Field of Complex Numbers
+    \item Lesson 8 - Linear Algebra: Vector Spaces
+    \item Lesson 9 - Logic: Logical Arguments
+    \item Lesson 10 - Set Theory: Reltions and Functions
+    \item Lesson 11 - Abstract ALgebra: Strucutres and Homomorphisms
+    \item Lesson 12 - Number Theory: Primes, GCD, and LCM
+    \item Lesson 13 - Real Analysis: Limits and Continuity
+    \item Lesson 14 - Topology: Spaces and Homeomorphisms
+    \item Lesson 15 - Complex Analysis: Complex Valued Functions
+    \item Lesson 16 - Linear Algebra: Linear Transformations
+\end{enumerate}
+
+\pagebreak
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem*{remark}{Remark}
+\newtheorem*{proposition}{Proposition}
+
+\section{Lesson 1 - Logic: Statements and Truth}
+
+\subsection{Overview}
+
+This section introduces the notion of statements and truth tables, which is the
+foundation of proofs.
+
+\subsection{Statements with words}
+
+\par
+The goal of this section is to determine wether a sentence is a statement or not.\\
+
+A statement or proposition is a sentence that can be true or false, but not both
+simultaneously. If it expresses a single idea, we say it is an atomic statement.
+If we want to create a statement with more than one idea, we need to connect the
+atomic statement using logical connectives.
+
+\subsection{Statements with symbols}
+
+In mathematics, we want to express mathematical statement in symbols since they
+actract away the unecessary clutter and help us focus on the form of the statement.
+Consequently, we need to define a set of symbol used to define the common logical
+connectives. The most common are:
+
+\begin{enumerate}
+    \item Conjunction
+    \item Disjunction
+    \item Negation
+    \item Implication
+    \item Biconditional
+\end{enumerate}
+
+\subsection{Truth Table}
+
+\par
+Each logical connective is associated to a truth table, which tell us the
+truth value of a compound statement based on the truth value of the propositional
+variables. Here is the truth table for the common logical connectives:\\
+
+We can also use truth table to determine if two statement are equivalent. To do
+so, we compare their truth table.
+
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 2 - Set Theory: Sets and Subsets}
+
+\subsection{Overview}
+
+This section introduce the notion of sets, subsets, union and intersection.
+
+\subsection{Why do we care about sets}
+
+Having a good intuition on sets allows us to regroup similar element and compare
+them together. We can show that set contains some properties so that the elements
+all share those properties.
+
+\subsection{Describing Sets}
+
+\begin{definition}[Set]
+    A set is a collection of objects. The set can either be finite or infinite. We
+    can describe the set based on a common characteristic among the elements of the
+    set using the set builder notation. We write \(\{x|P(x)\}\), where P(x) is the common
+    characteristic.
+\end{definition}
+
+\begin{definition}[Axiom of Extensionality]
+    Two sets are equivalent if they contain the same element, we write:
+    $$ \forall x(x \in A \leftrightarrow x \in B) $$
+\end{definition}
+
+\begin{definition}[Cardinality]
+    The cardinality of an element is the number of different element in the set. For
+    example, the set S={1,2,3} has the same cardinality as the set T={1,2,2,3}
+\end{definition}
+
+\begin{theorem}[Fence-Post Formula]
+    To count the number of integers in a set, we use the fence-post formula
+    $$ n - m + 1 $$
+\end{theorem}
+
+\subsection{Subsets}
+
+\begin{definition}[Subset]
+    We say that A is a subset of B if every element of A is an element of B. We write
+    \( A \subseteq B\)
+    $$ \forall x(x \in A \rightarrow x \in B) $$
+\end{definition}
+
+\begin{theorem}
+    Every set A is a subset of itself
+    $$ \forall x(x \in A \rightarrow x \in A) $$
+\end{theorem}
+
+\begin{theorem}
+    The empty set is a subset of every set
+    $$ \forall x(x \in \emptyset \rightarrow x \in A) $$
+\end{theorem}
+
+\begin{theorem}[Transitivity of sets]
+    Let A, B, C be sets such that $$ A \subseteq B, B \subseteq C. Then, A \subseteq C $$
+\end{theorem}
+
+\begin{theorem}
+    There are \(2^n\) subsets in a set
+\end{theorem}
+
+\subsection{Unions and Intersections}
+
+\begin{definition}[Union]
+    The union of the sets A and B, written \(A \cup B\), is the set of elements that
+    are in A or B (or both).
+    $$ \forall x(x | x \in A \lor x \in B) $$
+\end{definition}
+
+\begin{definition}[Intersection]
+    The intersection of the sets A and B, written \(A \cap B\), is the set of
+    elements that are in A and B simultaneously.
+    $$ \forall x(x | x \in A \land x \in B) $$
+\end{definition}
+
+\begin{theorem}
+    If A and B are sets, then \( A \subseteq A \cup B\)
+\end{theorem}
+
+\begin{theorem}
+    \(B \subseteq A \iff A \cup B = A\)
+\end{theorem}
+
+\begin{theorem}
+    \(B \subseteq A \iff A \cap B = B\)
+\end{theorem}
+
+\begin{definition}[Reflexive]
+    A relation R is reflexive if  $ \forall x(x R x) $
+\end{definition}
+
+\begin{definition}[Symmetric]
+    A relation R is symmetric if $$\forall x \forall y(x R y \rightarrow y R x)$$
+\end{definition}
+
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 3 - Abstract Algebra: Semigroups, Monoids and Groups}
+\subsection{Overview}
+
+This section focus on the properties of semigroups, monoids and groups. It gives
+us an intuition on why some set behave a certain way while other don't.
+
+To determine wether a set has certain properties, we often use a multiplication
+table.
+
+\subsection{Binary Operations and Closure}
+
+\begin{definition}[Binary Operation]
+    A binary operation on a set is a rule that combines two elements of the set to
+    produce another element of the set
+\end{definition}
+
+\begin{definition}[Closed]
+    We say that the set S is closed under the partiel binary operation * if
+    whenever \(a,b \in S\), we have \(a * b \in S \)
+\end{definition}
+
+\subsection{Semigroups and Associativity}
+
+\begin{definition}[Associativity]
+    Let * be a binary operation on a set. We say that * is associative in S if
+    for all x, y, z in S, we have
+    $$ x * (y * z) = (x * y) * z $$
+\end{definition}
+
+
+\begin{definition}[Semigroup]
+    A semigroup is a pair (S,*), where S is a set and * is an associative binary
+    opertaion on S
+\end{definition}
+
+\begin{corollary}
+    If the binary operator * is not associative in S, then the pair (S,*) is not
+    a semigroup
+\end{corollary}
+
+\begin{definition}[Abelian or Commutative]
+    Let * be a binary operation on a set. We say that * is abelian (or commutative)
+    in S if for all x, y, z in S, we have
+    $$ x * y = y * x $$
+\end{definition}
+
+\begin{definition}[Abelian Semigroup]
+    An abelian semigroup is a semigroup that is commutative. Therefore, it has the
+    following properties:
+    \begin{enumerate}
+	\item Closed
+	\item Associative
+	\item Commutative
+    \end{enumerate}
+\end{definition}
+
+\subsection{Monoids and Identity}
+
+\begin{definition}[Identity]
+    Let (S,*) be a semigroup. An element e of S is called an identity with respect
+    of the binary operation * if for all \( a \in S \), we have \( a * e = e * a = a \)
+\end{definition}
+
+\begin{definition}[Monoid]
+    A monoid is a semigroup with an identity. In other word, a monoid is
+    \begin{enumerate}
+	\item Closed
+	\item Associative
+	\item Identity
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Unique Identity]
+    Let (M, *) be a monoid with identity e. The identity element is unique
+\end{theorem}
+
+\subsection{Groups and Inverses}
+
+\begin{definition}[Inverse]
+    Let (M,*) be a monoid with identity e. An element a of M is called invertible
+    if there is an element \( b \in M \) such that \( a * b = b * a = e \)
+\end{definition}
+
+\begin{definition}[Group]
+    A group is a monoid in which every element is invertible. Therefore, a group
+    follows the following properties
+    \begin{enumerate}
+	\item Closed
+	\item Associative
+	\item Identity
+	\item Inversible
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Unique Inverse]
+    Let (G, *) be a group. Each element in G has a unique inverse
+\end{theorem}
+
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 4 - Number Theory: The Ring of Integers}
+
+\subsection{Overview}
+
+The goal of this section is to familiarise ourselves with induction proofs. However,
+the proofs we have to prove utilize integers properties, so we have to define
+ring properties first.
+
+The notion of ring utilize the concepts of closure, associativity, abelian,
+identity and inverses which we saw in the previous section.
+
+We want to understand the properties of the common set $\mathbb{N}$, $\mathbb{Z}$,
+$\mathbb{Q}$, $\mathbb{R}$, as it will allow us to use those properties to work
+with more complex objects such as vectors or complex numbers.
+
+\subsection{Ring and Distributivity}
+
+\begin{definition}[Commutative Group]
+    A commutative group is a group that follows the following properties:
+    \begin{enumerate}
+	\item Closure
+	\item Associative
+	\item Commutative
+	\item Identity
+	\item Inverse
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+    $ (\mathbb{Z} , +) $ is a commutative group
+\end{lemma}
+
+\begin{definition}[Commutative Monoid]
+    A commutative monoid is a monoid that follows the following properties:
+    \begin{enumerate}
+	\item Closure
+	\item Associative
+	\item Commutative
+	\item Identity
+    \end{enumerate}
+\end{definition}
+
+\begin{lemma}
+    $ (\mathbb{Z} , \cdot) $ is a commutative monoid
+\end{lemma}
+
+\begin{definition}[Ring]
+    A ring is a triple $ (R,+, \cdot) $ where R is a set, + and $ \cdot $ are binary
+    operations on R that satisfies:
+    \begin{enumerate}
+	\item (R, +) is commutative group
+	\item (R, $ \cdot $) is a commutative monoid
+	\item Multiplication is distributive over addition in R. That is, for all
+	    x,y,z $\in $ R, we have
+	    $$ x \cdot (y+z) = x \cdot y + x \cdot z \text{ and }
+	    (y+z) \cdot x = y \cdot x + z \cdot x $$
+    \end{enumerate}
+
+    It should be noted that the properties that define a ring are called the ring axioms
+\end{definition}
+
+\begin{lemma}
+    $ (\mathbb{Z} , +, \cdot) $ is a commutative ring
+\end{lemma}
+
+\begin{lemma}
+    $ (\mathbb{N} , +, \cdot) $ is a ring because $ (\mathbb{N} , +) $ is not a group.
+    We say it is a semiring
+\end{lemma}
+
+\subsection{Divisibility}
+
+\begin{definition}[Even]
+    An integer a is called even if there is another integer b such that a = 2b
+\end{definition}
+
+\begin{definition}[Odd]
+    An integer a is called odd if there is another integer b such that a = 2b + 1
+\end{definition}
+
+\begin{definition}[Sum]
+    We define the sum of integers a and b to be a + b
+\end{definition}
+
+\begin{definition}[Product]
+    We define the product of integers a and b to be a $ \cdot $ b
+\end{definition}
+
+\begin{theorem}
+    The sum of two even integer is even
+\end{theorem}
+
+\begin{theorem}
+    The product of two integers that are each divisible by k is also divisible by k
+\end{theorem}
+
+\subsection{Induction}
+
+\begin{definition}[Well Ordering Principle]
+    The Well Ordering Principle says that every nonempty subset of natural numbers
+    has a least element
+\end{definition}
+
+\begin{theorem}[Principle of Mathematical Induction]
+    Let S be a set of natural numbers such that
+    \begin{enumerate}
+	\item $ 0 \in S $
+	\item $ \text{for all k } \in \mathbb{N} , k \in S \rightarrow k+1.
+	    \text{ Then, } S= \mathbb{N} $
+    \end{enumerate}
+\end{theorem}
+
+\begin{lemma}[Standard Advanced Calculus Trick]
+    We can add and substract the same quantities without changing the result
+\end{lemma}
+
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 5 - Real Analysis: The Complete Ordered Field of Reals}
+\subsection{Overview}
+
+The goal of this section is to define the set of numbers. We are introduced
+(Q, +, $\cdot$) which is an ordered field, but we are shown that we can't
+generate all the numbers with that set. We need the irrational numbers.
+
+\subsection{Field}
+
+\begin{definition}[Field]
+    A field is a triple (F, +, $\cdot $), where F is a set and + and $ \cdot$
+    are binary operations on F satisfying:
+    \begin{enumerate}
+	\item (F, +) is a commutative group
+	\item (F, $\cdot $) is a commutative group
+	\item Multiplication is distributive over addition in F. That is, for all
+	    x,y,z $\in $ F, we have
+	    $$ x \cdot (y+z) = x \cdot y + x \cdot z \text{ and }
+	    (y+z) \cdot x = y \cdot x + z \cdot x $$
+	\item 0 $\neq$ 1
+    \end{enumerate}
+
+    The properties that define a field are called the field axioms
+\end{definition}
+
+\begin{lemma}[Set of Natural Numbers]
+    The set $ \mathbb{N} $ is the set of natural numbers and the structure
+    ($ \mathbb{N} $ , +, $\cdot $) is a semiring
+\end{lemma}
+
+\begin{lemma}[Set of Integers]
+    The set $ \mathbb{Z} $ is the set of integers and the structure
+    ($ \mathbb{Z} $ , +, $\cdot $) is a ring
+\end{lemma}
+
+\begin{lemma}[Set of Rational Numbers]
+    The set $ \mathbb{Q} $ is the set of rational numbers and the structure
+    ($ \mathbb{Q} $, +, $\cdot $) is a field
+\end{lemma}
+
+\begin{definition}[Substraction]
+    If a,b $ \in $ F, we define the substraction a-b= a+(-b)
+\end{definition}
+
+\begin{definition}[Division]
+    If a,b $ \in $ F and b $\neq$0, we define the division $a/b= ab^-1$
+\end{definition}
+
+\subsection{Ordered Rings and Fields}
+
+\begin{definition}[Positive and Negative Elements]
+    If a $\in$ P, we say that a is positive and if -a $\in$ P, we say that a is
+    negative
+\end{definition}
+
+\begin{definition}[Ordered Ring]
+    We say that a ring (R,+, $\cdot$) is ordered if there is a nonempty subset
+    P of R, called the set of positive elements of R satisfying the folowing
+    properties
+    \begin{enumerate}
+	\item if a,b $\in$ P, then a + b $\in$ P
+	\item if a,b $\in$ P, then ab $\in$ P
+	\item if a $\in$ P, then exactly one of the following holds:
+	    $$ a \in P, a=0, \text{or} -a \in P $$
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    Since P is the set of positive element, the following are equivalent:
+    \begin{enumerate}
+	\item $a \in P \Longleftrightarrow a \geq 0$
+	\item $-a \in P \Longleftrightarrow a \leq 0$
+	\item $ a \leq b \Longleftrightarrow a<b or a=b$
+	\item $ a \geq b \Longleftrightarrow a>b or a=b$
+    \end{enumerate}
+\end{remark}
+
+\begin{definition}[Nonnegative Number]
+    Let x be a non negative number. Then, a is positive or zero
+\end{definition}
+
+\begin{theorem}
+    $ (\mathbb{Q}, +, \cdot) $ is an ordered field
+\end{theorem}
+
+\begin{theorem}
+    Let (F, $\leq$ ) be an ordered field. Then, for all x $\in$ F*, $ x \cdot x > 0 $
+\end{theorem}
+
+\begin{theorem}
+    Every ordered field (F, $\leq$ ) contains a copy of the natural numbers.
+\end{theorem}
+
+\begin{theorem}
+    Let (F, $\leq$ ) be an ordered field and let $ x \in F$ with $ x > 0$.
+    Then, $ \frac{1}{x} > 0 $
+\end{theorem}
+
+\subsection{Why Isn't $\mathbb{Q}$ Enough?}
+
+\begin{theorem}[Pythagorean Theorem]
+    In a right triangle with legs of length a and b, and a hypotenuse of length c
+    $$ c^2 = a^2 + b^2 $$
+\end{theorem}
+
+\begin{theorem}
+    There does not exist a rational number a such that $a^2=2$
+\end{theorem}
+
+\begin{remark}
+    Proving a number is irrational is done by assuming the rational can be
+    expressed as a irreductible fraction gcd(p,q)=1 and showing that the
+    smallest divisor is not 1
+\end{remark}
+
+\subsection{Completeness}
+
+\begin{definition}[Upper Bound]
+    Let (F, $\leq$ ) be an ordered field and let S be a nonempty subset of F.
+    We say that S is bounded above if there is $ M \in F$ such that for all
+    $s \in S, s \leq M$. Each number M is called an upper bound of S
+\end{definition}
+
+\begin{definition}[Lower Bound]
+    Let (F, $\leq$ ) be an ordered field and let S be a nonempty subset of F.
+    We say that S is bounded below if there is $ K \in F$ such that for all
+    $s \in S, K \leq s$. Each number K is called an lower bound of S
+\end{definition}
+
+\begin{definition}[Bounded Set]
+    We say that S is bounded if it is bounded above and bounded below. Otherwise,
+    we say that S is unbounded.
+\end{definition}
+
+\begin{definition}[Supremum]
+    A least upper bound of a set S is an upper bound that is smaller than any
+    other upper bound of S
+\end{definition}
+
+\begin{definition}[Infimum]
+    A greatest lower bound of S is a lower bound that is larger than any other
+    other lower bound of S
+\end{definition}
+
+\begin{remark}
+    To show that the number n is a supremum/infimum, we need to show that
+    \begin{enumerate}
+	\item The set S has a upper bound/lower bound
+	\item There is no greater lower bound / lower upper bound by contradiction.
+	    We use the fact that S < S' -> S' = S + $\varepsilon$, where
+	    $\varepsilon$ > 0, which contradict the fact that S' is a upper/lower
+	    bound
+    \end{enumerate}
+\end{remark}
+
+\begin{definition}[Completeness Property]
+    An ordered field (F, $\leq$ ) has the Completeness Property if every nonempty
+    subset of F that is bounded above has a least upper upper bound in F. In this
+    case, we cay that (F, $\leq$ ) is a complete ordered field.
+\end{definition}
+
+\begin{remark}
+    The proof is done by contradiction. We assume that the naturals are bounded
+    (we know that they are not because $\mathbb{N}$ is not an ordered field?) and
+    we prove that there is a least upper bound that is not a upper bound using
+    the compleness property.
+\end{remark}
+
+\begin{corollary}
+    Every nonempty set of real numbers that is bounded below has a greatest
+    lower bound (infimum)
+\end{corollary}
+
+\begin{theorem}
+    There is exactly one complete ordered field
+\end{theorem}
+
+\begin{theorem}[Archimedian Property of $\mathbb{R}$]
+    For every $x \in \mathbb{R}, there is n \in \mathbb{N} such that n > x $
+\end{theorem}
+
+\begin{corollary}
+    Let $x<y$. There exist $n \in \mathbb{N}$ such that $nx>y$
+\end{corollary}
+
+\begin{remark}
+    The Archimedian property tell us that the set of natural numbers is infinite.
+    Therefore, if we choose any arbitrary natural, we can find another natural
+    that can be smaller or greater than it.
+\end{remark}
+
+\begin{theorem}[Density Theorem]
+    If $x, y \in \mathbb{R} \text{with} x<y$ then there is $q \in \mathbb{Q}
+    \text{ with } x<q<y $
+\end{theorem}
+
+\begin{remark}
+    The Density theorem tells us that we can find a rational number between any
+    two real numbers. Intuitively, we can think that is because there is infintely
+    many numbers in the interval, so there must be a rational number in it.
+\end{remark}
+
+\begin{remark}
+    To prove the density theorem, we want to construct a rational number with
+    the Archimedian and the Well Ordering Principle. TODO
+\end{remark}
+
+\begin{corollary}
+    There is a real number that is not rational between any two real numbers.
+\end{corollary}
+
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 6 - Topology: The Topology of R}
+
+\subsection{Overview}
+
+\subsection{Intervals of Real Numbers}
+
+\begin{definition}[Interval]
+    A set I of real numbers is called an interval id any real number that lies
+    between two numbers in I is also in I. We write:
+    $$ \forall x, y \in I, \forall z \in \mathbb{R}, \text{if x is less than z
+    and z is less than y, the z is in I} $$
+
+    Here is a list of the other types of intervals:
+    \begin{enumerate}
+	\item Open Interval
+	\item Closed Interval
+	\item Half-open Interval
+	\item Infinite Open Interval
+	\item Infinit Closed Interval
+    \end{enumerate}
+
+\end{definition}
+
+\begin{theorem}
+    If an interval I is bounded, the there are a,b $\in \mathbb{R} $ such that
+    one of the following holds:
+    $$ I=(a,b), I=(a,b], \text{ or } I=[a,b) $$
+\end{theorem}
+
+\subsection{Operations on Sets}
+
+\begin{definition}[Union]
+    The union of the sets A and B, written \(A \cup B\), is the set of elements that
+    are in A or B (or both).
+    $$ \forall x(x | x \in A \lor x \in B) $$
+\end{definition}
+
+\begin{definition}[Intersection]
+    The intersection of the sets A and B, written \(A \cap B\), is the set of
+    elements that are in A and B simultaneously.
+    $$ \forall x(x | x \in A \land x \in B) $$
+\end{definition}
+
+\begin{definition}[Difference]
+    The difference A \ B is the set of elements that are in A and not in B
+    $$ A \ B = {x|x \in A \text{ and } x \notin B} $$
+\end{definition}
+
+\begin{definition}[Symmetric Difference]
+    The symmetric difference A $ \triangle $ B is the set of elements that are
+    in A or B, but not both
+    $$ A \triangle B = (A \ B) \cup (B \ A) $$
+\end{definition}
+
+\begin{theorem}
+    The operation of forming unions is associative
+\end{theorem}
+
+\subsection{Open and Closed Sets}
+
+\begin{definition}[Open Set]
+    A subset X of $\mathbb{R}$ is open if for every real number $ x \in \mathbb{R}$,
+    there is an open interval (a,b) with $ x \in (a,b) \text{ and } (a,b) \subseteq X$
+\end{definition}
+
+\begin{definition}[Closed Set]
+\end{definition}
+
+\begin{theorem}
+    Let $a \in \mathbb{R}$ The infinite interval (a, $\infty$) is an open set
+\end{theorem}
+
+\begin{theorem}
+    $\emptyset $ and $\mathbb{R}$ are both open sets
+\end{theorem}
+
+\begin{theorem}
+    A subset X of $\mathbb{R}$ is open if and only if for every real number
+    $x \in X$, there is a positive real number c suche that $(x-c, x+c) \subseteq X$
+\end{theorem}
+
+\begin{theorem}
+    The union of two open sets in $\mathbb{R}$ is an open set in $\mathbb{R}$
+\end{theorem}
+
+\begin{theorem}
+    Let X be a set of open subsets of $\mathbb{R}$. Then UX is open
+\end{theorem}
+
+\begin{theorem}
+    Every open set in $\mathbb{R}$ can be expressed as a union of bounded open
+    intervals
+\end{theorem}
+
+\begin{theorem}
+    The intersection of two open sets in $\mathbb{R}$ is an open set in $\mathbb{R}$
+\end{theorem}
+
+\begin{theorem}
+    The intersection of two closed sets in $\mathbb{R}$ is a closed set in $\mathbb{R}$
+\end{theorem}
+
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 7 - Complex Analysis: The Field of Complex Numbers}
+\subsection{Overview}
+
+We should alway keep in mind wether we are in a field or ring when working with
+linear and quadratic equation.
+
+\subsection{A Limitation of the Reals}
+
+\begin{definition}[Linear Equation]
+    A linear equation has the form ax+b=0.
+\end{definition}
+
+\begin{definition}[Quadratic Equation]
+    A quadratic equation has the form $a^2 + bx + c =0 $, where $a \neq 0$
+\end{definition}
+
+\subsection{The Complex Field}
+
+\begin{definition}[Standard From of a Complex Number]
+    The standard form of a complex number is a + bi, where a and b are real numbers.
+    The set of complex number is $\mathbb{C} = {a + bi | a,b \in \mathbb{R}}$
+\end{definition}
+
+\begin{definition}[The Complex Plane]
+    We can visualize a complex number as a point in the Complex Plane, which has
+    a real axis (in x) and an imaginary axis (in y). The point (0,0) is called
+    the origin\\
+
+    The Complex plane allow us to visualize a complex number as a vector. If
+    z is a complex number such as z=a+bi, we call a the real part of z and b the
+    imaginary part of z. We write a = Re z and b = Im z
+\end{definition}
+
+\begin{definition}[Equality]
+    Two complex numbers are equal if and only if they have the same real and
+    imaginary part.
+    % $$ a + bi = c + di \iif a = c \text{ and } b = d $$
+\end{definition}
+
+\begin{definition}[Addition]
+    We can add two complex numbers by adding their real and imaginary parts.
+    $$ (a+bi) + (c+di) = (a+c) + (b+d) i$$
+\end{definition}
+
+\begin{definition}[Substraction]
+    We can find the difference of two complex numbers by substracting their real
+    and imaginary parts.
+    $$ (a+bi) - (c+di) = (a-c) + (b-d) i$$
+\end{definition}
+
+\begin{definition}[Division]
+    Let z and w be complex numbers such that $z \in \mathbb{C}$ and
+    $w \in \mathbb{C}*$. We define the quotient $\frac{z}{w}$ by
+    % $$ \frac{z}{w} = z w^-1 = (a+bi) (\frac{c}{c^2 + d^2} - \fract{d}{(c^2 + d^2)i}) $$
+\end{definition}
+
+\begin{definition}[Conjugate]
+    The conjugate of the complex number z=a+bi is the complex number
+    $\overline{z} = a - bi $
+\end{definition}
+
+\begin{definition}[Real Number]
+    Let z be a complex number such that z=a+bi. If b=0, then we call z a real
+    number.
+\end{definition}
+
+\begin{definition}[Pure Imaginary Number]
+    Let z be a complex number such that z=a+bi. If a=0, then we call z a pure
+    imaginary number
+\end{definition}
+
+\begin{theorem}
+    $i^2 = -1$
+\end{theorem}
+
+\begin{theorem}
+    $ (\mathbb{C}, +, \cdot)$ is a field
+\end{theorem}
+
+\begin{corollary}
+    $ (\mathbb{R}, +, \cdot)$ is a subfield of $ (\mathbb{C}, +, \cdot)$
+\end{corollary}
+
+\begin{theorem}
+    The field of complex numbers cannot be ordered
+\end{theorem}
+
+\subsection{Absolute Value and Distance}
+
+\begin{definition}[Square Root]
+    If x and y are real or complex numbers such that $y=x^2$, the we call x a
+    sqaure root of y. If x is a positive real number, then we say that x is the
+    positive square root of y and we write $x=\sqrt(y)$
+\end{definition}
+
+\begin{definition}[Modulus of a Complex Number]
+    The absolute value or the modulus of the complex number z=a+bi is the nonnegative
+    real number $$ |z | = \sqrt(a^2 + b^2) = \sqrt((Re z)^2 + (Im z)^2) $$
+\end{definition}
+
+\begin{definition}[Distance between Complex Numbers]
+    The distance between the complex numbers z=a+bi and w=c+di is
+    $$ d(z,w) = |z-w| = \sqrt((c-a)^2 + (d-b)^2)$$
+\end{definition}
+
+\begin{theorem}[The Triangle Inequality]
+    For all $z,w \in \mathbb{C}, |z+w| \leq |z| + |w| $
+\end{theorem}
+
+\subsection{Basic Topology of $\mathbb{C}$}
+
+\begin{definition}[Circle]
+    A circle in the Complex Plane is the set of all points that are at a fixed
+    distance from a fixed point. The fixed distance is called the radius of the
+    circle and the fixed point is called the center of the circle\\
+
+    If a circle has radius of r>0 and center c=a+bi, then any point z=x+yi on the
+    circle must satisfy $|z-c| = r$, or equivalently, $(x-a)^2 + (y-b)^2 = r^2$
+\end{definition}
+
+\begin{definition}[Open Disk]
+    An open disk in $\mathbb{C}$ consists of all the points in the interior of a
+    circle. If a is the center of the open disk and r is the radius of the open
+    disk, then any point z inside the disk satisfies $|z-a|<r$
+\end{definition}
+
+\begin{definition}[r-neighborhood of a]
+    $ N_r(a) = {z \in \mathbb{C} | |z-a| < r} $ is also called the r-neighborhood of a.
+\end{definition}
+
+\begin{definition}[Diameter]
+    In $\mathbb{R}$, an r-neighborhood of a is the open interval $N_r(a)=(a-r, a+r)$
+    The diameter of this interval is 2r
+\end{definition}
+
+\begin{definition}[Closed Disk]
+    A closed disk is the interior of a circle together with the circle itself
+    (boundary included). If a is the center of the closed disk and r is the radius
+    of the closed disk, the any point z inside the closed disk satisfies
+    $ |z-a| \leq r $
+\end{definition}
+
+\begin{definition}[Punctured Open Disk]
+    A punctured open sidk consists of all the points in the interior of a circle
+    except for the center of the circle. If a is the center of the punctured open
+    disk and r is the radius of the open disk, then any point z inside the
+    punctured disk satifies $|z-a|<r$ and $z \neq a$\\
+
+    Since $z \neq a$ is equivalent to $z-a \neq 0$, then it is also equivalent to
+    $ |z-a| \neq 0$. Since |z-a| must be nonnegative, then $|z-a|>0$ or $ 0<|z-a|$.
+
+    Therfore, a puncture open disk with center a and radius r consists of all
+    points z that satisfy 0<|z-a|<r
+\end{definition}
+
+\begin{definition}[Deleted r-neighborhood of a]
+    $N_{r}^{\odot}(a)=\{z|0<| z-a \mid<r\}$ is also called a deleted r-neighborhood
+    of a
+\end{definition}
+
+\begin{definition}[Open Subset]
+    A subset X of $\mathbb{C} $ is said to be open if for every complex number
+    z $\in$ X, there is an open disk D with $z \in D$ and $D \subseteq X$
+\end{definition}
+
+\begin{theorem}
+    A subset X of $\mathbb{C}$ is open if and only if for every complex number
+    w $\in$ X, there is a positive real number d such that $N_d(w) \subseteq X$
+\end{theorem}
+
+\begin{theorem}[Closed Subset]
+    A subset X of $\mathbb{C}$ is said to be closed if the complement of X
+    $\in \mathbb{C}$, noted $\mathbb{C} \ X$, is open
+
+    The complement concist of all complex numbers not in X
+\end{theorem}
+
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 8 - Linear Algebra: Vector Spaces}
+\subsection{Overview}
+
+In the previous section, we looked at three structure called fields:
+
+\begin{enumerate}
+    \item $\mathbb{Q}$ : field of rational numbers
+    \item $\mathbb{R}$ : field of real numbers
+    \item $\mathbb{C}$ : field of complex numbers
+\end{enumerate}
+
+And we also saw that $\mathbb{Q}$ is a subfield of $\mathbb{R}$, which is also
+a subset of $\mathbb{C}$. This means that every rational number is a real number
+and every real number is a complex number.
+
+Understanding that $\mathbb{Q}$, $\mathbb{R}$ and $\mathbb{C}$ are fields is pretty
+neat, since they have two operations (addition and substraction) that satisifes
+closure, associativity, commutativity, identity, inverse, and distributive,
+which allows us to perform high school algebra on its elements.
+
+Consequently, since vectors are also in these fields, we can apply the field
+properties on vectors.
+
+\subsection{Vector Spaces Over Fields}
+
+\begin{definition}[Vector Space]
+    A vector space over a field $\mathbb{F}$ is a set V with a binary operation +
+    on V (called addition) and an operation called scalar multiplication satisfying:
+    \begin{enumerate}
+	\item (V,+) is a commutative group
+	\item (Closure under scalar multiplication) for all $ k \in \mathbb{F},
+	    kv \in V$
+	\item (Scalar multiplication Identity) If 1 is the multiplicative identity
+	    $\mathbb{F} \text{ and } v \in V$, then 1v=v
+	\item (Associativity of scalar multiplication) For all j,k $\in \mathbb{F}
+	    \text{ and } v \in V$, (jk)v=j(kv)
+	\item (Distributivity of 1 scalar over 2 vectors) For all $ k \in \mathbb{F}
+	    \text{ and } v,w \in V$, k(v+w)=kv+kw
+	\item (Distributivity of 2 scalars over 1 vector) For all j,k $\in
+	    \mathbb{F} \text{ and } v \in V$, (j+k)v = jv + kv
+    \end{enumerate}
+\end{definition}
+
+\subsection{Subspaces}
+
+\begin{definition}[Subspace]
+    Let V be a vector space over a field $\mathbb{F}$. A subset U of V is called
+    subspace of V, written $ U \leq V$, if it is also a vector space with respect
+    to the same operations of addition and scalar multiplication as they were
+    defined in V.
+\end{definition}
+
+\begin{theorem}
+    Let V be a vector space over a field $\mathbb{F}$ and let $ U \subseteq V$.
+    Then $ U \leq V$ if and only if:
+    \begin{enumerate}
+	\item $ 0 \in U$
+	\item for all $v,w \in U, v+w \in U$
+	\item for all $ v\in U \text{and} k \in \mathbb{F}, kv \in U$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Let V be a vector space over a field $\mathbb{F}$ and let U and W be
+    subspaces of V. Then $ U \cap W$ is a subspace of V
+\end{theorem}
+
+\subsection{Bases}
+
+\begin{definition}[Linear Combination]
+    Let V be a vector space over a field $\mathbb{F}$, let $v,w \in V$ and
+    $j,k \in \mathbb{F}$. The expression jv+kw is called a linear combination
+    of vectors v and w. We call the scalars j and k weights
+\end{definition}
+
+\begin{definition}[Span]
+    If $v,w \in V$, where V is a vector space over a field $\mathbb{F}$, then
+    the set of all linear combinations of v and w is called the span of v and w.
+    Symbolically, we have  $ span{v,w} = {jv+kw|j,k \in \mathbb{F}} $
+\end{definition}
+
+\begin{theorem}
+    Let $V=\mathbb{R}^2 = {(a,b)|a,b \in \mathbb{R}}$ be the vector space over
+    $\mathbb{R}$ with the usual definitions of addition and scalar multiplication.
+    Then span{(1,0),(0,1)} = $V=\mathbb{R}^2$
+\end{theorem}
+
+\begin{definition}[Linear Independance]
+    If $v,w \in V$, where V is avector space over a field $\mathbb{F}$, then we
+    say that v and w are linearly independanent if neither vector is a scalar
+    multiple of the other one. Otherwise, we say that v and w are linearly dependant.
+\end{definition}
+
+\begin{theorem}
+    Let V be a vector space over a field $\mathbb{F}$ and let $v,w \in V$. Then
+    v and w are linearly dependent if and only if there are $j,k \in \mathbb{F}$,
+    not both 0, such that jv+kw=0
+\end{theorem}
+
+\begin{theorem}
+    Let $V=\mathbb{R}^{n}=\left\{\left(k_{1}, k_{2}, \ldots, k_{n}\right) \mid k_{1}, k_{2}, \ldots, k_{n} \in \mathbb{R}\right\}$ be the vector space over $\mathbb{R}$ with the
+    usual definitions of addition and scalar multiplication. Then
+    $$
+    \operatorname{span}\{(1,0,0, \ldots, 0),(0,1,0, \ldots, 0), \ldots,(0,0,0, \ldots, 1)\}=\mathbb{R}^{n}
+    $$
+\end{theorem}
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 9 - Logic: Logical Arguments}
+\subsection{Overview}
+
+In lesson 1, we introduce the principle of statement and logical
+connector to express a proposition.
+
+\subsection{Statements and Substatements}
+
+\begin{definition}[Substatement]
+    A substatement is a statement where we dropped unecessary
+    parentheses (parenthesese that don't add clarity)
+\end{definition}
+
+\subsection{Logical Equivalence}
+
+\begin{definition}[Logical Statement]
+    Let $\phi$ and $\psi$ be statements. We say that $\phi$ and $\psi$
+    are logically equivalent if every truth assignment of the propositional
+    variables lead to the same truth table. We write $\phi \equiv \psi$
+\end{definition}
+
+\begin{proposition}[Logical Equivalence]
+    Let p,q,r be propositional variables. Here is a list of propositional
+    equivalence
+    \begin{enumerate}
+	\item Law of double negation: $p \equiv \neg(\neg p)$
+	\item De Morgan's laws:
+	    \begin{itemize}
+		\item $\neg(p \wedge q) \equiv \neg p \vee \neg q $
+		\item $\neg(p \vee q) \equiv \neg p \wedge \neg q$
+	    \end{itemize}
+	\item Commutative laws:
+	    \begin{itemize}
+		\item $p \wedge q \equiv q \wedge p $
+		\item $ p \vee q \equiv q \vee p$
+	    \end{itemize}
+	\item Associative laws:
+	    \begin{itemize}
+		\item $(p \wedge q) \wedge r \equiv p \wedge(q \wedge r)$
+		\item $(p \vee q) \vee r \equiv p \vee(q \vee r)$
+	    \end{itemize}
+	\item Distributive laws:
+	    \begin{itemize}
+		\item $ p \wedge(q \vee r) \equiv(p \wedge q) \vee(p \wedge r) $
+		\item $p \vee(q \wedge r) \equiv(p \vee q) \wedge(p \vee r)$
+	    \end{itemize}
+
+	\item Identity laws:
+	    \begin{itemize}
+		\item $p \wedge \mathrm{T} \equiv p $
+		\item $ p \wedge \mathrm{F} \equiv \mathrm{F} $
+		\item $p \vee \mathrm{T} \equiv \mathrm{T} \quad$
+		\item $p \vee \mathrm{F} \equiv p$
+	    \end{itemize}
+	\item Negation laws:
+	    \begin{itemize}
+		\item $ p \wedge \neg p \equiv \mathrm{F} $
+		\item $ p \vee \neg p \equiv \mathrm{T}$
+	    \end{itemize}
+	\item Redundancy laws:
+	    \begin{itemize}
+		\item $p \wedge p \equiv p$
+		\item $ p \vee p \equiv p$
+	    \end{itemize}
+	\item Absorption laws:
+	    \begin{itemize}
+		\item $(p \vee q) \wedge p \equiv p $
+		\item $(p \wedge q) \vee p \equiv p$
+	    \end{itemize}
+	\item Law of the conditional:  $p \rightarrow q \equiv \neg p \vee q$
+	\item Law of contrapositive: $p \rightarrow q=\neg q \rightarrow \neg p$
+	\item Biconditional: $p \leftrightarrow q \equiv(p \rightarrow q) \wedge(q \rightarrow p)$
+    \end{enumerate}
+\end{proposition}
+
+\begin{definition}[Tautology]
+    A statement that has truth value T for all truth assignements is
+    called a Tautology
+\end{definition}
+
+\begin{definition}[Contradiction]
+    A statement that has truth value F for all truth assigments is called
+    a contradiction
+\end{definition}
+
+\begin{proposition}[Law of Logical Equivalence]
+    \begin{enumerate}
+	\item Law of transitivity of logical equivalence: Let $\phi, \psi$,
+	    and $\tau$ be statements such that $\phi \equiv \psi$ and
+	    $\psi \equiv \tau$. Then $\phi \equiv \tau$
+	\item Law of substitution of logical equivalents: Let $\phi, \psi$, and $\tau$ be statements such that $\phi \equiv \psi$ and $\phi$ is a substatement of $\tau$. Let $\tau^{*}$ be the sentence formed by replacing $\phi$ by $\psi$ inside of $\tau$. Then $\tau^{*} \equiv \tau$
+	\item Law of substitution of sentences: Let $\phi$ and $\psi$ be statements such that $\phi \equiv \psi$, let $p$ be a propositional variable, and let $\tau$ be a statement. Let $\phi^{*}$ and $\psi^{*}$ be the sentences formed by replacing every instance of $p$ with $\tau$ in $\phi$ and $\psi$, respectively. Then $\phi^{*} \equiv \psi^{*}$
+    \end{enumerate}
+\end{proposition}
+
+\subsection{Validity in Sentential Logic}
+
+\begin{definition}[Logical Argument]
+    A logical argument (or proof) concists of premises (statements
+    we are given) and conclusions (statements we are not given)
+\end{definition}
+
+\begin{definition}[Valid Argument]
+    A logical argument is valid if every truth assignment that makes
+    all the premises true also makes all the conclusions true.\\
+    A logical argument that is not valid is called invalid or a fallacy
+\end{definition}
+
+\begin{definition}[Sound Argument]
+    We say that an argument is sound if
+    \begin{enumerate}
+	\item the argument is valid
+	\item all the premises are true
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    To show that an argument is invalid, we provide a counter example
+\end{remark}
+
+\begin{proposition}[Fallacy of the Converse]
+    $ p \to q \not\Longrightarrow q \to p$
+\end{proposition}
+
+\begin{remark}
+    Let $p \to q$
+    \begin{enumerate}
+	\item Converse: $ p \to p$ is not logically equivalent
+	\item Inverse: $ \neg p \to \neg q$ is not logically equivalent
+	\item Contrapositive: $ \neg q \to \neg p$ is logically equivalent
+    \end{enumerate}
+\end{remark}
+
+\begin{proposition}[Rules of Inference]
+    \begin{enumerate}
+	\item Modus Ponens: $ (p \to q) \land p \Longrightarrow q$
+	\item Modus Tollens: $ (p \to q) \land \neg q \Longrightarrow
+	    \neg p$
+	\item Disjunctive Syllogism: $ (p \lor q) \land \neg p
+	    \Longrightarrow q$
+	\item Hypothetical Syllogism: $ (p \to q) \land (q \to r)
+	    \Longrightarrow (p \to r)$
+	\item Conjunctive Introduction: $(p \land q) \Longrightarrow
+	    p \land q$
+	\item Disjunctive Introduction: $ p \Longrightarrow p \lor q$
+	\item Biconditional Introduction: $ (p \to q) \land (q \to p)
+	    \Longrightarrow (p \leftrightarrow q)$
+	\item Constructive Dilemma: $(p \to q) \land (r \to s)
+	    \land (p \lor r) \Longrightarrow (q \lor s)$
+	\item Destructive Dilemma: $(p \to q) \land (r \to s)
+	    \land (\neg q \lor \neq p) \Longrightarrow
+	    (\neq p \lor \neg r)$
+	\item Disjunctive Resolution: $(p \lor q) \land (\neg p \lor r)
+	    \Longrightarrow (q \lor r)$
+	\item Conjunctive Elimination: $ (p \land q) \Longrightarrow p$
+	\item Biconditional Elimination: $ (p \leftrightarrow q)
+	    \Longrightarrow (p \to q)$
+    \end{enumerate}
+\end{proposition}
+
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 10 - Set Theory: Relations and Functions}
+\subsection{Overview}
+\subsection{Relations}
+
+\begin{definition}[unordered pair]
+    An unordered pair is a set with 2 elements. In other words, (x,y)
+    and (y,x) is the same
+\end{definition}
+
+\begin{definition}[ordered pair]
+    An ordered pair (x,y) is not the same as (x,y). We define this property
+    as follows $$ (x,y) = {{x}, {x,y}} $$
+\end{definition}
+
+\begin{remark}[ordered k-tuple]
+
+\end{remark}
+
+\begin{theorem}
+    (x,y) = (z,w) $\longrightarrow x=z \text{ and } y=w$
+\end{theorem}
+
+\begin{definition}[Cartesian Product]
+    The cartesian product of the sets A and B, written $ A \times {B}$
+    is the set of ordered pairs (a,b) with $a \in A$ and $b \in B$
+    $$ A \times {B} = {(a,b) | a \in A \land b \in B} $$
+\end{definition}
+
+\begin{definition}[Binary Relation on a set]
+    A binary relation on a set A is a subset of $A^2 = A \times {A}$. We
+    write $$ \text{ R is a binary relation on A } \longrightarrow {R \subseteq A \times {A}} $$
+\end{definition}
+
+\begin{remark}[n-ary relation]
+
+\end{remark}
+
+\begin{proposition}[Properties of Binary Relations]
+    We say a binary relation R on A is
+    \begin{enumerate}
+	\item (Reflexive): $\forall a \in A, (a,a) \in R$
+	\item (Symmetric): $\forall a,b \in A, (a,b) \in R \longrightarrow
+	    (b,a) \in R$
+	\item (Transitive): $\forall a,b,c \in A, (a,b), (b,c) \in R
+	    \Longrightarrow (a,c) \in R$
+	\item (Antireflexive): $\forall a \in A, (a,a) \not\in R$
+	\item (antisymmetric): $\forall a,b \in A, (a,b), (b,a) \in R
+	    \longrightarrow a=b$
+    \end{enumerate}
+\end{proposition}
+
+\begin{definition}[Partial ordering]
+    A relation that is
+    \begin{enumerate}
+        \item Transitive
+	\item Reflexive
+	\item Antisymmetric
+    \end{enumerate}
+    is called a partial ordering
+\end{definition}
+
+\begin{definition}[Strict Partial ordering]
+    A relation that is
+    \begin{enumerate}
+        \item Transitive
+	\item Antireflexive
+	\item Antisymmetric
+    \end{enumerate}
+    is called a partial ordering
+\end{definition}
+
+\subsection{Equivalence Relations and Partitions}
+
+TODO
+
+\subsection{Orderings}
+\subsection{Functions}
+\subsection{Equinumerosity}
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 11 - Abstract Algebra: Structures and Homomorphisms}
+\subsection{Overview}
+\subsection{Problem Set}
+\subsection{Structures and Substructures}
+\subsection{Homomorphisms}
+\subsection{Images and Kernels}
+\subsection{Normal Subgroups and Ring Ideals}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 12 - Number Theory: Primes, GCD, and LCM}
+\subsection{Overview}
+\subsection{Prime Numbers}
+\subsection{The Division Algorithm}
+\subsection{GCD and LCM}
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 13 - Real Analysis: Limits and Continuity}
+\subsection{Overview}
+\subsection{Strips and Rectangles}
+\subsection{Limits and Continuity}
+\subsection{Equivalent Definitions of Limits and Continuity}
+\subsection{Basic Examples}
+\subsection{Limit and Continuity Theorems}
+\subsection{Limits Involving Infinity}
+\subsection{One-Sided Limits}
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 14 - Topology: Spaces and Homeomorphisms}
+\subsection{Overview}
+\subsection{Topological Spaces}
+\subsection{Bases}
+\subsection{Types of Topological Spaces}
+\subsection{Continuous Functions and Homeomorphisms}
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 15 - Complex Analysis: Complex Valued Functions}
+\subsection{Overview}
+\subsection{The Unit Circle}
+\subsection{Exponential Form of a Complex Number}
+\subsection{Functions of a Complex Variable}
+\subsection{Limits and Continuity}
+\subsection{The Reimann Sphere}
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\section{Lesson 16 - Linear Algebra: Linear Transformations}
+\subsection{Overview}
+\subsection{Linear Transformations}
+\subsection{Matrices}
+\subsection{The Matric of a Linear Transformation}
+\subsection{Images and Kernels}
+\subsection{Eigenvalues and Eigenvectors}
+\subsection{Problem Set}
+\subsubsection{Level 1}
+\subsubsection{Level 2}
+\subsubsection{Level 3}
+\subsubsection{Level 4}
+\subsubsection{Level 5}
+\pagebreak
+
+\end{document}
+\end{article}

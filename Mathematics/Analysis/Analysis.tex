@@ -1,0 +1,1536 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\begin{document}
+\title{Notes de Cours - Analyse I}
+\author{Emulie Chhor}
+\maketitle
+
+\section*{Introduction}
+
+Le premier cours d'analyse porte sur la même matière que le calcul différentiel
+et intégral, mais est plus rigoureux. La majorité du cours met l'emphase sur la
+démonstration des preuves et théorèmes et très peu sur le calcul.\\
+
+MAT1000 porte sur les chapitres suivants:
+
+    \begin{enumerate}
+	\item Nombres Rationnels et Nombres Réels
+	\item Inégalités et Valeur Absolue
+	\item Suprémum et Infimum
+	\item Axiomes de Complétude
+	\item Dénombrabilité
+	\item Suites
+	\item Continuité et Continuité Uniforme
+	\item Dérivabilité
+	\item Séries
+    \end{enumerate}
+
+\newtheorem{definition}{Définition}[subsection]
+\newtheorem{theorem}{Théorème}[subsection]
+\newtheorem{corollary}{Corollaire}[subsection]
+\newtheorem{lemma}[theorem]{Lemme}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\newcommand{\euler}{e}
+\newcommand{\ramuno}{i}
+\pagebreak
+
+\section{Nombres Rationnels et Nombres Réels}
+
+\subsection{Overview}
+
+Malgré que le cours ne met pas l'emphase sur la topologie des réels, il est
+important de comprendre que les réels possèdent certaines propriétés qui nous
+permettent de manipuler les termes algébriquement. On définit la notion de
+corps ordonné qui est TODO
+
+\subsection{Topologie des Réels}
+
+\begin{proposition}
+    $\forall a \in \mathbb{Q}, a^2 \neq 2$
+\end{proposition}
+
+\begin{lemma}
+    Soit $b \in \mathbb{Z}$. Si $b^2$ est pair, alors b est pair
+\end{lemma}
+
+\begin{axiom}
+    Il existe un corps totalement ordonné de $\mathbb{R}$ tel que:
+    \begin{enumerate}
+	\item $\mathbb{Q} \subseteq \mathbb{R} \text{ et } \mathbb{Q}$ est un sous-corps
+	    de $\mathbb{R}$
+	\item $\mathbb{R}$ possède la propriété de Complétude
+    \end{enumerate}
+\end{axiom}
+
+\begin{proposition}
+    Soit $a,b \in \mathbb{Q}$ avec a<b. Alors il existe $c \in \mathbb{Q}$ tel que
+    $a<c<b$
+\end{proposition}
+
+\begin{theorem}[Propriétés d'un corps]
+    Un corps possède les propriétés suivantes:
+    \begin{enumerate}
+	\item Commutativité
+	\item Associativité
+	\item Distributivité
+	\item Existence d'éléments neutres
+	\item Existence de l'inverse additif et multiplicatif
+	\item Lien entre les relations d'ordre et opérations
+    \end{enumerate}
+\end{theorem}
+
+\begin{problem}[Montrer qu'un nombre est irrationnel]
+\end{problem}
+
+\pagebreak
+
+\section{Inégalités et Valeur Absolue}
+
+\subsection{Overview}
+
+TODO
+
+\subsection{Définition de la Valeur Absolue}
+
+\begin{definition}[Valeur Absolue]
+\end{definition}
+
+\subsection{Propriétés des Valeurs Absolues}
+
+\begin{remark}
+    On peut interpréter la valeur absolue comme la distance entre 2 termes
+\end{remark}
+
+\subsection{Propriétés des Inégalités}
+
+\begin{problem}[Montrer l'inégalité]
+    Lorsqu'on veut montrer une inégalité, on utilise les astuces suivantes:
+    \begin{enumerate}
+	\item Ajouter et Enlever le même terme
+	\item $x^2 > 0$
+	\item Utiliser la transitivité pour comparer avec un autre terme
+    \end{enumerate}
+
+\end{problem}
+
+\begin{problem}[Résoudre des inégalités]
+    Lorsqu'on nous demande de résoudre des inégalités, on doit trouver les
+    valeurs qui satisfont l'inégalité. Pour ce faire, il est pratique d'utiliser
+    un tableau pour tester les intervalles de cohérence.
+\end{problem}
+
+\subsection{Induction}
+
+% \begin{intuition}[Induction]
+    % L'induction est une technique de preuve qui se fait en 3 étapes:
+    % \begin{enumerate}
+	% \item Cas de base
+	% \item Hypothèse d'induction: on suppose que l'étape n est vraie
+	% \item Étape d'induction: on montre que l'hypothèse est vraie en utilisant l'hypothèse d'induction
+    % \end{enumerate}
+% \end{intuition}
+
+\subsection{Inégalité de Bernouilli}
+
+\begin{theorem}[Inégalité de Bernouilli]
+    $ \forall n \in \mathbb{N}, \forall t > -1, (1+t)^n \geq 1+nt$
+\end{theorem}
+
+\pagebreak
+
+\section{Suprémum et Infimum}
+
+\subsection{Overview}
+
+\subsection{Majorant et Minorant}
+
+\begin{definition}[Majorant]
+    Soit $E \subseteq \mathbb{R}$. E est majoré si $\exists c \in \mathbb{R}, \forall
+    x \in E, x \leq c$. On dit que c est un majorant de E
+\end{definition}
+
+\begin{definition}[Minorant]
+    Soit $E \subseteq \mathbb{R}$. E est minoré si $\exists c \in \mathbb{R}, \forall
+    x \in E, x \geq c$. On dit que c en un minorant de E
+\end{definition}
+
+\begin{definition}[Ensemble Borné]
+    Soit $E \subseteq \mathbb{R}$. E est borné si E est majoré et minoré
+\end{definition}
+
+\begin{proposition}
+    E est borné $ \to \exists c \in \mathbb{R}, \forall x \in E, |x|<c $
+\end{proposition}
+
+\begin{remark}
+    Un majorant et un minorant sont des valeurs que l'ensemble de peut jamais
+    atteindre. Il peut en exister plusieurs
+\end{remark}
+
+\subsection{Suprémum et Infimum}
+
+\begin{definition}[Supremum]
+    Soit $E \subseteq \mathbb{R}$. On dit que $c \in \mathbb{R}$ est le supremum
+    de E si c'est le plus petit majorant de E
+\end{definition}
+
+\begin{definition}[Infimum]
+    Soit $E \subseteq \mathbb{R}$. On dit que $c \in \mathbb{R}$ est l'infimum
+    de E si c'est le plus grand minorant de E
+\end{definition}
+
+\begin{proposition}
+    Soit $ A \subseteq \mathbb{R}, B \subseteq \mathbb{R}$ tel que Sup A et Sup B
+    existent. Alors, $sup(A+B)= sup A + sup B$
+\end{proposition}
+
+\begin{proposition}
+    Le suprémum et l'infimum sont uniques.
+\end{proposition}
+
+\begin{problem}[Montrer que la suite possède un suprémum/infimum]
+    Pour montrer que la suite possède un supremum/infimum, il faut montrer que:
+    \begin{enumerate}
+	\item c est un majorant/minorant
+	\item c est le plus petit majorant/plus grand minorant
+    \end{enumerate}
+
+    Pour montrer la première étape, il suffit d'utiliser la définition. Pour
+    montrer la deuxième étape, on procède par contradiction. On suppose qu'il
+    existe un plus petit majorant/plus grand minorant et on montre que cela
+    contredit l'hypothèse que S' était un majorant/minorant
+
+\end{problem}
+
+\begin{problem}[Montrer que la suite ne possède pas un suprémum/infimum]
+    Une suite de possède pas de suprémum ou d'infimum si elle n'est pas bornée
+    (l'ensemble est infini). On peut supposer qu'elle est bornée et utiliser
+    l'axiome de complétude pour montrer qu'elle est majorée/minorée, puis on
+    montre qu'il s'agit d'une contradiction avec la propriété Archimédienne.
+\end{problem}
+
+\begin{problem}[Montrer que le suprémum/infimum est atteint]
+\end{problem}
+
+\pagebreak
+\section{Axiomes de Complétude}
+\subsection{Overview}
+
+\subsection{Propriété Archimédienne}
+
+\begin{theorem}[Propriété Archimédienne]
+    Pour tout $x,y \in \mathbb{R} \text{ avec } x>0$, il existe $ n \in \mathbb{N}
+    \text{ tel que } nx>y$
+\end{theorem}
+
+\begin{remark}
+    La propriété Archimédienne nous dit que les réels ne sont pas bornés. Ainsi,
+    si on prend un nombre arbitraire, on peut en trouver un autre qui est plus
+    petit ou plus grand.
+\end{remark}
+
+\subsection{Axiome de Complétude}
+
+\begin{proposition}[Axiome de Complétude]
+    Si $E \in \mathbb{R}$ est non-vide et majorée, alors sup E existe dans
+    $\mathbb{R}$
+\end{proposition}
+
+\begin{corollary}[Corollaire de l'Axiome de Complétude]
+    \begin{enumerate}
+	\item $ \forall y \in \mathbb{R}, \exists n \in \mathbb{N}, n>y$
+	\item $ \forall x \in \mathbb{R}, \exists! n \in \mathbb{R}$ tel que
+	    $n \leq x \neq n+1$ (fonction plancher)
+	\item (Densité de $\mathbb{Q}$ dans $\mathbb{Q}$): Soit $x,y \in \mathbb{R}$,
+	    alors $\exists r \in \mathbb{Q}, x<r<y$
+	\item (Densité de $\mathbb{R} \ \mathbb{Q}$ dans $\mathbb{Q}$): Soit $x,y \in \mathbb{R}$,
+	    alors $\exists r \in \mathbb{R} \ \mathbb{Q}, x<r<y$
+    \end{enumerate}
+\end{corollary}
+
+\begin{theorem}
+    L'axiome de complétude est faux dans $\mathbb{Q}$
+\end{theorem}
+
+\subsection{Densité des Rationnels}
+
+\begin{theorem}[Densité de $\mathbb{Q}$ dans $\mathbb{R}$]
+    Soit $x,y \in \mathbb{R}$, alors $\exists r \in \mathbb{Q}, x<r<y$
+\end{theorem}
+
+\begin{theorem}[Densité de $\mathbb{Q}'$ dans $\mathbb{R}$]
+    Soit $x,y \in \mathbb{R}$, alors $\exists r \in \mathbb{Q} ', x<r<y$
+\end{theorem}
+
+\begin{remark}
+    Le densité des rationnels et des irrationnels découle de la propriété
+    d'Archimède. Puisque les réels ne sont pas bornés, alors il existe une
+    infinité de nombre dans un intervalle, alors il existe nécessairement un
+    rationnel et un irrationnel dans cet intervalle.
+\end{remark}
+
+\begin{intuition}
+    La preuve de la densité se fait en construisant un rationnel à partir de la
+    distance entre x et y
+\end{intuition}
+
+\subsection{Racine n-ième}
+
+\begin{definition}[Definition Racine n-ième]
+    % Soit $q \in \mathbb{Q}, m \in \mathbb{Z}, n \in \mathbb{N} \text{ tel que }
+    % q= \fract{m}{n}$. Pour $x \geq 0$, on pose:
+    \begin{enumerate}
+	% \item $x^q := ^n\sqrt(x^m)$ si $q \geq 0$
+	% \item $x^q := (\fract{1}{x}) ^ (-q)$ si $q<0, x \neq 0$
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Racine n-ième]
+    $ \forall n \in \mathbb{N} , \forall x \geq 0, \exists! y \geq 0, y^n =x \,
+    (^n\sqrt{x} = y)$
+\end{theorem}
+
+\pagebreak
+
+\section{Dénombrabilité}
+\subsection{Overview}
+
+\subsection{Injection, Surjection, Bijection}
+
+\begin{definition}[Injection]
+\end{definition}
+
+\begin{definition}[Surjection]
+\end{definition}
+
+\begin{theorem}[Bijection]
+\end{theorem}
+
+\subsection{Cardinalité}
+
+\begin{definition}[Cardinalité]
+    Deux ensembles A et B ont le même cardinal s'il existe une bijection $\Phi:A \to B$
+\end{definition}
+
+\begin{corollary}
+    Si $\Phi:A \to B$ est une bijection, alors $\Phi ^(-1): B \to A$ existe et est
+    bijective
+\end{corollary}
+
+\begin{definition}[Dénombrabilité]
+    Un ensemble A est dénombrable s'il a le même cardinal que $\mathbb{N}$
+\end{definition}
+
+\begin{remark}
+\item $\mathbb{N}$ est dénombrable
+\item Un ensemble dénombrable est infini
+\item Un ensemble est dénombrable $\Longleftrightarrow$ on peut former une suite
+    infinie $a_1, a_2, ...$ contenant une et une seule fois chaque élément de A
+\end{remark}
+
+\begin{theorem}
+    Soit $ f:A \to B$, une fonction:
+    \begin{enumerate}
+	\item si f est surjective, alors $|A| \geq |B|$
+	\item si f est injective, alors $|A| \leq |B|$
+	\item si f est bijective, alors $|A| = |B|$
+    \end{enumerate}
+\end{theorem}
+
+\begin{proposition}
+    \begin{enumerate}
+	\item $\mathbb{Z}$ est dénombrable
+    	\item $\mathbb{Q}$ est dénombrable
+    	\item $\mathbb{R}$ n'est pas dénombrable
+    \end{enumerate}
+\end{proposition}
+
+\begin{remark}[Diagonale de Cantor]
+\end{remark}
+
+\pagebreak
+\section{Suites}
+
+\subsection{Overview}
+
+Dans cette section, on essaie de déterminer si une suite converge et si oui,
+on veut calculer sa limite
+
+\subsection{Convergence d'une suite}
+
+
+\begin{definition}[Suite Borné]
+    La suite $(a_n)$,
+    \begin{enumerate}
+	\item majorée si $\exists M \in \mathbb{R}, \forall n \in \mathbb{N},
+	    (a_n) \leq M$
+	\item minorée si $\exists M \in \mathbb{R}, \forall n \in \mathbb{N},
+	    (a_n) \geq M$
+	\item bornée si $\exists M \in \mathbb{R}, \forall n \in \mathbb{N},
+	    |(a_n)| \leq M$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Croissance et Décroissance d'une Suite]
+    La suite $(a_n)$ est
+    \begin{enumerate}
+	\item strictement croissante si $a_(n+1) > a_n, \forall n \in \mathbb{N}$
+	\item croissante si $a_(n+1) \geq a_n, \forall n \in \mathbb{N}$
+	\item strictement décroissante si $a_(n+1) < a_n, \forall n \in \mathbb{N}$
+	\item décroissante si $a_(n+1) \leq a_n, \forall n \in \mathbb{N}$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Suite Monotone]
+    La suite est monotone si la suite est croissante ou décroissante
+\end{definition}
+
+\begin{definition}[Convergence d'une Suite]
+    Une suite $(a_n)$ est convergente s'il existe un nombre $L \in \mathbb{R}$
+    tel que pour $\varepsilon > 0$, il existe $N \in \mathbb{N}$ pour lequel
+    $|a_n - L| < \varepsilon$ lorsque $n \geq \mathbb{N}$.\\
+    On dit que L est la limite de $(a_n)$, et on écrit
+    $$ \lim_{n \to \infty} a_n = L$$
+\end{definition}
+
+\begin{definition}[Divergence d'une suite]
+    Si $(a_n)$ n'est pas convergente, on dit qu'elle est divergente
+    $$ \lim_(n \to \infty) a_n \neq L \Longleftrightarrow \exists \varepsilon 0,
+    \forall N \in \mathbb{N}, \exists n \geq N, |a_n - L | \geq \varepsilon$$
+\end{definition}
+
+\begin{problem}[Montrer que la suite converge]
+    Pour montrer que la suite converge, il faut trouver un N qui satisfait
+    l'inégalité $|a_n - L| < \varepsilon$. Pour ce faire, il est pratique de
+    partir avec $|a_n - L|$ et de poser N en fonction de $\varepsilon$.\\
+    Comme en différentielle, on peut évaluer la limite d'une suite en calculant
+    sa limite lorsqu'elle tend vers l'infini
+\end{problem}
+
+\begin{intuition}
+    On s'imaginer que les valeurs de la suite se trouvent à l'intérieur d'un
+    tube $(L-\varepsilon, L+\varepsilon)$ à partir d'un certain N.
+\end{intuition}
+
+\begin{theorem}[La limite est unique]
+    Si $(a_n)$ est convergente, alors la limite est unique
+\end{theorem}
+
+\begin{theorem}[La limite est bornée]
+Si $(a_n)$ est convergente, alors $a_n | n \in \mathbb{N} $ est bornée
+\end{theorem}
+
+\begin{corollary}
+    Si $(a_n)$ n'est pas bornée, alors elle diverge
+\end{corollary}
+
+\begin{remark}
+    Si $(a_n)$ converge, alors elle est bornée, mais le contraire n'est pas vrai
+\end{remark}
+
+\begin{theorem}[Théorème des suites monotones]
+\item Si $(a_n)$ est croissante et majorée , alors $\lim_{n \to \infty} a_n =
+    sup {a_n | n \in \mathbb{N} =: L}$. On écrit $a_n \nearrow L$
+\item Si $(a_n)$ est décroissante et minorée, alors $\lim_{n \to \infty} a_n =
+    inf{a_n | n \in \mathbb{N} =: L}$. On écrit $a_n \searrow L$
+\end{theorem}
+
+\begin{remark}
+    On peut tracer le graphique pour voir que la limite tend vers sup/inf.
+    De plus, le premier terme de la suite correspond à l'inf/sup respectivement
+\end{remark}
+
+\begin{theorem}
+    Pour tout $M \in \mathbb{N}$, on a $\lim_{n \to \infty} a_n =
+    \lim_{n \to \infty} a_(n+M-1)$
+\end{theorem}
+
+\subsection{Limites suppérieures et Limites Inférieures}
+
+\begin{definition}
+    Soit $(a_n)$, une suite
+    \begin{enumerate}
+	\item $ \sup{m \geq n} a_m := \sup{a_m | m \in \mathbb{N}, m \geq n}$
+	\item $ \inf{m \geq n} a_m := \inf{a_m | m \in \mathbb{N}, m \geq n}$
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+    Soit $(a_n)$, une suite bornée. On pose $b_n := \sup_{m \geq n} a_m$ et
+    $c_n := \inf_{m \geq n} a_m$, alors
+    \begin{enumerate}
+	\item $(b_n)$ est décroissante et convergente et
+	    $ \lim_{n \to \infty} b_n = \inf_{n \geq 1} \sup_{m \geq n} a_m$
+	\item $(b_n)$ est croissante et convergente et
+	    $ \lim_{n \to \infty} c_n = \sup{n \geq 1} \inf{m \geq n} a_m$
+    \end{enumerate}
+\end{proposition}
+
+\subsection{Limites Infinies}
+
+\begin{definition}[Limite à l'infinie]
+    On dit qu'une suite $(a_n)$ tend (diverge) vers l'infinie si
+    $\forall M \mathbb{R}, \exists N \in \mathbb{N}, \forall n \geq N, a_n \geq M$
+\end{definition}
+
+\begin{remark}
+    Si $a_n$ tend vers $-\infty$, alors $a_n \leq M$
+\end{remark}
+
+\subsection{Opérations Élémentaire des Limites}
+
+\begin{theorem}
+    Supposons que $\lim_{n \to \infty} a_n$ et $\lim_{n \to \infty} b_n =b,
+    a,b, \in \mathbb{R}$, alors
+    \begin{enumerate}
+	\item $\lim_{n \to \infty} |a_n| = |a|$
+	\item $\lim_{n \to \infty} (a_n + b_n) = a+b$
+	\item $\lim_{n \to \infty} (a_n \cdot b_n) = ab$
+	\item Si $b_n \neq 0, b \neq 0, \forall n > N$, alors
+	    $\lim_{n \to \infty} \frac{a_n}{b_n} = \frac{a}{b}$
+	\item Si $a_n \leq b_n \forall n \geq N$, alors $a \leq b$
+	\item Si $a_n \geq 0$, alors $\lim_{n \to \infty} ^p\sqrt(a_n) = ^p\sqrt(a)
+	    \forall p \in \mathbb{N}$
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+    \begin{enumerate}
+	\item $\lim_{n \to \infty} (k a_n) =ka , \forall k \in \mathbb{R}$
+	\item $\lim_{n \to \infty} (a_n - b_n) = a-b$
+    \end{enumerate}
+\end{corollary}
+
+\subsection{Critère de Comparaison}
+
+\begin{theorem}[Théorème des 2 Gendarmes]
+    Soit $(a_n), (b_n), (c_n)$, des suites tel que $\lim_{n \to \infty} a_n =
+    \lim_{n \to \infty} c_n = L$ et $a_n \leq b_n \leq c_n$, alors
+    $\lim_{n \to \infty} b_n = L$
+\end{theorem}
+
+\begin{corollary}
+    Si $|a_n| \rightarrow 0$, alors $a_n \rightarrow 0$
+\end{corollary}
+
+\begin{theorem}
+    Si $a_n \rightarrow \infty$ et $ b_n \geq a_n$, alors $b_n \rightarrow \infty,
+    \forall n \geq N$
+\end{theorem}
+
+\subsection{Progression Géométrique}
+
+\begin{definition}[Progression Géométrique]
+    Une progession géométrique de raison $q \neq 1$ est une suite de la forme
+    $(a, aq, aq^2, ...) = (aq^(n-1))_{n \in \mathbb{N}}$
+\end{definition}
+
+\begin{theorem}
+    \begin{enumerate}
+	\item Si $|q| >1$, alors $|q|^n \rightarrow \infty$
+	\item Si $|q| <1$, alors $|q|^n \rightarrow 0$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Soit $q \neq 1$. On pose $S_n = 1 + q + q^2 + ... + q^(n-1)$
+    \begin{enumerate}
+	\item $S_n = \frac{1 - q^n}{1-q}$
+	\item $|q|<1$, alors $S_n \rightarrow \frac{1}{1-q}$
+	\item $|q|>1$, alors $S_n$ diverge et $|S_n| \rightarrow \infty$
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Racine n-ième}
+
+\begin{theorem}
+    \begin{enumerate}
+	\item $n^(1/n) \rightarrow 1 \, (n \rightarrow \infty)$
+	\item Si $a>0$, alors $a^(\frac{1}{n}) \rightarrow 1 $
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Sous-suites}
+
+\begin{definition}[Sous-suites]
+\end{definition}
+
+\begin{remark}
+    Lorsque $k \rightarrow \infty$, alors $n_k \rightarrow \infty$, car
+    $n_{k-1} < n_k$
+\end{remark}
+
+\begin{theorem}
+    $a_n \rightarrow L \Longleftrightarrow$ toutes sous-suites de $(a_n)$
+    convergent vers L
+\end{theorem}
+
+\begin{corollary}
+    \begin{enumerate}
+	\item Si une sous-suite diverge, alors $(a_n)$ diverge
+	% \item Si $a_{n_k} \rightarrow L_{1}$ et $a_{m_k} \rightarrow L_{2} \enq L_{1}$,
+	    % alors $(a_n)$ diverge
+	\item Si $(a_n)$ converge et $(a_{n_k}) \rightarrow L$, alors $a_n
+	    \rightarrow L$
+	\item Si $(a_n)$ est monotone et $(a_{n_k}) \rightarrow L$, alors $a_n
+	    \rightarrow L$
+    \end{enumerate}
+\end{corollary}
+
+\begin{theorem}[Théorème de Bolzano-Weistrass]
+    Soit $(a_n)$, une suite. Si $(a_n)$ est bornée, alros $(a_n)$ possède
+    une sous-suite convergente
+\end{theorem}
+
+\begin{remark}[Méthode de Dichotomie]
+    La preuve du théorème de Bolzano se fait avec la méthode de la dichotomie.
+    On prend l'intervalle fermé et on le sépare en 2 jusqu'à temps d'avoir un
+    intervalle tellement petit qu'on peut le considérer comme un point, et
+    on dit qu'un point converge vers la même valeur.
+\end{remark}
+
+\subsection{Suites de Cauchy}
+
+\begin{definition}[Suite de Cauchy]
+    On dit que $(a_n)$ est une suite de Cauchy si
+    $$ \forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n,m \geq N,
+    |a_{n+k} - a_n| < \varepsilon$$
+\end{definition}
+
+\begin{remark}[Définition alternative de la suite de Cauchy]
+    $$ \forall \varepsilon > 0, \exists N \in \mathbb{N}, \forall n,m \geq N,
+    |a_m - a_n| < \varepsilon$$
+\end{remark}
+
+\begin{theorem}
+    $(a_n)$ est une suite de Cauchy $\Longleftrightarrow (a_n)$ est une suite
+    convergente
+\end{theorem}
+
+\begin{intuition}
+    Intuitivement, la suite de Cauchy mesure la distance entre 2 termes
+    consécutifs. Pour que la suite converge, on veut que la distance deviennent
+    de plus en plus petite et converge vers 0.
+\end{intuition}
+
+\subsection{Suites définies par récurrence}
+
+\begin{proposition}[Nombre d'Euler]
+    % \begin{enumerate}
+	% \item On pose $S_n = \frac{1}{0!} + \frac{1}{1!} + ... + \frac{1}{n!}$
+	    % alors $(S_n)$ converge et on pose $e := \lim_{n \to \infty} S_n$
+	% \item On pose $t_n = (1+\frac{1}{n})^n$, alors $(t_n)$ est strictement
+	    % croissante s et \lim_{n \to \infty} t_n = e$
+    % \end{enumerate}
+\end{proposition}
+
+\begin{problem}[Calculer la limite d'une suite définie par récurrence]
+\end{problem}
+
+\pagebreak
+
+\section{Continuité et Continuité Uniforme}
+
+\subsection{Overview}
+
+\subsection{Definition de la Limite d'une fonction}
+
+\begin{definition}[Domaine et Image]
+\end{definition}
+
+\begin{definition}[Intervalle Ouvert et Fermé]
+\end{definition}
+
+\begin{definition}[Limite d'une fonction]
+    Soit $f:D \rightarrow \mathbb{R}$ et $a \in \bar{D}$. On dit que
+    f(x) tend vers L lorsque x tend vers a si
+    $$ \forall \varepsilon > 0 , \exists \delta > 0, \forall x \in D,
+    0 < |x-a|< \delta \Longrightarrow |f(x) -L| < \varepsilon$$
+    On écrit $lim_{x \to a} f(x) = L$
+\end{definition}
+
+\begin{remark}[Interprétation Graphique]
+    La définition de la limite d'une fonction nous dit que pour nimporte
+    quel epsilon, on peut trouver delta à l'intérieur de l'intervalle
+    $(L-\varepsilon, L+\varepsilon)$
+\end{remark}
+
+\begin{remark}
+    Si $f(x) \not\to L, \exists \varepsilon > 0, \forall \delta > 0,
+    \exists x \in D, 0 < |x-a|< \delta \Longrightarrow |f(x)-L| \geq
+    \varepsilon$
+\end{remark}
+
+\begin{problem}[Montrer que la fonction converge]
+    Pour montrer que la fonction converge, on doit reverse engineer et
+    trouver $\delta (\varepsilon)$. On part avec $|f(x)-L|$ et on essait
+    d'isoler $|x-a|$ pour pouvoir poser $\delta$ en fonction de epsilon.
+\end{problem}
+
+\begin{problem}[Montrer que la fonction ne converge pas]
+\end{problem}
+
+\begin{theorem}
+    Soit $f:D \rightarrow \mathbb{R}$ et $a \in \bar{D}$. Les énoncés
+    suivants sont équivalents:
+    \begin{enumerate}
+	\item $lim_{x \to \infty} f(x)=L$
+	\item Pour toute suite $(x_n) \subseteq D \ {a}$ tel que
+	    $x_n \to a$, on a $lim_{x \to \infty} f(x_n)=L$
+    \end{enumerate}
+\end{theorem}
+
+\begin{intuition}
+    Essentiellement, le théorème ci-haut nous dit que la définition des
+    limites est équivalente à la définition de la suite. Intuitivement,
+    Si la suite $x_n$ converge, alors on peut travailler à l'intérieur
+    de cet intervalle et trouver la fonction qui converge aussi (on
+    fixe $|x_n -a|<\varepsilon$)
+\end{intuition}
+
+\begin{definition}[Limite à gauche et à droite]
+    $$ \forall \varepsilon > 0, \exists \delta > 0, \forall x \in D,
+    0 < x-a < \delta \Longrightarrow |f(x)-L|< \varepsilon (resp
+    -\delta < x-a <0)$$
+\end{definition}
+
+\begin{definition}[Limite infinie]
+    $$ \forall M > 0, \exists \delta > 0, \forall x \in D,
+    0 < |x-a| < \delta \Longrightarrow f(x)-L > M (resp <M)$$
+\end{definition}
+
+\begin{definition}[Limite à l'infini]
+    $$ lim_{x \to \infty} f(x)=L \Longleftrightarrow \forall \varepsilon >0,
+    \exists M \in \mathbb{R}, \forall x \in D, x >M \Longrightarrow
+    |f(x) -L|< \varepsilon (resp <M)$$
+\end{definition}
+
+\subsection{Propriétés des limites}
+
+\begin{theorem}[Propriétés des limites de fonctions continues]
+    Soit $f,g:D \to \mathbb{R}$. Si $f(x) \to L$ et $g(x) \to M$, alors
+    \begin{enumerate}
+	\item $ |f(x)| \to L$
+	\item $ f(x) + g(x) \to L+M$
+	\item $ f(x) g(x) \to LM$
+	\item $ \frac{f(x)}{g(x)} \to \frac{L}{M}$, si $M \neq 0$
+	\item $ f(x) \leq g(x)$, alors $L \leq M$
+	\item $ \forall n \in \mathbb{N}, ^n\sqrt(L)$ si $f(x) \geq
+	    L, \forall x \in D$
+    \end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+    Soient P et Q, des polynomes et $Q(a) \neq 0$. Alors
+    $ lim_{x \to a} \frac{P(a)}{Q(a)}$
+\end{corollary}
+
+\subsection{Definition de la Limite d'une fonction}
+
+\begin{definition}[Fonction Continue en un point]
+    f est continue en $a \in D$ si
+    $$ \forall \varepsilon > 0 , \exists \delta > 0, \forall x \in D,
+    0 < |x-a|< \delta \Longrightarrow |f(x) -L| < \varepsilon$$
+\end{definition}
+
+\begin{definition}[Fonction Discontinue en un point]
+    f est discontinue en $a \in D$ si elle n'est pas continue en a
+\end{definition}
+
+\begin{definition}[Fonction Continue]
+    f est continue sur D si $\forall a \in D$, f est continue en a.
+    On dit que f est continue
+\end{definition}
+
+\begin{proposition}
+    Les énoncés suivants sont équivalents:
+    \begin{enumerate}
+	\item f est continue en a
+	\item $ lim_{x \to a} f(x) = f(a)$
+	\item $\forall (x_n) \subseteq D, x_n \to a \Longrightarrow
+	    f(x_n) \to f(a)$
+    \end{enumerate}
+\end{proposition}
+
+\begin{intuition}
+    La proposition nous dit que la définition de la continuité implique
+    la définition de la limite et vice-versa
+\end{intuition}
+
+\subsection{Propriétés de fonctions continues}
+
+\begin{proposition}
+    Soit $f,g:D \to \mathbb{R}$ sont continues, $a \in D$, alors $|f|,
+    f+g, fg, f/g (si g(a) \neq 0), ^n\sqrt(f) (si f \geq 0)$ sont
+    continues en a
+\end{proposition}
+
+\begin{proposition}
+    Les fonctions transcendantes suivantes sont continues en chaque point
+    de leur domaine: $e^x, log x, sin(x), cos(x), tan(x), arcsin(x),
+    arccos(x), arctan(x)$
+\end{proposition}
+
+\begin{proposition}
+    La composition de fonctions continues est aussi continues
+\end{proposition}
+
+\begin{proposition}
+    \begin{enumerate}
+	\item $lim_{x \to -\infty} e^x = 0$
+	\item $lim_{x \to \infty} e^x = \infty$
+	\item $lim_{x \to 0^(+)} log(x) = -\infty$
+	\item $lim_{x \to \infty} log(x) = \infty$
+    \end{enumerate}
+\end{proposition}
+
+
+\subsection{Théorème des Valeurs Intermédiaires}
+
+\begin{theorem}[Théorème des Valeurs Intermédiaires]
+    Soit $f:[a,b] \to \mathbb{R}$ continues sur [a,b] et tel que
+    $f(a)<f(b)$. Alors, $\forall c \text{ tel que } f(a)<c<f(b)$,
+    il existe $x \in (a,b)$ tel que f(x)=c
+\end{theorem}
+
+\begin{intuition}
+    Le TVI nous dit que si la fonction est continue dans un intervalle,
+    alors on peut atteindre toutes les images à l'intérieur de l'intervalle
+    donné par f(a) et f(b)
+\end{intuition}
+
+\begin{remark}[Algorithme de Bissection]
+    La preuve du TVI se fait avec l'algorithme de bissection, qui marche
+    de façon similaire à l'algorithme de dichotomie pour le théorème
+    de Bolzano-Weistrass.
+\end{remark}
+
+\begin{problem}[Point Fixe]
+    Lorsqu'on résout des problèmes de points fixes, on veut transformer
+    le problème en problème de zéro. Par exemple, si on a $f(x)=x$, alors
+    on veut travailler avec $g(x) = f(x)-x$ et montrer qu'il y a un
+    changement de signe dans cet intervalle pour que g possède un zéro
+\end{problem}
+
+\begin{problem}[Trouver les racines de la fonction]
+    On peut utiliser le théorème des valeurs intermédiaires pour montrer
+    qu'il y a une racine dans l'intervalle. Essentiellement, on veut
+    montrer que s'il y a un changement de signe dans un intervalle, et
+    que la fonction est continue, nécessairement, on passe par l'axe
+    des x et la fonction possède un zéro dans cet intervalle.\\
+    Si on nous demande de trouver la racine à au plus (erreur), on n'a
+    qu'à définir un intervalle dont la moitié est moins que ce terme
+    d'erreur
+\end{problem}
+
+\begin{problem}[Montrer que si f est continue est $\lim_{n \to -\infty}
+    a_n = -\infty$ et $\lim_{n \to \infty} \infty$, alors f possède au
+    moins un zéro]
+    Essentiellement, si lim -inf et lim +inf, alors il existe un $x_0$
+    strictement négatif et $x_1$ strictement positif. Puisque f est
+    continue, par TVI, il f a un zéro
+\end{problem}
+
+\subsection{Continuité Uniforme}
+
+\begin{definition}[Continuité Uniforme]
+    Soit $f:D \to \mathbb{R}$, une fonction. On dit qu'elle est
+    uniformément continue si $$\forall \varepsilon > 0, \exists \delta >0,
+    \forall x,y \in D, |x-y| \Longrightarrow |f(x) - f(y)|< \varepsilon$$
+\end{definition}
+
+\begin{theorem}
+    Soit $f:[a,b] \to \mathbb{R}$. Si f est continue, alors f est
+    uniformément continue. En d'autres mots, si f est une fonction
+    continue définie sur un compact (intervalle fermé et borné), alors
+    elle est uniformément continue sur cet intervalle.
+\end{theorem}
+
+\begin{theorem}[Une Fonction Lipschitz est uniformément continue]
+    Soit $f:D \to \mathbb{R}$. S'il existe une constante K tel que
+    $K >)$ telle que $$ |f(x) - f(y)| < K |x-y|$$ alors elle est
+    uniformément continue
+\end{theorem}
+
+\begin{remark}
+    Une fonction Lipschitz est bornée, et on sait que toute fonction
+    continue qui est fermé et bornée dans un intervalle est convergente,
+    et donc continuement uniforme
+\end{remark}
+
+\begin{problem}[Montrer que la fonction n'est pas uniformément continue]
+    Une fonction est uniformément continue si on peut fermer les extrémités. En
+    d'autres mots, il faut que la limite aux extrémités existent et soient
+    égale à f(a)
+\end{problem}
+
+\pagebreak
+
+\section{Dérivabilité}
+
+\subsection{Overview}
+
+\subsection{Définition de la dérivabilité}
+
+\begin{definition}[Dérivée]
+    Soit I =(a,b), un intervalle. Soit $F:I \to \mathbb{R}$, une fonction
+    et soit $ c \in I$. ALors f est dérivable en c si
+    $$ \lim_{h \to 0} \frac{f(c+h) -f(c)}{h} \text{ existe } $$
+    La valeur de la limite s'appelle a dérivée de f en a, notée $f'(A)$
+\end{definition}
+
+\begin{remark}
+    La définition de la dérivée nous dit que si la dérivée est équivalent
+    à prendre deux points et de les rapprocher à une distance très petite,
+    qui tend vers 0. Une définition équivalente serait la suivante:
+    $$ \lim_{x \to x_0} \frac{f(x) -f(x_0)}{x - x_0} \text{ existe } $$
+\end{remark}
+
+\begin{remark}[Interprétation Analytique]
+    On sait que la dérivée représente la pente de la fonction en un
+    point donné, mais on peut réécrire la fonction de la façon suivante:
+    $$ f(c+h) = f(c) + f'(c)h + \epsilon (h)h, \epsilon (h)h \to 0
+    \text{ lorsque } h \to 0$$
+    Ainsi, puisque f(c+h) = constante + pente + erreur, on peut considérer
+    que f ressemble à une fonction affine localement
+\end{remark}
+
+\begin{theorem}[Règles de Calcul]
+    Soit I, un intervalle ouvert et $f,g:I \to \mathbb{R}$. Si f et g
+    sont dérivables en $a \in I$, alors
+    \begin{enumerate}
+	\item Somme:
+	\item Produit:
+	\item Quotient:
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Règle de Dérivation en Chaine]
+    Si f et g sont dérivables en b = f(a), alors $g(f(x))$ est dérivable
+    en a et $$ (g \cdot f)'(a) = g'(f(a)) f'(a) = g'(b) f'(a) $$
+\end{theorem}
+
+\subsection{Extremums Relatifs et Absolues}
+
+\begin{definition}[Extremums Locaux]
+    Soit $f:I \to \mathbb{R}$, une fonction et soit $a \in I$. On dit
+    que a est un maximum local s'il existe un intervalle
+    $$(c,d) \subseteq I \text{ tel que } a \in \ (c,d) \text{ et }
+    f(x) \leq f(a)$$
+    On dit que a est un minimum local s'il existe un intervalle
+    $$(c,d) \subseteq I \text{ tel que } a \in \ (c,d) \text{ et }
+    f(x) \geq f(a)$$
+\end{definition}
+
+\begin{remark}
+    Pour que le maximum/minimum existent, il faut que le maximum/minimum
+    soit atteint
+\end{remark}
+
+\begin{definition}[Points Critiques]
+    Les points critiques de f sont les points x lorsque f(x)=0
+\end{definition}
+
+\begin{theorem}
+    Supposons $f:I \to \mathbb{R}$ atteint un minimum ou un maximum
+    en un point $a \in I$ et que a est un point intérieur de I. Supposons
+    aussi que f est dérivable dans l'intervalle. On a que $f'(a)=0$
+\end{theorem}
+
+\begin{remark}
+    La pente d'un maximum et d'un minimum est nulle
+\end{remark}
+
+\begin{remark}
+    La fonction f peut atteindre un min/max au bout d'un intervalle sans
+    avoir f'(a)=0, car si a est au bout, il n'est pas inclu dans
+    l'intervalle
+\end{remark}
+
+\begin{theorem}
+    f dérivable en a $\Longrightarrow$ f est continue en a, mais la
+    contraposée est fausse.
+\end{theorem}
+
+\subsection{Propriété des fonctions dérivables}
+
+\subsubsection{Théorème de Rolle}
+
+\begin{definition}[Théorème de Rolle]
+    Soit $f:[a,b] \to \mathbb{R}$, une fonction telle que
+    \begin{enumerate}
+	\item f est continue sur [a,b]
+	\item f est dérivable sur (a,b)
+	\item f(a)=f(b)
+    \end{enumerate}
+    alors $\exists c \in (a,b) \text{ tel que } f'(c)=0$
+\end{definition}
+
+\begin{remark}
+    Le Théorème de Rolle nous dit que si deux points ont la même
+    image et que la fonction est continue et dérivable, alors il y
+    a un extremums local. On sait que ce ne sera pas un point
+    d'inflexion, car la fonction ne peut pas avoir d'asymptote
+    verticale dans l'intrervalle si elle est continue.
+\end{remark}
+
+\begin{corollary}[Corollaire du Théorème de Rolle]
+    Soit $f:[a,b] \to \mathbb{R}$, une fonction continue sur [a,b] et
+    n fois dérivable sur (a,b). Supposons que $f^(n) \neq 0, \forall
+    x \in (a,b)$. Alors l'équation f(x)=0 possède au plus n solutions
+    dans l'intervalle [a,b]
+\end{corollary}
+
+\begin{remark}
+    Le corollaire nous dit qu'un polynôme a au plus n zéros
+\end{remark}
+
+\begin{problem}[Montrer que f possède au plus n racines réelles]
+    Pour trouver les zéros, on peut utiliser le théorème des
+    valeurs intermédiaires pour construire les intervalles avec changement
+    de signe. Pour montrer qu'il n'y a pas un deuxième zéro dans cet
+    intervalle, on peut utiliser le théorème de Rolle pour montrer qu'il
+    y a une contradiction. On montre que la racine trouvée est à
+    l'extérieur de l'intervalle définie.
+\end{problem}
+
+\begin{problem}[Montrer que si f est continue, dérivable et
+    $\lim_{n \to -\infty} f(x) = \infty$
+    et $\lim_{n \to \infty} f(x) = \infty$, alors il existe c tel que
+    f'(c) = 0]
+    On peut utiliser le TVI pour se construire des deux points ayant la
+    même image. Voir solution de Stelios
+\end{problem}
+
+
+\subsubsection{Théorème des Accroissements Finis}
+
+\begin{theorem}[Théorème des Accroissements Finis]
+    Soit $f:[a,b] \to \mathbb{R}$, une fonction telle que
+    \begin{enumerate}
+	\item f est continue sur [a,b]
+	\item f est dérivable sur (a,b)
+    \end{enumerate}
+    alors $\exists c \in (a,b) \text{ tel que } f'(c)=\frac{f(b) - f(a)}
+    {b-a}$
+\end{theorem}
+
+\begin{intuition}
+    Le théorème des accroissements finis nous dit que si on a une
+    fonction continue et dérivable et qu'on relie les 2 extrémités
+    de l'intervalle, on peut trouver un point intérieur c qui possède
+    la même pente que la droite formée par a et b
+\end{intuition}
+
+\begin{remark}
+    Le théorème des accroissements finis est le théorème de Rolle
+    généralisé. C'est comme si on rotationnait notre graphique
+\end{remark}
+
+\begin{remark}
+    Le théorème des accroissements finis est pratique, car il nous
+    permet de rendre notre fonction Lipschitienne:
+    $$ |f(b) - f(a)| \leq M |b-a|, \forall x \in \mathbb{R},
+    |f'(x) \leq M$$
+    Ainsi, si on peut appliquer le théorème des accroissements finis
+    sur une fonction, la fonction est uniformément continue, car elle
+    est Lipschitienne
+\end{remark}
+
+\begin{intuition}[$ \frac{f'(x)}{f(x)}$ ]
+    Lorsqu'on voit $ \frac{f'(x)}{f(x)}$, on doit remarquer qu'on peut
+    transformer ce problème en problème de point fixe en posant la
+    fonction $ g(x)= log(f(x))$. On utilise le fait que
+    $ \frac{f'(x)}{f(x)}$ est la dérivée d'une fonction log
+\end{intuition}
+
+
+\begin{theorem}[Fonction Constante]
+    Soit $f:I \to \mathbb{R}$, une fonction dérivable avec I, un
+    intervalle ouvert. Alors, f est constante $\Longleftrightarrow
+    f'(x)=0 \forall x \in I$
+\end{theorem}
+
+
+\begin{intuition}
+    La preuve se fait avec le théorème de Rolle
+\end{intuition}
+
+\begin{problem}[Calculer approximativement $\sqrt(24)$]
+    On peut utiliser le théorème des accroissements finis pour
+    approximer une racine en posant $f(x)=\sqrt(x)$ et en travaillant
+    avec l'intervalle [16,25], car on sait calculer $\sqrt(16)$ et
+    $\sqrt(25)$
+\end{problem}
+
+\begin{corollary}[Formule de Cauchy]
+    Soit f et g, deux fonctions continues sur [a,b] et différentiables
+    sur (a,b). Si $g'(x) \neq 0 \forall x \in (a,b)$, il existe au moins
+    un point $c \in (a,b)$ tel que
+    $$ \frac{f(b)- f(a)}{g(b)-g(a)} = \frac{f'(c)}{g'(c)}$$
+\end{corollary}
+
+\begin{remark}
+    On peut retrouver la formule de Cauchy à partir du théorème des
+    accroissements finis ou de la règle de l'Hospital
+\end{remark}
+
+\subsection{Croissance et Décroissance}
+
+\begin{definition}[Fonction Croissante et Décroissante]
+    Une fonction $f:I \to \mathbb{R}$ est dite
+    \begin{enumerate}
+	\item croissante si $a \leq b \Longrightarrow f(a) \leq f(b)$
+	\item strictement croissante si
+	    $a < b \Longrightarrow f(a) < f(b)$
+	\item décroissante si $a \geq b \Longrightarrow f(a) \geq f(b)$
+	\item strictement décroissante si
+	    $a > b \Longrightarrow f(a) > f(b)$
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    Une fonction $f:I \to \mathbb{R}$, dérivable sur un intervalle I
+    ouvert.
+    \begin{enumerate}
+	\item f est croissante $\Longleftrightarrow f'(x) \geq 0,
+	    \forall x \in I$
+	\item $f'(x) >0 \forall x \in I$, alors f est strictement
+	    croissante sur I
+	\item f est décroissante $\Longleftrightarrow f'(x) \leq 0,
+	    \forall x \in I$
+	\item $f'(x) <0 \forall x \in I$, alors f est strictement
+	    décroissante sur I
+    \end{enumerate}
+\end{theorem}
+
+\begin{intuition}
+    La preuve se fait avec le théorème des accroissements finis.
+\end{intuition}
+
+\begin{remark}
+    f strictement croissante $\not\Longrightarrow f'(x)>0 \forall x$
+\end{remark}
+
+\subsection{Règle de l'Hospital}
+
+\begin{theorem}[Règle de l'Hospital]
+    Soient $f,g:I \to \mathbb{R}$, des fonctions dérivables. Soit
+    $a \in I$ et supposons que f(a)=0 et g(a)=0. Soit $a \in I$ et
+    supposons que $f(a)=0, g(a)=0$. Si
+    $$ \lim_{x \to a} \frac{f'(x)}{g'(x)}=l, \text{ alors }
+    \lim_{x \to a} \frac{f(x)}{g(x)} = l$$
+\end{theorem}
+
+\begin{remark}
+    L'hypothèse que $ \lim_{x \to a} \frac{f'(x)}{g'(x)}$ existe suppose
+    aussi que $g'(x) \neq 0 \forall x$ assez proche de a. La règle de
+    l'hospital marche quand même s'il y a une discontinuité dans
+    l'intervalle I, on ne veut juste pas que ce soit autour de a
+\end{remark}
+
+\begin{intuition}
+    La règle de l'hospital nous permet d'évaluer la limite de forme
+    indéterminée avec la dérivée
+\end{intuition}
+
+\begin{lemma}
+    Soient $f,g:[a,b] \to \mathbb{R}$, deux fonctions continues sur [a,b]
+    et dérivales sur (a,b). Alors, il existe $c \in (a,b)$ tel que
+    $$ (f(b) - f(a)) g'(c) = (g(b)-g(a))f'(c) $$
+\end{lemma}
+
+\begin{remark}
+    Le cas g(x)=x est le théorème des accroissements finis
+\end{remark}
+
+\begin{remark}[Lien entre théorème des accroissements finis et Règle
+    de l'Hospital]
+
+\end{remark}
+
+\subsection{Approximation}
+
+\subsubsection*{Overview}%
+\label{ssub:Overview}
+
+L'idée de cette section est d'utiliser des méthodes numériques pour estimer
+les valeurs de fonctions transcendantes ou approximer les zéros d'une
+fonction.
+
+\subsubsection{Théorème des Développements Limités}
+
+\begin{definition}[Théorème des Développements Limités]
+
+\end{definition}
+
+\subsubsection{Théorème de Taylor}
+
+\begin{theorem}[Théorème de Taylor]
+
+\end{theorem}
+
+\begin{problem}[Montrer les inégalités en utilisant le théorème de Taylor]
+    On peut utiliser le théorème de Taylor pour approximer des fonctions
+    transcendantes. Ainsi, on peut écrire son développement à une certaine
+    constante près et annuler les termes
+\end{problem}
+
+
+\subsubsection{Méthode de Newton}
+
+\begin{theorem}[Méthode de Newton]
+    $$ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} $$
+    De plus,
+    $$ | x_{n+1} - x_0 | \leq \frac{M}{2m} |x_n - x_0| ^2,
+    |f'(x)| \geq m > 0, |f''(x)| \leq M$$
+\end{theorem}
+
+\begin{remark}
+    La méthode de Newton est un algorithme itératif nous permettant
+    de déterminer les racines d'une fonction. on doit d'abord choisir
+    une fonction dont la racine est le nombre cherché, puis on commence
+    notre itération proche (avant ou après). Par exemple, si on veut
+    déterminer $\sqrt(24)$, on choisirait la fonction $ f(x) = x^2 - 24$
+\end{remark}
+
+\begin{remark}[Convergence Quadratique]
+    On dit que la méthode de Newton converge quadratiquement puisque
+    si on double la précision à chaque itération (la distance est coupé
+    de 2 à chaque fois). Tracer le graphique
+\end{remark}
+
+\subsection{Tracés de Graphe}
+
+\pagebreak
+
+\section{Séries}
+
+\subsection{Overview}
+
+Le but de cette section est de déterminer la convergence d'une
+série, et si elle converge, de calculer sa somme. L'importance de
+la convergence d'une série est p/r à l'approximation. On utilise
+les séries pour estimer les fonctions transcendantes.\\
+
+Idéalement, on serait capable d'exprimer toutes les séries en
+termes des séries célèbres, mais ce n'est pas le cas. On verra donc
+qu'on peut utiliser des critères pour déterminer si la série converge
+ou non.
+
+\subsection{Convergence des séries}
+
+\begin{definition}[Série de terme général]
+    La série S de termes général $a_n$ est l'expression
+    $$ S = \sum_{n=1}^{\infty} a_n = a_1 + a_2 + ... + a_n$$
+\end{definition}
+
+\begin{definition}[Sommes Partielles]
+    Soit $S_n = \sum{k=1}^{n} a_k$. On appelle $S_n$ la suite des sommes
+    partielles de S
+\end{definition}
+
+\begin{definition}[Convergence de Série]
+    Si $S_n$ converge, alors on dit que la série S converge et on écrit
+    $ \lim_{n \to \infty} S_n = S$. Si $S_n$ diverge, alors on dit que
+    la série S diverge
+\end{definition}
+
+\begin{intuition}
+    Une suite et une série est essentiellement le même objet, seulement
+    pour les suites, on considère la valeur de chaque terme, alors que
+    pour les séries, on considère la distance entre 2 termes consécutifs.\\
+    La convergence d'une suite signifie que si on est assez loin dans
+    la suite, le terme $a_n$ prend une certaine valeur, alors que la
+    convergence d'une série nous dit que si on additionne la distance
+    entre deux termes consécutifs une infinité de fois, on obtient une
+    valeur réelle.
+\end{intuition}
+
+\begin{remark}
+    Commencer l'itération d'une série change uniquement la valeur de
+    sa somme, pas sa convergence
+\end{remark}
+
+\begin{theorem}[Critère de Cauchy]
+
+\end{theorem}
+
+\begin{theorem}[Associativité Finie]
+
+\end{theorem}
+
+
+
+\subsection{Séries célèbres}
+
+\begin{proposition}[Série Géométrique]
+\end{proposition}
+
+\begin{proposition}[Série Harmonique]
+    La série harmonique $ \sum^{\infty}_{i=1} \frac{1}{n}  $ diverge
+\end{proposition}
+
+\begin{proposition}[Série de Téléscopique]
+\end{proposition}
+
+\begin{proposition}[Série de Riemann]
+    La série de Riemann $ \sum^{\infty}_{i=1} \frac{1}{n^p}$
+    \begin{enumerate}
+        \item converge si $ p > 1$
+	\item diverge si $ p \leq 1 $
+    \end{enumerate}
+\end{proposition}
+
+\begin{theorem}[Convergence d'une suite]
+    Si $\sum_{n=1}^{\infty} a_n$ converge, alors
+    $\lim_{n \to \infty} a_n=0$
+\end{theorem}
+
+\begin{corollary}
+    Si $\lim_{n \to \infty} a_n \neq 0$, alors la série diverge
+\end{corollary}
+
+\begin{intuition}
+    Pour la convergence d'une suite, on se disait qu'on voulait que
+    la distance entre 2 termes consécutifs deviennent de plus en plus
+    petit pour que le n-ième terme reste sur place. L'intuition pour
+    la convergence d'une suite est similaire: si la distance entre
+    deux termes consécutifs n'est pas de 0, on continue d'ajouter des
+    termes à l'infini, ce qui veut dire que la somme tend vers l'infini
+\end{intuition}
+
+\begin{theorem}[Propriétés de Séries]
+    Soient $S = \sum_{n=1}^{\infty} a_n$ et $T = \sum_{n=1}^{\infty} b_n$,
+    deux séries convergentes. Alors,
+    \begin{enumerate}
+	\item $\sum_{n=1}^{\infty} (c a_n + d b_n) = cS + dT, c,d \in
+	    \mathbb{R}$
+	\item Si $\sum_{n=1}^{\infty} a_n$ diverge, alors
+	    $\sum_{n=1}^{\infty} c a_n$ diverge si $ c \neq 0$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}
+    Si une série converge, alors on peut regrouper ses termes en blocs
+    sans changer l'ordre. La réciproque est fausse
+\end{theorem}
+
+\subsection{Critères de Convergence pour les séries à termes positifs}
+
+\begin{definition}[Série à termes positifs]
+    Une série $\sum_{n=1}^{\infty} a_n$ est dite à termes positifs si
+    $a_n \geq 0, \forall n \in \mathbb{N}$
+\end{definition}
+
+\begin{remark}
+    \begin{enumerate}
+	\item Si S est à termes positifs, alors $(S_n)$ est croissante
+	\item S converge $\Longleftrightarrow (S_n)$ est majoré
+    \end{enumerate}
+\end{remark}
+
+\begin{enumerate}
+    \item Critère de Comparaison
+    \item Critère de Condensation de Cauchy
+    \item Critère du Quotient
+    \item Critère d'Alembert (du rapport)
+    \item Critère de la Racine de Cauchy
+    \item Critère de Dirichlet
+\end{enumerate}
+
+\begin{theorem}[Critère de Comparaison]
+    Soit deux séries $ \sum^{\infty}_{i=1} a_n $ et
+    $ \sum^{\infty}_{i=1} b_n $ telles que $b_n \geq 0$
+    \begin{enumerate}
+        \item Si $ \sum^{\infty}_{i=1} b_n $ converge, et qu'il existe
+	    deux nombres positifs N et M tels que $|a_n| \leq M b_n,
+	    \forall n \geq N$ la série $ \sum^{\infty}_{i=1} a_n $
+	    converge absolument
+        \item Si $ \sum^{\infty}_{i=1} b_n $ diverge, et qu'il existe
+	    deux nombres positifs N et M tels que $|a_n| \geq M b_n,
+	    \forall n \geq N$ la série $ \sum^{\infty}_{i=1} a_n $
+	    diverge
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Critère de Condensation de Cauchy]
+    Soit la suite décroissante ${a_n}, a_n \geq 0$.
+    $$ \sum^{\infty}_{i=1} a_n \text{ converge } \longrightarrow
+    \sum^{\infty}_{i=1} 2^n a_{2^n} $$
+\end{theorem}
+
+\begin{theorem}[Critère du Quotient]
+    Soit les deux séries $ \sum a_n$ et $ \sum b_n$. Posons
+    $ \lim_{n \to \infty} |\frac{a_n}{b_n} $
+    \begin{enumerate}
+        \item si $L \neq 0 \, ou \, \infty$ les séries $ \sum |a_n|$ et
+	    $ \sum |b_n|$ sont de même nature
+	\item si L = 0 et si $ \sum b_n$ converge absolument, alors
+	    $ \sum a_n $ converge abosulement. Si la série $ \sum |a_n|$
+	    diverge, alors $ \sum |b_n|$ diverge aussi
+	\item si L = $\infty$ et si $ \sum b_n$ diverge, alors
+	    $ \sum a_n $ diverge. Si la série $ \sum |a_n|$
+	    converge, alors $ \sum |b_n|$ converge
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Critère d'Alembert (du rapport)]
+    Soit la série $ \sum a_n , a_n \neq 0 $ tele que la limite
+    $ L = \lim_{n \to \infty} | \frac{a_{n+1}}{a_n} $ existe. Alors
+    \begin{enumerate}
+        \item si L < 1, la série converge absolument
+	\item si L > 1, la série diverge
+	\item si L = 1, on ne peut rien conclure
+    \end{enumerate}
+\end{theorem}
+
+\begin{intuition}
+    Intuitivement, on peut penser que le critère d'Alembert compare
+    la distance entre 2 termes consécutifs. Si cette distance devient
+    de plus en plus petite (L<1), alors elle converge. Elle diverge sinon
+\end{intuition}
+
+\begin{theorem}[Critère de la Racine de Cauchy]
+    Soit la série $\sum a_n$ telle que
+    $ \lim_{n \to \infty} ^n\sqrt(|a_n|)$ existe. Alors,
+    \begin{enumerate}
+        \item si L < 1, la série converge absolument
+	\item si L > 1, la série diverge
+	\item si L = 1, on ne peut rien conclure
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Critère de Dirichlet]
+
+\end{theorem}
+
+\subsection{Convergence des séries alternées et Critère de Leibniz}
+
+\begin{definition}[Convergence Absolue et Conditionnelle]
+    Une série $\sum_{n=1}^{\infty} a_n$ est dite
+    \begin{enumerate}
+	\item Absolument Convergente si $\sum_{n=1}^{\infty} |a_n| $
+	    converge
+	\item Conditionnellement Convergente si $\sum_{n=1}^{\infty} |a_n|$
+	    diverge
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Critère de Leibniz]
+    La série alternée $ \sum^{\infty}_{i=1} (-1)^{n+1} a_n $ converge si
+    \begin{enumerate}
+	\item $ \lim_{n \to \infty} a_n = 0 $
+	\item $ {a_n} $ est décroissante
+    \end{enumerate}
+\end{theorem}
+
+\begin{intuition}
+    On peut s'imaginer que la suite saute en avant et en arrière avec des
+    bonds de plus en plus petits jusqu'à s'arrêter à une valeur
+\end{intuition}
+
+\begin{theorem}
+    Si une série est absolument convergente, alors elle converge
+\end{theorem}
+
+\begin{theorem}[Produit de Cauchy]
+    Soient $S = \sum_{n=1}^{\infty} a_n$ et $T = \sum_{n=1}^{\infty} b_n$.
+    On pose $$ P:= \sum_{n=1}^{\infty} (a_n b_n + a_1 b_{n-1} + ... +
+    a_{n-1} b_1 + a_n b_n) = \sum_{n=0}^{\infty} \sum_{n=0}^{n}
+    (a_k - b_{n-k})$$
+    \begin{enumerate}
+	\item Si S est absolument convergente et T converge, alors P
+	    converge et P=ST
+	\item Si S et T sont absolument convergentes, alors p est
+	    absolument convergente et P=ST
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Séries Entières}
+
+\begin{definition}[Série Entière]
+    Une série entière est une série de la forme
+    $$ \sum a_n x^n, a_n , x \in \mathbb{R}$$
+\end{definition}
+
+\begin{theorem}
+    Soit $ \sum a_n x^n$, une série entière. Il existe un unique $R \in
+    [0, \infty]$ tel que
+    \begin{enumerate}
+	\item $ \sum a_n x^n$ est absolument convergente si $|x|<R$
+	\item $ \sum a_n x^n$ est divergente si $|x|>R$
+    \end{enumerate}
+    On dit que R est le rayon de convergence de $ \sum a_n x^n$ et (-R,R)
+    est son intervalle de convergence
+\end{theorem}
+
+\begin{remark}
+    On parle de rayon de convergence, car on a un cercle en analyse
+    complexe.
+\end{remark}
+
+\begin{remark}
+    On utilise les séries entières (ou de puissance) pour estimer des
+    fonctions transcendantes $(sin, cos, tan, e^x, log x, ...)$ à
+    l'aide d'une somme de fonctions polynômiales. Cependant, la fonction
+    est similaire que sur un certain intervalle, d'ou l'intervalle de
+    convergence. Plus on ajoute de termes, plus notre estimation est
+    précise et plus notre intervalle grandit.
+\end{remark}
+
+\pagebreak
+
+\section{Ressources}
+
+\subsection{Books}%
+\label{sub:Books}
+
+\begin{enumerate}
+    \item How to think about Analysis by Lara Alcock: Great first book
+	to develop the intuition behind Real Analysis (recommended)
+    % \item Introduction à l'Analyse Réelle by Jacques Labelle: lots of
+    %     proofs, but not well explained and a bunch of easier exercices.
+    \item Basic Analysis by Jiri Lebl: great for self taught (recommended)
+    \item Understanding Analysis by Steven Abott: gives lot of intuition
+	with lots of images (recommended)
+    % \item Elementary Analysis by Kenneth Ross (not read)
+    \item Analysis I,II,III by Amann and Escher: great for theory, but
+	not so much exercices
+    \item Baby Rudin (not read)
+    \item Terrence Tao (not read)
+    \item A working Excursion to Accompany Baby Rudin by Evelyn Silvia:
+	Emphasis on proofs and definitions rather than using the theorems
+\end{enumerate}
+
+\subsection{Lectures}%
+\label{sub:Lectures}
+
+\begin{enumerate}
+    \item MAT137: A Youtube Channel with short videos on the concept.
+	Great for classes preview
+\end{enumerate}
+
+\subsection{Exercices}%
+\label{sub:Exercices}
+
+\begin{enumerate}
+    \item The Math Professor - Advanced Calculus Playlist: Great to
+	understand how to use definition, but need to complement with
+	harder problem
+    \item Problem Books in Mathematics by Aksoy and Khamsi: great problems
+	with all solutions (recommended)
+\end{enumerate}
+
+\end{document}
+\end{article}

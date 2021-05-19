@@ -1,0 +1,184 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{textgreek}
+\begin{document}
+\title{Lecture Notes for LeetCode}
+\author{Emulie Chhor}
+\maketitle
+
+\section*{Introduction}
+
+Le but de ce document est de compiler les stratégie utilisées pour
+résoudre les questions de LeetCode. Les stratégies sont séparées de la
+façon suivante:
+
+    \begin{enumerate}
+	\item Arrays
+	\item Linked List
+	\item String
+	\item Hash Table
+	\item Sorting
+	\item Recursion
+	\item Trees
+	\item Dynamic Programming
+	\item Backtracking
+	\item Greedy
+	\item Graph Problems
+    \end{enumerate}
+
+Il est à noter que les problèmes les plus durs peuvent toujours être
+séparés en problème plus simple. De plus, certains problèmes peuvent
+être considérés comme des problèmes récurrents, c-à-d qu'ils sont
+souvent utilisées non pas comme une fin en soit, mais comme un stratégie
+intermédiaire pour résoudre un plus gros problème.
+
+\newtheorem{strategy}{Strategy}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\section{Arrays}%
+\label{sec:Arrays}
+
+\subsection*{Overview}%
+\label{sub:Overview}
+
+\subsection{Two Pointers}%
+\label{sub:Two Pointers}
+
+\subsection{Sliding Window Technique}%
+\label{sub:Sliding Window Technique}
+
+\subsubsection{In-place Sliding Window}%
+\label{ssub:In-place Sliding Window}
+
+\subsubsection{Dynamic Sliding Window}%
+\label{ssub:Dynamic Sliding Window}
+
+\subsection{Kadane's Algorithm}%
+\label{sub:Kadane's Algorithm}
+
+\section{Linked List}%
+\label{sec:Linked List}
+
+\subsection{Fast-and-Slow Pointers}%
+\label{sub:Fast-and-Slow Pointers}
+
+\section{Trees}%
+\label{sec:Trees}
+
+\subsection{Tree Traversal}%
+\label{sub:Tree Traversal}
+
+\textbf{Motivation}
+
+Malgré qu'on nous demande pas explicitement de traverser un arbre, certains
+problèmes utilisent la structure des traversals. Il existe 4 façons de
+traverser les arbres:
+\begin{enumerate}
+    \item preorder (depth)
+    \item in-order(depth)
+    \item post-order(depth)
+    \item level-order (breadth)
+\end{enumerate}
+
+Les traversals depth-first peuvent être implémentées récursivement ou
+itérativement avec un stack/queue.
+
+\subsubsection{Pre-order}%
+\label{ssub:Pre-order}
+
+\textbf{Implémentation Récursive}
+
+\begin{enumerate}
+    \item visit node
+    \item traverse left
+    \item traverse right
+\end{enumerate}
+
+\textbf{Implémentation Itérative}
+
+\subsubsection{In-order}%
+\label{ssub:In-order}
+
+\textbf{Implémentation Récursive}
+
+\begin{enumerate}
+    \item traverse left
+    \item visit node
+    \item traverse right
+\end{enumerate}
+
+\textbf{Implémentation Itérative}
+
+\subsubsection{Post-Order}%
+\label{ssub:Post-Order}
+
+\textbf{Implémentation Récursive}
+
+\begin{enumerate}
+    \item traverse left
+    \item traverse right
+    \item visit node
+\end{enumerate}
+
+\textbf{Implémentation Itérative}
+
+\subsubsection{Level-Order}%
+\label{ssub:Level-Order}
+
+\textbf{Implémentation Itérative}
+
+\subsection{Find Smallest/Biggest Element}%
+\label{sub:Find Smallest/Biggest Element}
+
+\textbf{Motivation}
+
+Un sous-problème qui revient souvent est de trouver le plus gros/plus
+petit élément dans un subtree. Malgré que l'algorithme est simple, il
+nous permet de trouver le successeur/prédécesseur lors de la suppression
+dans un arbre.
+
+\textbf{Intuition}
+
+Puisque le BST possède le BST invariant, qui nous dit que $ node.left \leq
+node \leq node.right $, on trouve le plus petit enfant en traversant la
+gauche jusqu'à ce qu'on trouve un noeud null. De la même façon, pour trouver
+le noeud le plus grand, on doit traverser le BST en choisissant toujours
+le noeud de droite, jusqu'à avoir un null.
+
+\subsection{Find Depth/Height of Tree}%
+\label{sub:Find Depth/Height of Tree}
+
+\section{Graph Problems}%
+\label{sec:Graph Problems}
+
+\subsection{Shortest Path}%
+\label{sub:Shortest Path}
+
+\subsection{Topological Sort}%
+\label{sub:Topological Sort}
+
+\subsection{Conectivity}%
+\label{sub:Conectivity}
+
+\subsection{Minimum Spanning Tree}%
+\label{sub:Minimum Spanning Tree}
+
+\subsection{Cycle Detection}%
+\label{sub:Cycle Detection}
+
+\section*{Ressources}%
+\label{sec:Ressources}
+
+\begin{enumerate}
+    \item Currated Top 75 LeetCode Questions: \url{https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-100-LeetCode-Questions-to-Save-Your-Time-OaM1orEU}
+\end{enumerate}
+
+\end{document}
+\end{article}
+

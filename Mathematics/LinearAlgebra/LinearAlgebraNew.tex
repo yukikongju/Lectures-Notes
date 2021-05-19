@@ -1,0 +1,825 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\begin{document}
+\title{Notes de Cours - Algèbre Linéaire}
+\author{Emulie Chhor}
+\maketitle
+
+\section*{Introduction}
+
+Le cours d'algèbre linéaire comporte plusieurs chapitres:
+
+    \begin{enumerate}
+	\item Systèmes d'Équations Linéaires
+	\item Matrices
+	\item Déterminants
+	\item Espaces et Sous-Espaces Vectoriels
+	\item Orthogonalité et Projections
+	\item Diagonalisation
+    \end{enumerate}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\subsection{Pourquoi étudier l'algèbre linéaire?}
+
+\pagebreak
+
+\section{Systèmes d'Équations Linéaires}
+
+\subsection{Overview}
+
+Le but de cette section est de pouvoir résoudre des systèmes d'équations linéaires
+avec l'algorithme de Gauss et de Gauss-Jordan
+
+\subsection{Définition d'un système d'équations linéaires}
+\subsection{Opérations élémentaires sur les lignes}
+
+Il existe 3 opérations élémentaires sur les matrices:
+\begin{enumerate}
+    \item Multiplier la ligne i par une constante $k \neq 0$ : $L_i \rightarrow
+	k L_j , k \neq 0$
+    \item Permuter les lignes i et j : $ L_i \leftrightarrow L_j$
+    \item Ajouter à la linge i un multiple d de la ligne j : $ L_i \rightarrow
+	L_i + d L_j$
+\end{enumerate}
+
+\subsection{Forme des matrices}
+
+Lorsqu'on essait de résoudre un SEL, on veut transformer notre matrice en l'une
+des deux formes:
+\begin{enumerate}
+    \item Forme échelonée : Gauss
+    \item Forme échelonée réduite : Gauss-Jordan
+\end{enumerate}
+
+\subsection{Types de Solutions}
+
+Il existe 3 types de solutions:
+\begin{enumerate}
+    \item Solution Unique: chaque variable est associée à un pivot
+    \item Infinité de Solutions: il existe une variable libre ou plus
+    \item Aucune Solutions: le système est incompatible et on a
+	$ [0 \, 0 \, ... \, 0 | \, k], \, k \neq 0$
+\end{enumerate}
+
+\subsection{Méthode de Gauss}
+\subsection{Méthode de Gauss-Jordan}
+
+\begin{remark}[Méthode de Gauss vs Gauss-Jordan]
+\end{remark}
+
+\pagebreak
+
+\section{Matrices}
+\subsection{Overview}
+
+Le but de cette section est de se familiariser algébriquement avec la notion de
+matrice. Cependant, il faut toujours garder en tête qu'une matrice représente
+une transformation linéaire. Essentiellement, une transformation linéaire est
+une fonction qui prend un vecteur et en recrache un autre. On verra plus tard
+les détails.
+
+\subsection{Opérations Matricielles}
+
+\subsubsection{Addition et Multiplication par un scalaire}
+
+\begin{definition}[Égalité Matricielle]
+    On dit que 2 matrices $A_{mxn}$ et $B_{pxq}$ sont égales si:
+    \begin{enumerate}
+	\item meme dimension: m=p et n=q
+	\item composantes identiques: $^(A)_ij = (B)ij, \forall i,j$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Addition Matricielle]
+    Soit A et B, deux matrices de même dimension. La Matrice A+B est
+    de même dimension et est caractérisée par $$(A+B)_ij = (A)_ij + (B)_ij$$
+\end{definition}
+
+\begin{remark}[Interprétation Géométrique de l'addition Matricielle]
+
+\end{remark}
+
+\begin{definition}[Multiplication par un scalaire]
+    Soit A, une matrice, et r un scalaire. La matrice rA, de meme dimension,
+    est donnée par $$ (rA)_ij = r(A)_ij$$
+\end{definition}
+
+\begin{remark}[Interprétation Géométrique de la multiplication Matricielle]
+
+\end{remark}
+
+\begin{theorem}[Propriétés de la somme et du PPS matriciel]
+    Soit A,B,C des matrices et r,s des scalaires.
+    \begin{enumerate}
+	\item (Commutativité de l'addition) : A + B = B + A
+	\item (Associativité de l'addition) : (A+B)+C=A+(B+C)
+	\item (Identité de la somme) : A + 0 = A
+	\item r(A+B) = rA + rB
+	\item (r+s)A = rA + sA
+	\item r(sA) = (rs)A
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    Algébriquement, on sait que les matrices possèdent ces propriétés,
+    car ses composantes sont des réels ou des complexes, qui sont
+    des fields. Géométriquement, on sait que les matrices sont construites
+    à partir de vecteurs, alors il s'agit encore de d'addition et de
+    multiplication, mais sur des vecteurs au lieu de composantes.
+\end{remark}
+
+\subsubsection{Multiplication Matricielle}
+
+\begin{definition}[Multiplication Matricielle]
+    Lignes x Colonnes
+\end{definition}
+
+\begin{theorem}[Propriétés de la Multiplication Matricielle]
+    Soit A,B,C, des matrices carrées et r un scalaire. Alors,
+    \begin{enumerate}
+	\item $ AB \neq BA$
+	\item $ r(AB) = (rA)B = A(rB), r \in \mathbb{R}$
+	\item $ IA = AI = A$
+	\item $A(B+C) = AB + AC$
+	\item $(B+C)A=BA + CA$
+	\item $A(BC) = (AB)C$
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}[Interprétation géométrique]
+    Géométriquement, on peut interpréter la multiplication matricielle
+    comme la composition de transformations linéaires, ce qui fait en
+    sorte que l'ordre est important.\\
+    Que peut-on dire à propos de A et B si AB=BA?
+\end{remark}
+
+\subsubsection{Transposition de Matrice}
+
+\begin{definition}[Transposition]
+    La transposition de la matrice A, notée $A^T$, est la matrice dont on
+    a interchangé ses lignes et ses colonnes. $$ (A^T)_{ij} = (A)_{ji}$$
+\end{definition}
+
+\begin{theorem}[Propriétés de la Transposée matricielle]
+    Soit A,B,C, des matrices carrées et r un scalaire. Alors,
+    \begin{enumerate}
+	\item $(A^T)^T = A$
+	\item $ (A+B)^T = A^T + B^T$
+	\item $ (rA)^T = r(A^T), r \in \mathbb{R}$
+	\item $ (AB)^T = B^T A^T$
+    \end{enumerate}
+\end{theorem}
+
+\subsection{Équation Ax=b}
+
+\subsubsection{Combinaison Linéaire}
+
+\begin{definition}[Combinaison Linéaire]
+    On dit que le vecteur u est une combinaison linéaire des vecteurs
+    $v_1, v_2, v_3$ dans l'espace vectoriel V s'il existe des scalaires
+    $c_2, c_2, c_3$ tels que: $$ u = c_1 v_1 + c_2 v_2 + ... + c_n v_n$$
+\end{definition}
+
+\begin{intuition}[Interprétation Géométrique de la Combinaison Linéaire]
+    On veut exprimer un vecteur quelconque comme une somme de plusieurs
+    autres. C'est comme si on voulait se rendre à la destination X, mais
+    qu'on s'arrêtait à pleins d'endroits.
+\end{intuition}
+
+\subsubsection{Indépendance Linéaire}
+
+\begin{definition}[Indépendance Linéaire]
+    On dit que la famille des vecteurs $(v_1, v_2, ..., v_n)$ de l'espace
+    vectoriel sont linéairement indépendants $\Longleftrightarrow
+    c_1 = c_2 = ... = c_n = 0$ est la seule solution pour la combinaison
+    linéaire $ c_1 v_1 + c_2 v_2 + ... + c_n v_n = 0$
+\end{definition}
+
+\begin{intuition}
+    On ne peut pas écrire les vecteurs de l'ensemble comme une combinaison
+    linéaire des autres. Plus tard, on verra que l'indépendance linéaire
+    fait en sorte qu'on a un minimum de vecteurs nécessaires pour générer
+    un ensemble de vecteurs.
+\end{intuition}
+
+\subsubsection{Équation Ax=b}
+
+\begin{theorem}[Compatibilité de Ax=b]
+    Le système Ax=b est compatible si et seulement si b est une combinaison
+    linéaire des colonnes de A
+\end{theorem}
+
+\begin{intuition}
+    On sait que A est une matrice de transformation, ce qui veut dire que b
+    est le vecteur x après avoir appliqué cette transformation. Ainsi,
+    on peut s'imaginer que les colonnes de A ont été utilisées pour faire
+    le doit product, qui nous donne l'étirement de chaque composantes de x.
+    Cet étirement peut donc être vu comme un scalaire par lequel on
+    multiplie x pour obtenir le vecteur b.
+\end{intuition}
+
+\begin{theorem}
+    Le système Ax=0 possède une unique solution si et seulement si les
+    colonnes de A sont linéairement indépendantes.
+\end{theorem}
+
+\begin{intuition}
+    On veut multiplier les vecteurs colonnes de A par le vecteur nul pour
+    obtenir zéro, ce qui est équivalent à l'indépendance linéaire.
+\end{intuition}
+
+\subsection{Inversion de Matrices}
+
+\subsubsection{Définition et Propriétés de l'inverse}
+
+\begin{definition}[Matrice Inversible]
+    On dit qu'une matrice carrée est inversible s'il existe une matrice B
+    telle que $AB=BA=I$
+\end{definition}
+
+\begin{theorem}[Unicité de l'inverse]
+    Si A est une matrice inversible, alors elle est l'inverse de A, notée
+    $A^(-1)$, est unique
+\end{theorem}
+
+\begin{remark}[Interprétation de l'inverse matricielle]
+    L'inverse d'une matrice est l'opération qui annule la transformation
+    faite par la matrice A. On sait que l'inverse existe si la
+    transformation ne change pas la dimension du vecteur/matrice. On
+    verra plus tard pourquoi les matrices ayant un détarminant nul ne
+    sont pas inversibles.
+\end{remark}
+
+\begin{theorem}[Propriétés de l'inverse matriciel]
+    Soit A et B, des matrices. Alors,
+    \begin{enumerate}
+	\item $ (A^(-1))^(-1) = A$
+	\item $ (AB))^(-1) = B^-1 A^-1$
+	\item $ (A^T)^-1 = (A^-1)^T$
+    \end{enumerate}
+
+\end{theorem}
+
+\subsubsection{Calcul de l'inverse avec la méthode de Gauss-Jordan}
+
+\begin{definition}[Algorithme de Gauss-Jordan]
+    On peut calculer l'inverse d'une matrice si $$ (A \, | \, I) ~ ...
+    ~ (\, I \, | \, A^(-1))$$
+\end{definition}
+
+\begin{intuition}
+    On est capable de trouver l'inverse avec Gauss-Jordan puisque chaque
+    opération matricielle peut être associée à une matrice élémentaire.
+    C'est comme si on faisait une composition de matrices élémentaires.
+    On verra plus tard pourquoi les matrices élémentaires sont inversibles.
+\end{intuition}
+
+\subsubsection{Résolution du système Ax=b avec l'inverse}
+
+On peut trouver le vecteur x à l'aide de l'inverse de la façon suivante:
+\begin{multline}
+    % $ Ax = B$ \\ $ A^(-1) (Ax) = A^(-1)b$ \\ $ (A^(-1) A)x = A^(-1)b $ \\
+    % $ Ix = A^(-1)b $ \\ $ x = A^(-1)b$
+\end{multline}
+
+\subsubsection{Matrices élémentaires}
+
+\begin{definition}[Matrice élémentaire]
+    Une matrice élémentaire est une matrice obtenue de la matrice en
+    effectuant une seule opération élémentaire ligne
+\end{definition}
+
+\begin{proposition}[Multiplication à gauche par une matrice élémentaire]
+    Soit $A_{mxn}$ une matrice quelconque et $E_{mxm}$, une matrice
+    élémentaire. La matrice obtenue de A par une opération élémentaire
+    ligne est égale au produit EA.
+\end{proposition}
+
+\begin{proposition}[Inverse des Matrices Élémentaires]
+    Toute matrice élémentaire est inversible
+\end{proposition}
+
+\pagebreak
+\section{Déterminants}
+\subsection{Overview}
+
+Géométriquement, le déterminant d'une matrice représente le ratio entre l'aire
+formée par les vecteurs avant et après transormations linéaires. Intuitivement,
+le déterminant nous dit si une matrice est diagonalisable ou non puisque si
+$det(A)=0$, alors la transformation à changer de dimension et n'est pas inversible.
+
+On peut aussi utiliser les déterminants pour évaluer un SEL. On compare le déterminant
+de chaque vecteur avant et après transformation.
+
+\subsection{Définition du Déterminant}
+
+\begin{definition}[Definition du Déterminant]
+
+\end{definition}
+
+\begin{remark}[Interprétation Géométrique du Déterminant]
+    Le déterminant mesure le ratio de l'aire (ou le volume) formé par les
+    vecteurs colonnes de la matrice A avant et après la transformation.
+    Si le déterminant est de zéro, alors il y a compression et on a perdu
+    une dimension. La matrice est donc non inversible. Si le déterminant
+    est de 1, alors la transformation n'a pas changé la longueur des
+    vecteurs. On a donc une rotation ou une translation. Finalement, si
+    le déterminant est négatif, on a flippé l'orientation des vecteurs.
+    \begin{enumerate}
+	\item si $det(A) = 0$ :
+	\item si $det(A) = 1$ :
+	\item si $0 < det(A) < 1$ :
+	\item si $det(A) > 0$ :
+    \end{enumerate}
+\end{remark}
+
+\subsection{Propriétés du Déterminant}
+
+\subsection{Règle de Cramer}
+
+\begin{intuition}
+    La règle de Cramer est un ratio
+\end{intuition}
+
+\pagebreak
+
+\section{Espaces et Sous-Espaces Vectoriels}
+\subsection{Overview}
+
+Un aspect important à comprendre dans l'étude de l'algèbre linéaire est la notion
+d'espace. Malgré qu'on s'attarde peu à la notion d'anneau, il faut se souvenir
+qu'on peut manipuler les vecteurs algébriquement, car l'espace dans lequel il se
+trouve est un field, un ensemble qui comporte certaines propriétés qu'on nomme
+axiomes.\\
+
+Un deuxième aspect important est la notion de transformation linéaire. Comme mentionné
+plus tôt, une matrice peut être interprétée comme une transformation, c-à-d qu'elle
+est une fonction qui transforme un vecteur en un autre vecteur. Cependant, cette
+transformation peut changer les propriétés de l'espace. On s'attardera donc aux
+transformations qui gardent ces propriétés, transformations qu'on nomme linéaire.
+
+Finalement, on veut être capable de changer de base. Décrire un vecteur dans
+l'espace est assez arbitraire, car chaque personne peut tracer son propre quadrillage
+et obtenir un vecteur différent. Ainsi, pour s'assurer de parler le même language,
+on veut être capable de traduire un vecteur/transformation d'un espace à un autre.
+
+\subsection{Espaces vectoriels sur $\mathbb{R}$}
+
+\begin{definition}[Espaces Vectoriels sur $\mathbb{R}$]
+    On appelle espace vectoriel tout ensemble non vide V constitué
+    d'objets appelés vecteurs sur lequel sont définies deux opérations
+    (l'addition et la multiplication par un scalaire), vérifiant les
+    10 axiomes suivants:
+    \begin{enumerate}
+	\item $u+v \in V$
+	\item $u+v = v+u$
+	\item $(a+v)+w=u+(v+w)$
+	\item $u+0=u$
+	\item $u+(-u)=0$
+	\item $ cu \in V$
+	\item $ c(u+v)=cu+vu$
+	\item $ (c+d)u=cu+du$
+	\item $ (cd)u=c(du)$
+	\item $1u=u$
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    Les réels forment un ring, c-à-d que:
+    \begin{enumerate}
+	\item L'opération binaire de l'addition est un groupe commutatif
+	\item L'opération binaire de multiplication est un groupe commutatif
+	\item Distributivité de la multiplication sur l'addition
+    \end{enumerate}
+\end{remark}
+
+\begin{definition}[Sous-espaces vectoriels]
+    Soit V, un espace vectoriel muni de l'addition et de la multiplication
+    par un scalaire. Un sous-espace vectoriel H de V est un sous-ensemble de
+    V qui vérifie les propriétés suivantes:
+    \begin{enumerate}
+	\item Le vecteur nul de V appartiet à H $(0 àin H)$
+	\item pour tout $u,v çin H, u+v \in H$
+	\item pour tout $u \in H$ et tout scalaire $c, cu \in H$
+    \end{enumerate}
+\end{definition}
+
+\subsection{Transformations Linéaires}
+
+\begin{definition}[Transformations Linéaires]
+    On dit qu'une fonction $T: \mathbb{R}^n \rightarrow \mathbb{R}^n$
+    est linéaire si pour tout $u,v \in \mathbb{R}^n$ et $k \in \mathbb{R}$:
+    \begin{enumerate}
+	\item T(ku)=kT(u)
+	\item T(u+v) = T(u) + T(v)
+    \end{enumerate}
+\end{definition}
+
+\begin{intuition}
+    On dit qu'une transformation est linéaire si elle préserve les
+    opérations dans les réels.
+\end{intuition}
+
+\begin{remark}[Pourquoi veut-on travailler avec des transformations
+    linéaires]
+\end{remark}
+
+\begin{theorem}[Représentation Matricielle]
+    Soit $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$, une transformation
+    linéaire. Alors il existe une unique matrice A, de dimension m x n
+    telle que $$ T(u)=A u$$
+\end{theorem}
+
+\begin{intuition}
+    La représentation matricielle nous dit que la transformation matricielle
+    est équivalente à la multiplication matricielle, ce qu'on savait déjà.
+\end{intuition}
+
+\begin{proposition}[Transformations Linéaires de $\mathbb{R}^2$
+    dans $\mathbb{R}^2$]
+    On distingue 4 transformations linéaires principales dans
+    $\mathbb{R}^2$:
+    \begin{enumeration}
+	\item Étirement:
+	\item Homothétie:
+	\item Réflexion:
+	\item Rotation:
+    \end{enumeration}
+\end{proposition}
+
+\begin{definition}[Composition de Transformations Linéaires]
+\end{definition}
+
+\subsection{Injectivité et Noyau}
+
+\begin{definition}[Injectivité]
+    Soit $f:X \rightarrow Y$ une fonction. On dit que f est injective si
+    pour tout $x_1, x_2 \in X$ $$ x_1 \neq x_2 \Longrightarrow f(x_1)
+    \neq f(x_2)$$
+\end{definition}
+
+\begin{theorem}[Injectivité d'une Transformation Linéaire]
+    Soit $T: \mathbb{R}^n \rightarrow \mathbb{R}^m$ une transformation
+    linéaire. $$ \text{T est injective } \Longleftrightarrow ker(T)={0}$$
+\end{theorem}
+
+\begin{definition}[Surjectivité]
+    Soit $f:X \rightarrow Y$, une fonction. On dit que f est surjective
+    si pour tout $y \in Y$, il existe $x \in X$ tel que $f(x)=y$
+\end{definition}
+
+\begin{theorem}[Surjectivité d'une Transformation Linéaire]
+    Soit $f:X \rightarrow Y$, une fonction. $$ \text{ f est surjective }
+    \Longleftrightarrow Im(f)=Y$$
+\end{theorem}
+
+\subsection{Base d'un Espace Vectoriel}
+
+\begin{definition}[Ensemble Générateur]
+    Un ensemble B de vecteurs de l'espace vectoriel V est un ensemble
+    générateur de V si tout élément de V peut s'écrire comme une combinaison
+    linéaire des éléments de B
+\end{definition}
+
+\begin{intuition}
+    On peut former tous les vecteurs de l'espace vectoriel à l'aide des
+    vecteurs de ce même ensemble. Notons qu'il peut y avoir des vecteurs
+    redondants.
+\end{intuition}
+
+\begin{definition}[Base d'un espace vectoriel]
+    Un ensemble B de vecteurs de l'espace vectoriel V est une base de V
+    si:
+    \begin{enumerate}
+	\item les vecteurs de B sont linéairement indépendnats
+	\item B est un ensemble générateur de V
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    Pour qu'un ensemble forme une base, il faut qu'on ait le nombre
+    minimal de vecteurs pour générer l'ensemble, mais pas trop pour
+    que les vecteurs soient redondants.
+\end{remark}
+
+\subsection{Système de Coordonnées dans $\mathbb{R}^n$}
+
+\begin{definition}[Système de coordonnées]
+    Soit $B=(b_1, ... , b_n)$, une base d'un espace vectoriel V. Alors
+    pour tout vecteur x de V, il existe une unique famille $(c_1, ...,
+    c_n)$ de scalaires telle que $$x= c_1 b_1 + ... + c_n b_n$$
+    Le vecteur $[c_1 ... c_n]$ est appelé le vecteur coordonnées de x
+    dans la base B et est noté $[x]_B$
+\end{definition}
+
+\begin{remark}
+    Le vecteur des coordonées, aussi appelé vecteur des composantes,
+    est un vecteur formé des scalaire de la combinaison linéaire.
+    Intuitivement, on peut le voir comme le scalaire par lequel on
+    doit multiplier chaque composantes pour obtenir x
+\end{remark}
+
+\begin{definition}[Matrice de Passage]
+    Soit $B=(b_1, ... , b_n)$, une base de $\mathbb{R}^n$. La matrice
+    définie par $$P_B = [b_1 ... b_n]$$ est appelée la matrice de passage
+    de la base B. Pour tout vecteur $x \in \mathbb{R}^n$, on a
+    l'équation $$ x = P_B [x]_B$$ De plus, la matrice $P_B$ est inversible,
+    car ses colonnes forment une base, et on a l'équation
+    $$ [x]_B = P_B ^(-1) x$$
+\end{definition}
+
+\begin{remark}
+    L'équation $ x = P_B [x]_B$ est la même équation que $b=Ax$. On a que
+    x=b, $P_B = A$ et $ [x]_B = x$. Ainsi, on peut interpréter la matrice
+    de passage comme la matrice intermédiaire qu'on peut utiliser pour
+    passer d'une base à une autre.
+\end{remark}
+
+\subsection{Changement de Base}
+
+\begin{intuition}
+    Caractériser un vecteur est assez arbitraire, car chaque personne
+    peut choisir un quadrillage différent et obtenir un résultat
+    différent. Ainsi, pour s'assurer de parler le même language, on
+    veut être capable de traduire un vecteur dans un espace et dans un
+    autre. On se sert de la matrice de changement de base pour passer
+    d'une base à l'autre.
+\end{intuition}
+
+\begin{theorem}[Matrice de Changement de Base]
+    Soit $B=(b_1, ... , b_n)$ et $C=(c_1, ... , c_n)$, deux bases de
+    d'un espace vectoriel V. Il existe une unique matrice n x n, notée
+    $ P_{C \leftarrow B}$ telle que pour tout $x \in V$
+    $$ [x]_C = P_{C \leftarrow B}[x]_B, P_C = [[b_1]_C ... [b_n]_C] $$
+    Cette matrice est appelée la matrice de changement de base de B à C
+\end{theorem}
+
+\begin{remark}
+    On peut construire la matrice de transformation pour traduire un
+    vecteur de la base B dans la base C en prenant la matrice construite
+    par les vecteurs colonnes de la base originelle traduite dans la
+    nouvelle base.\\
+    En pratique, on trouve la matrice de changement de base en échelonnant
+    $$ (c_1 c_2 c_3 | b_1 b_2 b_3) ~ (I | [b_1]_C [b_2]_C [b_3]_C)
+    ~ (I | P_{C \leftarrow B})$$
+\end{remark}
+
+\begin{remark}[Lien entre matrice de changement de base et matrice de
+    passage]
+
+\end{remark}
+
+\subsection{Représentation matricielle d'une transformation Linéaire de V
+dans W}
+
+\pagebreak
+
+\section{Orthogonalité et Projections}
+
+\subsection{Overview}
+
+Le but du chapitre est de définir ce qu'est l'orthogonalité et déterminer
+si une matrice est orthogonale, et si elle ne l'est pas, de la diagonaliser
+avec le Procédé de Graham-Schmidt. Essentiellement, on veut travailler
+avec une base orthonormale, c-à-d dont les vecteurs sont orthogonaux
+entre eux, car les propriétés linéaires des vecteurs et de l'espace sont
+gardées. De plus, travailler avec une base orthonormale est plus pratique
+puisque le quadrillage forment des rectangles (et non des parallélogrammes).
+
+\subsection{Produit Scalaire et Projection Orthogonale}
+
+\subsubsection{Orthogonalié et Projections}
+
+\begin{definition}[Produit Scalaire]
+    Soit u et v, deux vecteur de $\mathbb{R}^n$. Le produit scalaire de u
+    et v est le nombre réel $$ u \cdot v = u^T v = u_1 v_1 + u_2 v_2 +
+    ... + u_n v_n$$
+\end{definition}
+
+\begin{theorem}[Propriétés du produit scalaire]
+    Soit u,v et w, trois vecteurs de $\mathbb{R}^n$ et c, un nombre réel.
+    Alors,
+    \begin{enumerate}
+	\item $ u \cdot v = v \cdot u$
+	\item $ u \cdot (v+w) = u \cdot v + u \cdot w$
+	\item $(cu) \cdot v = u \cdot (cv) = c(u \cdot v)$
+	\item $ u \cdot u \geq 0$ et $ u \cdot u = 0 \Longleftrightarrow
+	    u = 0$
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}[Interprétation géométrique du produit scalaire]
+    Comme le nom le dit, le produit scalaire de deux vecteurs nous donne
+    un scalaire. Ce nombre nous dit à quel point le premier vecteur va
+    dans la même direction que le deuxième. Une autre interprétation peut
+    se faire avec la formule de l'angle, qu'on verra plus tard.
+\end{remark}
+
+\subsubsection{Norme d'un vecteur}
+
+\begin{theorem}[Norme d'un vecteur]
+    On appelle la longueur d'un vecteur (ou norme) $u \in \mathbb{R}^n$
+    le nombre réel positif ou nul défini par
+    $$ || u|| = \sqrt(u_1 ^2 + u_2 ^2 + ... + u_n^2) = \sqrt(u \cdot u)$$
+\end{theorem}
+
+\begin{definition}[Vecteur Unitaire]
+    Un vecteur ayant une norme de 1 est appelé un vecteur unitaire.
+\end{definition}
+
+\begin{intuition}[D'ou vient la formule pour la norme d'un vecteur]
+\end{intuition}
+
+\begin{theorem}[Inégalité de Cauchy-Schwarz]
+    Soit u et v, deux vecteurs de $\mathbb{R}^n$, alors
+    $ | u \cdot v | \leq ||u|| ||v||$
+\end{theorem}
+
+\begin{theorem}[Propriétés de la norme]
+    Soit u et v, deux vecteurs de $\mathbb{R}^n$, alors
+    \begin{enumerate}
+	\item $ ||u||=0 \Longleftrightarrow u=0$
+	\item $ ||cu|| = |c| ||u||$
+	\item $ || u+v || \leq ||u||+||v||$
+    \end{enumerate}
+\end{theorem}
+
+\subsubsection{Angle entre deux vecteurs}
+
+\begin{theorem}[Angle entre deux vecteurs]
+    Soit u et v, deux vecteurs non nul de $\mathbb{R}^n$. L'angle entre
+    u et v est le nombre réel $\Theta \in [0, \pi]$ tel que
+    $$ cos(\Theta) = \frac{u \cdot v}{||u||||v||}$$
+\end{theorem}
+
+\begin{intuition}[D'ou vient la formule de l'angle entre 2 vecteurs]
+\end{intuition}
+
+\begin{theorem}[Vecteurs Orthogonaux]
+    On dit que deux vecteurs u et v de $\mathbb{R}^n$ sont orthogonaux
+    (ou perpendiculaires) si $u \cdot v = 0$
+\end{theorem}
+
+\begin{intuition}
+    On sait que le produit scalaire peut être interprété comme la
+    quantité du premier vecteur qui va dans la même direction que le
+    deuxième. Ainsi, géométriquement, on sait que deux vecteurs orthogonaux
+    ne vont pas dans la même direction, d'ou le produit vectoriel de 0
+\end{intuition}
+
+\subsubsection{Projection Orthogonale}
+
+\begin{proposition}[Projection Orthogonale]
+    Soit $ u \neq 0$ et y, deux vecteurs de $\mathbb{R}^n$. La projection
+    orthogonale de y sur u est le vecteur donné par
+    $$ ŷ = proj_u y = \frac{y \cdot u}{u \cdot u} u $$
+\end{proposition}
+
+\begin{intuition}[D'ou vient la projection orthogonale]
+    Soit $ŷ=ku, y=ŷ+z, z \perp u$. On a que
+    \begin{enumerate}
+	\item $ŷ=ku$ :
+	\item $y=ŷ+z = ku +z$
+	\item $ z \perp u \Longleftrightarrow z \cdot u=0$
+    \end{enumerate}
+\end{intuition}
+
+\subsection{Sous-Espace Orthogonal}
+
+\begin{definition}[Sous-Ensemble Orthogonal]
+    Soit W, un sous-ensemble de $\mathbb{R}^n$. L'ensemble des vecteurs
+    orthogonaux à tous les vecteurs de W est appelé le sous-ensemble
+    orthogonal de W. Il est noté
+    $$ W^\perp = {v \in \mathbb{R}^n | \forall _{w \in W} v \perp w } $$
+\end{definition}
+
+\begin{intuition}
+    C'est la famille des vecteurs orthogonaux à tous les vecteurs de la
+    famille W
+\end{intuition}
+
+\begin{problem}[Trouver $W^\perp$]
+    Si on veut déterminer $W^\perp$, on n'a qu'à résoudre le système
+    d'équations linéaires formés de vecteurs de $W_i \cdot v = 0$
+\end{problem}
+
+\begin{definition}[Sous-Espace Orthogonal]
+    Soit W, un sous-ensemble de $\mathbb{R}^n$. Alors $W^\perp$ est un
+    sous-espace vectoriel
+\end{definition}
+
+\begin{intuition}
+    On sait que $W^\perp$,car ses vecteurs sont linéairement indépendants
+\end{intuition}
+
+\begin{theorem}[Description d'un sous-espace orthogonal]
+    Un vecteur appartient à $W^\perp \Longleftrightarrow$ si il est
+    orthogonal à tous les vecteurs d'une famille génératrice de W
+\end{theorem}
+
+\subsubsection{Famille Orthogonale}
+
+\begin{definition}[Famille Orthogonale]
+    On dit qu'une famille de vecteurs $B =(u_1, u_2, ... , u_p)$ de
+    $\mathbb{R}^n$ est orthogonale si pour tout $i \neq j, u_i$ est
+    orthogonal à $u_j(u_i \cdot u_j =0)$
+\end{definition}
+
+\begin{intuition}
+    Une famille orthogonale est une famille dont tous les vecteurs
+    sont orthogonales entre eux c-à-d qu'ils sont à 90 degrés entre eux.
+    Travailler avec une famille orthogonale est plutôt pratique, car
+    notre quadrillage est rectangulaire (et non pas des parallélogrammes)
+\end{intuition}
+
+\begin{problem}[Montrer que la famille B est orthogonale]
+    Pour montrer qu'une famille est orthogonale, on veut montrer
+    que chaque paire de vecteurs de la famille est orthogonale
+    entre elles, c-à-d que $u_i \cdot u_j =0$
+\end{problem}
+
+\begin{theorem}[Base Orthogonale]
+    Une famille orthogonale de vecteurs non nuls est une base de
+    l'espace qu'elle engendre
+\end{theorem}
+
+\begin{intuition}
+    On sait que les vecteurs d'une famille orthogonale sont perpendiculaires
+    entre eux, ce qui veut aussi dire qu'ils sont linéairement indépendants
+    et forment donc une base
+\end{intuition}
+
+\begin{theorem}[Coordonnées dans une base orthogonale]
+    Soit $B =(u_1, u_2, ... , u_p)$, une base orthogonale d'un sous-espace
+    W de $\mathbb{R}^n$. Pour tout $y \in W$,
+    $$ y = proj_{u_1}y + ... + proj_{u_p}y = \sum proj_{u_i}y =
+    \sum (\frac{y \cdot u_i}{u_i \cdot u_i}) u_i$$
+\end{theorem}
+
+\begin{intuition}
+
+\end{intuition}
+
+\begin{remark}[Illustration du théorème]
+
+\end{remark}
+
+
+\begin{problem}[Trouver les coordonnées de y dans la base B]
+
+\end{problem}
+
+\pagebreak
+
+\section{Diagonalisation}
+
+\subsection{Overview}
+
+La diagonalisation est un processus utilisé dans le domaine du Machine Learning,
+car elle permet de "compresser" les données dans une plus petite dimension. La
+diagonalisation est notamment utilisée pour le PCA et le SVD.\\
+
+Géométriquement, lorsqu'on parle de valeurs propres et de vecteurs propres, c'est
+qu'il existe un vecteur qui reste sur le même axe après transformation linéaire.
+Ainsi, appliquer la transformation linéaire sur ce vecteur peut être considérer
+comme une multiplication par un scalaire $\lambda$, qui étire la longueur du vecteur.
+Notre but est donc de trouver le vecteur qui reste dans le même axe, qu'on appelle
+vecteur propre, et de trouver le facteur de multiplication, qu'on appele valeur
+propre.
+
+\subsection{Valeurs et Vecteurs Propres}
+
+\subsection{Espace Propre et Multiplicité Géométrique}
+
+\subsection{Diagonalisation d'une matrice quelconque}
+
+\subsection{Diagonalisation d'une matrice symétrique}
+
+\pagebreak
+
+\section{Ressources}%
+\label{sec:Ressources}
+
+\begin{enumerate}
+    \item Nathaniel Johnston
+    \item Kimberly Brehm
+    \item Mathema-TICS
+\end{enumerate}
+
+
+\end{document}
+\end{article}

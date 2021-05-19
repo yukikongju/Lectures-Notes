@@ -1,0 +1,1391 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\begin{document}
+\title{Handbook for Linear Algebra}
+\author{Emulie Chhor}
+\maketitle
+
+\section*{Introduction}
+
+This is a compilation of the intuition I have learned in Linear Algebra.
+The approach I want to take is a recursive top-down approach.
+
+In my mind, linear algebra should be taught as follow:
+\begin{enumerate}
+    \item Linear Algebra: Nathaniel Johnston, Mathema-TICS
+    \item Advanced Linear Algebra: Nathaniel Johnston
+    \item Modern Linear Algebra: Macauley
+\end{enumerate}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{proof}{Proof}[subsection]
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\part{Linear Algebra} % (fold)%
+\label{prt:Linear Algebra}
+
+% part Linear Algebra (end)
+
+\section{Overview}%
+\label{sec:Overview}
+
+Le premier cours d'algèbre est une introduction aux notions de base
+dans un espace euclidien $\mathbb{R}^n$.
+
+\begin{enumerate}
+    \item What is Linear Algebra
+    \item Introduction to Vectors: Length, Dot Product, Linear Combination
+    \item Opérations sur les Matrices: Addition, Scalar Multiplication,
+	Matrix Multiplication, transpose
+    \item System of Linear Equation (à part)
+    \item Interlude: Relations entre droites/plans: parallèles vs sécantes,
+	distance
+    \item Linear Tranformation
+    \item Inverse of a Matrix
+    \item Determinants
+    \item Sous-Espace Orthogonaux
+    \item Eigenvalues and Eigenvectors
+    \item Diagonalization
+    \item Spaces, Subspaces
+    \item Bases et Changements de Bases
+    \item Bases Orthogonale
+    \item Spectral Decomposition
+    \item Singular Value Decomposition (SVD)
+\end{enumerate}
+
+Plus généralement, on a 3 buts:
+\begin{enumerate}
+    \item Résoudre un SEL
+    \item Diagonaliser une matrice avec les eigenvalue et eigenvectors
+    \item Traduire des vecteurs d'une base à l'autre avec les matrices de
+	changements de base
+    \item Orthogonaliser une base avec Gram-Schmidt (ou QR decomposition)
+\end{enumerate}
+
+
+\section{What is Linear Algebra}
+
+L'algèbre linéaire est l'étude des espaces vectoriels et sert de pont entre les
+différentes branches en mathématiques.
+
+\section{Introduction to Vectors: Length, Dot Product, Linear Combination}
+
+\subsection{Overview}
+
+Le premier concept à comprendre est la notion de vecteur. Il est important
+de comprendre ce qu'est un vecteur algébriquement et géométriquement, car ces
+représentations nous permettra de comprendre et de caractériser ce qu'est
+un espace vectoriel et de généraliser nos conclusions à des objets plus
+complexes (polynômes, fonctions, matrice, ...). Il est donc essentiel de
+comprendre:
+\begin{enumerate}
+    \item Qu'est-ce qui définit un vecteur algébriquement et géométriquement
+    \item Quelles sont les propriétés d'un vecteur
+    \item Opérations sur les vecteurs: addition, PPS
+    \item Combinaison Linéaire
+\end{enumerate}
+
+\subsection{Qu'est-ce qu'un vecteur}%
+\label{ssub:Qu'est-ce qu'un vecteur}
+
+Comme mentionné plus tôt, un vecteur peut être visualisé géométriquement et
+algébriquement.
+\begin{enumerate}
+    \item Géométriquement: flèche ayant une longeur et une direction
+    \item Algébriquement: composée de paramètres représentant les coordonnées
+	sur les axes
+\end{enumerate}
+
+\subsection{Propriétés d'un vecteur}%
+\label{ssub:Quelles sont les propriétés d'un vecteur}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Un vecteur est caractérisé par sa longueur et son orientation. Encore une fois,
+il est nécessaire de bien comprendre pourquoi les propriétés d'un vecteur sont
+vraies algébriquement et géométriquement. Algébriquement, les propriétés des
+vecteurs sont vraies, car elles découlent du fait qu'un vecteur est définit
+dans les réels, qui forment un ring. Géométriquement, les propriétés modifient
+la longueur et la direction d'un vecteur
+
+\subsubsection{Longueur d'un vecteur}%
+\label{ssub:Longueur d'un vecteur}
+
+\textbf{Calcul de la Longueur d'un vecteur}
+
+\begin{definition}[Norme d'un vecteur]
+    TODO
+\end{definition}
+
+\begin{definition}[Vecteur Unitaire]
+    TODO
+\end{definition}
+
+\textbf{Propriétés de la longueur d'un vecteur}
+TODO
+
+\textbf{Inégalité du Triangle}
+TODO
+
+\subsubsection{Orientation d'un vecteur}%
+\label{ssub:Orientation d'un vecteur}
+
+\textbf{Produit Scalaire}
+
+\begin{definition}[Produit Scalaire]
+    TODO
+\end{definition}
+
+\begin{intuition}
+    Le produit scalaire représente le "ratio" de la direction entre 2 vecteurs.
+\end{intuition}
+
+\begin{theorem}[Propriétés du produit scalaire]
+    TODO
+\end{theorem}
+
+\begin{theorem}[Inégalité de Cauchy-Schwarz]
+
+\end{theorem}
+
+\begin{remark}
+    L'inégalité de Cauchy-Schwarz nous donne un lien entre le produit scalaire
+    et la norme de 2 vecteurs
+\end{remark}
+
+\textbf{Angle entre 2 vecteurs}
+
+\begin{definition}[Angle entre 2 vecteurs]
+\end{definition}
+
+\begin{intuition}[Angle entre 2 vecteurs]
+    La formule de l'angle entre 2 vecteurs vient de TODO
+\end{intuition}
+
+\begin{theorem}[Vecteurs Perpendiculaires]
+    2 vecteurs u et v sont perpendiculaires si $ u \cdot v = 0$
+\end{theorem}
+
+\begin{proof}
+    La preuve se fait en isolant le produit vectoriel dans la formule de
+    l'angle entre 2 vecteurs.
+\end{proof}
+
+\begin{intuition}
+    Puisqu'on peut interpréter le produit scalaire comme la valeur représentant
+    la similaritude entre la direction de 2 vecteurs, on peut voir
+    $ u \cdot v = 0$ comme 2 vecteurs n'allant pas vers la même direction.
+\end{intuition}
+
+\begin{remark}[Vecteurs Perpendiculaires et Indépendance Linéaire]
+    TODO
+\end{remark}
+
+\subsection{Opérations sur les vecteurs: addition, PPS}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Il existe 2 opérations élémentaires sur les vecteurs
+\begin{enumerate}
+    \item Addition
+    \item Multiplication par un scalaire
+\end{enumerate}
+
+\subsection{Combinaison Linéaire}%
+\label{sub:Combinaison Linéaire}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+On peut utiliser l'addition et la multiplication scalaire de 2 vecteurs ou plus
+pour exprimer un autre vecteurs dans l'espace. La combinaison linéaire est
+essentielle pour caractériser un espace vectoriel, car on veut déterminer
+l'ensemble de vecteur qu'on peut former à partir d'un autre ensemble de
+vecteurs. On verra plus tard qu'il s'agit de span
+
+\subsubsection{Combinaison Linéaire et ses propriétés}%
+\label{ssub:Combinaison Linéaire et ses propriétés}
+
+\begin{definition}[Combinaison Linéaire]
+    TODO
+\end{definition}
+
+\section{Opérations sur les Matrices: Addition, Scalar Multiplication,
+Matrix Multiplication, transpose}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+Le premier sujet abordés dans le cours d'algèbre linéaire est la notion
+de matrice. La plupart des professeurs s'attardent davantage à l'interprétation
+algébrique des matrices, car les matrices peuvent représenter plusieurs objets.
+On verra plus tard que les matrices peuvent représenter:
+\begin{enumerate}
+    \item Transformation
+    \item Système d'équations Linéaire
+\end{enumerate}
+
+Dans cette section, on s'attardera aux opérations algébriques de base des
+matrices:
+\begin{enumerate}
+    \item Addition Matricielle
+    \item Multiplication par un scalaire
+    \item Multiplication Matricielle
+    \item Transposée d'une matrice
+    \item Power of Matrices
+    \item Bonus: Block Matrices
+\end{enumerate}
+
+Il sera important de
+\begin{enumerate}
+    \item Appliquer l'opération
+    \item Appliquer les propriétés de l'opération
+    \item Comprendre les preuves algébriques derrière les opérations
+    \item Bonus: Interpréter géométriquement les propriétés sur les matrices
+\end{enumerate}
+
+\subsection{Addition Matricielle}
+
+\begin{definition}[Addition Matricielle]
+\end{definition}
+
+\begin{theorem}[Propriétés de l'addition matricielle]
+\end{theorem}
+
+\subsection{Multiplication par un scalaire}
+
+\begin{definition}[Multiplication par un scalaire]
+\end{definition}
+
+\begin{theorem}[Propriétés de la multiplication par un scalaire]
+\end{theorem}
+
+\subsection{Multiplication Matricielle}
+
+\begin{definition}[Multiplication Matricielle]
+\end{definition}
+
+\begin{theorem}[Propriétés de la multiplication matricielle]
+\end{theorem}
+
+\subsection{Transposée d'une matrice}
+\begin{definition}[Transposée d'une matrice]
+\end{definition}
+
+\begin{theorem}[Propriétés de la transposée d'une matrice]
+\end{theorem}
+
+\subsection{Power of Matrices}%
+\label{sub:Power of Matrices}
+
+\subsection{Block of Matrices}%
+\label{sub:Block of Matrices}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Lorsqu'on doit appliquer des opérations sur des matrices de grandes
+dimensions, il est possible d'exprimer notre matrice en bloc de matrices,
+c-à-d des une plus petite matrice dont les éléments sont elles-mêmes
+des sous-matrices.\\
+
+Souvent, si on remarque que une des sous-matrices est la matrice identité ou
+la matrice nulle, il peut être pratique d'exprimer la matrice originelle
+en sous-blocs.\\
+
+Notons aussi que l'existence des sous-matrices facilitent la preuve de
+propriétés matricielles.
+
+\subsection{Block of Matrices and its properties}%
+\label{sub:Block of Matrices and its properties}
+
+\subsection{Proofs with block of matrices}%
+\label{sub:Proofs with block of matrices}
+
+\section{System of Linear Equation}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+Les matrices peuvent être aussi utilisées pour résoudre des systèmes d'équations
+linéaires. Encore une fois, il est important de visualiser ces systèmes
+géométriquement et algébriquement. Géométriquement, on veut déterminer
+si 2 vecteurs ou plus s'intersectent ou non. Le même principe s'applique pour
+des plans. Algèbriquement, on veut déterminer l'ensemble de vecteurs qui
+vérifient le système. L'étude des équations linéaires se fera donc en quelques
+temps
+\begin{enumerate}
+    \item Types de solutions: compatible vs incompatible, interprétation
+	géométrique des solutions
+    \item Résolution de SEL avec les méthode de Gauss et de Gauss-Jordan
+\end{enumerate}
+
+\section{Linear Tranformation}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+Dans la plupart des cas, on peut interpréter une matrice comme une
+transformation, c-à-d une fonction qui prend en paramètre un vecteur et qui
+en recrache un autre. Dans notre cas, on se concentrera sur les transformations
+qu'on dit linéaire, c-à-d qu'ils préservent les propriétés avant et après
+transformations.
+
+L'étude des transformations linéaires se fera en plusieurs étapes:
+\begin{enumerate}
+    \item Interprétation géométrique et linéaire d'une transformation linéaire
+    \item Tranformation Linéaire d'une matrice standard
+    \item Common Linear Transformations: Rotation, Translation, Projection, ...
+    \item Composition de Transformation Linéaire
+\end{enumerate}
+
+\subsection{Interprétation géométrique et linéaire d'une transformation linéaire}
+
+\textbf{Interprétation Géométrique d'une transformation linéaire}
+
+On peut identifier géométriquement une transformation linéaire si:
+\begin{enumerate}
+    \item Origine reste au même endroit avant et après transformation
+    \item Les lignes sont mappées à des lignes
+\end{enumerate}
+
+\begin{remark}
+    La transformation linéaire change le quadrillage de notre espace vectoriel.
+    Plus tard, on verra qu'il existe plusieurs façons d'exprimer un vecteur
+    dépendamment des bases de l'espace choisie, et on verra qu'on peut
+    utiliser les transformations linéaires pour traduire ce vecteur d'un
+    espace à l'autre.
+\end{remark}
+
+\begin{proposition}[f(x) = ax+b n'est pas une transformation linéaire]
+    La fonction affine n'est pas une transformation linéaire, car elle change
+    l'origine de place. Plus tard, on verra qu'il est possible d'exprimer
+    une fonction affine par une transformation linéaire.
+\end{proposition}
+
+\textbf{Interprétation Algèbrique d'une transformation linéaire}
+
+On peut identifier algébriquement une transformation linéaire si:
+\begin{enumerate}
+    \item Addition: $ T(v+u) = T(v) + T(u)$
+    \item Multiplication: $ T(cv) = c T(v) $
+\end{enumerate}
+
+\begin{remark}
+    Pour déterminer si une matrice représente une transformation linéaire, on
+    peut vérifier les 2 conditions d'addition et de multiplication d'un coup
+    $$ T(cu + dv) = cT(u) + dT(v) $$
+\end{remark}
+
+\subsection{Tranformation Linéaire d'une matrice standard}
+
+\textbf{Pourquoi veut-on calculer la transformation linéaire d'une matrice
+standard}
+
+Une propriété des transformation linéaire est qu'on peut représenter toutes
+transformations linéaires dans la forme
+$ T(v) = [T]v, [T] = [T(e_1) ... T(e_n)] $
+
+Essentiellement, cette propriété nous dit qu'on peut construire la matrice
+de transformation linéaire standard en appliquant la transformation linéaire
+sur chacun des vecteurs standard de la base
+
+\begin{intuition}[Pourquoi peut-on calculer la transformation linéaire d'une
+    matrice standard de cette façon]
+    TO REVIEW
+\end{intuition}
+
+
+\subsection{Common Linear Transformations: Rotation, Translation, Projection, ...}
+
+TODO
+
+\subsection{Composition de Transformation Linéaire}
+
+\textbf{Pourquoi calculer la composition de transformation linéaire}
+
+On peut appliquer plusieurs transformations linéaires successivement en
+appliquant successivement le produit de matrice de transformation linéaire.
+Cependant, il existe une façon plus efficace d'appliquer toutes les
+transformations linéaire d'un coup: la composition de transformation linéaire\\
+
+Essentiellement, la composition de transformation linéaire nous dit qu'on peut
+trouver la matrice qui performe toutes les transformations d'un coup en
+multipliant les matrices de transformations une à la suite de l'autre (gauche
+vers la droite: transformation 1 x transformation 2 x ... )
+
+\textbf{Lien entre Composition de Transformation et Matrices Élémentaires}
+
+\section{Inverse of a Matrix}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+Dans la section sur la combinaison linéaire, on a vu qu'il était possible
+d'exprimer une matrice sous la forme Ax=b: on pouvait obtenir le nouveau
+vecteur b en appliquant une multiplication entre la matrice A et le vecteur x.\\
+
+Dans cette section, on cherche le contraire: on connait la matrice de
+transformation A et le vecteur après transformation b, et on veut trouver le
+vecteur originel x. Pour ce faire, un peu comme dans les réels lorsqu'on
+doit appliquer les opérations de soustraction et de division pour défaire
+les opérations d'addition et de soustraction, on veut défaire ce que la
+transformation linéaire a fait sur x en appliquant la matrice inverse de A sur
+le vecteur b, qu'on note $A^-1$\\
+
+Cependant, il n'est pas toujours possible de trouver un inverse pour la matrice
+A, un peu comme dans le multiplication, ou on ne peut pas trouver une valeur
+unique pour $ x \cdot 0 = 0 $. Ainsi, cette section comportera 2 buts
+principaux:
+\begin{enumerate}
+    \item Déterminer si une matrice est inversible
+    \item Trouver la matrice inverse si elle existe
+\end{enumerate}
+
+Pour ce faire, on doit d'abord se familiariser avec certains concepts
+préliminaires, notamment la matrice élémentaire
+
+\subsection{Matrices Élémentaires}%
+\label{sub:Matrices Élémentaires}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Pour comprendre et trouver les matrices inversibles, il faut d'abord comprendre
+la notion de matrice élémentaire, car elles permettent de "renverser" les
+opérations lignes faites sur les matrices.\\
+
+Essentiellement, on peut associer chaque opération ligne à une matrice
+élémentaire, qui est le produit entre cette opération et la matrice identité.
+Ainsi, puisque chaque matrice élémentaire et inversible, on peut multiplier
+la matrice de transformation A par chacune des matrices élémentaires inverses
+pour obtenir la matrice inverse de A, qui nous permettra de trouver le
+vecteur orignial x
+
+\subsection{Matrice Inversible et ses propriétés: Comment déterminer si une
+matrice est inversible}%
+\label{sub:Matrice Inversible et ses propriétés}
+
+\subsection{Calculer l'inverse d'une matrice}%
+\label{sub:Calculer l'inverse d'une matrice}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Il existe plusieurs façons de calculer l'inverse d'une matrice:
+\begin{enumerate}
+    \item Méthode de Gauss: $ [A|I] ~ [I| A^-1] $
+    \item Formule de l'inverse d'une matrice 2x2:
+	$$
+	A^{-1}=\begin{bmatrix}
+	    a & b \\
+	    c & d
+	\end{bmatrix}^{-1}
+	=\frac{1}{\lvert A\rvert}
+	\begin{bmatrix*}[r]
+	    d & -b \\
+	    -c & a
+	\end{bmatrix*} \,.
+	    $$
+
+\end{enumerate}
+
+\section{Determinants}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+Le déterminant est un concept assez important en algèbre linéaire, car il
+nous permet de :
+\begin{enumerate}
+    \item Calculer l'aire d'un parallélogramme
+    \item Déterminer si la matrice est inversible ou non
+    \item Résoudre un SEL avec la règle de Cramer
+\end{enumerate}
+
+\subsection{Déterminant d'une matrice et propriétés}%
+\label{sub:Déterminant d'une matrice et propriétés}
+
+\begin{definition}[Déterminant d'une matrice]
+\end{definition}
+
+\begin{intuition}[Interprétation Géométrique du déterminant]
+    Le déterminant nous donne une valeur numérique qui nous dit
+    à quel point l'aire de chaque quadrillage a grandit/rapetissé:
+    $$ det(A) = \frac{\text { area/volume parallélogramme }}
+    { \text{ area/volume square/cube } }  $$
+    \begin{enumerate}
+	\item Si det(A)=1, alors le quadrillage est resté de la même taille.
+	    Il y aurait pu avoir rotation
+	\item Si det(A)<0 : le quadrillage a flippé de bord verticalement,
+	    alors les vecteurs sont inversés
+	\item Si det(A)>0 : le quadrillage n'a pas flippé
+	\item Si $ |det(A)| > 1$ : les vecteurs de la base se sont allongés
+	\item Si $ 0< |det(A)| < 1$ : les vecteurs de la base se sont
+	    racourcis
+    \end{enumerate}
+\end{intuition}
+
+\begin{definition}[Matrice Orthogonale]
+    On dit qu'une matrice est orthonale si $ A A^T = A^T A = I$\\
+    Le déterminant d'une matrice orthogonale est de $ det(A) = 1 \text{ ou } -1 $
+\end{definition}
+
+\begin{intuition}
+    Si une matrice est orthogonale, alors sa transformation est probablement
+    une rotation ou un réflexion.
+\end{intuition}
+
+\subsubsection{Propriétés du déterminant d'une matrice}%
+\label{ssub:Propriétés du déterminant d'une matrice}
+
+\begin{theorem}[Propriétés du déterminant]
+\item Produit de Matrice: $ det(AB) = det(A) det(B) $
+\item Transposée de Matrice: $ det(A^T) = det(A) $
+\end{theorem}
+
+\begin{remark}
+    Encore une fois, les propriétés peuvent être interprétées géométriquement.
+    Puisqu'on sait que le déterminant représente l'aire, on peut TODO
+\end{remark}
+
+\subsection{Calcul du déterminant}%
+\label{sub:Calcul du déterminant}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Il existe plusieurs méthodes pour calculer le déterminant d'une matrice:
+\begin{enumerate}
+    \item Diagonale d'une matrice triangulaire: on applique les opérations
+	élémentaires sur la matrice et on multiplie la diagonale
+    \item Formule pour le déterminant d'une matrice 2x2:
+	$ ad-bc $
+    \item Matrices de cofacteurs
+\end{enumerate}
+
+\subsection{Calculer l'aire d'un parallélogramme}
+
+\subsection{Déterminer si la matrice est inversible ou no}
+
+\begin{theorem}[Déterminant d'une matrice inversible]
+    Une matrice est inversible si $det(A) \neq 0$
+\end{theorem}
+
+\begin{intuition}
+    Puisqu'on peut interpréter le déterminant comme le ratio après/avant la
+    transformation, ça veut donc dire que la transformation nous a fait
+    perdre une dimension ou plus et qu'il est impossible de retrouver
+    le vecteur original puisqu'il en existe plusieurs. Ce n'est pas one-onto
+    one
+\end{intuition}
+
+\subsection{Résoudre un SEL avec la règle de Cramer}
+
+\begin{remark}[Pourquoi résoudre un SEL avec Cramer plutôt qu'avec Gauss]
+    TODO
+\end{remark}
+
+\section{Eigenvalues and Eigenvectors}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+Les eigenvalues et les eigenvectors combinent les concepts vus précédemment
+(déterminant, inverse, noyau) afin de mieux comprendre les effets d'une
+transformation linéaire sur le quadrillage.\\
+
+On peut aussi se servir du eigenvalue et du eigenvector pour "compresser"
+l'information (ex: SVD), qu'on verra plus tard
+
+\textbf{Que représente le eigenvalue et le eigen vector}
+
+En fait, le eigenvalue et le eigenvector sont le vecteur v et le scalaire
+$\lambda$ satisfaisant l'équation suivante:
+$$ Av = \lambda v $$
+
+Intuitivement, cette équation représente l'ensemble des vecteurs v qui,
+en applicant la matrice de transformation A, est équivalent à multiplier le
+vecteur par un scalaire, qui "stretch" le vecteur. Autrement dit, la direction
+du vecteur ne change pas, seul sa longueur change.\\
+
+Notons qu'un eigenvalue et un eigenvector sont toujours associé ensemble. Si
+on trouve un eigenvalue, alors on peut trouver son eigenvector et vice-versa.
+
+\textbf{Quel est le lien entre le déterminant, inverse, noyau et eigenvector/
+eigenvalue?}
+
+En transformant l'équation vue précédemment en problème de zéro, on a que
+$$ (A- \lambda I)v = 0 $$, ce qui implique que $ A - \lambda I $
+n'est pas inversible, car
+\begin{enumerate}
+    \item $ dim(null(A-\lambda I)) > 0 $
+    \item $ det(A -\lambda I) = 0 $
+\end{enumerate}
+
+Intuitivement, on peut se dire que la transformation linéaire n'est pas
+inversible, car la transformation linéaire nous fait perdre au moins une
+dimension: on passe de $\mathbb{R}^n$ à $\mathbb{R}$. Ainsi, si on perd une
+dimension, alors le déterminant est nécessairement nul, car l'aire formé par
+les vecteurs est nulle, et le noyau est nécessairement non-vide, car il
+il existe des vecteurs pour lesquels la transformation linéaire fait perdre
+des dimensions.
+
+\textbf{Grandes Lignes du chapitre}
+
+Le but de ce chapitre est d'apprendre à trouver les eigenvectors et les
+eigenvalues associés à une matrice. Plus généralement, on parlera de eigenspace,
+c-à-d la base représentant la famille de ces vecteurs.\\
+
+Habituellement, on trouve le eigenspace en suivant les étapes suivantes:
+\begin{enumerate}
+    \item Trouver le Eigenvector en résolvant $ det(A-\lambda I)=0$
+    \item Trouver le eigenvector en résolvant le SEL $ (A - \lambda I)v=0 $
+	pour chacune des valeurs propres trouvées
+    \item Former la base avec les vecteurs propres trouvés.
+\end{enumerate}
+
+\subsection{Eigenvalue}%
+\label{sub:Eigenvalue}
+
+\subsection{Eigenvector}%
+\label{sub:Eigenvector}
+
+\subsection{Eigenspace}%
+\label{sub:Eigenspace}
+
+\subsection{Nombre Complexes et eigenvalues}
+
+Parfois, lorsqu'on calcule les eigenvalues, on obtient $ \lambda ^ 2 = -1$,
+qui ne se trouve pas dans les réels. On doit donc introduire les nombres
+complexes pour résoudre cette équation.\\
+
+Intuitivement, on peut se dire qu'on ne peut pas trouver de vecteurs dont la
+transformation linéaire ne fait que stretch le vecteur, mais on peut quand
+même trouver une solution.
+
+\textbf{Que représente un eigenvalue imaginaire?}
+
+TODO
+
+\subsection{Multiplicity}%
+\label{sub:Multiplicity}
+
+\begin{definition}[Algebraic Multiplicity]
+    Each eigenvalue is associated with an algebraix multiplicity ie how
+    many time the eigenvalue occurs. It is the exponant on $\lambda$
+\end{definition}
+
+\begin{definition}[Geometric Multiplicity]
+    Dimension of Eigenspace (how many vectors are in the eigenspace)
+\end{definition}
+
+\textbf{Why do we care about multiplicity: Fundamental Theorem Algebra}
+
+\begin{theorem}[Geometric Multiplicity $leq$ Algebraic Multiplicity]
+\end{theorem}
+
+Le théorème fondamental de l'algèbre nous dit que tout polynôme de degré
+n a exactement n racines, comptées par la multiplicité (si on accepte les
+nombres irrationnels).
+
+Ainsi, la somme des multiplicités algébriques d'une matrice carrée est
+toujours égales à n.
+
+\begin{remark}
+    La matrice est toujours réelle même si les valeurs propres sont complexes.
+\end{remark}
+
+\section{Diagonalization}%
+\label{sec:Diagonalization}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+\textbf{Pourquoi veut-on diagonaliser une matrice}
+
+On peut utiliser les eigenvectors pour diagonaliser une matrice, ce qui
+nous permet d'évaluer les puissances de matrices $A^k$ plus facilement, car
+$ A^k = (PDP^-1)(PDP^-1)(...)(PDP^-1) = PD^k P^-1 $
+
+\textbf{Grandes Lignes}
+
+\begin{enumerate}
+    \item Déterminer si la matrice est diagonalisable: $ A = PDP^-1 $
+\end{enumerate}
+
+\subsection{Diagonalizable Matrices}%
+\label{sub:Diagonalizable Matrices}
+
+\begin{definition}[Matrice Diagonalisable]
+    Une matrice est diagonalisable si A possède une famille de n vecteurs
+    linéairement indépendants.
+\end{definition}
+
+\subsubsection{How to determine if matrix is diagonalizable}%
+\label{ssub:How to determine if matrix is diagonalizable}
+
+Pour déterminer si une matrice est diagonalisable, il faut que ses vecteurs
+propres soient linéairement indépendants. En d'autres mots, il faut que les
+valeurs propres soient différentes.
+
+\begin{theorem}
+    A matrix is diagonalizable is its eigenvalues are distinct
+\end{theorem}
+
+\subsubsection{How to Diagonalize a matrix}%
+\label{ssub:How to Diagonalize a matrix}
+
+\begin{enumerate}
+    \item Trouver les eigenvalues et eigenvectors
+    \item Construire la matrice inversible P avec les eigenvectors
+    \item Construire la matrice diagonale D formée des eigenvalues
+    \item Trouver l'inverse de la matrice P, $P^-1$
+\end{enumerate}
+
+\subsubsection{Trouver la formule pour $A^k$}%
+\label{ssub:Trouver la formule pour $A^k$}
+
+$ A^k = P D^k P^-1 $
+
+\subsection{Undiagonalize a Matrix}
+
+TODO
+
+\section{Spaces and Subspaces}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+\textbf{Pourquoi la notion d'espace et de sous-espace est important}
+
+La chair de l'algèbre linéaire commence à partir de ce chapitre. Tout
+d'abord, on définit ce qu'est la notion d'espace et de sous-espace
+linéaire, car cela nous permet de définir l'espace dans lequel on travaille.\\
+
+Plus généralement, on veut définir les caractéristiques d'un espace vectoriel
+afin de généraliser les propriétés d'une matrice sur d'autres objets que
+des vecteurs (polynômes, fonctions, ...)
+
+\subsection{Espace Vectoriel}%
+\label{sub:Espace Vectoriel}
+
+\begin{definition}[Axiomes d'un Espace Vectoriel]
+    Un espace vectoriel doit satisfaire les 10 propriétés suivantes, qu'on
+    nomme axiome:
+    \begin{enumerate}
+	\item
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    Les axiomes proviennent du fait qu'un espace euclidien $\mathbb{R}^n$
+    est un field.
+\end{remark}
+
+\subsection{Sous-Espace Vectoriel}%
+\label{sub:Sous-Espace Vectoriel}
+
+\begin{definition}[Sous-Espace Vectoriel]
+\end{definition}
+
+\subsection{Noyau et Image}%
+\label{sub:Noyau et Image}
+
+\subsubsection{Noyau}%
+\label{ssub:Noyau}
+
+La base du noyau est la base de l'espace satisfaisant à $ Ax=0$
+
+\subsubsection{Image}%
+\label{ssub:Image}
+
+La base de l'image est composé des vecteurs linéairement indépendants qui
+vérifient $Ax$. Pour ce faire, on doit
+\begin{enumerate}
+    \item Identifier les pivots de la matrice échelonné pour avoir les
+	vecteurs linéairement indépendants
+    \item Construire la base avec les vecteurs colonnes de la matrice A
+	originale
+\end{enumerate}
+
+\subsection{Rank}%
+\label{sub:Rank}
+
+Le rang correspond à la dimension du vecteur après transformation.
+Intuitivement, c'est le nombre d'information qu'on a après transformation
+
+\begin{theorem}[Caraterization of a Rank]
+    \begin{enumerate}
+	\item rank(A)
+	\item $rank(A^T)$
+	\item The number of non-zeros rows dans la matrice echelonnée A
+	\item Le nombre de colonne associée à un pivot dans la matrice
+	    echelonnée A
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    The range(A) is span of A's columns, so $range(A^T)$ is span of A's
+    rows
+\end{remark}
+
+
+
+\subsection{Nullity}%
+\label{sub:Nullity}
+
+
+
+
+\section{Bases et Changements de Bases}%
+\label{sec:Bases et Changements de Bases}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+\subsection{Bases}%
+\label{sub:Bases}
+
+\subsubsection{Overview Bases}%
+\label{sub:Overview Bases}
+
+Pour comprendre la notion de Base, il faut comprendre les notions préliminaires
+suivantes:
+\begin{enumerate}
+    \item Espaces Générateurs (span)
+    \item Indépendance Linéaire
+\end{enumerate}
+
+\subsubsection{Espace Générateur}%
+\label{ssub:Espace Générateur}
+
+\subsubsection{Indépendance Linéaire}%
+\label{ssub:subsubsection name}
+
+\subsection{Changement de Bases}%
+\label{sub:Changement de Bases}
+
+\subsubsection{Overview Changement de Base}%
+\label{sub:Overview}
+
+On décrit un vecteur à l'aide de ses composantes qu'on lit à partir des
+coordonnées de la base. Cependant, ces coordonnées sont assez arbitraires.
+Ainsi, 2 personnes voulant décrire le même vecteur peuvent mal se comprendre
+si elles n'utilisent pas les mêmes vecteurs pour "tracer leur quadrillage".
+Par conséquent, il nous faut un moyen pour traduire les vecteurs d'une base
+à l'autre, ce qu'on appelle les matrices de changement de bases. Essentiellement,
+cette matrice n'est qu'une transformation linéaire qui nous permet de convertir
+un vecteur d'une base à l'autre.
+
+\textbf{Changement de Base}
+
+\begin{theorem}[Changement de Base]
+    $$ [T]_{E \leftarrow C} = P_{E \leftarrow D} [T]_{D \leftarrow B}
+    P_{B \leftarrow C} $$
+\end{theorem}
+
+\section{Sous-Espaces Orthogonaux}%
+\label{sec:Sous-Espaces Orthogonaux}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+Il existe plusieurs bases pour un même espace, mais il est toujours plus
+pratique de travailler avec une base orthogonale ie avec un quadrillage qui
+est rectangulaire. Dans ce chapitre, on veut donc
+\begin{enumerate}
+    \item Déterminer si un espace est orthogonal
+    \item Former un base orthogonale avec le Procédé de Gram-Schmidt
+\end{enumerate}
+
+\subsection{Déterminer si un espace est orthogonal}
+
+\begin{theorem}[Famille Orthogonale]
+    Une famille de vecteurs est orthogonale si chaque paire de vecteur
+    sont orthogonaux entre eux: $ u_i \cdot u_j = 0 $
+\end{theorem}
+
+\begin{theorem}
+    Une famille orthogonale de vecteurs non-nuls est une base de l'espace
+    qu'elle engendre
+\end{theorem}
+
+\begin{theorem}[Coordonnées dans une base orthogonale]
+\end{theorem}
+
+\begin{problem}[Trouver les coordonnées de y dans la base B]
+\end{problem}
+
+\subsection{Former un base orthogonale avec le Procédé de Gram-Schmidt}
+
+\textbf{Intuition du Procédé de Gram-Schmidt}
+
+Le procédé de Gram-Schmidt nous permet de former une base orthogonale
+à l'aide d'une base qui n'est pas orthogonale en projettant chaque
+vecteur sur un sous-espace orthogonal, ce qu'on apelle la projection
+orthogonale sur un sous-espace.
+
+\textbf{Étapes de Procédé Gram-Schmidt}
+
+TODO
+
+\part{Advanced Linear Algebra} % (fold)%
+\label{prt:Advanced Linear Algebra}
+
+% part Advanced Linear Algebra (end)
+
+\section{Overview}%
+\label{sec:Overview}
+
+Le but de ce deuxième cours est de généraliser ce qu'on a vu sur les
+espaces vectoriels pour des objets quelconques.
+
+\begin{enumerate}
+    \item Généralisation des concepts de l'algèbre linéaire sur
+	des polynômes et matrices
+\end{enumerate}
+
+\section{Généralisation des concepts de l'algèbre linéaire sur
+	des polynômes et matrices}%
+\label{sec:Vector Space and Subspace}
+
+Le premier chapitre est une généralisation des concepts d'algèbre
+linéaire. On revoit les mêmes définitions, mais on essait des les
+appliquer sur des objets différents que des vecteurs:
+\begin{enumerate}
+    \item Fonctions polynômiales
+    \item Matrices
+\end{enumerate}
+
+Les concepts:
+\begin{enumerate}
+    \item Vector Space and Subspace
+    \item Combinaison Linéaire, Indépendance Linéaire, Span
+    \item Bases et Changement de base
+\end{enumerate}
+
+\begin{remark}
+    Toujours revenir à la définition
+\end{remark}
+
+\subsection{Vector Space and Subspace}%
+\label{sub:Vector Space and Subspace}
+
+Le premier concept à comprendre est la notion d'espace vectoriel et de
+sous-espace vectoriel. Puisqu'on essait de généraliser les opérations
+sur des objets quelconques, on doit d'abord caractériser l'espace dans
+lequel ils se trouvent. On doit donc définir ce qu'est un espace vectoriel
+et un sous-espace vectoriel.
+
+Analogie: humains (objets) sur Terre (espace)
+
+\subsection{Vector Space}%
+\label{sub:Vector Space}
+
+Un espace vectoriel est un field, et possède les 10 axiomes suivants:
+\begin{enumerate}
+    \item
+\end{enumerate}
+
+\begin{remark}[Field]
+    A field is a set of number that
+    \begin{enumerate}
+	\item Addition that is an abelian group
+	\item Multiplication that is an abelian group
+    \end{enumerate}
+    A group is
+    \begin{enumerate}
+        \item Closed
+	\item Associative
+	\item Identity
+	\item Unique inverse
+    \end{enumerate}
+\end{remark}
+
+\begin{proposition}
+    \begin{enumerate}
+        \item $\mathbb{R}^n$ is a vector space
+    \end{enumerate}
+\end{proposition}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Show that a set is a vector space using the definition
+    \end{enumerate}
+\end{problem}
+
+\subsection{Subspace}%
+\label{sub:Subspace}
+
+\begin{definition}[Subspace]
+    If V is a vector space and $ S \subseteq V$, then S is a subspace
+    of V if S is itself a vector space with the same addition and
+    scalar multiplication as V.
+\end{definition}
+
+Un espace vectoriel est un sous-espace si:
+\begin{enumerate}
+    \item fermeture de l'addition
+    \item fermeture de la multiplication
+\end{enumerate}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Show that a set is a subspace using the definition
+	    \begin{itemize}
+		\item Polynome
+		\item Matrice symmétrique
+	    \end{itemize}
+    \end{enumerate}
+\end{problem}
+
+\subsection{Linear Combination, Span}%
+\label{sub:Linear Combination, Span}
+
+\begin{intuition}[Linear Combination]
+    Linear Combination:
+    \begin{enumerate}
+        \item polynôme: peut-on exprimer p(x) comme la somme de produit
+	    de g(x) et h(x) tel que $ p(x) = c_1 q(x) + c_2 h(x) $
+	\item matrice: peut-on exprimer A comme la somme de produit de
+	    B et C tel que $ A = c_1 B + c_2 C $
+    \end{enumerate}
+\end{intuition}
+
+\begin{definition}[Span]
+    Let V be a vetor space and let $ B \subseteq V$ be a set of vectors.
+    Then, the span of B, denoted span(B), is the set all all finite
+    linear combinations of vector from B
+\end{definition}
+
+\begin{intuition}[Span]
+    Peut-on générer tous les vecteurs/polynômes/matrices avec les
+    objets de la base? On regarde si les objets peuvent s'écrire
+    comme une combinaison linéaire.
+\end{intuition}
+
+\begin{proposition}
+    \begin{enumerate}
+	\item $ P^p = span(1,x, ..., x^p) $
+	\item $M_{m,n}$ is spanned by stand matrix unit $E_{1,1},
+	    E_{1,2}, E_{2,1}, E_{2,2} $
+    \end{enumerate}
+\end{proposition}
+
+\begin{theorem}
+    Let V be a vector space and let $ B \subseteq V$. Then span(B) is
+    a subspace of V.
+\end{theorem}
+
+\begin{definition}[Linear Indépendance]
+    A set of two vectors is linearly independent iif they are not scalar
+    multiples of each others
+    \begin{enumerate}
+	\item polynôme: $ c_1 p(x) + c_2 q(x) = 0, c_1 = c_2 = 0$
+	\item matrices: $ c_1 A + c_2 B = \begin{0/0/0/0/smallmatrix} $
+	\end{0/0/0/0/smallmatrix}
+    \end{enumerate}
+\end{definition}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Determine if function/matrice is linear combination
+	\item Determine if function/matrice span vector space
+    \end{enumerate}
+\end{problem}
+
+\subsection{Bases et Changement de Base}%
+\label{sub:Bases et Changement de Base}
+
+\subsubsection{Bases}%
+\label{ssub:Bases}
+
+Pour montrer qu'une famille de vecteurs/polynômes/matrices forment
+une base, il faut montrer que
+\begin{enumerate}
+    \item Linéairement Indépendant
+    \item Génère l'espace vectoriel dans lequel il se trouve
+\end{enumerate}
+
+\begin{proposition}
+    \begin{enumerate}
+	\item Standard basis of $\mathbb{R}^n$: ${e_1, ..., e_n} $
+	\item Standard basis of $M_{m,n}$: $ {E_{1,1}, E_{1,2}, ...,
+	    E_{m,n}} $
+	\item Standard basis of $P^p$: ${1,x,x^2, ..., x^p} $
+    \end{enumerate}
+\end{proposition}
+
+\begin{problem}
+    \begin{enumerate}
+	\item Montrer que l'ensemble {...} forme un base
+    \end{enumerate}
+\end{problem}
+
+\subsubsection{Coordinate Vectors}%
+\label{ssub:Coordinate Vectors}
+
+\begin{intuition}
+    Puisque tout vecteur dans une base ne peut s'écrire avec une
+    unique combinaison linéaire, on peut décrire chaque vecteur
+    avec un vecteur de réels, qu'on appelle vecteur coordonnées.\\
+    Le concept de vecteur coordonnées est pratique, car il nous
+    permet d'écrire nimporte quel objet dans un vecteur qu'avec des
+    nombres réels, ce qui sera pratique lors de changement de base.\\
+\end{intuition}
+
+\begin{theorem}[Uniqueness of Linear Combination]
+    Let V be a vector space and let B be a bass for V. Then, for
+    every $v \in V$, there is exactly one way to write v as a
+    linear combination of the basis vectors in B
+\end{theorem}
+
+\begin{definition}[Coordinate Vectors]
+    Suppose V is a vector space over a field F with a finite ordered
+    basis $ B= {v_1, ... , v_n}, v \in V$. Then,
+    $$ v = c_1 v_1 + c_2 v_2 + ... + c_n v_n $$ with coordinate
+    vector $$ [v]_B = (c_1, c_2, ..., c_n)$$
+\end{definition}
+
+\begin{intuition}
+    Le vecteur coordonnée nous donne les composantes de chaque
+    quadrillage, peut importe la base de l'espace vectoriel
+\end{intuition}
+
+\begin{remark}
+    Puisque le vecteur coordonnée est aussi dans le sous-espace
+    vectoriel, la fermeture de l'addition et de la mutliplication
+    restent vraies:
+    \begin{enumerate}
+	\item Fermeture de l'addition: $ [v + w]_B = [v]_B + [w]_B $
+	\item Fermeture de la multiplication: $ [cv]_B = c [v]_B $
+    \end{enumerate}
+    L'ordre des bases est important
+\end{remark}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Find Coordonate vector for vectors/polynômes/matrice
+    \end{enumerate}
+\end{problem}
+
+\subsubsection{Dimension of Vectors Space}%
+\label{ssub:Dimension of Vectors Space}
+
+\begin{theorem}[Dimension of Basis]
+    Let V be a vector Space with basis B of size n. Then
+    \begin{enumerate}
+        \item Any set of more than n vectors must be linearly dependant
+	\item Any set of less than n vectors cannot span V
+    \end{enumerate}
+    This theorem can be proved with coordinates vectors
+\end{theorem}
+
+\begin{definition}[Dimension of Vector Space]
+    \begin{enumerate}
+        \item Finite Dimensional Vector Space
+	\item Infinite Dimensional Vector Space: $dim(V) = \infty $
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}[Dimension of Standard Basis]
+    \begin{tabular}{c c c}
+	V & Basis $ dim(V)$ \\
+	$\mathbb{F}^n, \mathbb{R}^n, \mathbb{C}^n$ & ${e_1, ..., e_n}$
+	& n \\
+	$ P^p $ & ${1,x,..., x^p} $ & p+1 \\
+	$ M_{m,n}$ & $ {E_{1,1}, ..., E_{m,n}} $ & mn \\
+	P (all polynômes) & $ {1,x,x^2,...}$ & $ \infty $\\
+	F & ?? & $ \infty $\\
+	C & ?? & $ \infty $\\
+    \end{tabular}
+\end{proposition}
+
+\begin{remark}
+    By definition, all finite dimensional vector space has a basis
+\end{remark}
+
+More: Axiom of choice (TODO)
+
+\subsubsection{Changement de Bases}%
+\label{ssub:Changement de Bases}
+
+\textbf{Comment efectuer un changement de base}
+
+Rappelons-nous qu'on veut effectuer un changement de base afin de
+traduire un vecteur d'un espace à un autre. Pour faciliter ce changement,
+on veut utiliser le vecteur coordonnées, qui représente la "longeur"
+de chaque composantes. Ainsi, pour faire un changement de base, on n'a
+qu'à "rescale" la longueur de chaque quadrillage à l'aide d'une
+transformation linéaire, qu'on nomme matrice de changement de base.
+
+\textbf{Matrice de changement de base}
+
+\begin{definition}[Matrice de changement de base]
+    $$ P_{C \rightarrow B} = [ [v_1]_C \, [v_2]_C \, ... \, [v_n]_C ] $$
+\end{definition}
+
+\begin{remark}
+    Intuitivement, la formule pour trouver la matrice de changement de
+    base a du sens, car on veut traduire chaque longueur des composantes
+    de la base B à la base C.
+\end{remark}
+
+\begin{theorem}[Matrice de Changement de Base]
+    \begin{enumerate}
+	\item $ P_{C \rightarrow B} [v]_B = [v]_C $
+	\item La matrice de changement de base est inversible et unique:
+	    $ P_{C \rightarrow B} = P_{C \rightarrow B}^-1 $
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Computing Change of Basis]
+    $ [ P_{E \rightarrow C} | P_{E \rightarrow B}] ~
+    [I | P_{C \rightarrow B} ] $
+\end{theorem}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Trouver la matrice de changement de base pour vecteurs/
+	    polynômes/matrices
+	\item Trouver le vecteur coordonnée du polynômes/matrice dans
+	    la base C
+    \end{enumerate}
+    Utiliser les 2 méthodes:
+    \begin{enumerate}
+        \item Définition
+	\item Théorème
+    \end{enumerate}
+    TO REVIEW
+\end{problem}
+
+\begin{remark}
+    Si B ou C est la matrice standard, il est plus facile de trouver
+    la matrice de changement de base C avec B et de trouver son inverse.
+    Par exemple, si $B={1,x,x^2}, C={1+x,1+x^2, x+x^2}$, alors
+    $ P_{C \rightarrow B} = P_{B \rightarrow C}^-1 =
+    [ [1+x]_B [1+x^2]_B [x+x^2]_B ] ^-1 $ et la matrice de coordonnée
+    B dans C est $ [P]_C = P_{C \rightarrow B} [P]_B $
+\end{remark}
+
+\subsection{Transformation Linéaire}%
+\label{sub:Transformation Linéaire}
+
+\begin{definition}[Linear Transformation]
+    \begin{enumerate}
+	\item $ T(v+w) = T(v) + T(w) $
+	\item $T(cv) = c T(v) $
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    For all linear transformation, T(0)=0
+\end{remarktheorem}
+
+\begin{definition}
+    \begin{enumerate}
+	\item Zero Transformation 0(v) = 0
+	\item Identity Transformation: I(v) = v
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}
+    Every matrice transformation is a linear transformation
+\end{proposition}
+
+\subsubsection{Standard Matrix}%
+\label{ssub:Standard Matrix}
+
+\begin{theorem}[Standard Matrix of a Linear Transformation]
+    A function $ T:v \rightarrow W$ is a linear transformation if
+    $$ [T(v)]_D = [T]_{D \rightarrow B} [v]_B $$
+    The standard matrix is
+    $$[T]_{D \rightarrow B} =[ [T(v_1)_D] \, .. \, [T(v_n)]_D ] $$
+\end{theorem}
+
+\begin{problem}[Find Standard Basis]
+    \begin{enumerate}
+        \item Trouver la base de l'espace vectoriel dans lequel on veut
+	    traduire
+	\item Exprimer chacune de nos bases à l'aide des bases de l'autre
+	    espace vectoriel
+    \end{enumerate}
+\end{problem}
+
+\subsubsection{Composition of Linear Transformation}%
+\label{ssub:Composition of Linear Transformation}
+
+\begin{theorem}[Composition of Linear Transformation]
+    $ S \circ T: V \to X$
+    $$ [D \circ D]_{D \rightarrow B} = [S]_{D \rightarrow C}
+    [T]_{C \rightarrow B} $$
+\end{theorem}
+
+\begin{intuition}
+    On peut utiliser le théorème précédant pour trouver la  puissance
+    de matrice de transformation standard
+\end{intuition}
+
+\subsubsection{Change of Basis for Linear Tranformation}%
+\label{ssub:Change of Basis for Linear Tranformation}
+
+\begin{theorem}[Change of Basis]
+    $$ [T]_{E \rightarrow C} = P_{E \rightarrow D} [T]_{D \rightarrow B}
+    P_{B \rightarrow C}$$
+\end{theorem}
+
+\begin{intuition}
+    On a vu que pour traduire un vecteur d'une base à l'autre, on
+    veut manipuler le vecteur coordonnées pour obtenir celle-ci
+    dans la nouvelle base en la multipliant par un la matrice de
+    changement de base.\\
+    Intuitivement,
+    \begin{enumerate}
+        \item Vector in our language
+	\item Transformed vector in our language
+	\item Transformed vector in other language
+    \end{enumerate}
+\end{intuition}
+
+
+TODO: Lect 12
+
+
+\section{Ressources}%
+\label{sec:Ressources}
+
+\subsection{Lectures}%
+\label{sub:Lectures}
+
+\begin{enumerate}
+    \item Nathaniel Johnston - Linear Algebra and Advanced Linear Algebra:
+	explain concept intuitively, lecture notes provided (recommended)
+    \item Mathema-TICS - Algèbre Linéaire: bonnes capsules vidéos pour
+	comprendre un d'où vient une formule, mais pas d'intuition
+\end{enumerate}
+
+\subsection{Books}%
+\label{sub:Books}
+
+\subsection{Exercices}%
+\label{sub:Exercices}
+
+
+\end{document}
+\end{article}
+

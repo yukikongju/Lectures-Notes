@@ -1,0 +1,183 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{parskip}
+\usepackage{textgreek}
+\begin{document}
+\title{Notes de Cours - Processus Stochastiques}
+\author{Emulie Chhor}
+\maketitle
+
+\section*{Introduction}
+
+Le cours de Processus Stochastiques comporte 6 chapitres:
+
+    \begin{enumerate}
+	\item Généralités sur les Processus
+	\item Chaîne de Markov à Temps Discret
+	\item Processus de Poisson
+	\item Chaîne de Markov à Temps Continu
+	\item Martingales à Temps Discret
+	\item Mouvement Brownien
+    \end{enumerate}
+
+\newtheorem{definition}{Definition}[subsection]
+\newtheorem{theorem}{Theorem}[subsection]
+\newtheorem{corollary}{Corollary}[subsection]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{axiom}{Axiome}
+\newtheorem{property}{Propriété}[subsection]
+\newtheorem*{remark}{Remarque}
+\newtheorem*{problem}{Problème}
+\newtheorem*{intuition}{Intuition}
+
+\subsection{Pourquoi étudier les Processus Stochastique?}
+
+\pagebreak
+\section{Genéralitées sur les processus}
+
+\subsection{Overview}
+
+Dans le premier cours de probabilité, on s'est penché sur la notion de variable
+aléatoire. Dans ce cours-ci, on voit qu'on doit ajouter un autre paramètre à
+ces variables aléatoires: le temps. On ne parle donc plus de variables aléaoires,
+mais de processus stochastiques, qui sont des variables aléatoires prenant en
+considération le temps. Ainsi, on parle donc de processus stochastique à temps
+discrete et à temps continu, dépendemment si on considère le temps discret ou
+continu.
+
+\subsection{Processus Stochastiques}
+
+\begin{definition}[Processus Stochastiques à temps discret]
+\end{definition}
+
+\begin{definition}[Processus Stochastiques à temps continu]
+\end{definition}
+
+\begin{definition}[Trajectoire]
+\end{definition}
+
+\begin{remark}
+    Les processus stochastiques ne sont que des variables aléatoires dans
+    lequel on considère le temps
+\end{remark}
+
+\subsection{Marche aléatoire}
+
+\begin{definition}[Marche aléatoire]
+\end{definition}
+
+\begin{intuition}
+    On peut s'imaginer qu'on se déplace sur l'axe des réels et que notre
+    position est la valeur du processus à temps discret
+\end{intuition}
+
+\subsection{Processus de Branchement}
+
+\begin{definition}[Processus de Branchement]
+\end{definition}
+
+\begin{intuition}
+    Chaque évènement peut produire d'autres évènements avec probabilité p.
+    (penser aux états dans du reinforcement learning)
+\end{intuition}
+
+\subsection{Processus de Comptage}
+
+\begin{definition}[Processus de Comptage]
+    Un processus de comptage compte le nombre d'évènement qui se produit
+    dans un intervalle de temps [0,t]
+\end{definition}
+
+\begin{remark}
+    Un processus de comptage à temps continu est à trajectoire discontinue,
+    c-à-d que sa trajectoire fait des sauts de +1
+\end{remark}
+
+\begin{intuition}
+    On compte le nombre d'évènements à chaque n secondes, alors on peut
+    s'imaginer que la trajectoire a l'air d'un escalier
+\end{intuition}
+
+\begin{definition}[Processus de Poisson]
+    Si le temps d'attente entre 2 arrivées sont:
+    \begin{enumerate}
+	\item iid
+	\item exponentiellement distribuées
+    \end{enumerate}
+    alors elle on l'appelle un Processus de Poisson.\\
+    On dit qu'elle est continue à droite et limité à gauche
+\end{definition}
+
+\section{Chaîne de Markov a temps discret}
+
+\subsection{Overview}
+
+Une chaine de Markov est un processus stochastique qui à la propriété de
+Markov, c-à-d que connaitre ce qu'il s'est passé avant ne nous donne pas
+plus d'informations sur ce qu'il va se passer dans le futur.\\
+
+Les chaines des Markov sont importantes, car elles nous permettent de
+modéliser certaines situations avec moindre informations.
+
+\subsection{définition, exemples, probabilitées/matrice de transition, classification d’états}
+
+\begin{definition}[Propriété de Markov]
+
+\end{definition}
+
+\begin{remark}
+    La propriété de Markov nous dit qu'on n'a pas besoin de connaitre
+    l'historique pour déterminer ce qu'il se passe plus tard. En d'autres
+    mots, connaitre ce qu'il s'est passé avant ne nous donne pas plus
+    d'information. (indépendant?)
+\end{remark}
+
+\begin{definition}[Chaines de Markov]
+    Une chaine de Markov (à temps discret) est un processus stochastique
+    satisfaisant la propriété de Markov.\\
+\end{definition}
+
+\begin{defintion}[Probabilités de Transition]
+    On peut décrire une chaine de Markov par ses probabilités de transition,
+    c-à-d la probabilité de passer d'un état à un autre état.\\
+
+    Si la probabilité de transition ne dépend pas du temps, on dit que
+    la chaine de Markov est homogène dans le temps, et on peut la
+    représenter par une matrice de transition.
+\end{defintion}
+
+\subsection{distribution stationnaire, théorème érgodique et applications}
+\pagebreak
+
+\section{Processus de Poisson}
+\subsection{Overview}
+\subsection{définitions et propriétés}
+\subsection{processus de Poisson composée et applications à l’assurance.}
+\pagebreak
+
+\section{Chaîne de Markov a temps continu}
+\subsection{Overview}
+\subsection{définition, exemples, matrice d’intensité, classification d’états}
+\subsection{files d’attente et processus de naissance-mort}
+\subsection{distribution stationnaire et comportement asymptotique, applications}
+\pagebreak
+
+\section{Martingales a temps discret}
+\subsection{Overview}
+\subsection{définitions and Propriétés}
+\subsection{théorème d’arrêt et applications.}
+\pagebreak
+
+\section{Mouvement Brownian}
+\subsection{Overview}
+\subsection{définitions et construction}
+\subsection{brève introduction aux martingales à temps continu et thérème d’arrêt}
+\subsection{mouvement brownien géométrique and applications à la finance.}
+
+\pagebreak
+
+\end{document}
+\end{article}
