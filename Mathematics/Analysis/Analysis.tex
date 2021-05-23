@@ -17,17 +17,17 @@ démonstration des preuves et théorèmes et très peu sur le calcul.\\
 
 MAT1000 porte sur les chapitres suivants:
 
-    \begin{enumerate}
-	\item Nombres Rationnels et Nombres Réels
-	\item Inégalités et Valeur Absolue
-	\item Suprémum et Infimum
-	\item Axiomes de Complétude
-	\item Dénombrabilité
-	\item Suites
-	\item Continuité et Continuité Uniforme
-	\item Dérivabilité
-	\item Séries
-    \end{enumerate}
+\begin{enumerate}
+    \item Nombres Rationnels et Nombres Réels
+    \item Inégalités et Valeur Absolue
+    \item Suprémum et Infimum
+    \item Axiomes de Complétude
+    \item Dénombrabilité
+    \item Suites
+    \item Continuité et Continuité Uniforme
+    \item Dérivabilité
+    \item Séries
+\end{enumerate}
 
 \newtheorem{definition}{Définition}[subsection]
 \newtheorem{theorem}{Théorème}[subsection]
@@ -41,7 +41,6 @@ MAT1000 porte sur les chapitres suivants:
 \newtheorem*{intuition}{Intuition}
 
 \newcommand{\euler}{e}
-\newcommand{\ramuno}{i}
 \pagebreak
 
 \section{Nombres Rationnels et Nombres Réels}
@@ -128,6 +127,29 @@ TODO
     valeurs qui satisfont l'inégalité. Pour ce faire, il est pratique d'utiliser
     un tableau pour tester les intervalles de cohérence.
 \end{problem}
+
+\subsection{Logarithmes}%
+\label{sub:Logarithmes}
+
+Une sous-section que j'aurais aimé avoir dans le cours est de montrer les
+preuves pour les propriétés des logs
+
+\begin{definition}[Logarithmes]
+    Soit $ b > 1$ et $ x>0$. Alors le logarithme en base b de x est
+    $$ log_b x = y \Longleftrightarrow b^y = x $$
+\end{definition}
+
+\begin{theorem}[Propriétés des logarithmes]
+    \begin{enumerate}
+	\item $ e^{log_b x} = x $
+	\item $ log(x^a) = a log(x) $
+	\item $ log_b (x) = \frac{log_c(x)}{log_c(b)} $
+    \end{enumerate}
+\end{theorem}
+
+\begin{remark}
+    Les preuves des propriétés se font avec la définition
+\end{remark}
 
 \subsection{Induction}
 

@@ -21,6 +21,18 @@ The Study of Discrete Maths can be divided in a few sections:\\
 	\item Graph Theory and Trees
     \end{enumerate}
 
+Le cours de Maths discrète est spécial, car les chapitres ne sont pas
+vraiment successifs. Ils forment plutôt une collection des concepts de
+base importants pour les branches mathématiques suivantes:
+\begin{enumerate}
+    \item Logique
+    \item Set Theory
+    \item Number Theory
+    \item Combinatorics
+    \item Algorithms
+    \item Graph Theory
+\end{enumerate}
+
 \section{Logic and Quantifiers}
 
 \subsection{Why do we care about logic?}
@@ -151,14 +163,91 @@ additional tricks to make our proofs a little easier
 
 \section{Set Theory}
 
-
-
-
 \section{Number Theory and Cryptography}
 
 \section{Induction and Recursion}
 
 \section{Counting and Combinatorics}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+Les preuves des formules combinatoires se font par argument de comptage,
+ce qui diffère du type de preuve qu'on faiit habituellement. Souvent,
+la preuve et l'intuition de la formule ne font qu'un.
+
+\begin{enumerate}
+    \item Binome de Newton
+    \item
+    \item Inégalité de Pascal
+    \item Nombre de sous-ensembles
+    \item Identité de Vandermonde
+\end{enumerate}
+
+\subsection{Theorems in Combinatorics}%
+\label{sub:Theorems in Combinatorics}
+
+\subsubsection{Binome de Newton}%
+\label{ssub:Binome de Newton}
+
+\subsubsection{Égalité des combinaisons}%
+\label{ssub:Égalité des combinaisons}
+
+\begin{theorem}
+    $ {n \choose k} = {n \choose n-k} $
+\end{theorem}
+
+\begin{intuition}
+    k parmi n est similaire à dénombrer non k parmi n
+\end{intuition}
+
+\subsubsection{Inégalité de Pascal}%
+\label{ssub:Inégalité de Pascal}
+
+\begin{theorem}[Pascal's Inequality]
+    $ {n+1 \choose k} = {n \choose k} + {n \choose k-1} $
+\end{theorem}
+
+\begin{intuition}
+    On considère un ensemble de n+1 éléments duquel on lui enlève un
+    élément. On doit donc enlever toutes les combinaison qu'on peut former
+    avec l'élément enlevé.
+\end{intuition}
+
+\subsubsection{Nombre de sous-ensembles}%
+\label{ssub:Nombre de sous-ensembles}
+
+\begin{theorem}[Number of subsets]
+    Le nombre de sous-ensembles qu'on peut former avec un ensemble de
+    taille n est $$ \sum^{n}_{i=0} {n \choose k} = 2^n $$
+\end{theorem}
+
+\begin{intuition}
+    Pour compter le nombre de sous-ensemble de taille n, on doit considérer
+    la combinaison. Si on veut déterminer l'ensemble des sous-ensembles, on
+    n'a qu'à additionner le nombre de sous-ensembles pour chacune des
+    tailles. Finalement, on peut utiliser le binôme de Newton pour montrer
+    que $ \sum^{n}_{i=0} {n \choose k} = 2^n $
+\end{intuition}
+
+\subsubsection{Vandermonde's Identity}%
+\label{ssub:Vandermonde's Identity}
+
+\begin{theorem}[Vandermonde's Identity]
+    $$ \sum^{n}_{i=0} {m \choose k}{n \choose r-k}= {m+n \choose r} $$
+\end{theorem}
+
+\begin{intuition}
+    TODO
+\end{intuition}
+
+\begin{corollary}
+    $ \sum^{n}_{i=0} {n \choose k} ^2 = {2n \choose n} $
+\end{corollary}
+
+\subsubsection{Triangle de Pascal}%
+\label{ssub:Triangle de Pascal}
+
 
 \section{Functions and Relations}%
 \label{sec:Functions and Relations}
@@ -168,8 +257,6 @@ additional tricks to make our proofs a little easier
 
 \begin{defintion}[Functions]
 \end{defintion}
-
-
 
 \section{Graph Theory and Trees}
 

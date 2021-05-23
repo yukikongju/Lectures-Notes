@@ -42,6 +42,13 @@ The first course is separated into the following chapter:
     \item Partial Differential Equations
 \end{enumerate}
 
+On distingue les équations linéaires par:
+\begin{enumerate}
+    \item Type: ODE vs PDE
+    \item Order: Normal Form vs
+    \item Linearity:
+\end{enumerate}
+
 \newtheorem{definition}{Definition}[subsection]
 \newtheorem{theorem}{Theorem}[subsection]
 \newtheorem{corollary}{Corollary}[subsection]
@@ -83,10 +90,19 @@ On verra 4 méthodes pour résoudre les ODEs:
     On dit qu'une transformation est linéaire si les coefficients de
     l'équation différentielle sont de degré 0 et que y et ses dérivées
     sont exposant 1
+    \begin{enumerate}
+	\item Forme Différentielle: $ M(x,y) dx + N(x,y) dy = 0$
+	\item Forme Normale: $ \frac{dy}{dx} = \frac{N(x,y)}{M(x,y)} $
+	    derivative isolated
+    \end{enumerate}
+    Une équation est linéaire si ses coefficients sont exprimés qu'en
+    fonction de sa variable indépendantes
 \end{definition}
 
 \begin{definition}[Order of Derivative]
     L'ordre d'une équation différentielle est la plus grande dérivée.
+    $$ g(x) = a_n (x) \frac{d^n y}{dx^n} + a_{n+1} \frac{d^{n-1}}
+    {d x^{n-1}}  + ... + a_1(x) \frac{dy}{dx}  + a_0 (x) y $$
 \end{definition}
 
 \begin{definition}[Solution générale et particulière]
@@ -113,6 +129,17 @@ et ses dérivées. On l'utilise pour modéliser:
 
 Il est à noter qu'on cherche la famille de fonctions qui vérifie l'équation.
  On pourra choisir la solution parmi cette famille de solutions plus tard.
+
+ \begin{problem}
+     \begin{enumerate}
+         \item Écrire l'équation sous sa forme normale ou différentielle
+	 \item Classifier l'équation différentielle par son ordre et
+	     sa linéarité
+	    \item Verify if function is a solution to differential
+		equation
+     \end{enumerate}
+ \end{problem}
+
 
 \subsection{Plotting solutions to differential equations. }
 
@@ -220,6 +247,30 @@ Dépendemment du problème, on doit solve for une des 4 variables
     travailler avec des fractions positives
 \end{remark}
 
+\begin{theorem}[Existence and Uniqueness Theorem for first order IVP]
+    Let $ \frac{dy}{dx}  = f(x,y), y(x_0)=y_0$. If f(x,y) and
+    $ \frac{\partial f}{\partial y} $ are both continuous in a
+    neighborhood of $(x_0, y_0)$, then there is a unique solution
+    definied on an interval containing $x_0$
+\end{theorem}
+
+\begin{intuition}
+    Before integrating to find a solution to a differential equation,
+    we want to determine wether:
+    \begin{enumerate}
+        \item Is there a solution?
+	\item Are there more solutions?
+    \end{enumerate}
+\end{intuition}
+
+
+\begin{problem}
+    \begin{enumerate}
+        \item Determine if the IVP has a unique solution
+    \end{enumerate}
+\end{problem}
+
+
 \subsection{Falling objects with air resistance: Newton's 2nd Law}
 
 Dans cette section, on voit que la 2e loi de Newton F=ma qui considère
@@ -260,7 +311,7 @@ Dépendemment du problème, on nous demande de trouver:
     \item terminal velocity: $ A = \frac{-mg}{r} $
     \item Limiting velocity: $ v' = 0 $
     \item C: initial value
-    \item m: mass
+    \item m: masse
     \item g: constante de gravité
     \item v(t): velocity after t time
     \item rate of change r: use terminal velocity and solve for r
@@ -302,7 +353,8 @@ voir si on a fait des erreur
 
 La première méthode consiste à multiplier par un facteur d'intégration afin de
 pouvoir intégrer. Pour choisir ce facteur d'intégration, on doit regarder a(t),
-le coefficient qui multiplie y(t).
+le coefficient qui multiplie y(t). Cette méthode nous permet de simuler
+une équation différentielle homogène et utiliser la séparation de variable.
 
 Plus généralement, les étapes sont les suivantes:
 \begin{enumerate}
@@ -579,6 +631,7 @@ TODO
 \label{sub:Courses}
 
 \begin{enumerate}
+    \item Edgar Haley Math 24 - Differential Equations
     \item Professor Macauley - Differential Equations
     \item Professor Macauley - Advanced Maths for Engineering: A course
 	on Partial Differential Equations

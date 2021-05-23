@@ -2,6 +2,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amsthm}
+\usepackage{hyperref}
 \usepackage{parskip}
 \usepackage{textgreek}
 \begin{document}
@@ -113,6 +114,11 @@ on a retrancher les groupes équivalents, donné par r!
     \end{enumerate}
 \end{problem}
 
+\begin{theorem}
+    $ \binom{n,k} = \binom{n, n-k} $
+\end{theorem}
+
+
 \subsubsection{Boules et Urnes}%
 \label{ssub:boules_et_urnes}
 
@@ -130,9 +136,52 @@ résoudre avec l'astuce de boule et urnes par la suite.
 
 \begin{enumerate}
     \item Formule de Pascal
-    \item Formule du Binome
+    \item Binôme de Netwon
     \item Coefficients Binomiaux
 \end{enumerate}
+
+\subsubsection{Formule de Pascal}
+\subsubsection{Binôme de Netwon}
+
+La formule du Binome de Newton nous permet de développer des puissances
+de binôme
+$$ (x+y)^n = \sum^{n}_{k=1} \binom(n,x) x^{n-k} y^y$$
+
+\begin{remark}
+    $ (x+y)^n = (x+y)^{n-1} (x+y) $
+\end{remark}
+
+\textbf{Intuition sur la formule}
+
+En calculant les intégrales de $ \int (1-x^2)^n$, Newton a remarqué un
+parttern intéressant: le numérateur des premiers termes se trouvent de
+la façon suivante:
+\begin{enumerate}
+    \item 1er terme: toujours x
+    \item Numérateur du 2e coefficient: exposant n
+    \item Numérateur du 3e coefficient: nombre triangulaire avec k=n-1,
+	$ \frac{k(k-1)}{2} $
+    \item Numérateur du 4e coefficient: nombre pyramidal avec k=n-2
+	$ \frac{k(k+1)(k+2)}{1 \cdot 2 \cdot 3} \Longrightarrow
+	\frac{(n-2)(n-1)(n)}{1 \cdot 2 \cdot 3} $
+    \item Numérateur du n-ième coefficient:
+	$ \frac{n}{1} \cdot \frac{n-1}{2} \cdot ... \cdot \frac{0}{n} $
+\end{enumerate}
+
+\url{https://www.youtube.com/watch?v=sZaXmKB5xSI}
+
+\begin{corrollary}
+    $$ \sum^{n}_{i=0} \binom(n,k) 2^n , \forall n \geq 0$$
+    On prend x=1 et y=1 dans la formule de Newton
+\end{corrollary}
+
+\begin{remark}
+    Le corrollaire du binome de Newton nous donne le nombre de sous-ensembles
+    dans un ensemble de taille n
+\end{remark}
+
+
+\subsubsection{Coefficients Binomiaux}
 
 \subsection{Espaces de Probabilité}
 
@@ -589,18 +638,21 @@ On peut trouver l'espérance et la variance avec les formules générales
 
 mais on connait l'espérance et la variance des distributions classiques:
 \begin{enumerate}
-	\begin{enumerate}[Binomiale]
+	\item Binomiale
+	\begin{itemize}
 	    \item Espérance
 	    \item Variance
-	\end{enumerate}
-	\begin{enumerate}[Poisson]
+	\end{itemize}
+	\item Géométrique
+	\begin{itemize}
 	    \item Espérance
 	    \item Variance
-	\end{enumerate}
-	\begin{enumerate}[Géométrique]
+	\end{itemize}
+	\item Poisson
+	\begin{itemize}
 	    \item Espérance
 	    \item Variance
-	\end{enumerate}
+	\end{itemize}
 \end{enumerate}
 
 \subsection{Espérance et Variance de v.a. continues}
@@ -618,18 +670,21 @@ On connait aussi l'espérance et la variance des distributions continues
 classiques
 
 \begin{enumerate}
-	\begin{enumerate}[Uniforme]
+	\item Uniforme
+	\begin{itemize}
 	    \item Espérance
 	    \item Variance
-	\end{enumerate}
-	\begin{enumerate}[Exponentielle]
+	\end{itemize}
+	\item Exponentielle
+	\begin{itemize}
 	    \item Espérance
 	    \item Variance
-	\end{enumerate}
-	\begin{enumerate}[Normale]
+	\end{itemize}
+	\item Normale
+	\begin{itemize}
 	    \item Espérance
 	    \item Variance
-	\end{enumerate}
+	\end{itemize}
 \end{enumerate}
 
 \subsection{Espérance et Variance de v.a. indépendantes}

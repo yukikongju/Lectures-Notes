@@ -51,7 +51,7 @@ continu.
 \subsection{Processus Stochastiques}
 
 Un processus stochastique est une v.a aléatoire qui est dépendante du temps.
-Elle peut être discrète ou continue (dépendemment à quelle fréquence on
+Elle peut être discrète ou continue dépendemment à quelle fréquence on
 observe la valeur de la v.a)\\
 
 On dit que le temps est déterministe. Why?\\
@@ -341,8 +341,9 @@ Tous les états qui communiquent entre eux forment une classe. Pour que
 les conditions suivantes:
 \begin{enumerate}
     \item Réflexive: $ i \leftrightarrow i$
-    \item Symétrique: $ i \leftrightarrow j \iif j \leftrightarrow i $
-    \item Transitive: $ i \to j, j \tok \Longrightarrow i \to k $
+    \item Symétrique: $ i \leftrightarrow j \Longleftrightarrow j
+	\leftrightarrow i $
+    \item Transitive: $ i \to j, j \to k \Longrightarrow i \to k $
 \end{enumerate}
 
 \textbf{Quelles sont les types de classes}
@@ -361,19 +362,153 @@ entre elles. Autrement dit, tous les états forment une seule classe.
 
 \subsection{TP}
 
-TODO
+Le TP de cette semaine se penchait sur 2 buts:
+\begin{enumerate}
+    \item Déterminer la probabilité de passer d'un état à l'autre
+    \item Classification des états
+\end{enumerate}
+
+\subsection{Déterminer la probabilité de passer d'un état à l'autre}
+
+Pour déterminer la probabilité de passer d'un état à l'autre, on a deux
+façons:
+\begin{enumerate}
+    \item si le nombre de steps est relativement petit: conditionnement
+	(tracer l'arbre peut aider)
+    \item si le nombre de steps est grand: utiliser la relation de
+	Chapman-Kolmogrov pour calculer la matrice de transition en
+	diagonalisant
+\end{enumerate}
+
+\subsection{Classification des états}
+
+Dans une matrice de transition, on veut être capable de regrouper les
+états similaires afin de créer de classes. Tous les états dans une
+même classe devraient pouvoir être accessible, c-à-d qu'il existe un
+chemin entre les 2. Les classes peuvent être:
+\begin{enumerate}
+    \item Transition vs Récurrent: on pourrait quitter la classe et ne
+	jamais y revenir vs une fois qu'on est dans cette classe, on
+	ne peut jamais la quitter (non-retour)
+    \item Périodique vs Apériodique: après combien de pas en revient
+	à l'état d'où on est partit (cycle) vs pgcd = 1
+    \item Irréductibilité: le graphe forme une seule classe
+\end{enumerate}
+
+\begin{remark}
+    Il est utile de tracer le graphe pour déterminer les classes
+\end{remark}
 
 \pagebreak
 \section{Semaine 3}
 \subsection{Théorie 1}
 \subsection*{Big Idea}
+
+Le but de cette section est d'essayer de séparer les états de transition
+en classe. Cette séparation est assez pratique, car tous les états d'une
+même classe ont les mêmes propriétés.
+
+Un autre concept abordé est la notion de temps de ruine, qui représente
+le nombre d'étapes après lequel on ne peut plus jouer. On verra qu'il
+est impossible de calculer l'espérance du temps de ruine pour une v.a.
+infinie, car on ne peut pas calculer sa distribution, mais si on a
+une chaine de Markov, on peut utiliser ces propriétés pour estimer ce
+temps de ruine. Finalement, on a finit avec quelques exemples.
+
 \subsection*{Outline}
 \begin{enumerate}
-    \item
-    \item
+    \item Classification des états: types de classes et propriétés
+    \item Temps de Ruine
+    \item Périodicité
+\end{enumerate}
+
+\subsection{Classification des états: types de classes et propriétés}
+
+\subsubsection{Types de Classes}%
+\label{ssub:Types de Classes}
+
+Le premier concept à se souvenir est que la notion d'état et de classe
+est similaire. Puisque tous les états d'une même classe possèdent les
+mêmes propriétés, alors parler des propriétés d'une classe ou d'un état
+revient au même.
+
+Il existe plusieurs types d'états/classe:
+\begin{enumerate}
+    \item Classe Transitoire vs Classe Récurrente:
+	\begin{itemize}
+	    \item Transitoire: On peut rester dans cette classe ou y sortir
+		$ 0 < P_{j,j} < 1 $
+	    \item Récurrente: Une fois qu'on entre dans cette classe, on
+		ne peut plus y sortir $ p_{j,j} = 1 $
+	\end{itemize}
+    \item Classe Fermée vs Classe ouverte:
+	\begin{itemize}
+	    \item Fermée: on ne peut que reach des états à l'intérieur de
+		la classe
+	    \item Ouverte:
+	\end{itemize}
     \item
 \end{enumerate}
+
+\subsubsection{Propriétés des Classes}%
+\label{ssub:Propriétés des Classes}
+
+\begin{enumerate}
+    \item Si l'état j est absorbant, alors elle est forme sa propre classe
+	et on dit que c'est une classe récurrente
+    \item Si la classe est fermée, alors c'est une classe récurrente
+    \item Un état est transient si $ i \to j$, mais $ j \not\to i$
+    \item Si l'espace d'états est fini (il y a un nombre fini d'états),
+	alors il y a au moins une classe récurrente
+\end{enumerate}
+
+\begin{remark}
+    \begin{enumerate}
+	\item Pour montrer qu'une classe est transiente, on n'a qu'à montrer
+	    la propriété (3) pour l'un des états de la classe
+        \item Si on a deux classes et qu'on montre que l'une d'entre elles
+	    est transiente, l'autre est nécessairement récurrent par (4)
+    \end{enumerate}
+\end{remark}
+
+\subsection{Temps de Ruine}
+
+Le temps de ruine correspond au nombre d'étapes après laquelle on ne peut
+plus jouer (on get stuck dans un espace récurrent?). Plus généralement,
+on a 2 buts:
+\begin{enumerate}
+    \item Déterminer la probabilité de se faire ruiner en n étapes:
+	possible de calculer pour un petit nombre d'étape
+    \item Détermine l'espérance du temps de ruine: impossible à calculer
+	puisqu'on n'a pas la fonction densité (pcq v.a. infinie)
+\end{enumerate}
+
+\subsection{Périodicité}
+
+\begin{definition}[Période d'une classe]
+    La période d'une classe est le pgcd de tous les temps $n \geq 1$
+    vérifiant $p_{j,j} >0$. Autrement dit, on
+    \begin{enumerate}
+        \item identifie tous les chemins qui nous permettent de revenir
+	    à l'état initial j
+	\item compte le nombre d'étapes pour chaque chemin
+	\item faire le pgcd entre ces nombres d'étapes
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}[Classe Apériodique]
+    Si la période d'une classe est de 1, on dit que la classe est
+    apériodique. Ainsi, une classe récurrente est apériodique
+\end{remark}
+
+\begin{remark}
+    On dit que la période est une propriété de classe, car les états
+    et la classe ont la même période ie on peut interchanger l'utilisation
+    de ces termes.
+\end{remark}
+
 \subsection{Théorie 2}
+TODO
 \subsection*{Big Idea}
 \subsection*{Outline}
 \begin{enumerate}

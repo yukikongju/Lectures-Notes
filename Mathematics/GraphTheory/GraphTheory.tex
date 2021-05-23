@@ -13,13 +13,16 @@
 \section*{Introduction}
 
 \begin{enumerate}
-    \item Fundamentals Concepts: Graphs, Digraphs, Degrees
+    \item Fundamentals Concepts: Types of Graphs, Path/Cycle, Degrees
+    \item Trees
     \item Connectivity
     \item Optimization
-    \item Shortest Path
+    \item Shortest Path: Trails, Circuit, Path and Cycles
     \item Planar Graphs
-    \item Coloring
     \item Flow
+    \item Coloring
+    \item Matching
+    \item Ramsey Theory
 \end{enumerate}
 
 \newtheorem{definition}{Definition}[subsection]
@@ -51,6 +54,7 @@ TODO
     \item Types of Graphs: Path Graph, Cycle Graph, Complete Graph,
 	Complement of a graph, Bipartite Graph, Complete Bipartite Graph
     \item Directed Graphs
+    \item Degree of a Graph
 \end{enumerate}
 
 \subsection{What is a Graph}%
@@ -77,25 +81,41 @@ définir la terminlogie pour parler d'un graphe
     elements and E is a set of 2 subsets of V
 \end{definition}
 
-\begin{definition}[Directed and Undirected Graph]
-    A directed graph, also called digraph, is a graph that has a
-    direction associated with its edges. In other words, the subsets
-    in the Edge set are ordered.
+\begin{definition}[Undirected Graph]
     An undirected graph is a graph whose edge subsets are not ordered.
     In other word, if two nodes are connected, then we can reach a to b
     and b from a.
 \end{definition}
 
+\begin{definition}[Directed Graph]
+    A directed graph, also called digraph, is a graph that has a
+    direction associated with its edges. In other words, the subsets
+    in the Edge set are ordered. The edges are called arcs.
+    \begin{enumerate}
+        \item Out Degrees: Number of vertices comming out from x noted
+	    $ od_G(x)$
+	\item In Degrees: Number of vertices comming in to x noted
+	    $id_G(x)$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Multigraph and Pseudographs]
+    A multigraph is a graph G=(V,E) is an undirected graph where the
+    edges set is a multiset, which means that there can be multiple edges
+    between two vertices. The number of distinct edge is called the
+    multiplicity
+\end{definition}
+
 \begin{definition}[Order and Size]
     \begin{enumerate}
-        \item Order |V| : number of vertex in the graph
+	\item Order |V| : number of vertex in the graph
 	\item Size |E|: number of edges in the graph
     \end{enumerate}
 \end{definition}
 
 \begin{definition}[Simple Graph]
     \begin{enumerate}
-        \item No loop
+	\item No loop
 	\item No multiples edges
     \end{enumerate}
 \end{definition}
@@ -103,19 +123,27 @@ définir la terminlogie pour parler d'un graphe
 \begin{definition}[Adjacence]
     On peut parler d'adjacence pour les vertex et les edges.
     \begin{enumerate}
-        \item Vertex Adjacence: 2 vertex are adjacents if they are
+	\item Vertex Adjacence: 2 vertex are adjacents if they are
 	    connected by an edge
-        \item Edge Adjacence: 2 edges are adjacent if they have a
+	\item Edge Adjacence: 2 edges are adjacent if they have a
 	    vertex in between them
     \end{enumerate}
 \end{definition}
+
+\begin{theorem}
+    The sum of the degree of all vertices is an even number
+    $$ \sum deg(v)$$
+    Plus généralement, the sum of the degrees of all vertices is
+    twice the number of edges
+    $$ \sum deg(v) = 2 |E| $$
+\end{theorem}
 
 \subsection{Terminology}%
 \label{ssub:Terminology}
 
 \begin{definition}[Walk]
     \begin{enumerate}
-        \item Walk: Sequence of adjacent vertices. We can go back on our
+	\item Walk: Sequence of adjacent vertices. We can go back on our
 	    steps: we can traverse edges and vertices several times.
 	    We say the vertices lie on the walk.
 	\item Length: Number of "steps" we make (even though we may go
@@ -130,7 +158,7 @@ définir la terminlogie pour parler d'un graphe
     On peut utiliser les définitions suivantes pour les trail et autres
     aussi:
     \begin{enumerate}
-        \item open/closed
+	\item open/closed
 	\item endpoints
 	\item length
     \end{enumerate}
@@ -154,12 +182,18 @@ définir la terminlogie pour parler d'un graphe
 \end{definition}
 
 \begin{definition}[Circuit]
-    TODO
+    Closed trail of length 3 or more
+\end{definition}
+
+\begin{definition}[Cycle]
+    Closed path that has a length greater than or equal to 3. Sometimes,
+    the definition differ and we may traverse vertex several times (but
+    can't cross edges).
 \end{definition}
 
 \begin{definition}[Path and Cycle]
     \begin{enumerate}
-        \item A Path $P_n$ is a graph whose vertices can be arranged
+	\item A Path $P_n$ is a graph whose vertices can be arranged
 	    in a sequence such that the edge set is
 	    $ E = {v_i v_{i+1} | i = 1,2,...,n-1} $
 	\item A Cycle $C_n$ is a graph whose vertices can be arranged in
@@ -179,7 +213,7 @@ définir la terminlogie pour parler d'un graphe
 \begin{definition}[Distance and Diameter between vertices]
     Soit deux noeud u et v.
     \begin{enumerate}
-        \item Distance entre u et v: plus court chemin entre u et v
+	\item Distance entre u et v: plus court chemin entre u et v
 	\item Diameter entre u et v: plus long chemin entre u et v
     \end{enumerate}
 \end{definition}
@@ -206,9 +240,7 @@ définir la terminlogie pour parler d'un graphe
 \end{definition}
 
 \begin{definition}[Connected Vertices]
-
 \end{definition}
-
 
 \begin{definition}[Open and Closed Neighborhood]
     TODO
@@ -227,24 +259,299 @@ définir la terminlogie pour parler d'un graphe
     \item Complete Bipartite Graph: every node can reach all nodes in
 	the other subset (end)
     \item Star
-    \item Path:
-    \item Cycle: l'ensemble de noeud allant d'un noeud à lui-même
+    \item k-regular graph: each vertex is degree k
+    \item Cubic Graph: 3-regular graph (ex: Petersen Graph)
+    \item Irregular graph:
+    \item Path Graph:
+    \item Cycle Graph:
+    \item Hypercube Graph
 \end{enumerate}
 
-\subsection{Bipartite Graphs}%
+\subsubsection{Bipartite Graphs}%
 \label{sub:Bipartite Graphs}
 
-\begin{remark}[Importance des graphes bipartites]
-    Intuitivement, les graphes bipartites peuvent être séparés en 2
-    sous-ensembles dont l'image de chaque élément est mappé à l'autre
-    set et pas sur un élément du même ensemble.
+\begin{definition}[Bipartite Graph]
+    A graph is bipartite if we can split that graph in two sets such that
+    all vertices in A maps to B
+\end{definition}
+
+\begin{definition}[Complete Bipartite Graph]
+    A complete bipartite graph is a bipartite graph where all vertices in
+    A maps to all vertices in B
+\end{definition}
+
+\begin{theorem}[Bipartite graph and odd cycle]
+    A graph is bipartite $\Longleftrightarrow$ it has no odd cycle
+\end{theorem}
+
+\begin{proof}[If a graph is bipartite, then it has no odd cycle]
+    The proof is done by contradiction
+    \begin{enumerate}
+	\item Let G be a bipartite graph and c be an odd cycle such that
+	    $ c=(v_1, v_2, ..., v_n, v_1)$
+	\item Because G is bipartite, then we can partition odd vertices
+	    into set X and even vertices into set Y (because adjacent
+	    vertices cannot be in the same component)
+	\item Since c is an odd cycle, then $v_n$ is odd.
+	\item This contradicts the fact that G is bipartite, because two
+	    adjacent vertices are in the same component $(v_1 and v_n)$
+	    are adjacents and both odd.
+    \end{enumerate}
+\end{proof}
+
+\begin{proof}[If a graph has no odd cycle, then it is bipartite]
+    The proof is also done by contradiction
+    \begin{enumerate}
+	\item Let G be a graph with no odd cycle.
+	\item Let's partition the vertices of the cycles by its parity
+	    such that $$ X = {v \in V(G) | d(v,w) \text{ is even }} $$
+	    $$ Y = {v \in V(G) | d(v,w) \text{ is odd }} $$
+	    $$ X \cap Y = {} \text{ (distance is unique) }$$
+	    $$ X \cup Y = V(G) \text{ (connected graph) }$$
+	\item SFC, there are two adjacents vertices that are in the same
+	    set: $a,b \in X$ or $a,b \in Y$ such that $ab \in E(V) $
+	\item Suppose a=w, then d(a,w)=0 (the distance is even). Thus, d(b,w)
+	    is even and d(a,b) is even. However, since a,b are adjacents
+	    then d(a,b)=1. Therefore, $a \neq b \neq w$
+	\item Consider the shortest path from aw denoted by P, the
+	    shortest path from bw denoted by Q, and m be the last
+	    common vertex of P and Q. Let $P_1$ and $Q_1$ be the path from
+	    a to m and b to m respectively and $P_2$ and $Q_2$ both be the
+	    path from m to w
+	\item Then $|Q_1| = |P_1|, |P|=|P_1|+|P_2|, |Q|=|Q_1|+|Q_2|$. Since
+	    a,b are in the same set, then d(a,w) and d(b,w) must have the
+	    same parity. Since $|P_1|=|Q_1|$ by construction, then
+	    $|P_2|$ and $|Q_2$ must have the same partity by parity of
+	    integers
+	\item If we construct a cycle from M to A to B using d(a,b),
+	    $P_2$. $Q_2$, we have an odd cycle: $|P_2|+|Q_2|+1=2k+1 \forall
+	    k \in \mathbb{Z}$, which contradicts the fact that G has no
+	    odd cycle
+    \end{enumerate}
+\end{proof}
+
+\subsubsection{Complete Graph}%
+\label{ssub:Complete Graph}
+
+\begin{theorem}
+    Let G=(V,E) be a graph with m vertex. Alors, la somme de tous les
+    degrés d'un graphe est le double du nombre de edges.
+    $$ \sum deg(v) = 2 |E| = 2m$$
+\end{theorem}
+
+\begin{remark}
+    La preuve se fait par induction. On suppose qu'on a un graphe de m+1
+    edges et qu'on lui enlève un dege arbitraire.
 \end{remark}
+
+\begin{theorem}[Handshaking Theorem]
+    The Number of Edges in a Complete Graph is $ |E| = \frac{N(N-1)}{2} $
+    Proof:
+    \begin{enumerate}
+	\item N vertex in graph
+	\item The degree of each vertex is N-1 by definition of a complete
+	    graph (each node is connected to all the other)
+	\item Sum of all vertex degrees is $\sum d(v_i) = N(N-1)$
+	\item Number of edges is $ |E| = \frac{N(N-1)}{2} $ because we
+	    counted all edges twice
+    \end{enumerate}
+\end{theorem}
+
+\subsubsection{Complement of a Graph}%
+\label{ssub:Complement of a Graph}
+
+\begin{definition}[Complement of a Graph]
+    Let G be a graph. The complement of G, noted $\bar G$. uv is an edge of
+    $\bar G \Longleftrightarrow $ uv is not an edge of G
+\end{definition}
+
+\begin{definition}[Self Complementary Graph]
+    A graph that is isometric to its complement is self complementary
+\end{definition}
+
+\begin{theorem}[Connectivity of the complement of a graph]
+    A graph or its complement must be connected $\Longleftrightarrow$
+    if a graph is disconnected, then its complement must be connected
+\end{theorem}
+
+\begin{proof}[Connectivity of the complement of a graph]
+    \begin{enumerate}
+	    Let's work with the second proposition
+	\item $(\Longrightarrow )$ If G is a disconnected graph and u,v be two
+	    vertices in G such that u and v are in different components. Then,
+	    by definition, uv must be in $\bar G$. Therefore, uv $\in \bar G$, a
+	    connected graph.
+	\item $(\Longleftarrow)$ If uv $\in V(G)$, such that they are in the same
+	    components. Then u,v are adjactents. If uv are not in the same
+	    component, there exist w such that $ uw \in V(G)$ and $vw \in V(G)$,
+	    therefore, there exist a uv path in $\bar G$
+    \end{enumerate}
+\end{proof}
+
+\begin{corollary}[There is not disconnected self complement graph]
+    If there were such a graph, then G and $\bar G$ must be disconnected,
+    which contradicts the fact that G or $\bar G$ must be connected.
+\end{corollary}
+
+\subsection{Degrees of a Graph}%
+\label{sub:Degrees of a Graph}
+
+\begin{definition}
+    \begin{enumerate}
+	\item minimum degree: $\delta(G)$
+	\item maximum degree: $\Delta(G)$
+	\item Isolated Vertex: deg(G)=0
+	\item End Vertex (leaf): deg(G)=1
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Every Graph has an even number of odd Degree vertices]
+    Proof by contradiction by using the fact that sum of odd number is even
+    and Handshaking
+    \begin{enumerate}
+	\item Let G be a graph with odd number of odd degree vertices.
+	    Let X and Y be the sets of even and odd vertices respectively
+	    such that $ X={v \in G(V)| \text{ deg(v) is even }} $,
+	    $ Y={v \in G(V)| \text{ deg(v) is odd}} $
+	\item Remark that
+	    \begin{itemize}
+		\item $ \sum^{}_{v \in G(V)} = 2m$ because of Handshaking Theorem
+	    \item $\sum^{}_{v \in X}  = 2k$ (even) because the sum of even
+		number is even
+	    \item $\sum^{}_{v \in X}  = 2k$ (even) because the sum of odd
+		number is even (where our contradiction lies)
+	    \end{itemize}
+	\item However, $ \sum^{}_{v \in Y} = \sum^{}_{v \in G(V)} -
+	\sum^{}_{v \in X} = 2(k-l) $ is even, which contradicts the facts that
+	    $\sum^{}_{v \in Y}$ is odd.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Degree sum condition for connected graph]
+    Let G be a graph of order n. If $deg(u)+deg(v) \geq n-1$, then G is
+    connected and $diam(G) \leq 2$
+\end{theorem}
+
+\begin{proof}
+    Pour montrer que G est connexe, on veut montrer qu'il existe un
+    chemin entre d'un vertex u à v. Si u et v sont adjacent, alors c'est
+    trivial. Si u et v ne sont pas adjactents, on utilise l'hypothèse
+    $deg(u)+deg(v) \geq n-1 \geq n-2$ nous dit qu'il existe n-1 edges qu'il
+    existe un vertex intermédiaire w par lequel on peut passer pour se
+    rendre à v, et donc qu'il existe un chemin (u,w,v) de deg(2).
+\end{proof}
+
+\begin{theorem}[Minimum Degree Condition for Connected Graph]
+    If G is a graph of order n with $\delta(G) \geq \frac{n-1}{2} $,
+    then G is connected. Note: $\delta(G)$ is the minimum degree of
+    a graph
+\end{theorem}
+
+\begin{proof}
+    On veut utiliser le degree sum condition for connected graph.
+    \begin{enumerate}
+	\item $deg(u)+deg(v) \geq \delta(G)+\delta(G)$
+	\item $deg(u)+deg(v) \geq \frac{n+1}{2} + \frac{n+1}{2} $
+	    par hypothèse
+	\item $deg(u)+deg(v) \geq n-1$, which is always true by degree
+	    sum condition
+    \end{enumerate}
+\end{proof}
+
+\begin{remark}[Necessary vs Sufficient condition]
+    The minimum degree condition for connected graph is sufficient to say
+    if a graph is connected, but not necessary.
+\end{remark}
+
+\subsection{Isomorphic Graph}%
+\label{sub:Isomorphic Graph}
+
+\begin{definition}[Isomorphic Graph]
+
+\end{definition}
+
+
+\begin{definition}[Degree of Sequence]
+    The degree of a sequence is the ordered set of degree(v)
+    \begin{enumerate}
+	\item non-increasing: $ d_n \geq d_{n+1}$
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    If two graph  are isomorphic, then they have the same degree sequence
+\end{theorem}
+
 
 
 \section{Connectivity}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+\begin{enumerate}
+    \item Vertex Cuts and Connectivity
+    \item Edges Cuts and Connectivity
+    \item Minimum Spanning Trees
+    \item Menger Theorem
+    \item Eulerian and Hamiltonians path/cycles
+\end{enumerate}
+
+\subsection{Fundementals of Connectivity}
+
+\begin{definition}[Connected Vertices]
+    Two vertices are connected if there exist a path between them
+\end{definition}
+
+\begin{definition}[Connected Graph]
+    A graph is connected if, for every vertices in the graph, we can
+    reach any other node. If a graph is not connected, we say it is
+    disconnected made of components.
+\end{definition}
+
+\begin{remark}
+    A connected graph has one single component
+\end{remark}
+
+\begin{definition}[Components of a graph]
+    A component of a graph is a maximal connected subgraph, which means
+    that
+    \begin{enumerate}
+	\item Connected: All the nodes in the subgraph can be reached
+	    from one to another
+	\item Maximal: there no is node or vertex that we can add without
+	    violating the connected property
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Connected Graph contains Two Non-cut Vertices]
+    WHAT
+\end{theorem}
+
+
+\section{Trees}%
+\label{sec:Trees}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+\begin{enumerate}
+    \item Properties
+\end{enumerate}
+
+
+
 \section{Optimization}
 \section{Shortest Path}
 \section{Planar Graphs}
+
+\subsection{Overview}%
+\label{sub:Overview}
+
+\begin{enumerate}
+    \item What is a Planar Graph
+\end{enumerate}
+
 \section{Coloring}
 \section{Flow}
 
@@ -255,18 +562,22 @@ définir la terminlogie pour parler d'un graphe
 \label{sub:Books}
 
 - Reinhard Diestel: Graph Theory
+- Discrete Structure by Michiel Sidt (recommended)
 
 \subsection{Courses}%
 \label{sub:Courses}
 
 - Wrath of Math: Graph Theory Playlist
 - Sarada Herke: Graph Theory
+- Lecture Notes from JL Martin Math 105 - Topics in Mathematics:
+\url{https://jlmartin.ku.edu/courses/math105-F11/}
 
 \subsection{Exercices}%
 \label{sub:Exercices}
 
 - Introduction to Graph Theory by Douglas B. West: Proofs-based book on
 graph theory
+- Combinatorics and Graph Theory - Vasudev
 
 \end{document}
 \end{article}
