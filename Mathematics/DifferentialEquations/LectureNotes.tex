@@ -140,7 +140,6 @@ Il est à noter qu'on cherche la famille de fonctions qui vérifie l'équation.
      \end{enumerate}
  \end{problem}
 
-
 \subsection{Plotting solutions to differential equations. }
 
 Présentement, on n'est pas encore capable de résoudre une équation
@@ -151,6 +150,19 @@ On distingue 2 types de solutions:
 \begin{enumerate}
     \item Isocline: y' est une constante: $ y' = 0$, with c
     \item Autonomous ODEs: y' est une fonction quelconque: $ y' = f(y)$
+\end{enumerate}
+
+\subsubsection{Slope Field}%
+\label{ssub:Slope Field}
+
+On distingue 3 types de slope field
+\begin{enumerate}
+    \item Attractor: toutes les courbes convergent vers une valeur. On
+	dit qu'il y a un équilibre et que les courbes sont stables
+    \item Repeller: Les courbes divergent et on dit qu'elles sont
+	instables
+    \item Semi-Stable: Les courbes sont de type "attractor" d'un bord
+	et repeller de l'autre
 \end{enumerate}
 
 \subsubsection{Comment tracer les solutions}
@@ -177,10 +189,24 @@ aura l'air d'une courbe.
 
 Plus généralement, si on a $ y' = f(t,y)$ et $ y(t_0)$ avec un stepsize
 de h, on a:
-$$ (t_{k+1}, y_{k+1}) = (t_k + h, y_k + f(t_k, y_k) \cdot h) $$
+$ y_{n+1} = y_n + h \cdot f(x_n, y_n)$
+% $$ (t_{k+1}, y_{k+1}) = (t_k + h, y_k + f(t_k, y_k) \cdot h) $$
 Il s'agit donc d'une méthode récursive pour tracer des graphes:
 on détermine la pente entre deux steps en considérant le triangle
 rectangle qui forme le point précédent et le point suivant.
+
+\subsubsection{Improved Euler's Method}%
+\label{ssub:Improved Euler's Method}
+
+La méthode de Euler a tendance à sous-estimer la valeur de la pente
+puisqu'on considère que la pente est la même à un certain point donné.
+Ce qu'on veut faire, c'est de calculer une nouvelle pente
+$$ m = f(x_0 + h, y_0 + h \cdot f(x_0, y_0)) $$
+Cependant, cette méthode a tendance à surestimer la pente. Ainsi, on veut
+trouver un pente moyenne en considérant la pente calculée à partir de
+l'ancienne méthode et de la nouvelle méthode.
+$ y_{n+1} = y_n + h \cdot [f(x_n, y_n) + f(x_n+h, y_n + h \cdot
+f(x_n, y_n))]$
 
 \pagebreak
 \section{First Order Differential Equations}
@@ -211,6 +237,48 @@ dit à quel point le decay/growth se fait rapidement.
 	    premier zéro
     \end{enumerate}
 \end{remark}
+
+\subsubsection{Models with Separable Method}%
+\label{ssub:Models with Separable Method}
+
+\textbf{Newton's Law of Cooling}
+
+Newton's Law of cooling is used when we want to model an object whose
+cooling point is at some degree. The temperature of the object start at
+$T_0$ and converge toward a value T. The rate of change is given by
+$$ \frac{dT}{dt}  = k(T-T_m)$$
+where k is a constant and $(T - T_m)$ is the difference between the
+object's temperature and the room in which it resides
+
+Using the separable variables method, we get $$ T = c e^{kt} + T_m
+= (T_0 - T_m) e^{kt} + T_m$$
+
+\textbf{Exponential Growth}
+
+The exponential growth is used when the rate of change grows without
+restrictions. The rate of change for an exponential growth is given
+by $$ \frac{dy}{dt} = ky $$
+
+Using the separable variables method, we get
+$$ A = A_0 e^kt $$
+
+\begin{remark}
+    \begin{enumerate}
+        \item If k<0, we have a decay
+	\item If k>0, we have a growth
+    \end{enumerate}
+\end{remark}
+
+\textbf{Logistic Growth}
+
+The logistic growth correspond to the exponential growth, but we have
+a restrictions that forbids us to grow/decay after a given point.
+The rate of change is given by $$ \frac{dP}{dt}  = r (\frac{k-P}{k}) P $$
+where r is a rate of growth, P is the size of the current population, and
+$(\frac{k-P}{k} )$ is the carrying capacity
+
+When solving this equation using separable variables, we get
+$$ P = \frac{k}{1+ce^{-rt}} $$
 
 \subsection{Initial value problems}
 
@@ -269,7 +337,6 @@ Dépendemment du problème, on doit solve for une des 4 variables
         \item Determine if the IVP has a unique solution
     \end{enumerate}
 \end{problem}
-
 
 \subsection{Falling objects with air resistance: Newton's 2nd Law}
 
@@ -371,6 +438,13 @@ Plus généralement, les étapes sont les suivantes:
 Notons pour que cette stratégie fonctionne, on doit savoir intégrer la partie
 de droite
 
+\begin{problem}
+    \begin{enumerate}
+	\item Mixing Problems: $ \frac{dA}{dt} = (rate in) - (rate out)$
+	\item RL Ciruit:
+    \end{enumerate}
+\end{problem}
+
 \subsubsection{Variation of Parameters}
 
 La deuxième méthode consiste à trouver l'équation homogène en ignorant la
@@ -462,11 +536,162 @@ TODO
 
 \pagebreak
 
+\subsection{Substitution}%
+\label{sub:Substitution}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+When we have a first order differential equations that is nonlinear and
+cannot be solved by separating variables, we use substitution. There
+are two methods:
+\begin{enumerate}
+    \item Homogeneous equations: if differential equation is homogeneous,
+	substitute by y=vx to get turn it into separating variables
+    \item Bernouilli Equations
+\end{enumerate}
+
+\textbf{Homogeneous Equations}
+
+If a differential equation of first order is a homogeneous equations,
+then we can use the following substitution to turn the ODE into a
+separable equation
+
+\begin{enumerate}
+    \item Determine if the equations is homogeneous: f(tx,ty) = f(x,y)
+    \item If it is homogeneous, substitute equation by y=vx
+    \item Solve
+\end{enumerate}
+
+\textbf{Bernouilli Equations}
+
+ODEs that are nonlinear and cannot be solved by separating variables are
+Bernouilli if they take the following form
+$$ \frac{dy}{dx} + f(x)y = g(x) y^n$$
+If the ODE is Bernouilli, then we can substitute with $ v = y^{1-n}$,
+which will make the equation linear. Finally, we solve using Integrating
+Factor (or another method to solve linear first order ODEs)
+
+\begin{remark}
+    \begin{enumerate}
+        \item If n=0: not an ODEs
+	\item If n=1: Separable Variables
+    \end{enumerate}
+\end{remark}
+
+\subsection{Exact Equations}
+
+Les équations exactes sont des équations qui prennent la forme de
+$$ M(x,y) dx + N(x,y) dy =0$$
+
+Pour les résoudre, on doit:
+\begin{enumerate}
+    \item Écrire l'équation sous sa forme normale:
+	$ M(x,y) dx + N(x,y) dy =0$
+    \item Déterminer si l'équation différentielle est exacte:
+	$ \frac{M(x,y)}{\partial y} = \frac{N(x,y)}{\partial x} $
+    \item Si l'équationest exacte, on trouve la solution en intégrant
+	$ \int M(x,y) dy, \int N(x,y) dx$
+    \item Additionner les termes différents
+\end{enumerate}
+
 \section{Second Order Differential Equations}
 \subsection*{Overview}
 
 \subsection{Second order linear ODEs.}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Il existe plusieurs stratégies pour résoudre des équations différentielles
+de 2e ordre
+\begin{enumerate}
+    \item Reduction of Order: substitution pour réduire rendre le ODE 2nd
+	à un 1rst ODE
+    \item
+\end{enumerate}
+
+Il faut aussi se souvenir du concept de combinaison linéaire: on peut
+générer une famille de solutions avec la combinaison linéaire des
+solutions générales trouvées.
+
+\subsubsection{Reduction of Order}%
+\label{ssub:Reduction of Order}
+
+On peut utiliser la méthode de reduction of order si on connait une
+des solutions. Pour ce faire, on doit
+\begin{enumerate}
+    \item Trouver la substitution: $ y= u y_1$ et trouver la nouvelle
+	équation en terme de cette substitution
+    \item Réduire l'ordre en posant une autre substitution: $ v=u'$
+    \item Résoudre pour v=u'
+    \item Intégrer v pour obtenir u pour ensuite substituer dans
+	l'équation originale $y= u y_1$
+\end{enumerate}
+
+\begin{remark}
+    Si l'équation est
+    \begin{enumerate}
+        \item Homogène: devient first order et se résout avec separating
+	    variables
+	\item Nonhomogène: devient first order et se résout avec
+	    integrating factor
+    \end{enumerate}
+\end{remark}
+
 \subsection{Equations with constant coefficients.}
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Lorsqu'on a une ODE de deuxième ordre qui prend la forme
+$ ay'' + by' + cy = 0$, on dit que'on a une équation linéaire avec
+des coefficients constants. Intuitivement, pour résoudre cette ODE,
+on veut que la fonction y soit une exponentielle, car ses dérivées
+existent et peuvent être exprimées comme une combinaison linéaire des
+précédantes. On a donc $ y=e^{mx}, y'=me^{mx}, y''=m^2 e^{mx}$. Ainsi,
+on obtient
+$$ ay'' + by' + cy = 0$$
+$$ a(m^2 e^{mx}) + b(me^{mx})+c(e^{mx})=0$$
+$$ e^{mx} (am^2+bm+c)=0$$
+
+Puisque $e^{mx} \neq 0$ (sinon f n'existe pas), il faut que le polynome
+caractéristique $(am^2+bm+c)=0$ et donc trouver ses racines.
+
+On distingue 3 types de solutions pour le polynome caractéristique:
+\begin{enumerate}
+    \item Distinct Real Root
+    \item Repeated Real Root
+    \item Complex Roots
+\end{enumerate}
+
+\subsubsection{Distinct Real Root}
+
+Si on obtient des racines réelles distinctes (avec formule quadratique
+ou en factorisant), on n'a qu'à substituer $m_1$ et $m_2$ dans
+$$ y= c_1 e^{m_1x}+c_2 e^{m_2x} $$
+
+\subsubsection{Repeated Real Root}
+
+Si la racine trouvée est unique, on dit que la racine est de multiplicité
+2. Cependant, on ne peut pas utiliser la formule
+$ y= c_1 e^{m_1x}+c_2 e^{m_2x} $, car les solutions générales
+${e^{mx}, e^{mx}}$ ne sont pas linéairement indépendantes, et on ne
+peut pas écrire notre combinaison linéaire.
+
+À la place, on utilise la formule suivante:
+$$ y= c_1 e^{mx}+c_2 xe^{mx} $$
+
+Pour s'en convaincre, on n'a qu'à vérifier que $y=xe^{mx}$ est une
+solution
+
+\subsubsection{Complex Roots}
+
+Lorsqu'on a une racine négative, on doit faire appel à des racines
+complexes. Cependant, on ne veut pas trainer des nombres complexes.
+il est donc pratique d'utiliser la formule suivante:
+si $ m = \alpha \pm \beta i$, alors la solution générale est
+$$ y = e^ {\alpha x} (c_1 cos(\beta x) + c_2 sin(\beta x)) $$
+
 \subsection{The method of undetermined coefficients.}
 \subsection{Simple harmonic motion.}
 \subsection{Damped and driven harmonic motion.}
@@ -512,7 +737,6 @@ TODO
 \subsection{Boundary value problems}
 
 \subsection*{Overview}
-
 
 \pagebreak
 \section{Partial Differential Equations}
@@ -625,6 +849,7 @@ TODO
 
 \begin{enumerate}
     \item A First Course in Differential Equations by Dennis G. Zill
+    \item Ordinary and Partial Differential Equations by John Cain (intuition for harder ODEs)
 \end{enumerate}
 
 \subsection{Courses}%
@@ -635,6 +860,7 @@ TODO
     \item Professor Macauley - Differential Equations
     \item Professor Macauley - Advanced Maths for Engineering: A course
 	on Partial Differential Equations
+    \item Houston Math Prep - Differential Equations
 \end{enumerate}
 
 \subsection{Exercices}%
@@ -647,6 +873,7 @@ TODO
 	lots of exercices (recommended)
     \item Timothy Norflok's Math2080 - Differential Equations: Worksheet
 	with detailed solutions (recommended)
+    \item Schaum's Differential Equations
 \end{enumerate}
 
 \pagebreak

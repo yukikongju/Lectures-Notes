@@ -508,19 +508,93 @@ on a 2 buts:
 \end{remark}
 
 \subsection{Théorie 2}
-TODO
 \subsection*{Big Idea}
+
+Cette classe-ci se concentrait sur la notion de distribution stationnaire, qui
+représente la probabilité de transitionner vers l'état $x_i$ à long terme.
+On peut représenter cette probabilité par un vecteur de probabilité $\pi$, qui
+est une probabilité stationnaire. Notre but sera de déterminer la probabilité
+stationnaire représentant la probabilité de transitionner d'un état à long terme.
+
 \subsection*{Outline}
 \begin{enumerate}
-    \item
-    \item
-    \item
+    \item Retour sur les classes de transition
+    \item Distribution Stationnaire
 \end{enumerate}
+
+\subsubsection{Retour sur les classes de transition}
+
+On a fait l'exemple 4 avec lequel on avait 2 classes de récurrence et une
+classe de transition. Encore une fois, pour montrer qu'une classe est
+récurrente,on doit montrer que  la probabilité de retour est de 1 $p_{j,j} = 1$.
+Pour montrer qu'une classe est transitive, on doit montrer que
+\begin{enumerate}
+    \item Un état de la classe n'est pas symétrique à celui d'une autre classe:
+	$ i \to j \not\Longrightarrow j \to i$ ou
+    \item La proabilité de non retour n'est pas égale à 1 : $0<p_{j,j} <1$
+\end{enumerate}
+
+Pour faire déterminer la périodicité de la classe, on fait le pgcd des chemins
+de retour. Si la périodicité est de 1 (pgcd=1), on doit que la classe est
+apériodique.
+
+\subsubsection{Distribution Stationnaire}
+
+\textbf{Qu'est-ce qu<une distribution stationnaire}
+
+La distribution stationnaire sert à décrire l'équilibre du système à long
+terme. On veut déterminer la probabilité de finir dans l'état $x_i$, peu
+importe dans quel état on commence. On représente la probabilité de finir
+dans chaque vecteur par $\pi=(\pi _1, ..., \pi _n)$, qu'on nomme vecteur
+probabilité, où $\pi _i$ est la probabilité de finir à l'état $x_i$.
+
+\textbf{Comment calculer la probabilité stationnaire de $\pi$}
+
+Pour déterminer la valeur de l'état à long terme, on doit calculer la
+probabilité stationnaire par un produit matriciel $\pi= \pi \cdot P$, où P
+est la matrice de transition. Intuitivement, on veut veut que la probabilité
+du vecteur à un moment donné et celui à un temps très loin soit la même, car
+connaitre ce qu'il s'est passé il y a 3000 ans ne change pas vraiment ce qu'on
+a aujourd'hui.
+
+Pour ce faire, on veut trouver les paramètres $\pi _i$ en faisant la
+multiplication matricielle:
+$$  \pi = (\pi _1, \pi _2, \pi _3) \cdot P = (\pi _1, \pi _2, \pi _3)
+\begin{bmatrix}
+    1/4 & 3/4 & 0\\
+    1/4 & 1/2 & 1/4\\
+    1/4 & 1/4 & 1/2\\
+\end{bmatrix} $$
+
+Cependant, si on résout cette matrice, on obtient une infinité de solutions.
+Ainsi, on doit utiliser la propriété markovienne nous disant que la somme des
+probabilités de chaque ligne est 1
+$$ \sum^{3}_{k=1} \pi _k = 1$$
+
+\begin{remark}[Pourquoi la distribution stationnaire génère une infinité de
+    solutions]
+    La matrice de probabilité stationnaire génére une infinité de solutions,
+    car les vecteurs colonnes ne sont pas linéairement indépendantes, ce qui
+    veut dire qu'on peut écrire chaque vecteur comme une combinaison linéaire
+    des autres. Ainsi, on ne peut pas associer de pivot à chaque colonne. Par
+    conséquent, on a une variable libre.
+\end{remark}
+
+\textbf{Que faire si l'espace d'états est infini}
+
+Si l'espace d'état est infini, il se peut que la probabilité stationnaire
+n'existe pas. Pour vérifier si elle existe, on n'a qu'à faire le produit
+matriciel (si possible), et vérifier que la somme des probabilités de chaque
+ligne est de 1
+
 \subsection{TP}
+
+Pas de TP (fête de la Reine)
 
 \pagebreak
 \section{Semaine 4}
 \subsection{Théorie 1}
+TODO
 \subsection*{Big Idea}
 \subsection*{Outline}
 \begin{enumerate}

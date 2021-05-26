@@ -11,14 +11,14 @@
 
 ## First Order Equations
 
-- [X] Examples: Newton's Law of Cooling, Newton's Second Law
 - [X] Theorem: Existence and Uniqueness Theorem
-- [X] Method of Integrating Factors
-- [ ] Substitution (Bernouilli Equation)
-- [ ] Bernouilli Differential Equations
+- [ ] Separable Variables: Newton's Law of Cooling, Newton's Second Law,
+	Exponential Growth, Logistic Growth
+- [X] Method of Integrating Factors (linear, non separable):
+      mixing problem, RL cricuit
+- [ ] Substitution (non linear, not separable): Homogeneous, Bernouilli
 - [ ] Exact Differential Equations
 - [ ] Autonomous Equations: stable vs unstable solutions
-- [ ] Logistic Equations
 
 ## Second Order Equations
 

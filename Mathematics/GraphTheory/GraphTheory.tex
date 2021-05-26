@@ -261,7 +261,8 @@ définir la terminlogie pour parler d'un graphe
     \item Star
     \item k-regular graph: each vertex is degree k
     \item Cubic Graph: 3-regular graph (ex: Petersen Graph)
-    \item Irregular graph:
+    \item Irregular graph: all of its vertices have distinct degrees. There
+	exist only one irregular graph, the graph made up of a single vertex
     \item Path Graph:
     \item Cycle Graph:
     \item Hypercube Graph
@@ -356,6 +357,29 @@ définir la terminlogie pour parler d'un graphe
 	    counted all edges twice
     \end{enumerate}
 \end{theorem}
+
+\subsubsection{Irregular Graphs}%
+\label{ssub:Irregular Graphs}
+
+\begin{definition}[Irregular Graph]
+    A graph is irregular if all of its vertices have different degrees
+\end{definition}
+
+\begin{proposition}[The single vertex graph is the only irregular graph]
+    The proof is done by contradiction by showing that there cannot be
+    a vertex adjacent to n-1 vertices and one adjacent to 0 vertex.
+    \begin{enumerate}
+        \item Let G be a graph with n vertex with different degrees,
+	    where the degrees of each vertex is between
+	    $ 0 \leq deg(v) \leq n-1$
+	\item Because each vertice has a different degree, this must means
+	    that there exist a vertice adjacent to 0 vertex and one
+	    adjacent to n-1 vertices.
+	\item However, the last statement is a contradiction, because if
+	    a vertex is adjacent to none, then there are only n-2 vertices
+	    left.
+    \end{enumerate}
+\end{proposition}
 
 \subsubsection{Complement of a Graph}%
 \label{ssub:Complement of a Graph}
@@ -467,9 +491,26 @@ définir la terminlogie pour parler d'un graphe
 \label{sub:Isomorphic Graph}
 
 \begin{definition}[Isomorphic Graph]
-
+    Two graphs are isomorphic if they have the same structures ie we can
+    match each vertices in graph G to each vertices in graph H. We want to
+    "rename" the vertices.
+    $$ \phi: V(G) \to V(H)$$
+    Formally, we say that two graphs G and H are isomorphic if there exists
+    a bijection $$ \phi: V(G) \to V(H)$$ such that $uv \in E(G)
+    \Longleftrightarrow \phi(u) \phi(v) \in E(H)$
+    We write $G \cong H$
 \end{definition}
 
+\begin{remark}
+    Isomorphic function is bijective which means that it is
+    \begin{enumerate}
+        \item injective: for each image, we can find a unique x
+	    $ f(a) = f(b) \Longrightarrow a=b$
+	\item surjective: we can reach all images from the domain
+    \end{enumerate}
+    We may prove that two graphs G and H are not isomorphic if they don't
+    have the same number of vertices and/or edges.
+\end{remark}
 
 \begin{definition}[Degree of Sequence]
     The degree of a sequence is the ordered set of degree(v)
@@ -478,9 +519,44 @@ définir la terminlogie pour parler d'un graphe
     \end{enumerate}
 \end{definition}
 
-\begin{theorem}
-    If two graph  are isomorphic, then they have the same degree sequence
+\begin{theorem}[Isomorphic Graphs have the same degree sequence]
+    If two graph  are isomorphic, then they have the same degree sequence.
+    The converse is not true.
 \end{theorem}
+
+\begin{proof}
+    TODO
+\end{proof}
+
+\begin{remark}
+    To make the degree sequence unique, we may require that the degree
+    sequence be non increasing.
+\end{remark}
+
+\begin{problem}
+    \begin{enumerate}
+        \item Determine if a degree sequence is a graph:
+	    \begin{itemize}
+		\item Number of odd degrees vertices must be even
+	        \item Use Handshaking Lemma: sum of vertex degrees is twice
+		    the number of edges + parity of sum of degrees
+		\item Use degree sum of connected graph: a single vertex
+		    cannot be adjacent to more than n-1 vertex
+	    \end{itemize}
+	\item Draw a graph with the degree sequence
+    \end{enumerate}
+\end{problem}
+
+\begin{remark}[Algorithm to find if degree sequence is graph]
+    We can compare the original degree sequence to another one we can
+    construct using the following algorithm:
+    \begin{enumerate}
+        \item remove largex degree vertex $v_0$
+	\item substract 1 to the next $deg(v_0)$ vertex in the non-incresing
+	    degree sequence.
+    \end{enumerate}
+\end{remark}
+
 
 
 
@@ -490,6 +566,8 @@ définir la terminlogie pour parler d'un graphe
 \label{sub:Overview}
 
 \begin{enumerate}
+    \item Fundamentals of Connectivity
+    \item Bridges
     \item Vertex Cuts and Connectivity
     \item Edges Cuts and Connectivity
     \item Minimum Spanning Trees
@@ -522,12 +600,53 @@ définir la terminlogie pour parler d'un graphe
 	\item Maximal: there no is node or vertex that we can add without
 	    violating the connected property
     \end{enumerate}
+    The number of component in a graph is noted K(G)
 \end{definition}
 
 \begin{theorem}[Connected Graph contains Two Non-cut Vertices]
     WHAT
 \end{theorem}
 
+\subsection{Bridges}%
+\label{sub:Bridges}
+
+\begin{definition}[Edge Substraction]
+    Let G be a graph and db be an edge in the graph G. The graph G-e is
+    the graph G in which we remove the edge db. If we remove several
+    edges from G, we can write $G-{e_1, ..., e_n}$
+\end{definition}
+
+\begin{definition}[Bridge]
+    An edge $e \in E(G)$ is a bridge if removing that edge from the
+    graph creates a new component In other word, removing the edge makes
+    G-e disconnected. Formally, we write $ K(G) = K(G-e)-1$
+\end{definition}
+
+\begin{definition}[Cut Vertex]
+    Let G be a graph and v be a vertex of that graph. If removing v from G
+    disconnect its graph, then we say it is a cut vertex.
+\end{definition}
+
+\begin{theorem}[An edge is a bridge iif it lies on no cycle]
+    Let G be a graph and e be an edge in G. The edge e is a bridge
+    $\Longleftrightarrow$ it lies on no cycle.
+\end{theorem}
+
+\begin{proof}
+    To prove the previous statement, consider the contrapositive:
+    if the edge lies on a cycle, then it is not a brigde.
+    \begin{enumerate}
+	\item Consider a cycle C on the graph G such that $C=(c_0 = u, ...,
+	    c_i=v, ... c_n=u)$
+	\item Because C is a cycle, then there exist two u-v path, let's
+	    say e and P.
+	\item Spdg, let's say we remove one of the path, suppose e. Then,
+	    there is still an u-v path from u to v (P), which means that
+	    the vertices u,v are still connected
+	\item Since the contrapositive is true, then the original proposition
+	    must be true.
+    \end{enumerate}
+\end{proof}
 
 \section{Trees}%
 \label{sec:Trees}
@@ -536,10 +655,137 @@ définir la terminlogie pour parler d'un graphe
 \label{sub:Overview}
 
 \begin{enumerate}
-    \item Properties
+    \item Tree Fundamentals and Properties
 \end{enumerate}
 
+\subsection{Fundamentals and Properties}
 
+\begin{definition}[Trees]
+    A tree is a connected acyclic graph.
+\end{definition}
+
+\begin{definition}[Leaf]
+    The end vertices in a tree is called a leaf. If v is a leaf, then
+    deg(v)=1
+\end{definition}
+
+
+\begin{remark}[Alternative Definitions to trees]
+    \begin{enumerate}
+        \item A graph is a tree $\Longleftrightarrow$ a graph has n-1 edges
+        \item A graph is a tree $\Longleftrightarrow$ every edge is a bridge
+        \item A graph is a tree $\Longleftrightarrow$ Every adjacent
+	    vertices are connected by a unique path
+    \end{enumerate}
+\end{remark}
+
+\begin{problem}[Show that a graph is a tree]
+    To show a graph is a tree, we must show that
+    \begin{enumerate}
+        \item connectivity: all vertices are reachable from any vertices
+	\item acyclic: show that it can't have a cycle by contradiction
+    \end{enumerate}
+\end{problem}
+
+\begin{theorem}[A graph is a tree iif each distinct pair of vertices is
+    connected by a unique path]
+    \begin{enumerate}
+        \item $\Longrightarrow$: Show that there cannot be two path by
+	    contradiction
+	    \begin{itemize}
+		\item Let T be a tree (no cycle+connected)
+		\item SLC, c-a-d qu'il existe 2 u-v path.
+		\item However, if there exist two distincts uv path, then
+		    we have a cycle, which contradict the fact that T is
+		    a tree.
+	    \end{itemize}
+        \item $\Longleftarrow$ : Use definition of tree
+	    \begin{itemize}
+	        \item Let G be a graph where each pair of vertices has a
+		    unique path
+		\item Connectivity: if each pair has a unique path, then
+		    we can reach all vertices from anywhere
+		\item Acyclic: SLC, c-a-d que G has a cycle. This means
+		    that there exist two distincts uv-path from u to v.
+		    However, this contradict the fact that there exist
+		    a unique path from u to v.
+		\item Since G is connected and acyclic, then it is a tree
+	    \end{itemize}
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Each nontrivial tree has at least two leaves]
+    We can take the longest path and show that their end vertices must
+    be deg(v)=1 by contradiction
+    \begin{enumerate}
+	\item Let T be a tree and P be the longest path $P=(v_0=u, ...,
+	    v_n=v), u \neq v$
+	\item Consider the two end vertices u and v. We can show by
+	    contradiction that their degree must be 1
+	    \begin{itemize}
+	        \item if u and v are connected to other vertices not in
+		    the path, then it wouldn't be the longest path, which
+		    contradict the fact that P is the longest path
+		\item If u and v were connected to other vertices in the
+		    path, then we would have a cycle, which contradict the
+		    fact that T is a tree
+	    \end{itemize}
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Every tree of order n has size n-1]
+    This theorem states that if a tree has n vertices, then it must have
+    n-1 edges. It can be proven by induction
+    \begin{enumerate}
+        \item Cas de base: n=1
+	\item Suppose that the induction hypothesis is true ie that a tree
+	    with n vertices has n-1 edges. Show that a tree with n+1
+	    vertices has n edges
+	\item Let T be a tree with n+1 vertices. Consider the tree T' in
+	    which we remove a leaf from T (if we remove a vertice other than
+	    a leaf, then it wouldn't be a tree). Therefore,
+	    $ deg(T')=deg(T)-1 \Longleftrightarrow deg(T) = deg(T)+1 =
+	    (n-1)+1=n$
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Every tree is bipartite]
+    We can use the fact that every bipartite graph has no odd cycle. Since
+    a tree has no cycle, then the previous statement is true
+\end{theorem}
+
+\begin{remark}
+    We could also make an argument that we can color all nodes without
+    coloring two adjacent node from being the same color by making path.
+\end{remark}
+
+\begin{theorem}[Connected Graph of order n has at least n-1 edges]
+    TODO: Proof by minimum counter-example
+\end{theorem}
+
+\begin{remark}
+    The previous theorem tells us implicitly that trees are minimally
+    connected graph. In other word, the smallest connected graph we
+    can form would be a tree
+\end{remark}
+
+\begin{definition}[Forest]
+    If all the component in a graph form a tree, then we say the graph is
+    a forest.
+\end{definition}
+
+\begin{theorem}[A forest has n-k edges]
+    Let F be a forest of order n with k components. We can show that it
+    has n-k edges directly
+    \begin{enumerate}
+        \item Let $T_i$ be the component of the forest, where each tree
+	    has $n_i - 1$ edges (theorem: tree has n-1 edges)
+	\item Note that sum of vertices in all trees is the degree of the
+	    graph : $\sum T_i = n$
+	\item If we sum all edges in all trees, we get $ \sum deg(T_i)-1
+	    = n - k$
+    \end{enumerate}
+\end{theorem}
 
 \section{Optimization}
 \section{Shortest Path}
@@ -578,6 +824,7 @@ définir la terminlogie pour parler d'un graphe
 - Introduction to Graph Theory by Douglas B. West: Proofs-based book on
 graph theory
 - Combinatorics and Graph Theory - Vasudev
+- Schaum's Outline Graph Theory
 
 \end{document}
 \end{article}

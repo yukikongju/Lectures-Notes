@@ -1,0 +1,22 @@
+## Chapters - An Epistodic History of Mathematics by Steven Krangtz
+
+- [X] The Ancient Greeks
+- [ ] Zeno's Paradox and the Concept of Limit
+- [ ] The Mystical Mathematics of Hypatia
+- [ ] The Arabics and the Development of Algebra
+- [ ] Cardano, Abel, Galois, and the Solving of Equations
+- [ ] René Descartes and the Idea of Coordinates
+- [ ] The Invention of Differential Calculus
+- [ ] Complex Numbers and Polynomial
+- [ ] Sophie Germain and Fermat's Last Problem
+- [ ] Cauchy and the Foundations of Analysis
+- [ ] The Prime Numbers
+- [ ] Dirichlet and How to Count
+- [ ] Riemann and the Geometry of Surfaces
+- [ ] Georg Cantor and the Orders of Infinity
+- [ ] The Number Systems
+- [ ] Henri Poincaré, Child Prodigy
+- [ ] Sonya Kovaleskaya and machanics
+- [ ] Emmy Noether and Algebra
+- [ ] Methods of Proofs
+- [ ] Alan Turing and Cryptography

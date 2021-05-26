@@ -23,16 +23,16 @@ what I have learned.
 After watching [Aleph's how to learn pure maths](https://www.youtube.com/watch?v=fo-alw2q-BU&t=430s), [The Math Sorcerer's Learn Mathematics](https://www.youtube.com/watch?v=pTnEG_WGd2Q) , [Arongil Productions](https://www.youtube.com/watch?v=lapgPfFAgr4), [CHALK's](https://www.youtube.com/watch?v=fG7ZKdKTo6E&t=1220s), I figured the following Courses were essential to
 understand maths:
 
-1. Calculus
-2. Discrete Maths
-3. Real Analysis
-4. Linear Algebra
-5. Topology
-6. Differential Equations
-7. Complex Analysis
-8. Abstract Algebra
-9. Differential Geometry
-10. Probability
+1. Calculus: Diffential, Integral, Multivariable
+3. Discrete Maths: Logic, Set Theory, Combinatorics, Graph Theory, Algorithms
+4. Real Analysis
+5. Linear Algebra
+6. Topology
+7. Differential Equations
+8. Complex Analysis
+9. Abstract Algebra
+10. Differential Geometry
+11. Probability
 
 Undergraduates Maths Classes:
 - [X] Calculus I, II, III - MAT1400, James Cook, Professor Butler

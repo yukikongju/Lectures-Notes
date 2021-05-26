@@ -1,0 +1,41 @@
+## Chapters - Famous Problem by Insights into Mathematics
+
+- [ ] Factoring large numbers into primes
+- [ ] The Collatz conjecture (3n+1 problem)
+- [ ] Apollonius' circle construction problems
+- [ ] The Graceful Tree Conjecture
+- [ ] Omar Khayyam and the Binomial Theorem
+- [ ] Archimedes' squaring of a parabola
+- [ ] Newcomb's paradox
+- [ ] Euler's triangulation of a polygon
+- [ ] Distances to the sun and moon
+- [ ] The integral of $x^n$ (a)
+- [ ] The integral of $x^n$ (b)
+- [ ] Steiner's regions of space problem
+- [ ] Euclid's construction problems I
+- [ ] The rotation problem and Hamilton's discovery of quaternions I
+- [ ] The rotation problem and Hamilton's discovery of quaternions IV
+- [ ] Japanese Temple Problems I Famous Math Problems 14
+- [ ] Euler's relation between vertices, edges and faces of the Platonic solids 15
+- [ ] The area of a triangle and Archimedes' formula
+- [ ] Are all true mathematical statements provable?
+- [ ] The most fundamental and important problem in mathematics
+- [ ] The rational number line and irrationalities (b)
+- [ ] Stevin numbers, infinitesimals and complex numbers
+- [ ] Dedekind cuts and computational difficulties with real numbers
+- [ ] The perspective image of a square I
+- [ ] The perspective image of a square IV: the number theoretic side
+- [ ] Computing cyclotomic polynumbers
+- [ ] Irreducibility and the Schoenemann-Eisenstein criterion
+- [ ] Logical difficulties with cyclotomic fields
+- [ ] Tips and tricks for computing cyclotomic polynumbers
+- [ ] How to construct the (true) complex numbers I
+- [ ] The remarkable Dihedron algebra
+- [ ] The geometry of the Dihedrons (and Quaternions)
+- [ ] The true algebra of complex numbers - via Dihedrons!
+- [ ] How to develop a proper theory of infinitesimals I
+- [ ] Dual complex numbers and Leibniz's differentiation rules
+- [ ] An algebraic infinitesimal approach to product and chain rules
+- [ ] Infinitesimal Calculus with Finite Fields
+- [ ] How to set up fractions I
+- [ ] How to set up fractions II -- the computational challenge
