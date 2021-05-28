@@ -557,9 +557,6 @@ définir la terminlogie pour parler d'un graphe
     \end{enumerate}
 \end{remark}
 
-
-
-
 \section{Connectivity}
 
 \subsection{Overview}%
@@ -568,9 +565,9 @@ définir la terminlogie pour parler d'un graphe
 \begin{enumerate}
     \item Fundamentals of Connectivity
     \item Bridges
+    \item Minimum Spanning Trees
     \item Vertex Cuts and Connectivity
     \item Edges Cuts and Connectivity
-    \item Minimum Spanning Trees
     \item Menger Theorem
     \item Eulerian and Hamiltonians path/cycles
 \end{enumerate}
@@ -785,6 +782,235 @@ définir la terminlogie pour parler d'un graphe
 	\item If we sum all edges in all trees, we get $ \sum deg(T_i)-1
 	    = n - k$
     \end{enumerate}
+\end{theorem}
+
+\subsection{Minimum Spanning Tree}%
+\label{sub:Minimum Spanning Tree}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Un minimum spanning tree est un arbre dont le poids est minimal. Ce qu'on
+entend par un poids minimal, c'est que la somme totale de la distance entre
+chaque vertex soit minimale.
+
+\begin{theorem}[Every connected graph has a spanning tree]
+    Proof by induction: G-e is still connected
+    \begin{enumerate}
+        \item Cas de base: 0 edges -> a vertex is a tree by default
+	\item Induction Hypothesis: Suppose every connected graph of n vertices
+	    has a spanning tree. Prove that a graph of n+1 vertices has a
+	    spanning tree.
+	\item Induction Step: Let G be a connected graph with n+1 vertices and
+	    let e be an edge of the graph. G-e is still connected (e is not
+	    a bridge since it removing it doesn't disconnect the graph).
+    \end{enumerate}
+\end{theorem}
+
+\subsubsection{Algorithms to find a spanning Tree}%
+\label{ssub:}
+
+\textbf{Kruskal's Algorithm}
+
+Kruskal's Algorithm uses union-find to group similar vertices and connect these
+groups by the smallest edge
+
+TODO
+
+\textbf{Prim's Algorithm}
+
+Prim's Algorithms works by choosing a random vertex and adding connecting the
+adjacent vertices that doesn't form a cycle with the current edges set.
+
+TODO
+
+\begin{remark}
+    Since we know a spanning tree has n-1 edges, we can iterate n-1 times
+    instead of a while loop
+\end{remark}
+
+\subsection{Non-Separable Graph: Vertex and Edge Connectivity}%
+\label{sub:Vertices Cut}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+This section focusses on the relationship between vertices and connectivity.
+Specifically, we want to caracterize what makes a graph more connected than
+some others ones
+
+\begin{enumerate}
+    \item Non-Separable graph
+    \item Cut Vertices
+    \item Vertex Connectivity
+    \item Edge Connectivity
+\end{enumerate}
+
+\subsubsection{Non-Separable Graph}%
+\label{ssub:Non-Separable Graph}
+
+\begin{definition}[Non-Separable Graph]
+    A non-separable graph is a graph that is
+    \begin{enumerate}
+        \item nontrivial
+	\item connected
+	\item contains no cut vertices
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}[Caracterisation of a Non-sperable Graph]
+    A graph with at least 3 vertices is non-separable iif two vertices in
+    the graph lie on a common cycle
+\end{theorem}
+
+\begin{remark}
+    On dit qu'un graphe doit avoir au moins 3 vertices, car ``u---v`` est
+    aussi un cut vertex, mais n'a pas de cycle
+\end{remark}
+
+\subsubsection{Cut Vertices}
+
+\begin{definition}[Cut Vertices]
+    A cut vertex is a vertex of a connected graph whose deletion makes the
+    graph disconnected.
+\end{definition}
+
+\begin{theorem}[Cut Vertices are $deg(v) \geq 2$]
+    Let v be a vertex incident with a bridge in a connected graph G. Then, v
+    is a cut vertex of G iif $deg(v) \geq 2$
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}
+        \item $\Longrightarrow$: Proof by contrapositive
+	    \begin{itemize}
+		\item Let v be a vertex with deg(v)<2 = 1. Therefore, v
+		    is a end vertices, so G-v is connected. Therefore, v is
+		    not a cut vertex
+	    \end{itemize}
+        \item $\Longleftarrow$: Proof by contradiction
+	    \begin{itemize}
+		\item Suppose $deg(v) \geq 2$ is not a cut vertex, and that
+		    G-v is connected. Then, uv is a bridge
+		\item Since v is $deg(v) \geq 2$, then there is an adjacent edge
+		    let's say $vw \in E(G)$. Therefore, there is a u-w path
+		\item However, the bridge lies on a cycle, and we know that a
+		    bridge can't be a cycle, so v must not be a bridge. However,
+		    this contradicts the fact that v is not a cut vertex.
+		    TO REVIEW
+	    \end{itemize}
+    \end{enumerate}
+\end{proof}
+
+% \begin{theorem}[A cut vertex v lies on every uv path in G-v]
+    % Let v be a cut vertex of a connected graph G. Then, G-v is disconnected
+    % and has 2 components. Let u and w be vertices from the distincts components
+    % of G-v. Then, v lies on every u-w path of G-v
+% \end{theorem}
+
+\begin{theorem}[Caracterisation of Cut Vertices]
+    A vertex v of a connected graph G is a cut vertex iif there exist two
+    vertices u and w distincts from v such that v lies on every u-w path in
+    G-v
+\end{theorem}
+
+\begin{proof}
+    \begin{enumerate}
+        \item $\Longrightarrow$: Direct proof from the definition
+	    \begin{itemize}
+	        \item Let G be a connected graph and v be a cut vertex. By the
+		    definition of a cut vertex, v must be a bridge and G-v
+		    must be disconnected. Therefore, $\not\exists$ u-w path
+		    between G-v (but there is one in G)
+		\item Consequently, v must lie on every path, otherwise, there
+		    would be another path from u to w, which contradicts the
+		    fact that G-v is disconnected
+	    \end{itemize}
+	\item $\Longleftarrow$: v lies on every u-w path -> v is a cut vertex
+	    \begin{itemize}
+		\item  Let $ v \in V(G)$ such that v lies on every u-w path.
+		\item Since G is nontrivial, then $ u \neq v, v \neq w$.
+		\item Therefore, G-v is disconnected, which means that v is
+		    a bridge and that v is a cut vertex
+	    \end{itemize}
+    \end{enumerate}
+\end{proof}
+
+\begin{lemma}[Every non-trivial graph contains two vertices that are not cut
+    vertices]
+\end{lemma}
+
+\begin{theorem}[The fartest vertex from another vertex is not a cut vertex]
+    Let u be a vertex of a connected non-trivial graph G. Is v is a vertex
+    fartest from u in G, then v is not a cut vertex.
+\end{theorem}
+
+\begin{proof}
+    TODO
+\end{proof}
+
+\subsubsection{Vertex Connectivity}
+
+\begin{definition}[Vertex Cut]
+    A vertex cut is a set of vertices u, that, when removed, disconnect the
+    graph
+\end{definition}
+
+\begin{definition}[Vertex Connectivity]
+    The vertex connectivity of a connected graph is the minimum cardinality of
+    all vertex cuts. Generally, we say it is the minimum number of vertices we
+    can delete to disconnect G or to make it trivial. We say kappa of G $K(G)$
+\end{definition}
+
+\begin{definition}[K-connected Graph]
+    TODO
+\end{definition}
+
+\begin{theorem}[Bound on vertex Connectivity]
+    The minimum number of vertices needed to disconnect a graph or make it
+    trivial is bounded by $ 0 \leq K(G) \leq n-1$
+\end{theorem}
+
+\begin{intuition}
+    Intuitivement,
+    \begin{enumerate}
+        \item The graph is already disconnected, we don't need to remove a
+	    vertex to make it disconnected -> 0 vertex
+	\item The graph is complete: we need to remove n-1 vertices to make
+	    it trivial
+    \end{enumerate}
+\end{intuition}
+
+\begin{remark}[Show that graph is k-connected]
+    To show that a graph is k-connected, we have to show that the lower bound
+    is necessary and that the upper bound is sufficient.
+\end{remark}
+
+\begin{proposition}[Petersen Graph and Vertex Transitivity]
+    The Petersen Graph had a vertex connectivity of $3 \leq K(P) \leq 3$.
+    Since removing a any vertex from the graph is isomorphic to any subgraph,
+    we say the Petersen Graph is vertex transitive.
+\end{proposition}
+
+\subsubsection{Edge Connectivity}
+
+\begin{definition}[Edge Cut]
+    Similar to vertex cut, an edge cut is the set of edges X such that G-X is
+    disconnected.
+\end{definition}
+
+\begin{definition}[Edge Connectivity]
+    The edge connectivity of a graph is the minimal of edge cut needed to make
+    the graph disconnected. We write lambda $\lambda(G)$
+\end{definition}
+
+\begin{remark}
+    $\lambda(\text{ Trivial Graph }) = \lambda(\text{ Disconnected Graph }) = 0$
+\end{remark}
+
+\begin{theorem}[Edge Connectivity of a complete graph is $\lambda(K_n)=n-1$]
+    To show that $\lambda(K_n)=n-1$, we need to show that $ n-1 \leq
+    \lambda(K_n) \leq n-1$ ie that n-1 is necessary and sufficient
 \end{theorem}
 
 \section{Optimization}

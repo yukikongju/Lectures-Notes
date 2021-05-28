@@ -127,6 +127,14 @@ DISCRETE MATHS
 DIFFERENTIAL EQUATION
 ------------------------------------------------------------------------
 
+- [ ] (Houston Prep - Differential Equation) Undertermined Coefficients
+- [ ] (Houston Prep - Differential Equation) Wronskian
+- [ ] (Houston Prep - Differential Equation) Variations of parameters
+- [ ] (Houston Prep - Differential Equation) Cauchy-Euler Equations
+- [ ] (Houston Prep - Differential Equation) Laplace Transforms
+- [ ] (Houston Prep - Differential Equation) Differential Equation with Power Series
+- [ ] (Houston Prep - Differential Equation) Systems of Linear Equations with eigenvalue/eigenvector
+
 - [ ] (Differential Equations) Series of Linear Equation
 - [ ] (Differential Equations) Laplace Transforms
 - [ ] (Differential Equations) Linear Higher Order Equations
@@ -233,4 +241,8 @@ AN EPISTODIC HISTORY OF MATHEMATICS - Steven Krangtz
 - [ ] (Epistodic History of Maths) Emmy Noether and Algebra
 - [ ] (Epistodic History of Maths) Methods of Proofs
 - [ ] (Epistodic History of Maths) Alan Turing and Cryptography
+
+------------------------------------------------------------------------
+LEETCODE
+------------------------------------------------------------------------
 
