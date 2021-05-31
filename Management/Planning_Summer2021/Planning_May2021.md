@@ -85,7 +85,7 @@ Tue, 25 May 2021 00:00:03 +0000
 Wed, 26 May 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-- [ ] (Processus Stochastique) Théorie 1
+- [X] (Processus Stochastique) Théorie 1
 - [ ] (Combinatorics) Multinomial Coefficients
 - [ ] (Combinatorics) Counting and Linear Equation
 - [ ] (Combinatorics) Pigeonhole Principle
@@ -97,52 +97,49 @@ Wed, 26 May 2021 00:00:03 +0000
 Thu, 27 May 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-%% - [ ] (Differential Equations) Application of First Order Equations
 - [X] (Combinatorics) Binomial Coefficients: Symmetry, Addition,
 	Pascal Inequaltiy, Binomial Theorem, Number of Subsets,
 	Vandermonde Inequality
-	- [X] (Wrath of Maths) - Spanning Trees: Kruskal, Prim, Theorems
+- [X] (Wrath of Maths) - Spanning Trees: Kruskal, Prim, Theorems
 - [X] (Wrath of Maths) Cut Vertices
 - [X] (Wrath of Maths) Edge Cuts and Connectivity
 - [X] (Algorithms) Properties of Trees
-- [ ] (Algorithms) Graph Representation
+- [X] (Leet Code) Top Interview Questions Easy
+- [X] (Algorithms) Graph Representation
 
 ------------------------------------------------------------------------
 Fri, 28 May 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-- [ ] (Procesus Stochastique) Quiz 1
-- [ ] (Computer Graphics) Lecture 04: Drawing a Triangle and an Intro to Sampling
+- [X] (Procesus Stochastique) Quiz 1
+- [X] (Leet Code) Top Interview Questions Easy
 
 ------------------------------------------------------------------------
 Sat, 29 May 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-%% - [ ] (Differential Equations) Linear Second Order Equation
-%% - [ ] (Processus Stochastique) Théorie 2
-- [ ] (Pure Maths) Lesson 4 - Number Theory: The Ring of Integers
-- [ ] (Algorithms) Binary Trees
-- [ ] (Schaum's Differential Equation) Chapter 4: Separable First-Order Differential Equations
-- [ ] (Schaum's Differential Equation) Chapter 5: Exact First-Order Differnetial Equations
-- [ ] (Schaum's Differential Equation) Chapter 6: Linear First-Order Differential Equations
-- [ ] (Schaum's Differential Equation) Chapter 7: Applications of First Order Differential Equations
-- [ ] (Computer Graphics) Lecture 05: Spatial Transformations
+- [X] (Houston Prep - Differential Equation) Undertermined Coefficients
+- [X] (Houston Prep - Differential Equation) Wronskian
+- [X] (Houston Prep - Differential Equation) Variations of parameters
 
 ------------------------------------------------------------------------
 Sun, 30 May 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-- [ ] (Computer Graphics) Lecture 06: 3D Rotations and Complex Representations
-- [ ] (Wrath of Maths) - Menger's Theorem
-- [ ] (Wrath of Maths) - Eulerian Circuits and Path
-- [ ] (Processus Stochastique) TP
-- [ ] (Algorithms) Tree Traversal: preorder, inorder, postorder, levelorder
+- [X] (Houston Prep - Differential Equation) Cauchy-Euler Equations
+- [X] (Houston Prep - Differential Equation) Laplace Transforms
+- [X] (Wrath of Maths) - Menger's Theorem
 
 ------------------------------------------------------------------------
 Mon, 31 May 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
 %% - [ ] (Differential Equations) Application of Second Order Equations
+- [ ] (Wrath of Maths) - Menger's Theorem Proof
+- [ ] (Wrath of Maths) - Eulerian Circuits and Path
 - [ ] (Wrath of Maths) - Hamiltoninan Circuits and Path: Ore, Dirac
-- [ ] (Pure Maths) Lesson 5 - Real Analysis: The Complete Ordered Field of Reals
+- [ ] (Pure Maths) Lesson 4 - Number Theory: The Ring of Integers
+- [ ] (Algorithms) Binary Trees
+- [ ] (Processus Stochastique) TP
+- [ ] (Algorithms) Tree Traversal: preorder, inorder, postorder, levelorder
 

@@ -85,6 +85,9 @@ COMBINATORICS
 COMPUTER GRAPHICS
 ------------------------------------------------------------------------
 
+- [ ] (Computer Graphics) Lecture 04: Drawing a Triangle and an Intro to Sampling
+- [ ] (Computer Graphics) Lecture 05: Spatial Transformations
+- [ ] (Computer Graphics) Lecture 06: 3D Rotations and Complex Representations
 - [ ] (Computer Graphics) Lecture 07: Perspective Projection and Texture Mapping
 - [ ] (Computer Graphics) Lecture 08: Depth and Transparency
 - [ ] (Computer Graphics) Lecture 09: Introduction to Geometry
@@ -127,11 +130,6 @@ DISCRETE MATHS
 DIFFERENTIAL EQUATION
 ------------------------------------------------------------------------
 
-- [ ] (Houston Prep - Differential Equation) Undertermined Coefficients
-- [ ] (Houston Prep - Differential Equation) Wronskian
-- [ ] (Houston Prep - Differential Equation) Variations of parameters
-- [ ] (Houston Prep - Differential Equation) Cauchy-Euler Equations
-- [ ] (Houston Prep - Differential Equation) Laplace Transforms
 - [ ] (Houston Prep - Differential Equation) Differential Equation with Power Series
 - [ ] (Houston Prep - Differential Equation) Systems of Linear Equations with eigenvalue/eigenvector
 
@@ -145,6 +143,10 @@ DIFFERENTIAL EQUATION
 - [ ] (Differential Equations) Boundary Value Problem
 - [ ] (Differential Equations) Sturm-Liouville Theory
 
+- [ ] (Schaum's Differential Equation) Chapter 4: Separable First-Order Differential Equations
+- [ ] (Schaum's Differential Equation) Chapter 5: Exact First-Order Differnetial Equations
+- [ ] (Schaum's Differential Equation) Chapter 6: Linear First-Order Differential Equations
+- [ ] (Schaum's Differential Equation) Chapter 7: Applications of First Order Differential Equations
 - [ ] (Schaum's Differential Equation) Chapter 8: Theory of Solutions for first ODEs
 - [ ] (Schaum's Differential Equation) Chapter 9: 2nd homogeneous ODEs with constant coefficients
 - [ ] (Schaum's Differential Equation) Chapter 10: nth-order Linear homogeneous ODEs with constants coefficients
@@ -246,3 +248,21 @@ AN EPISTODIC HISTORY OF MATHEMATICS - Steven Krangtz
 LEETCODE
 ------------------------------------------------------------------------
 
+- [ ] (Colin Galen) Dynamic Programming pt 1 (4h)
+- [ ] (Colin Galen) Dynamic Programming pt 2 (3h30)
+- [ ] (Colin Galen) Trees (5h)
+- [ ] (Colin Galen) Probability and Combinatorics (4h30)
+- [ ] (Colin Galen) Constructives (3h)
+- [ ] (Colin Galen) Dynamic Progamming Optimization (5h30)
+- [ ] (Colin Galen) Graphs (6h)
+
+------------------------------------------------------------------------
+THEORY OF COMPUTATION
+------------------------------------------------------------------------
+
+- [ ] (Easy Theory) Regular Languages: DFA, NFA, Regex, Pumping Lemma (4h)
+- [ ] (Easy Theory) Context-Free Languages: CFG, PDA, Conversions, Closure,
+      Pumping Lemma (3h30)
+- [ ] (Easy Theory) Turing Machines and Decidability: TM, Variants,
+	Church-Turing, Decidability (3h)
+- [ ] (Easy Theory) Undecidability: ATM, Rice's Theorem, LBAs, EQ_CFG (2h)

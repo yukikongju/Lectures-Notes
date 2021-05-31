@@ -4,7 +4,7 @@
 Tue, 01 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-- [ ] (Pure Maths) Lesson 6 - Topology: The Topology of R
+- [ ] (Pure Maths) Lesson 5 - Real Analysis: The Complete Ordered Field of Reals
 - [ ] (Algorithms) Self Balancing Trees: AVL Trees, Red-Black Trees, B-Trees
 - [ ] (Graph Theory) Directed Graph
 
@@ -13,6 +13,7 @@ Wed, 02 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
 - [ ] (Algorithms) Minimum Spanning Tree: Union Find, Prim's, Kruskal
+- [ ] (Pure Maths) Lesson 6 - Topology: The Topology of R
 
 ------------------------------------------------------------------------
 Thu, 03 Jun 2021 00:00:03 +0000

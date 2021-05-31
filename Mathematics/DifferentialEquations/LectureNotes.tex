@@ -608,7 +608,7 @@ de 2e ordre
 \begin{enumerate}
     \item Reduction of Order: substitution pour réduire rendre le ODE 2nd
 	à un 1rst ODE
-    \item
+    \item The method of undetermined coefficients.
 \end{enumerate}
 
 Il faut aussi se souvenir du concept de combinaison linéaire: on peut
@@ -693,10 +693,154 @@ si $ m = \alpha \pm \beta i$, alors la solution générale est
 $$ y = e^ {\alpha x} (c_1 cos(\beta x) + c_2 sin(\beta x)) $$
 
 \subsection{The method of undetermined coefficients.}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+La méthode undertermined coefficients nous permet de résoudre des équations
+différentielles non-homogène en additionnant la solution complémentaire et
+la solution particulière. On veut résoudre $ ay''+by'+cy=g(x)$
+
+\subsubsection{Étapes de résolution}%
+\label{ssub:Étapes de résolution}
+
+Notons que la solution générale est donnée par $ y= y_c + y_p$, où $y_c$ est
+la solution complémentaire trouvée en résolvant l'équation homogène et
+$y_p$ est l'équation particulière trouvée en résolvant TODO. Notons que
+l'ensemble de solutions fondamental doit être linéairement indépendant.
+
+\begin{enumerate}
+    \item Trouver la solution complémentaire: $y_p = c_1 e^{m_1 x} + c_2 e^{m_2 x}$ (ou autre dépendemment des valeurs de m)
+	\begin{itemize}
+	    \item Résoudre le polynôme caractéristique: $ am^2+bm+c=0$
+		(donné par la solution homogène: $ ay''+by'+cy=g(x)$)
+		pour obtenir $m_1$ et $m_2$
+	    \item Remplacer $m_1, m_2$ pour obtenir $y_c$
+	\end{itemize}
+    \item Trouver la solution particulière en s'assurant de poser $y_p$
+	linéairement indépendant
+	\begin{itemize}
+	    \item Poser $y_p$ et trouver ses dérivées première et deuxième
+	    \item Remplacer dans l'équation initiale $ ay''+by'+cy=g(x)$
+	    \item Résoudre le système pour obtenir la valeur de A
+	\end{itemize}
+\end{enumerate}
+
+\subsubsection{Types de problèmes}%
+\label{ssub:Types de problèmes}
+
+Comme pour la méthode à coefficients déterminé, il y a 3 types de solutions:
+\begin{enumerate}
+    \item Distinct Real Root
+    \item Repeated Real Root
+    \item Complex Roots
+\end{enumerate}
+
 \subsection{Simple harmonic motion.}
 \subsection{Damped and driven harmonic motion.}
 \subsection{Variation of parameters.}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+La méthode de variation de paramètres est utilisée pour résoudre des
+équations non-homogène $ ay''+by'+cy=g(x)$. Essentiellement, c'est une
+méthode qui combine à la fois la règle de Cramer et la méthode d'ordre
+de réduction en utilisant les "Wronskian" pour évaluer les déterminants
+
+\subsubsection{Étapes de Résolution}%
+\label{ssub:Étapes de Résolution}
+
+Encore une fois, on trouve la solution générale en additionnant la
+solution complémentaire et la solution particulière: $y=y_c+y_p$
+
+\begin{enumerate}
+    \item Trouver la solution complémentaire en résolvant l'équation
+	homogène: $ay''+by'+cy=0 \Longrightarrow am^2+bm+c=0$
+	\begin{itemize}
+	    \item Résoudre le polynôme caractéristique: $ay''+by'+cy=0 \Longrightarrow am^2+bm+c=0$
+	    \item $y_c = c_1 (...) + c_2 (...)$ (dépendemment du type de
+		solution homogène)
+	\end{itemize}
+    \item Trouver la solution particulière: $ y_p = u_1 y_1 + u_2 y_2$
+	\begin{itemize}
+	    \item Trouver $y_1$ et $y_2$ à partir de la solution
+		complémentaire
+	    \item Construire la Wronskian : $w, w_1, w_2$ à l'aide de la
+		règle de Cramer
+		$$ w = \begin{vmatrix}
+		    y_1 & y_2\\
+		    y_1' & y_2'\\
+		\end{vmatrix}$$
+		$$ w_1 = \begin{vmatrix}
+		    0 & y_2\\
+		    g(x) & y_2'\\
+		\end{vmatrix}$$
+		$$ w_2 = \begin{vmatrix}
+		    y_1 & 0\\
+		    y_1' & g(x)\\
+		\end{vmatrix}$$
+	    \item Calculer $u_1 ' et u_2 '$: $u_1'=\frac{w_1}{w}$,
+		$u_2'=\frac{w_2}{w}$
+	    \item Intégrer $u_1$ et $u_2$ pour obtenir $u_1$ et $u_2$
+	\end{itemize}
+    \item La solution générale: $y=y_c+y_p$
+\end{enumerate}
+
+\begin{remark}
+    Si $a \neq 1$, on n'a qu'à diviser $\frac{g(x)}{a}$
+\end{remark}
+
 \subsection{Cauchy-Euler equations.}
+
+\subsubsection{Overview}%
+\label{ssub:Overview}
+
+Les équations de Cauchy-Euler sont des équations différentielles qui
+peuvent être homogène ou non-homogène. La méthode de résolution dépend
+de la forme de l'équation différentielle:
+\begin{enumerate}
+    \item homogène: poser $y=m^x$
+    \item inhomogène: utiliser la wronskian
+\end{enumerate}
+
+\subsubsection{Homogeneous Cauchy-Euler Equations}%
+\label{ssub:Cauchy-Euler Equations}
+
+On peut résoudre une équation Cauchy-Euler homogène en posant $y=x^m$,
+$y'=m x^{m-1}$, $y''=m (m-1) x^{m-2}$. En remplacant dans l'équation
+homogène $a^2xy''+bxy'+cy=0$, on obtient
+$$ax^2 [m(m-1)x^{m-2}]+bx[mx^{m-1}]+cx^m=0$$
+$$x^m (am^2+(b-a)m+c)=0$$
+et on n'a qu'à résoudre le polynôme caractéristique $ (am^2+(b-a)m+c)$
+pour obtenir la solution $y=c_1 x^{m_1}+c_2 x^{m_2}$
+
+Types de solutions:
+\begin{enumerate}
+    \item Solutions réelles différentes: $y=c_1 x^{m_1}+c_2 x^{m_2}$
+    \item Solution réelle unique: $y = c_1 x^m + c_2 x^m ln|x|$
+    \item Solution complexe: $y= c_1 x^\alpha cos(\beta ln|x|)
+	+ c_2 x^\alpha sin(\beta ln|x|)$
+\end{enumerate}
+
+\subsubsection{Inhomogeneous Cauchy-Euler Equations}%
+\label{ssub:Cauchy-Euler Equations}
+
+Pour résoudre des équations de Cauchy-Euler non-homogène
+$a^2xy''+bxy'+cy=g(x)$, on utilise les Wronskian
+$$ w = \begin{vmatrix}
+    y_1 & y_2\\
+    y_1' & y_2'\\
+\end{vmatrix}$$
+$$ w_1 = \begin{vmatrix}
+    0 & y_2\\
+    \frac{g(x)}{ax^2}  & y_2'\\
+\end{vmatrix}$$
+$$ w_2 = \begin{vmatrix}
+    y_1 & 0\\
+    y_1' & \frac{g(x)}{ax^2} \\
+\end{vmatrix}$$
+
 \subsection{Power series solutions.}
 \subsection{The method of Frobenius.}
 

@@ -89,3 +89,16 @@
 ## Resources
 
 - Table of Contents: https://ocw.mit.edu/courses/mathematics/18-404j-theory-of-computation-fall-2006/readings/readings.pdf
+- Easy Theory
+    - Regular Languages
+    - Deterministic Finite Automatas
+    - Nondeterministic Finite Automatas
+    - Regular Expressions
+    - Pumping Lemmas
+    - Context-Free Languages
+    - Context-Free Grammar
+    - Chomsky Nomral Form
+    - Pushdown Automatas
+    - Decidable Languages
+    - Turing Machine
+    - Undecidable Languages

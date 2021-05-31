@@ -844,6 +844,7 @@ some others ones
     \item Cut Vertices
     \item Vertex Connectivity
     \item Edge Connectivity
+    \item Menger's Theorem
 \end{enumerate}
 
 \subsubsection{Non-Separable Graph}%
@@ -1012,6 +1013,72 @@ some others ones
     To show that $\lambda(K_n)=n-1$, we need to show that $ n-1 \leq
     \lambda(K_n) \leq n-1$ ie that n-1 is necessary and sufficient
 \end{theorem}
+
+\subsection{Menger's Theorem}%
+\label{sub:Menger's Theorem}
+
+\begin{definition}[Vertex Separating Sets]
+    Let S be a vertex cut of G and let u and v be verteices fronc distincts
+    components of G-S. Then S s a u-v separating sets. A minimum
+    vertex separating set is the minimum of vertex we have to remove to
+    disconnect vertices u and v.
+\end{definition}
+
+\begin{remark}[A vertex separating set is not unique]
+\end{remark}
+
+\begin{proposition}
+    If S is a u-v separating set, then $|S| \geq K(G)$
+\end{proposition}
+
+\begin{definition}[Vertex Disjoints Paths]
+    Let $P_1$ and $P_2$ be paths in the graph G. We say $P_1$ and $P_2$
+    are vertex disjoints path if these paths do not have vertex in common.
+    We say $P_1$ and $P_2$ are internally disjoints if only their start
+    and end vertices are the same
+\end{definition}
+
+\begin{proposition}
+    \begin{enumerate}
+	\item Example of disjoint path: $P_1={a,b,c,d}, P_2={f,g,e}$
+	\item Example of internal disjoint path: $P_1={a,e,f,t,b},
+	    P_2={a,g,h,b}$
+    \end{enumerate}
+\end{proposition}
+
+\begin{theorem}[If two paths are vertex disjoints, then they are edges
+    disjoints]
+\end{theorem}
+
+\begin{intuition}
+    Si 2 chemins ne partagent pas les mêmes noeuds, alors ils ne peuvent
+    pas avoir les mêmes arrêtes, car ils faut passer par les mêmes noeuds
+    pour avoir les mêmes arrêtes
+\end{intuition}
+
+\begin{theorem}[Menger's Theorem]
+    Let u and v be non-adjacent vertices in a graph G. Then minimum number
+    of vertices in a u-v separating set is equal to the maximum number
+    of internally disjoint u-v path in G.
+\end{theorem}
+
+\begin{intuition}
+    "If we need to remove a minimum of 3 vertices, then there must be 3
+    internal disjoint paths." There shouldn't be less, otherwise removing
+    the 3rd wouldn't make the u-v path disjoint, which contradict the
+    definition of separating set. There shouldn't be less because there
+    wouldn't be enough path to remove
+\end{intuition}
+
+\begin{remark}
+    The Menger's Theorem tells us that is we know the minimum vertex
+    separating set, then we know the cardinality of the internal disjoints
+    sets without having to find them.
+\end{remark}
+
+\begin{proof}[Proof for Menger's Theorem]
+    TODO
+\end{proof}
 
 \section{Optimization}
 \section{Shortest Path}
