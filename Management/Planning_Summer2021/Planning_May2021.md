@@ -127,19 +127,19 @@ Sun, 30 May 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
 - [X] (Houston Prep - Differential Equation) Cauchy-Euler Equations
-- [X] (Houston Prep - Differential Equation) Laplace Transforms
+- [X] (Houston Prep - Differential Equation) Laplace Transforms (intro)
 - [X] (Wrath of Maths) - Menger's Theorem
 
 ------------------------------------------------------------------------
 Mon, 31 May 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-%% - [ ] (Differential Equations) Application of Second Order Equations
-- [ ] (Wrath of Maths) - Menger's Theorem Proof
-- [ ] (Wrath of Maths) - Eulerian Circuits and Path
-- [ ] (Wrath of Maths) - Hamiltoninan Circuits and Path: Ore, Dirac
-- [ ] (Pure Maths) Lesson 4 - Number Theory: The Ring of Integers
-- [ ] (Algorithms) Binary Trees
-- [ ] (Processus Stochastique) TP
-- [ ] (Algorithms) Tree Traversal: preorder, inorder, postorder, levelorder
+- [X] (Schaum's Differential Equation) Chapter 4: Separable First-Order Differential Equations (part 1)
+- [X] (Schaum's Differential Equation) Chapter 5: Exact First-Order Differnetial Equations (part 1)
+- [X] (Schaum's Differential Equation) Chapter 6: Linear First-Order Differential Equations (part 1)
+- [X] (Schaum's Differential Equation) Chapter 7: Applications of First Order Differential Equations (part 1)
+- [X] (Schaum's Differential Equation) Chapter 8: Theory of Solutions for first ODEs (part 1 and 2)
+- [X] (Easy Theory) Regular Languages: Introduction, DFA, RL set operations
+- [X] (Algorithms) Binary Trees
+- [X] (Processus Stochastique) TP
 

@@ -4,23 +4,37 @@
 Tue, 01 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-- [ ] (Pure Maths) Lesson 5 - Real Analysis: The Complete Ordered Field of Reals
-- [ ] (Algorithms) Self Balancing Trees: AVL Trees, Red-Black Trees, B-Trees
-- [ ] (Graph Theory) Directed Graph
+- [X] (Wrath of Maths) - Menger's Theorem Proof
+- [X] (Schaum's Differential Equation) Chapter 9: 2nd homogeneous ODEs with constant coefficients
+- [X] (Schaum's Differential Equation) Chapter 10: nth-order Linear homogeneous ODEs with constants coefficients (part 1)
+- [X] (Schaum's Differential Equation) Chapter 11: Method of undertermined coefficients (part 1)
+- [X] (Schaum's Differential Equation) Chapter 12: Variations of Parameters (part 1)
+- [X] (Schaum's Differential Equation) Chapter 13: IVP for Linear ODE (part 1)
 
 ------------------------------------------------------------------------
 Wed, 02 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-- [ ] (Algorithms) Minimum Spanning Tree: Union Find, Prim's, Kruskal
-- [ ] (Pure Maths) Lesson 6 - Topology: The Topology of R
+- [X] (Processus Stochatique) Théorie 1
+- [X] (Schaum's Graph Theory) Chapter 1: Graphs and Digraphs: Introduction, Isomorpphism
+- [X] (Schaum's Differential Equation) Chapter 11: Method of undertermined coefficients (part 2)
+- [X] (Schaum's Differential Equation) Chapter 12: Variations of Parameters (part 2)
+- [X] (Pure Maths) Lesson 4 - Number Theory: The Ring of Integers
+- [X] (Wrath of Maths) - Eulerian Circuits and Path
 
 ------------------------------------------------------------------------
 Thu, 03 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-- [X] (Algorithms) Heaps
-- [ ] (Algorithms) Dynamic Programming FreeCodeCamp
+- [ ] (Pure Maths) Lesson 5 - Real Analysis: The Complete Ordered Field of Reals
+- [ ] (Pure Maths) Lesson 6 - Topology: The Topology of R
+- [ ] (Wrath of Maths) - Hamiltoninan Circuits and Path: Ore, Dirac
+- [ ] (Wrath of Maths) - Directed Graphs
+- [ ] (Algorithms) Tree Traversal: preorder, inorder, postorder, levelorder
+- [ ] (Algorithms) Self Balancing Trees: AVL Trees, Red-Black Trees, B-Trees
+- [ ] (Algorithms) Minimum Spanning Tree: Union Find, Prim's, Kruskal
+- [ ] (Houston Prep - Differential Equation) Laplace Transforms
+- [ ] (Graph Theory) Directed Graph
 
 ------------------------------------------------------------------------
 Fri, 04 Jun 2021 00:00:03 +0000
@@ -28,6 +42,7 @@ Fri, 04 Jun 2021 00:00:03 +0000
 
 - [ ] (Pure Maths) Lesson 7 - Complex Analysis: The Field of Complex Numbers
 - [ ] (Algorithms) Huffman Code
+- [ ] (Algorithms) Dynamic Programming FreeCodeCamp
 
 ------------------------------------------------------------------------
 Sat, 05 Jun 2021 00:00:03 +0000

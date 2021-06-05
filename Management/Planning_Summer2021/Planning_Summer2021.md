@@ -28,7 +28,7 @@ REAL ANALYSIS
 - [ ] (Aksoy Real Analysis) Chapter 3: Sequences
 - [ ] (Aksoy Real Analysis) Chapter 4: Limits of Functions
 - [ ] (Aksoy Real Analysis) Chapter 5: Continuity
-- [ ] (Aksoy Real Analysis) Chapter 6: Diffenretiability
+- [ ] (Aksoy Real Analysis) Chapter 6: Differentiability
 - [ ] (Aksoy Real Analysis) Chapter 7: integration
 - [ ] (Aksoy Real Analysis) Chapter 8: Series
 - [ ] (Aksoy Real Analysis) Chapter 9: Metric Spaces
@@ -122,7 +122,7 @@ DISCRETE MATHS
 - [ ] (Schaum's Discrete Math) Chapter 10: Binary Trees
 - [ ] (Schaum's Discrete Math) Chapter 11: Properties of the Integers
 - [ ] (Schaum's Discrete Math) Chapter 12: Languages, Automata, Gramars
-- [ ] (Schaum's Discrete Math) Chapter 13: Fininte State Machines and Turing Machines
+- [ ] (Schaum's Discrete Math) Chapter 13: Finite State Machines and Turing Machines
 - [ ] (Schaum's Discrete Math) Chapter 14: Ordered Set and Latices
 - [ ] (Schaum's Discrete Math) Chapter 15: Boolean Algebra
 
@@ -148,7 +148,7 @@ DIFFERENTIAL EQUATION
 - [ ] (Schaum's Differential Equation) Chapter 6: Linear First-Order Differential Equations
 - [ ] (Schaum's Differential Equation) Chapter 7: Applications of First Order Differential Equations
 - [ ] (Schaum's Differential Equation) Chapter 8: Theory of Solutions for first ODEs
-- [ ] (Schaum's Differential Equation) Chapter 9: 2nd homogeneous ODEs with constant coefficients
+- [X] (Schaum's Differential Equation) Chapter 9: 2nd homogeneous ODEs with constant coefficients
 - [ ] (Schaum's Differential Equation) Chapter 10: nth-order Linear homogeneous ODEs with constants coefficients
 - [ ] (Schaum's Differential Equation) Chapter 11: Method of undertermined coefficients
 - [ ] (Schaum's Differential Equation) Chapter 12: Variations of Parameters
@@ -158,7 +158,7 @@ DIFFERENTIAL EQUATION
 - [ ] (Schaum's Differential Equation) Chapter 16: e^At
 - [ ] (Schaum's Differential Equation) Chapter 17: Reduction of Linear Differential Equations to a system of first ODEs
 - [ ] (Schaum's Differential Equation) Chapter 18: Graphical and Numerical Method for Solving First-order ODEs
-- [ ] (Schaum's Differential Equation) Chapter 19: Furturher Numerical Methods for solving first-order differential equations
+- [ ] (Schaum's Differential Equation) Chapter 19: Further Numerical Methods for solving first-order differential equations
 - [ ] (Schaum's Differential Equation) Chapter 20: Numerical Methods for solving second-order ODEs via systems
 - [ ] (Schaum's Differential Equation) Chapter 21: Laplace Transform
 - [ ] (Schaum's Differential Equation) Chapter 22: Inverse Laplace Transforms
@@ -166,7 +166,7 @@ DIFFERENTIAL EQUATION
 - [ ] (Schaum's Differential Equation) Chapter 24: Solutions of Linear Differential Equations with Constant Coefficients
 - [ ] (Schaum's Differential Equation) Chapter 25: Solutions of Linear Systems by Laplace Transforms
 - [ ] (Schaum's Differential Equation) Chapter 26: Solutions of Linear Differential Equations with constant coefficient by matrix method
-- [ ] (Schaum's Differential Equation) Chapter 27: Pwer Series Solutions of Linear Differential Equations
+- [ ] (Schaum's Differential Equation) Chapter 27: Power Series Solutions of Linear Differential Equations
 - [ ] (Schaum's Differential Equation) Chapter 28: Series Solutions Near a Regular Singular Point
 - [ ] (Schaum's Differential Equation) Chapter 29: Some Classical Differential Equations
 - [ ] (Schaum's Differential Equation) Chapter 30: Gamma and Bessel Functions

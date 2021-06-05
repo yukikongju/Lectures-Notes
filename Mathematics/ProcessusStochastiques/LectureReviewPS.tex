@@ -166,7 +166,7 @@ Notons que si une chaine de Markov à un état absorbant, il est fort
 probable qu'il y ait plusieurs états absorbant et qu'on puisse observer
 un pattern.
 
-\subsection{TP}
+\subsection{TP 1 - Rappel Probabilités et Chaines de Markov en Temps Discret}
 
 Cette semaine, le TP se penchait sur 2 sujets:
 \begin{enumerate}
@@ -360,7 +360,7 @@ les conditions suivantes:
 On dit qu'une matrice est irréductible si tous les états communiquent
 entre elles. Autrement dit, tous les états forment une seule classe.
 
-\subsection{TP}
+\subsection{TP 2 - Classification des états}
 
 Le TP de cette semaine se penchait sur 2 buts:
 \begin{enumerate}
@@ -598,19 +598,45 @@ TODO
 \subsection*{Big Idea}
 \subsection*{Outline}
 \begin{enumerate}
-    \item
-    \item
-    \item
+    \item Théorème de Convergence
+    \item Début du Théorème Ergodique
 \end{enumerate}
 \subsection{Théorie 2}
-\subsection*{Big Idea}
-\subsection*{Outline}
+
+Quiz 1
+
+\subsection{TP 3 - Distribution Stationnaire}
+
+Le TP 3 portait sur les distributions stationnaires et sur la classification
+des classes
+
 \begin{enumerate}
-    \item
-    \item
-    \item
+    \item Représenter le graphe associé pour classifier les états et déterminer
+	si la classe est irréductible
+    \item Déterminer la lois stationnaire
 \end{enumerate}
-\subsection{TP}
+
+\subsection{Représenter le graphe associé pour classifier les états}
+
+Il faut se souvenir des justifications suivantes:
+\begin{enumerate}
+    \item Apériodique: pgcd=1 (à cause des boucles s'il y en a)
+    \item Réccurente: $P_{ii}=1$: La probabilité de retour est certaine
+    \item Irréductible: La CM finie forme une unique classe + thm: CM finie a
+	au moins une classe récurrente.
+\end{enumerate}
+
+\subsection{Déterminer la/les lois stationnaires}
+
+La loi stationnaire se trouve en résolvant $ \pi = \pi \cdot P$ et
+$\sum \pi _i =1$
+
+Par contre, il faut se souvenir que s'il y a plusieurs classes récurrentes,
+alors la loi n'est pas unique et dépend de la classe de départ. Si l'état de
+départ est un état transitoire, alors on doit considérer qu'on a autant de
+chance d'aller dans un état transitoire qu'un autre. Par contre, si on commence
+dans un état récurrente, il faut considérer qu'on ne reste qu'à l'intérieur de
+cette classe.
 
 \pagebreak
 \section{Semaine 5}
@@ -618,11 +644,77 @@ TODO
 \subsection*{Big Idea}
 \subsection*{Outline}
 \begin{enumerate}
-    \item
-    \item
-    \item
+    \item Retour sur le Théorème de Convergence
+    \item Details sur le Théorème Ergodique
+    \item Théorème 3: Combinaison Théorème Convergence et Ergodique
 \end{enumerate}
+
+\subsection{Retour sur le Théorème de Convergence}
+
+\subsection{Théorème de Convergence}%
+\label{sub:Théorème de Convergence}
+
+Le théorème de convergence nous dit que si une chaine de Markov est
+irréductible et apériodique, alors $\lim_{n \to \infty} P_{ij} ^{(n)} =
+\pi _j$. En d'autres mots, si la CM est irréductible et apériodique,
+alors la proportion du temps passé dans chaque état est donné par la
+distribution stationnaire (si elle existe)
+
+\subsubsection{Importance des hypothèses du Théorème de Convergence}%
+\label{ssub:Importance des hypothèses du Théorème de Convergence}
+
+On s'est aussi penché sur l'importance des hypothèses du théorème de
+convergence
+\begin{enumerate}
+    \item Irréductible: Si la CM n'est pas irréductible, alors $i \not\to j$
+	et $P_ij >0$, ce qui contredit le fait que la probabilité de
+	retour soit de 1
+    \item Apériodique: Si la CM est périodique (pgcd $I_n>1$), alors
+	la limite ne pourrait ne pas exister, car la suite est alternée
+    \item Existence de la distribution stationnaire
+\end{enumerate}
+
+\subsection{Details sur le Théorème Ergodique}
+
+\subsubsection{Théorème Ergodique}%
+\label{ssub:Théorème Ergodique}
+
+Le théorème Ergodique dit que pour une chaine de Markov irréductible,
+CM admet une distribution stationnaire $\Longleftrightarrow$ elle est
+récurrente positive, et
+$$ \mathbb{E} [T_j] = \frac{1}{\pi _j} $$
+
+En d'autres mots, on est capable d'estimer l'espérance du nombre d'étapes
+pour retourner à l'état i à l'aide de la distribution stationnaire d'une
+chaine de Markov est irréductible et est récurrente positive. On est
+donc capable de calculer l'espérance de premier retour sans avoir la
+distribution de $T_j$
+
+Plus généralement, si CM irréductible, alors
+$$ \text{ Existence de $\pi$ } \Longleftrightarrow \text{Récurrente positive et } \mathbb{E} [T_j] = \frac{1}{\pi _j} $$
+
+\begin{remark}[Récurrente positive vs Récurrente nulle]
+    \begin{enumerate}
+	\item CM positive: $\mathbb{E} [T_j]<\infty$
+	\item CM nulle: $\mathbb{E} [T_j]=\infty$
+    \end{enumerate}
+\end{remark}
+
+\subsection{Théorème 3: Combinaison Théorème Convergence et Ergodique}
+
+Le théorème 3 est la combinaison du théorème de convergenve et du théorème
+ergodique. Si les hypothèses des théorèmes 1 et 2 sont respectées (ie
+irréductible et ergodique: apériodique et réccurente), alors la
+loi stationnaire existe et est unique, et on a
+$$ \pi _j = \lim_{n \to \infty} P_{ij}^{(n)} = \frac{1}{\mathbb{E} [T_j]} $$
+
+\subsubsection{Marche Aléatoire Réfléchie}%
+\label{ssub:Marche Aléatoire Réfléchie}
+
+TODO
+
 \subsection{Théorie 2}
+ICI
 \subsection*{Big Idea}
 \subsection*{Outline}
 \begin{enumerate}
@@ -630,7 +722,7 @@ TODO
     \item
     \item
 \end{enumerate}
-\subsection{TP}
+\subsection{TP 4 - Théorèmes de Convergence et Ergodique}
 
 \pagebreak
 \section{Semaine 6}
@@ -650,7 +742,7 @@ TODO
     \item
     \item
 \end{enumerate}
-\subsection{TP}
+\subsection{TP 5 - Marche aléatoire et Processus de Poisson}
 
 \pagebreak
 \section{Semaine 7}
@@ -670,7 +762,7 @@ TODO
     \item
     \item
 \end{enumerate}
-\subsection{TP}
+\subsection{TP  }
 
 \pagebreak
 \section{Semaine 8}
