@@ -23,9 +23,9 @@ More:
 REAL ANALYSIS
 ------------------------------------------------------------------------
 
-- [ ] (Aksoy Real Analysis) Chapter 1: Elementary Logic and Set Theory
-- [ ] (Aksoy Real Analysis) Chapter 2: Real Numbers
-- [ ] (Aksoy Real Analysis) Chapter 3: Sequences
+- [X] (Aksoy Real Analysis) Chapter 1: Elementary Logic and Set Theory
+- [X] (Aksoy Real Analysis) Chapter 2: Real Numbers
+- [X] (Aksoy Real Analysis) Chapter 3: Sequences
 - [ ] (Aksoy Real Analysis) Chapter 4: Limits of Functions
 - [ ] (Aksoy Real Analysis) Chapter 5: Continuity
 - [ ] (Aksoy Real Analysis) Chapter 6: Differentiability
@@ -130,6 +130,7 @@ DISCRETE MATHS
 DIFFERENTIAL EQUATION
 ------------------------------------------------------------------------
 
+- [ ] (Houston Prep - Differential Equation) Laplace Transforms
 - [ ] (Houston Prep - Differential Equation) Differential Equation with Power Series
 - [ ] (Houston Prep - Differential Equation) Systems of Linear Equations with eigenvalue/eigenvector
 
@@ -151,7 +152,7 @@ DIFFERENTIAL EQUATION
 - [X] (Schaum's Differential Equation) Chapter 9: 2nd homogeneous ODEs with constant coefficients
 - [ ] (Schaum's Differential Equation) Chapter 10: nth-order Linear homogeneous ODEs with constants coefficients
 - [ ] (Schaum's Differential Equation) Chapter 11: Method of undertermined coefficients
-- [ ] (Schaum's Differential Equation) Chapter 12: Variations of Parameters
+- [X] (Schaum's Differential Equation) Chapter 12: Variations of Parameters
 - [ ] (Schaum's Differential Equation) Chapter 13: IVP for Linear ODE
 - [ ] (Schaum's Differential Equation) Chapter 14: Applications of 2nd Linear ODEs
 - [ ] (Schaum's Differential Equation) Chapter 15: Matrices
@@ -185,6 +186,9 @@ GRAPH THEORY
 
 starting from wrath of maths 112
 
+- [ ] (Wrath of Maths) - Hamiltoninan Circuits and Path: Ore, Dirac
+- [ ] (Wrath of Maths) - Directed Graphs
+
 - [ ] (Schaum's Graph Theory) Chapter 1: Graphs and Digraphs
 - [ ] (Schaum's Graph Theory) Chapter 2: Connectivity
 - [ ] (Schaum's Graph Theory) Chapter 3: Eulerian and Hamiltonian Graphs
@@ -194,6 +198,14 @@ starting from wrath of maths 112
 - [ ] (Schaum's Graph Theory) Chapter 7: Matchings and Factors
 - [ ] (Schaum's Graph Theory) Chapter 8: Graphs Embedding
 - [ ] (Schaum's Graph Theory) Chapter 9: Coloring of graphs
+
+
+
+- [ ] (Graph Theory) Matching: Bipartite, Hall's Marriage
+- [ ] (Graph Theory) - Graph Decomposition
+- [ ] (Graph Theory) - Planar Graph
+- [ ] (Graph Theory) - Chromatic Number
+- [ ] (Graph Theory) - Clique
 
 ------------------------------------------------------------------------
 NUMBER THEORY
@@ -219,7 +231,15 @@ PROCESSUS STOCHASTIQUE
 PURE MATHS
 ------------------------------------------------------------------------
 
-everything-scheduled
+- [X] (Pure Maths) Lesson 8 - Linear Algebra: Vector Spaces
+- [X] (Pure Maths) Lesson 9 - Logic: Logical Arguments
+- [ ] (Pure Maths) Lesson 10 - Set Theory: Relations and Functions
+- [ ] (Pure Maths) Lesson 11 - Abstract Algebra: Strucutres and Homomorphisms
+- [ ] (Pure Maths) Lesson 12 - Number Theory: Primes, GCD, and LCM
+- [ ] (Pure Maths) Lesson 13 - Real Analysis: Limits and Continuity
+- [ ] (Pure Maths) Lesson 14 - Topology: Spaces and Homeomorphisms
+- [ ] (Pure Maths) Lesson 15 - Complex Analysis: Complex Valued Functions
+- [ ] (Pure Maths) Lesson 16 - Linear Algebra: Linear Transformations
 
 ------------------------------------------------------------------------
 AN EPISTODIC HISTORY OF MATHEMATICS - Steven Krangtz
@@ -255,6 +275,18 @@ LEETCODE
 - [ ] (Colin Galen) Constructives (3h)
 - [ ] (Colin Galen) Dynamic Progamming Optimization (5h30)
 - [ ] (Colin Galen) Graphs (6h)
+
+- [ ] (Algorithms) Tree Traversal: preorder, inorder, postorder, levelorder
+- [ ] (Algorithms) Self Balancing Trees: AVL Trees, Red-Black Trees, B-Trees
+- [ ] (Algorithms) Minimum Spanning Tree: Union Find, Prim's, Kruskal
+- [ ] (Algorithms) Graph Traversal: Depth-First Search, Breadth-First Search
+- [ ] (Algorithms) Shortest Path: Dijkstra's, Bellman-Ford
+- [ ] (Algorithms) Find all Shortest Path: Floyd-Warshall, Johnson
+- [ ] (Algorithms) Lowest Common Ancestor
+- [ ] (Algorithms) Huffman Code
+- [ ] (Algorithms) Dynamic Programming FreeCodeCamp
+- [ ] (Algorithms) Menger's Theorem, Whitney's Theorem
+- [ ] (Algorithms) Kosaraju's algorithm
 
 ------------------------------------------------------------------------
 THEORY OF COMPUTATION

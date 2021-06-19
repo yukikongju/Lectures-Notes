@@ -51,6 +51,10 @@ From Douglas West Introduction to Graph Theory
 ## Edges and Cycles
 
 
+From Schaum's Graph Theory
+
+
+
 # Ressources - Books
 
 - Schaum's Discrete Maths

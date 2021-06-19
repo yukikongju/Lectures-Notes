@@ -711,41 +711,248 @@ $$ \pi _j = \lim_{n \to \infty} P_{ij}^{(n)} = \frac{1}{\mathbb{E} [T_j]} $$
 \subsubsection{Marche Aléatoire Réfléchie}%
 \label{ssub:Marche Aléatoire Réfléchie}
 
-TODO
+Une marche aléatoire réfléchie est représentée par la fonction suivante:
+\[
+    p_{ij} = \begin{cases}
+	\text{p} &\quad\text{ if j=i+1 }\\
+	\text{1-p} &\quad\text{ if j=i-1 et $p_{0,1}$ = 1}\\
+	\text{0} &\quad\text{ otherwise }\\
+    \end{cases}
+\]
+
+Ainsi, on peut représenter la marche aléatoire par une somme de Bernouilli
+(variable indicatrice): $ X_n = X_0 + Y_1 + ... + Y_n$. En divisant par
+le nombre d'essais n de chaque côté, on obtient
+$\frac{X_n}{n} = \frac{X_0}{n} + \frac{Y_1 + ...+Y_n}{n} $
+
+Or, puisque l'état initial est une constante, $\lim_{n \to \infty} \frac{X_0}{n} =0$, alors que $ \frac{Y_1 + ...+Y_n}{n} = E[Y_1] = 1(p) + (1-p)(-1) = 2p-1 $. Ainsi, $X_n ~ (2p-1) \cdot n$
+
+On obtient donc 2 cas:
+\begin{enumerate}
+    \item $2p-1>0: p>1/2$: on a $\lim_{n \to \infty} X_n ~ (2p-1) \cdot n = \infty $: puisque $x_n$ tend vers l'infini, il existe un $n_0$ après lequel
+	on ne revient jamais vers l'état de départ (définition
+	topologique de la limite à l'infini). \\ $\Longleftrightarrow$
+	Ainsi, puisque la probabilité de non-retour n'est pas 1, l'état
+	i est transient.\\ $\Longleftrightarrow$ Puisque la CM est
+	irréductible, alors la classe est transiente\\
+	$\Longleftrightarrow$ la probabilité stationnaire n'existe pas
+	(théorème ergodique)
+    \item $2p-1<0: p<1/2$: $\lim_{n \to \infty} X_n ~ (2p-1) \cdot n = -\infty $: par définition topologique de la limite à moins l'infini, il
+	existe un $n_0$ pour lequel on ne peut pas dépasser. Ainsi,
+	la probabilité de retour est de 1. Donc, l'état est récurrent.
+	Il ne reste juste qu'à vérifier si la probabilité stationnaire
+	$\pi$ existe pour savoir si la classe est récurrente positive ou
+	nulle.
+\end{enumerate}
 
 \subsection{Théorie 2}
-ICI
 \subsection*{Big Idea}
+
+Ce cours-ci portait sur les marches aléatoires réfléchies infinie.
+Auparavant, on ne considérait que les états finis, et on savait que
+si la classe était irréductible, alors elle était récurrente positive.
+Cependant, lorsqu'on a une marche aléatoire infinie, il faut considérer 2
+cas:
+\begin{enumerate}
+    \item p>1/2: Puisque $X_n$ tend vers l'infini, alors la probabilité
+	de non retour à l'état i >0, ce qui implique que la classe est
+	transiente et que la distribution stationnaire n'existe pas
+	(par théorème ergodique)
+    \item p<1/2: Puisque $X_n$ tend vers moins l'infini, alors la
+	probabilité de retour est de 1, et puisque la CM est irréductible,
+	alors la classe est récurrente. Pour déterminer si la classe est
+	récurrente positive (ou nulle), il faut vérifier que la
+	distribution stationnaire existe.
+\end{enumerate}
+
+Ce cours-ci porte donc sur la preuve du 2e cas: on veut montrer que
+la distribution stationnaire existe et que la classe est récurrente
+positive.
+
 \subsection*{Outline}
 \begin{enumerate}
-    \item
-    \item
-    \item
+    \item Preuve de la convergence d'une marche aléatoire si p<1/2
 \end{enumerate}
+
+\subsection{Preuve de la convergence d'une marche aléatoire si p<1/2}
+
+Notons que la matrice de transition d'une marche aléatoire réfléchie
+est donnée par
+$ P = \begin{bmatrix}
+    0 & 1 & 0 & ... & 0\\
+    1-p & 0 & p & ... & 0\\
+    0 & 1-p & 0 & ... & 0\\
+    ... & ... & ... & ... & ...
+\end{bmatrix}$
+
+Ainsi, on doit résoudre le SEL suivant:
+\begin{enumerate}
+    \item $\pi _0 = (1-p) \pi_1$
+    \item $\pi _1 = \pi_ 0 + (1-p) \pi_2$
+    \item $\pi _2 = \pi_ 1 + (1-p) \pi_3$
+    \item ...
+    \item $\pi _n = \pi_{n-1} + (1-p) \pi_{n+1}$
+\end{enumerate}
+
+En résolvant et en exprimant chacune des lignes en termes de $\pi _0$,
+on obtient la relation de récurrence suivante:
+$ \pi_n = \frac{p^{n-1}}{(1-p)^n} \cdot \pi_0$
+
+On n'a qu'à vérifier ce résultat par induction en partant de l'hypothèse
+de base $ \pi_n = \frac{p^{n-1}}{(1-p)^n} \cdot \pi_0$ et en isolant
+$\pi_{n+1}$ pour montrer que n+1 est vraie: $\pi_{n+1} = \frac{p^n}{(1-p)^{n+1}} $
+
 \subsection{TP 4 - Théorèmes de Convergence et Ergodique}
+
+Le 4e TP portait sur 3 sujets:
+\begin{enumerate}
+    \item Utilisation du théorème de convergence et du théorème ergodique
+    \item Bonus: Chaines de Markov Réversibles
+\end{enumerate}
+
+\subsubsection{Utilisation du théorème de convergence et du théorème ergodique}
+
+Il faut se rappeler que le théorème de convergence nous dit la chose
+suivante: si la chaine de Markov est irréductible, apériodique et admet une
+distribution stationnaire, alors la probabilité à long terme est donné par
+la distribution stationnaire. On note
+$ \lim_{n \to \infty} P_{0k} ^{(n)} = \pi$, où
+$\pi = \pi \cdot P$ et $\sum \pi _i = 1$
+
+Le théorème ergodique nous dit que si la Chaine de Markov est ergodique
+(irréductible, apériodique et récurrente positive), alors l'espérance
+du temps de retour est donné par $\mu _i = E[T_i] = \frac{1}{\pi _i}$
+
+On cherche à répondre aux questions suivantes:
+\begin{enumerate}
+    \item Trouver la distribution stationnaire: Théorème de Convergence
+    \item Quelle est la probabilité de se retrouver à l'état i à long
+	terme: Trouver la distribution stationnaire
+    \item Trouver l'espérance du temps de retour: théorème ergodique
+\end{enumerate}
+
+\subsubsection{Problème: Probabilité que $S_n$ soit divisible par 6}%
+\label{ssub:Problème: Probabilité que $S_n$ soit divisible par 6}
+
+Considérons un dé à 6 faces. On veut déterminer la probabilité que la
+somme des n premiers lancers de dé est divisible par 6. What if n tend vers
+l'infini.
+
+On doit considérer $X_n = S_n (mod 6)$
+
+\subsubsection{Bonus: Chaines de Markov Réversibles}
+
+Une chaine de Markov est réversible ssi la probabilité de traverser un cycle
+est le même dans les 2 sens. On dit que la chaine de Markov admet un
+réseau de conductances. Justification: Puisque $c_{ij} =c_{ji}$, alors
+$m_i p_{ij} = n_j p_{ji} \Longrightarrow$ la chaine est réversible
+
+La probabilité de transition est donné par le poids de l'arc:
+$p_{ij} = \frac{c_{ij}}{m_i} $
+
+On dit note que $(m_i) \propto pi _i$ et puisque $\sum \pi _i =1$, alors
+$ \pi _i = \frac{m_i}{M} , M= \sum m_s$
+
+\textbf{Exemple: Probabilité qu'un roi revienne sur la même case}
+
+Un échequier a une dimension de 8x8. On doit remarquer qu'il y a 3 types
+de cases:
+\begin{enumerate}
+    \item coin (x4): 3 options $ \Longrightarrow m_{coin} = 3$
+    \item bord (x24): 5 options $ \Longrightarrow m_{bord} = 5$
+    \item centre (x36): 8 options $ \Longrightarrow m_{centre} = 8$
+
+\end{enumerate}
+
+Ainsi, $ M= 36 x m_{centre} + 24 x m_{bord} + 4 x m_{coin} = 420$,
+et donc $\pi_{coin} = 3/420$, $\pi_{bord}=5/420$, $\pi _{centre}=8/420$,
+
+Donc, en sachant qu'on part du coin, il faut en moyenne 140 coups pour
+revenir sur le même coin.
 
 \pagebreak
 \section{Semaine 6}
 \subsection{Théorie 1}
 \subsection*{Big Idea}
+
+Le cours se comportait 2 parties. Dans un premier temps, on voulait montrer que pour une marche aléatoire, lorsque p<1/2, la CM était récurrente
+positive, alors la distribution stationnaire existait et était donnée
+par une récurrence qu'on montrera
+
+Dans un deuxième temps, on a commencé à parler de CM à temps continu
+ie des processus de poisson. On a vu que
+\begin{enumerate}
+    \item le temps entre 2 évènements est iid
+    \item la différence entre deux évènements iid est iid
+\end{enumerate}
+
 \subsection*{Outline}
 \begin{enumerate}
-    \item
-    \item
-    \item
+    \item Convergence d'une Marche aléatoire réfléchie
+    \item Introduction aux CM à temps continu: Processus de Poisson
 \end{enumerate}
+
+\subsection{Convergence d'une Marche aléatoire réfléchie}
+
+Étapes:
+\begin{enumerate}
+    \item Trouver la fonction de densité représentant la marche
+	aléatoire en l'écrivant comme somme de v.a Bernouilli
+    \item Trouver les valeurs de p pour lesquelles la marche aléatoire
+	est transitive (p<1/2), récurrente nulle (p=1/2) et récurrente
+	positive (p>1/2)
+    \item Trouver la distribution stationnaire lorsque p<1/2
+	\begin{itemize}
+	    \item Écrire la matrice de transition pour trouver $\pi _i$
+	    \item Exprimer $\pi _n$ par récurrence:
+		$\pi _n = p \pi _{n-1} +(1-p) \pi _{n+1}$
+	    \item Exprimer $\pi _n$ en fonction de $\pi _0$ en trouvant
+		la récurrence donnée en résolvant les premières variables
+		du SEL: $ \pi _n = \frac{p^{n-1}}{(1-p)^n} \pi _0$
+	    \item Prouver par induction que la formule trouvée est bonne
+	    \item Déduire $\pi _n$ en terme de p: on utilise le fait
+		que $\sum \pi _i =1$ et on remarque une série géométrique
+	\end{itemize}
+\end{enumerate}
+
+On peut représenter notre marche aléatoire réfléchie comme une somme
+de variable indicatrice (Bernouilli): $X_n = X_0 + Y_1 + ... + Y_n$
+Ainsi, l'espérance de la marche aléatoire à chaque pas ie la distance
+à laquelle on se déplace à chaque step, est donnée par
+$$ \frac{X_n}{n} = \frac{X_0}{n} + \frac{Y_1 + ...+ Y_n}{n} $$
+
+Puisque $X_0$ est une constante, alors elle converge vers 0. Puisque
+$Y_i$ est une Bernoulli, alors $E[Y_i] = (1)p+(-1)(1-p)$. Ainsi,
+$X_n ~ (2p-1) \cdot n$
+
+On veut montrer que:
+\begin{enumerate}
+    \item si p>1/2: la marche aléatoire diverge, car
+	$\lim_{n \to \infty} X_n = \infty $, alors il existe un M pour
+	lequel $X_n>M$ donc la probabilité de non-retour >1. Ainsi,
+	la classe est transitive
+    \item si p=1/2: la classe est récurrente nulle:
+	$ \lim_{n \to \infty} = 0 $
+    \item si p<1/2: la classe est récurrente positive, car
+	$\lim_{n \to \infty} X_n = -\infty $, alors la probabilité de
+	retour >0,
+\end{enumerate}
+
+\subsection{Introduction aux CM à temps continu: Processus de Poisson}
+
+TODO
+
 \subsection{Théorie 2}
-\subsection*{Big Idea}
-\subsection*{Outline}
-\begin{enumerate}
-    \item
-    \item
-    \item
-\end{enumerate}
+
+Quiz 2
+
 \subsection{TP 5 - Marche aléatoire et Processus de Poisson}
+
+TODO
 
 \pagebreak
 \section{Semaine 7}
+NEXT
 \subsection{Théorie 1}
 \subsection*{Big Idea}
 \subsection*{Outline}
@@ -762,7 +969,7 @@ ICI
     \item
     \item
 \end{enumerate}
-\subsection{TP  }
+\subsection{Intra}
 
 \pagebreak
 \section{Semaine 8}

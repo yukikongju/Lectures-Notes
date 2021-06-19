@@ -703,6 +703,14 @@ generate all the numbers with that set. We need the irrational numbers.
     The operation of forming unions is associative
 \end{theorem}
 
+\begin{definition}[General Defintion for union and intersection]
+    Let X be a non empty set of sets, then
+    \begin{enumerate}
+	\item $\cup X = {y| \text{ there is } y \in X \text{ with y} \in Y}$
+	\item $\cap X = {y| \text{ forall } y \in X, y \in Y}$
+    \end{enumerate}
+\end{definition}
+
 \subsection{Open and Closed Sets}
 
 \begin{definition}[Open Set]
@@ -711,6 +719,8 @@ generate all the numbers with that set. We need the irrational numbers.
 \end{definition}
 
 \begin{definition}[Closed Set]
+    A subset X of $\mathbb{R}$ is said to be closed if $\mathbb{R}\ X$
+    is open
 \end{definition}
 
 \begin{theorem}
@@ -791,7 +801,7 @@ linear and quadratic equation.
 \begin{definition}[Equality]
     Two complex numbers are equal if and only if they have the same real and
     imaginary part.
-    % $$ a + bi = c + di \iif a = c \text{ and } b = d $$
+    $$ a + bi = c + di \Longleftrightarrow a = c \text{ and } b = d $$
 \end{definition}
 
 \begin{definition}[Addition]
@@ -805,10 +815,14 @@ linear and quadratic equation.
     $$ (a+bi) - (c+di) = (a-c) + (b-d) i$$
 \end{definition}
 
+\begin{definition}[Multiplication]
+    $$ (a+bi)(c+di)=(ac-bd)+(ad+bc)i $$
+\end{definition}
+
 \begin{definition}[Division]
     Let z and w be complex numbers such that $z \in \mathbb{C}$ and
-    $w \in \mathbb{C}*$. We define the quotient $\frac{z}{w}$ by
-    % $$ \frac{z}{w} = z w^-1 = (a+bi) (\frac{c}{c^2 + d^2} - \fract{d}{(c^2 + d^2)i}) $$
+    $w \in \mathbb{C} *$. We define the quotient $\frac{z}{w}$ by
+    $$ \frac{z}{w} = z w^{-1} = (a+bi)\cdot (\frac{c}{c^2 + d^2} - \frac{d}{(c^2 + d^2)i}) = \frac{ac+bd}{c^2 + d^2} + \frac{bc-ad}{c^2 + d^2}  $$
 \end{definition}
 
 \begin{definition}[Conjugate]
@@ -1295,10 +1309,63 @@ connector to express a proposition.
 
 \subsection{Equivalence Relations and Partitions}
 
-TODO
+\begin{definition}[Equivalence Relation]
+    A binary relation R on a set A is an equivalence relation if R is
+    reflexive, symmetric and transitive
+\end{definition}
+
+\begin{definition}[Partition of a Set]
+    A partition of a set S is a set of pairwise disjoint nonempty subsets
+    of S whose union is S. Symbolically, X is a partition of S iif
+    $$ \forall A \in X(A \neq \emptyset \land A \subeq S) \land \forall
+    A,B \in X(A \neq B \rightarrow A \cap B = \emptyset) \land \cup X =S$$
+\end{definition}
+
+\begin{definition}[Power Set]
+    The power set of A, written P(a), is the set consisting of all subsets
+    of A $$ P(A) = {X|X \subseq A}$$
+\end{definition}
+
+\begin{theorem}
+    Let P be a partition of a set S. Then, there is an equivalence relation
+    ~ on S for which the elements of P are the equivalence classes of ~.
+    Conversely, if ~ is an equivalence relation on a set S, then the
+    equivalence classes of ~ form a partition of S
+\end{theorem}
 
 \subsection{Orderings}
+
+\begin{definition}[Partial Ordering]
+    A binary relation $\leq$ on a set A is a partial ordering on A if
+    it is reflexive, antisymmetric and transitive on A.
+\end{definition}
+
+\begin{definition}[Strict Partial Ordering]
+    A binary relation < on a set A is a partial ordering on A if
+    it is antireflexive, antisymmetric and transitive on A.
+\end{definition}
+
+\begin{definition}[Partially Ordered Set]
+    A partially ordered set (or poset) is a pair $(A,\leq)$, where A is
+    a set and $\leq$ is a partial ordering on A. A strict poset is
+    pair (A,<), wehre A is a set and < is a strict partial ordering on A
+\end{definition}
+
+\begin{definition}[Comparable Poset]
+    Let $(A, \leq)$ be a poset. We say $a,b \in A$ are comparable if
+    $a \leq b$ or $b \leq a$ The poset satisfies the comparability
+    condition if every pair of elements in A are comparable.
+\end{definition}
+
+\begin{definition}[Linearly Ordered Set]
+    A poset that satisfies the comparability condition is called a
+    linearly ordered set (or totally ordered set). A strict
+    linearly ordred set (A,<) satisfies trichotomy:
+    $$ \text{ If } a,b \in A, \text{ then } a<b, a=b, \text{ or } b<a$$
+\end{definition}
+
 \subsection{Functions}
+NEXT
 \subsection{Equinumerosity}
 \subsection{Problem Set}
 \subsubsection{Level 1}
