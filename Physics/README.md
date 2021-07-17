@@ -10,14 +10,14 @@ Upon looking at curriculum, [Looking Glass Mechanics](https://www.youtube.com/wa
 - [Courses Material](courses-material)
 
 
-## About Physics
+## [About Physics](#about-physics)
 
 | ------ | FAST                   | SLOW                |
 | BIG    | Relativistic Mechanics | Classical Mechanics |
 | SMALL  | Quantum Field Theory   | Quantum Mehcanics   |
 
 
-## Branches of Physics
+## [Branches of Physics](#branches-of-physics)
 
 - [ ] Classical Mechanics
 - [ ] Electronomagnetism
@@ -25,7 +25,7 @@ Upon looking at curriculum, [Looking Glass Mechanics](https://www.youtube.com/wa
 - [ ] Quantum Mechanics
 - [ ] Relativity
 
-## Core Classes
+## [Core Classes](#core-classes)
 
 - [ ] Physics I: Classical Mechanics
 - [ ] Physics II: Electronomagnetism
@@ -34,7 +34,7 @@ Upon looking at curriculum, [Looking Glass Mechanics](https://www.youtube.com/wa
 - [ ] Quantum Physics II:
 - [ ] Quantum Physics III:
 
-## Courses Material
+## [Courses Material](courses-material)
 
 #### Classical Mechanics
 
@@ -68,7 +68,7 @@ Upon looking at curriculum, [Looking Glass Mechanics](https://www.youtube.com/wa
 - Exercices:
 - Exams:
 
-## Ressources
+## [Miscellaneous Books](#miscellaneous-books)
 
 - Feynman Lectures:
     - Volume I: https://www.feynmanlectures.caltech.edu/I_toc.html

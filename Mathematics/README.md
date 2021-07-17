@@ -3,15 +3,17 @@
 ## Table of Contents
 
 - [Motivation](#motivation)
+- [How I learn Maths](#how-i-learn-maths)
 - [Core Classes](#core-classes)
 - [Courses Material](courses-material)
+- [Miscellaneous Books](#miscellaneous-books)
 
-## Motivation
+## [Motivation](#motivation)
 
 There are two branches in mathematics: pure and applied. My goal would
 be to be familiar with the concepts teached in an undergrad math majors.
 
-## How I learn Maths
+## [How I learn Maths](#how-i-learn-maths)
 
 Ideally, learning maths the self-taught way would be similar to what
 my classes are at uni: 2 class on theory and 1 class on practice.
@@ -24,7 +26,7 @@ to do each week and try to solve them before looking at the answer.
 I also like to make lecture reviews after each class, which help me retains
 what I have learned.
 
-## Core Classes
+## [Core Classes](#core-classes)
 
 After watching [Aleph's how to learn pure maths](https://www.youtube.com/watch?v=fo-alw2q-BU&t=430s), [The Math Sorcerer's Learn Mathematics](https://www.youtube.com/watch?v=pTnEG_WGd2Q) , [Arongil Productions](https://www.youtube.com/watch?v=lapgPfFAgr4), [CHALK's](https://www.youtube.com/watch?v=fG7ZKdKTo6E&t=1220s), I figured the following Courses were essential to
 understand maths:
@@ -78,7 +80,7 @@ Graduate Maths Classes:
 - [ ] What is a Tensor - XylyXylyX
 - [ ] Lie Groups and Lie Algebra - XylyXylyX, Borcheds
 
-## Courses Material
+## [Courses Material](courses-material)
 
 ### Undergraduate Classes
 
@@ -111,6 +113,14 @@ Graduate Maths Classes:
 - Lecture Notes: [Courses Notes from Nathaniel Johnston](http://www.njohnston.ca/publications/introduction-to-linear-and-matrix-algebra/)
 - Video Lectures part 1: [Nathaniel Johnston's Linear Algebra](https://www.youtube.com/watch?v=ea6p2eb7mTQ&list=PLOAf1ViVP13jmawPabxnAa00YFIetVqbd)
 - Video Lectures part 2: [Nathaniel Johnston's Advanced Linear Algebra](https://www.youtube.com/watch?v=1ADC9rZQ11E&list=PLOAf1ViVP13jdhvy-wVS7aR02xnDxueuL)
+- Textbook:
+- Exercices:
+- Exams:
+
+#### Discrete Maths
+
+- Lecture Notes:
+- Video Lectures:
 - Textbook:
 - Exercices:
 - Exams:
@@ -158,7 +168,7 @@ Graduate Maths Classes:
 - Exercices: [MIT's Recitation](https://ocw.mit.edu/courses/mathematics/18-04-complex-variables-with-applications-spring-2018/recitations/)
 - Exams: [MIT's Complex Variables Exams](https://ocw.mit.edu/courses/mathematics/18-04-complex-variables-with-applications-spring-2018/exams/)
 
-## Miscellaneous Books
+## [Miscellaneous Books](#miscellaneous-books)
 
 - Pure Maths by Steven Warner
 - All the Maths You Missed But Need to Know for Graduate School by
