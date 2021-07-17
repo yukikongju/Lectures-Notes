@@ -7,6 +7,7 @@ learn Computer Science, Mathematics and Electrical Engineering concepts.
 
 - [ ] Graph Theory
 - [ ] Differential Equations
+- [ ] Complex Variables
 - [ ] Processus Stochastique
 - [ ] LeetCode
 

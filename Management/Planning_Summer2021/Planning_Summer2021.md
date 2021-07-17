@@ -233,10 +233,10 @@ PURE MATHS
 
 - [X] (Pure Maths) Lesson 8 - Linear Algebra: Vector Spaces
 - [X] (Pure Maths) Lesson 9 - Logic: Logical Arguments
-- [ ] (Pure Maths) Lesson 10 - Set Theory: Relations and Functions
-- [ ] (Pure Maths) Lesson 11 - Abstract Algebra: Strucutres and Homomorphisms
-- [ ] (Pure Maths) Lesson 12 - Number Theory: Primes, GCD, and LCM
-- [ ] (Pure Maths) Lesson 13 - Real Analysis: Limits and Continuity
+- [X] (Pure Maths) Lesson 10 - Set Theory: Relations and Functions
+- [X] (Pure Maths) Lesson 11 - Abstract Algebra: Structures and Homomorphisms
+- [X] (Pure Maths) Lesson 12 - Number Theory: Primes, GCD, and LCM
+- [X] (Pure Maths) Lesson 13 - Real Analysis: Limits and Continuity
 - [ ] (Pure Maths) Lesson 14 - Topology: Spaces and Homeomorphisms
 - [ ] (Pure Maths) Lesson 15 - Complex Analysis: Complex Valued Functions
 - [ ] (Pure Maths) Lesson 16 - Linear Algebra: Linear Transformations

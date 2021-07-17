@@ -1,49 +1,66 @@
 ## Planning - July 2021
 
 ------------------------------------------------------------------------
-Thu, 01 Jul 2021 00:00:03 +0000
+Thu, 01 Jul 2021 00:00:03 +0000 (2/5)
 ------------------------------------------------------------------------
 
+- [X] (Pure Maths) Problem Set 13 - Real Analysis (theory part 3)
 
 ------------------------------------------------------------------------
-Fri, 02 Jul 2021 00:00:03 +0000
+Fri, 02 Jul 2021 00:00:03 +0000 (2/5)
 ------------------------------------------------------------------------
 
+- [X] (Pure Maths) Lesson 14 - Topology: Spaces and Homeomorphisms: bases, types of topological spaces, metric space
 
 ------------------------------------------------------------------------
-Sat, 03 Jul 2021 00:00:03 +0000
+Sat, 03 Jul 2021 00:00:03 +0000 (4/5)
 ------------------------------------------------------------------------
 
+- [X] (Pure Maths) Lesson 14 - Topology: Spaces and Homeomorphisms: function
+- [X] (Schaum's Complex Variable) Chapter 2 - Elementary functions, limits, theorems on limits, continuity
+- [X] (Schaum's Complex Variable) Chapter 3 - Complex Differentiation
 
 ------------------------------------------------------------------------
-Sun, 04 Jul 2021 00:00:03 +0000
+Sun, 04 Jul 2021 00:00:03 +0000 (3/5)
 ------------------------------------------------------------------------
 
+- [X] (Schaum's Complex Variable) Problem Chapter 3 - Derivatives, Cauchy-Riemann Equations, Differentials, Differentation rules, Hospital rule
 
 ------------------------------------------------------------------------
-Mon, 05 Jul 2021 00:00:03 +0000
+Mon, 05 Jul 2021 00:00:03 +0000 (4/5)
 ------------------------------------------------------------------------
 
+- [X] (Processus Stochastique) Théorie 2
+- [X] (Processus Stochastique) Théorie 1
+- [X] (Processus Stochastique) Séance TP
 
 ------------------------------------------------------------------------
-Tue, 06 Jul 2021 00:00:03 +0000
+Tue, 06 Jul 2021 00:00:03 +0000 (3/5)
 ------------------------------------------------------------------------
 
+- [X] (Schaum's Differential Equations) Chapter 15 - Matrices: Cayley-Hamilton Theorem
+- [X] (Schaum's Differential Equations) Chapter 16 - e^AT : find e^AT and its properties
+- [X] (Schaum's Complex Variable) Problem Chapter 3 - Singular Points, Orthogonal Families, Applications to Geometry and Mechanics, Gradient/Divergence/Curl/Laplacian
 
 ------------------------------------------------------------------------
-Wed, 07 Jul 2021 00:00:03 +0000
+Wed, 07 Jul 2021 00:00:03 +0000 (1/5)
 ------------------------------------------------------------------------
 
+- [X] (Processus Stochastique) Redo TP 6
 
 ------------------------------------------------------------------------
-Thu, 08 Jul 2021 00:00:03 +0000
+Thu, 08 Jul 2021 00:00:03 +0000 (2/5)
 ------------------------------------------------------------------------
 
+- [X] (Processus Stochastique) Redo TP 7
+- [ ] (Processus Stochastique) Théorie 2
+- [ ] (William Nesse - Math 2550) Laplace Transforms
 
 ------------------------------------------------------------------------
 Fri, 09 Jul 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [ ] (Processus Stochastique) Théorie 1
 
 ------------------------------------------------------------------------
 Sat, 10 Jul 2021 00:00:03 +0000

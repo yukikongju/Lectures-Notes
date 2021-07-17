@@ -4,12 +4,12 @@
 FEYNMAN LECTURES ON PHYSICS - VOLUME I
 -------------------------------------------------------------------
 
-- [ ] Chapter 1.Atoms in Motion
-- [ ] Chapter 2.Basic Physics
-- [ ] Chapter 3.The Relation of Physics to Other Sciences
-- [ ] Chapter 4.Conservation of Energy
-- [ ] Chapter 5.Time and Distance
-- [ ] Chapter 6.Probability
+- [X] Chapter 1.Atoms in Motion
+- [X] Chapter 2.Basic Physics
+- [X] Chapter 3.The Relation of Physics to Other Sciences
+- [X] Chapter 4.Conservation of Energy
+- [X] Chapter 5.Time and Distance
+- [X] Chapter 6.Probability
 - [ ] Chapter 7.The Theory of Gravitation
 - [ ] Chapter 8.Motion
 - [ ] Chapter 9.Newton’s Laws of Dynamics
@@ -130,3 +130,108 @@ FEYNMAN LECTURES ON PHYSICS - VOLUME III
 - [ ] Chapter 20.Operators
 - [ ] Chapter 21.The Schrödinger Equation in a Classical Context: A Seminar on Superconductivity
 
+
+-------------------------------------------------------------------
+EXERCICES - Feynman Lectures Vol I
+-------------------------------------------------------------------
+
+- [ ] 1. Atomes en mouvement
+- [ ] 2. Conservation de l'énergie, statique
+- [ ] 3. Loi de Kepler et gravitation
+- [ ] 4. Cinématique
+- [ ] 5. Lois de Newton
+- [ ] 6. Conservation de l'impulsion
+- [ ] 7. Vecteurs
+- [ ] 8. Collisions à deux corps non-relativistes en trois dimensions
+- [ ] 9. Forces
+- [ ] 10. Potentiels et champs
+- [ ] 11. Unités et dimensions
+- [ ] 12. Cinématique et dynamique relativistes, équivalence de la masse et de l'énergie au repos
+- [ ] 13. Énergie et impulsion relativistes
+- [ ] 14. Rotations à deux dimensions, le centre de masse
+- [ ] 15. Moment cinétique, le moment d'inertie
+- [ ] 16. Rotations à trois dimensions
+- [ ] 17. L'oscillateur harmonique, équations différentielles linéaires
+- [ ] 18. Algèbre
+- [ ] 19. Oscillations forcées avec amortissement
+- [ ] 20. Optique géométrique
+- [ ] 21. Rayonnement électromagnétique: interférences
+- [ ] 22. Rayonnement électromagnétique: diffraction
+- [ ] 23. Rayonnement électromagnétique: réfraction, dispersion, absorption
+- [ ] 24. Rayonnement électromagnétique: amortissement par rayonnement, diffusion
+- [ ] 25. Rayonnement électromagnétique: polarisation
+- [ ] 26. Rayonnement électromagnétique: effets relativistes
+- [ ] 27. Comportement quantique: ondes, particules et photons
+- [ ] 28. Théorie cinétique des gaz
+- [ ] 29. Principes de la mécanique statistique
+- [ ] 30. Applications de la théorie cinétique: équipartition
+- [ ] 31. Applications de la théorie cinétique: phénomènes de transport
+- [ ] 32. Thermodynamique
+- [ ] 33. Illustrations de la thermodynamique
+- [ ] 34. L'équation d'onde, le son
+- [ ] 35. Système d'ondes linéaires: battements, modes
+- [ ] 36. Analyse de Fourier des ondes
+
+-------------------------------------------------------------------
+EXERCICES - Feynman Lectures Vol II
+-------------------------------------------------------------------
+
+- [ ] 37. Électromagnétisme
+- [ ] 38. Calcul différentiel de champs de vecteurs
+- [ ] 39. Calcul intégral vectoriel
+- [ ] 40. Électrostatique
+- [ ] 41. Applications de la loi de Gauss
+- [ ] 42. Le champ électrique dans diverses circonstances
+- [ ] 43. Le champ électrique dans diverses circonstances (suite)
+- [ ] 44. Énergie électrostatique
+- [ ] 45. Diélectriques
+- [ ] 46. À l'intérieur des diélectriques
+- [ ] 47. Analogues électrostatiques
+- [ ] 48. Magnétostatique
+- [ ] 49. Le champ magnétique dans diverses situations
+- [ ] 50. Le potentiel vecteur
+- [ ] 51. Les lois de l'induction
+- [ ] 52. Solution des équations de Maxwell dans le vide
+- [ ] 53. Solution des équations de Maxwell avec des courants et des charges
+- [ ] 54. Circuits en courant alternatif
+- [ ] 55. Cavités résonantes
+- [ ] 56. Guides d'ondes
+- [ ] 57. L'électrodynamique en notations relativistes
+- [ ] 58. Transformations de Lorentz des champs
+- [ ] 59. Énergie et impulsion du champ
+- [ ] 60. Masse électromagnétique
+- [ ] 61. Le mouvement des charges dans des champs électriques et magnétiques
+- [ ] 62. Indice de réfraction des milieux denses
+- [ ] 63. La réflexion sur des surfaces
+- [ ] 64. Le magnétisme de la matière
+- [ ] 65. Paramagnétisme et résonance magnétique
+- [ ] 66. Ferromagnétisme
+- [ ] 67. Élasticité
+- [ ] 68. L'écoulement de l'eau sèche
+- [ ] 69. L'écoulement de l'eau mouillée
+
+-------------------------------------------------------------------
+EXERCICES - Feynman Lectures Vol III
+-------------------------------------------------------------------
+
+- [ ] 70. Amplitudes de probabilité
+- [ ] 71. Particules identiques
+- [ ] 72. Le spin un
+- [ ] 73. Le spin 1/2
+- [ ] 74. La dépendance en temps des amplitudes
+- [ ] 75. L'Hamiltonien matriciel
+- [ ] 76. Le maser à ammoniac
+- [ ] 77. Autres systèmes à deux états
+- [ ] 78. Davantage de systèmes à deux états
+- [ ] 79. Le clivage hyperfin de l'atome d'hydrogène
+- [ ] 80. Propagation dans un réseau cristallin
+- [ ] 81. Les semi-conducteurs
+- [ ] 82. L'approximation des particules indépendantes
+- [ ] 83. La dépendance des amplitudes dans la position
+- [ ] 84. Le moment cinétique
+- [ ] 85. L'atome d'hydrogène et la classification périodique
+
+
+## Ressources
+
+- Sean Caroll - The Biggest Ideas

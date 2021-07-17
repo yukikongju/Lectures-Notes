@@ -1,5 +1,11 @@
 # Courses in Mathematics
 
+## Table of Contents
+
+- [Motivation](#motivation)
+- [Core Classes](#core-classes)
+- [Courses Material](courses-material)
+
 ## Motivation
 
 There are two branches in mathematics: pure and applied. My goal would
@@ -35,30 +41,31 @@ understand maths:
 11. Probability
 
 Undergraduates Maths Classes:
-- [X] Calculus I, II, III - MAT1400, James Cook, Professor Butler
+- [X] Calculus I, II, III - MAT1400, James Cook, Professor Butler, William Nesse
 - [X] Discrete Maths - Kimberly Brehm, Macauley
-- [ ] Linear Algebra - MAT1600, Nathaniel Johnston, Maths Doctor Bob
-- [d] Advanced Linear Algebra - MAT1600, Nathaniel Johnston, Sheldon Axler
+- [X] Linear Algebra - MAT1600, Nathaniel Johnston, Maths Doctor Bob
+- [ ] Advanced Linear Algebra - MAT1600, Nathaniel Johnston, Sheldon Axler
 - [ ] Geometric Linear Algebra - Insights into Mathematics
 - [ ] Wild Linear Algebra - Insights into Mathematics
 - [X] Real Analysis - MAT1000, Math Sorcerer, James Cook
 - [X] Statistics - STT1700
 - [X] Probability - MAT1720
-- [d] Processus Stochastiques - MAT2717
-- [d] Differential Equations (ODEs, PDEs) - Macauley, Faculty of Khan, Maths Sorcerer, James Cook, Edgar Haley
-- [ ] Differential Geometry - Insights into Mathematics, James Cook
-- [ ] Algebraic Topology - Insights into Mathematics, UofT, Maths Sorcerer, Tadashi Tokieda, ThoughtSpaceZero, James Cook, Pierre Albin
+- [X] Processus Stochastiques - MAT2717
+- [X] Differential Equations (ODEs, PDEs) - Macauley, Faculty of Khan, Maths Sorcerer, James Cook, Edgar Haley, Houston Math Prep, William Nesse
+- [ ] Partial Differential Equations - William Nesse
+- [ ] Complex Variables - Faculty of Khan, Steven Miller Math372, James Cook,William Nesse
 - [ ] Analyse Numérique
+- [X] Complex Analysis - Borcheds, Math Sorcerer, Petra Bonfert-Taylor, James Cook, Maths Doctor Bob
 - [ ] Abstract Linear Algebra - Macauley, James Cook
 - [ ] Theory of Numbers - Borcheds, Graduate Mathematics
-- [ ] Complex Analysis - Borcheds, Math Sorcerer, Petra Bonfert-Taylor, James Cook, Maths Doctor Bob
+- [ ] Graph Theory - Wrath of Maths, Marius Furter, Sarada Herke, Professor Butler
 - [ ] Combinatorics
-- [ ] Graphs Theory - Wrath of Maths, Marius Furter, Sarada Herke
 - [ ] Algebraic Calculus I - Wild Egg
 - [ ] History of Maths - Insights into Mathematics, Jeff Suzuki
 - [ ] Famous Maths Problem - Insights into Mathematics
-- [ ] Complex Variables - Faculty of Khan, Steven Miller Math372, James Cook,
 - [ ] Abstract Algebra - Maths Sorcerer, Maths Doctor Bob
+- [ ] Differential Geometry - Insights into Mathematics, James Cook
+- [ ] Algebraic Topology - Insights into Mathematics, UofT, Maths Sorcerer, Tadashi Tokieda, ThoughtSpaceZero, James Cook, Pierre Albin
 
 Graduate Maths Classes:
 - [ ] Universal Hyperbolic Geometry - Insights into Mathematics
@@ -70,6 +77,86 @@ Graduate Maths Classes:
 - [ ] What is a Manifold - XylyXylyX
 - [ ] What is a Tensor - XylyXylyX
 - [ ] Lie Groups and Lie Algebra - XylyXylyX, Borcheds
+
+## Courses Material
+
+### Undergraduate Classes
+
+#### Differential Calculus
+
+- Lecture Notes:
+- Video Lectures: [Professor Butler's Calculus 1](https://www.youtube.com/watch?v=zLYkirsWlYE&list=PLi4h0n4UP8d_kV2n6PQbgXhlq1nmgqY4h)
+- Textbook:
+- Exercices (easy): Schaum's Calculus
+- Exams:
+
+#### Integrals Calculus
+
+- Lecture Notes:
+- Video Lectures: [Professor Butler's Calculus 2](https://www.youtube.com/watch?v=aGztC6hyMLo&list=PLi4h0n4UP8d8BiEy5qB9mlSe-ysEnUXN4)
+- Textbook:
+- Exercices:
+- Exams:
+
+#### Multivariable Calculus
+
+- Lecture Notes:
+- Video Lectures: [Professor Butler's Calculus 3](https://www.youtube.com/watch?v=7TSnO3cLKxU&list=PLi4h0n4UP8d836WAe3svKcKM5Paa5EGbm)
+- Textbook:
+- Exercices:
+- Exams:
+
+#### Linear Algebra
+
+- Lecture Notes: [Courses Notes from Nathaniel Johnston](http://www.njohnston.ca/publications/introduction-to-linear-and-matrix-algebra/)
+- Video Lectures part 1: [Nathaniel Johnston's Linear Algebra](https://www.youtube.com/watch?v=ea6p2eb7mTQ&list=PLOAf1ViVP13jmawPabxnAa00YFIetVqbd)
+- Video Lectures part 2: [Nathaniel Johnston's Advanced Linear Algebra](https://www.youtube.com/watch?v=1ADC9rZQ11E&list=PLOAf1ViVP13jdhvy-wVS7aR02xnDxueuL)
+- Textbook:
+- Exercices:
+- Exams:
+
+#### Probability and Statistics
+
+- Lecture Notes: [MIT Jeremy Orloff's Introduction to Probability and Statistics](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/index.htm)
+- Video Lectures:
+- Textbook: [A First Course in Probability by Sheldon Ross](http://julio.staff.ipb.ac.id/files/2015/02/Ross_8th_ed_English.pdf)
+- Exercices: [MIT's Problem Set](https://ocw.mit.edu/courses/mathematics/18-05-introduction-to-probability-and-statistics-spring-2014/assignments/)
+- Exams:
+
+#### Real Analysis 1
+
+- Lecture Notes:
+- Video Lectures:
+- Textbook:
+- Exercices (easy): Schaum's Advanced Calculus (proofs for theorems)
+- Exercices (medium): A Problem Book in Real Analysis by Asuman Aksoy (proofs)
+- Exercices (medium): Analyse par Jacques Douchet (calcul)
+- Exams:
+
+#### Differential Equations
+
+- Lecture Notes:
+- Video Lectures:
+- Textbook:
+- Exercices: Schaum's Differential Equations
+- Exams:
+
+#### Partial Differential Equations
+
+- Lecture Notes:
+- Video Lectures:
+- Textbook:
+- Exercices:
+- Exams:
+
+#### Complex Variables
+
+- Lecture Notes: [MIT Jeremy Orloff's Complex Variables](https://ocw.mit.edu/courses/mathematics/18-04-complex-variables-with-applications-spring-2018/index.htm)
+- Video Lectures:
+- Textbook:
+- Exercices: Schaum's Complex Variables (proof based problems)
+- Exercices: [MIT's Recitation](https://ocw.mit.edu/courses/mathematics/18-04-complex-variables-with-applications-spring-2018/recitations/)
+- Exams: [MIT's Complex Variables Exams](https://ocw.mit.edu/courses/mathematics/18-04-complex-variables-with-applications-spring-2018/exams/)
 
 ## Miscellaneous Books
 

@@ -146,68 +146,99 @@ Thu, 17 Jun 2021 00:00:03 +0000
 Fri, 18 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-- [ ] (Processus Stochastique) Théorie 1
-- [ ] (Schaum's - Calculus) Double and Triple Integrals
+- [X] (Schaum's - Calculus) Double and Triple Integrals
 
 ------------------------------------------------------------------------
 Sat, 19 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [X] RL Truck
+- [X] (Douchet - Real Analysis) Chapitres 2 - Suites numériques: calcul de limite, suite de récurrence
+- [X] (Douchet - Real Analysis) Chapitres 3 - Fonctions d'une variable: calcul de limite, problèmes de zéro, TVI
 
 ------------------------------------------------------------------------
 Sun, 20 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-- [ ] (Processus Stochastique) Théorie 2
+- [X] (Ross - Probability) Chapitre 4 - Variables aléatoires discrètes (théorie)
+- [X] (Ross - Probability) Chapitre 5 - Variables aléatoires continues (théorie)
+- [X] (Ross - Probability) Chapitre 6 - Variables aléatoires simultanées (théorie)
 
 ------------------------------------------------------------------------
 Mon, 21 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
-- [ ] Intra Processsus Stochastiques
+- [X] Intra Processsus Stochastiques
+- [X] (Schaum's Complex Variable) Chapter 1 - Complex Numbers (theory)
 
 ------------------------------------------------------------------------
 Tue, 22 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [X] (William Nesse - Math 2550) Laplace Transforms (incomplete)
+- [X] (Processus Stochastique) Théorie 1
+- [X] (William Nesse - Complex Variables) Introduction to Products and Quoteints
 
 ------------------------------------------------------------------------
 Wed, 23 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [X] (Processus Stochastique) Théorie 2
+- [X] (Schaum's Complex Variable) Chapter 1 - Complex Numbers (problem set)
+- [X] (Schaum's Complex Variable) Chapter 2 - Functions, Limits and Continuity
+	(theory: 1 to 6)
 
 ------------------------------------------------------------------------
 Thu, 24 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [X] (Processus Stochastique) Théorie 1
+- [X] (LeetCode) Increasing sequence, intersection linked list
+- [X] (Pure Maths) Lesson 10 - Set Theory: Relations and Functions
 
 ------------------------------------------------------------------------
 Fri, 25 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [X] (Pure Maths) Lesson 10 - Set Theory: Relations and Functions (functions, equinumerosity)
+- [X] (Pure Maths) Problem Set 10 - Set Theory: Relations and Functions (level 1 to 4)
+- [X] (Pure Maths) Lesson 11 - Abstract Algebra: Structures and Homomorphism (structures, substructures, homomorphism)
+- [X] (Leetcode) Generate Parenthesis
 
 ------------------------------------------------------------------------
 Sat, 26 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [X] (Pure Maths) Lesson 11 - Abstract Algebra: Structures and Homomorphism (normal subgroups and ring ideals)
+- [X] (Pure Maths) Lesson 12 - Number Theory: Primes, GCD and LCM (prime numbers, division algorithm)
 
 ------------------------------------------------------------------------
 Sun, 27 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [X] (Pure Maths) Lesson 12 - Number Theory: Primes, GCD and LCM (gcd and lcm)
+- [X] (Pure Maths) Problem Set 12 - Number Theory: level 1 and 2
 
 ------------------------------------------------------------------------
 Mon, 28 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [X] (William Nesse - Complex Variables) Roots, limits, derivatives
+- [X] (Processus Stochastique) Séance TP
+- [X] (Schaum's Complex Variables) 2.7 to 2.18 (theory)
+- [X] (LeetCode) Top K elements (incomplete)
 
 ------------------------------------------------------------------------
 Tue, 29 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [X] (Pure Maths) Problem Set 12 - Number Theory: level 3 to 5
+- [X] (Pure Maths) Lesson 13 - Real Analysis (theory part 1)
 
 ------------------------------------------------------------------------
 Wed, 30 Jun 2021 00:00:03 +0000
 ------------------------------------------------------------------------
 
+- [X] (Pure Maths) Lesson 13 - Real Analysis (theory part 2)
+- [X] (Pure Maths) Problem Set 13 - Real Analysis (theory part 2)
 

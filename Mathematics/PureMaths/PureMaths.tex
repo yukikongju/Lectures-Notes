@@ -1424,6 +1424,75 @@ NEXT
 \subsection{Topological Spaces}
 \subsection{Bases}
 \subsection{Types of Topological Spaces}
+
+\subsubsection{T-Space}%
+\label{ssub:T-Space}
+
+\begin{definition}[$T_0 -space$ (Kolmogorov space)]
+    A topological space (S,T) is a $T_0 -space$ if $\forall x,y \in S,
+    x \neq y, \exists U \in T \text{ such that } x \in U \land y \not\in U
+    \text{ or } x \not\in U \land y \in U$
+\end{definition}
+
+\begin{definition}[$T_1 -space$ (Fréchet space or Tikhonoc space)]
+    A topological space (S,T) is a $T_1 -space$ if $\forall x,y \in S,
+    x \neq y, \exists U,V \in T \text{ such that } x \in U \land y \not\in U
+    \text{ or } x \not\in V \land y \in V$
+\end{definition}
+
+\begin{definition}[$T_2 -space$ (Hausdorff Space)]
+    A topological space (S,T) is a $T_2 -space$ if $\forall x,y \in S,
+    x \neq y, \exists U,V \in T$ with:
+    \begin{enumerate}
+        \item $ x \in U$
+	\item $y \in V$
+	\item $ U \cap V = \emptyset$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[$T_3 -space$ (Regular Space)]
+\end{definition}
+
+\begin{definition}[$T_4 -space$ (Normal Space)]
+\end{definition}
+
+\begin{definition}[Separation Axioms]
+    $T_0, T_1, T_2, T_3, T_4$ are called separation axioms because they
+    all involve "separating" points and/or closed sets from each other
+    by open sets.
+\end{definition}
+
+\begin{theorem}[Sufficient condition for $T_1 -space$]
+    A topological space (S,T) is a $T_1 -space$ iif $\forall x \in S, {x}$
+    is a closed set
+\end{theorem}
+
+\begin{proposition}
+    The standard topologies on $\mathbb{R}$ and $\mathbb{C}$ are
+    $T_0, T_1, T_2, T_3, T_4$
+\end{proposition}
+
+\begin{proposition}
+    Discrete Topologies are $T_0, T_1, T_2, T_3, T_4$
+\end{proposition}
+
+\begin{proposition}
+    If topological space (S,T) is:
+    \begin{enumerate}
+        \item $T_4$, then it is $T_3$
+        \item $T_3$, then it is $T_2$
+        \item $T_2$, then it is $T_1$
+        \item $T_1$, then it is $T_0$
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+\end{proposition}
+
+\subsubsection{Metric Space}%
+\label{ssub:Metric Space}
+
+
 \subsection{Continuous Functions and Homeomorphisms}
 \subsection{Problem Set}
 \subsubsection{Level 1}
