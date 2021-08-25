@@ -59,7 +59,7 @@ Undergraduates Maths Classes:
 - [ ] Analyse Numérique
 - [X] Complex Analysis - Borcheds, Math Sorcerer, Petra Bonfert-Taylor, James Cook, Maths Doctor Bob
 - [ ] Abstract Linear Algebra - Macauley, James Cook
-- [ ] Theory of Numbers - Borcheds, Graduate Mathematics
+- [ ] Theory of Numbers - Borcheds, Graduate Mathematics, James Cook
 - [ ] Graph Theory - Wrath of Maths, Marius Furter, Sarada Herke, Professor Butler
 - [ ] Combinatorics
 - [ ] Algebraic Calculus I - Wild Egg
@@ -136,7 +136,7 @@ Graduate Maths Classes:
 #### Real Analysis 1
 
 - Lecture Notes:
-- Video Lectures:
+- Video Lectures: [Topics in Analysis by James Cook](https://www.youtube.com/playlist?list=PLBY4G2o7DhF2VZ9vGFgdap7Gpt-Tm3w3x) 
 - Textbook:
 - Exercices (easy): Schaum's Advanced Calculus (proofs for theorems)
 - Exercices (medium): A Problem Book in Real Analysis by Asuman Aksoy (proofs)
